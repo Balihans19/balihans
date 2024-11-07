@@ -1,0 +1,10 @@
+# Ignore node_modules in both client and server
+/backend/node_modules/
+/frontend/node_modules/
+
+
+# Ignore environment variables
+/backend/.env
+/backend/.env.production
+/frontend/.env
+/frontend/.env.production
