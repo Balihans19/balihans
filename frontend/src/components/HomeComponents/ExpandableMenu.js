@@ -91,6 +91,3 @@ const ExpandableMenu = ({ title, videoUrl, sections }) => {
 };
 
 export default ExpandableMenu;
-
-
-

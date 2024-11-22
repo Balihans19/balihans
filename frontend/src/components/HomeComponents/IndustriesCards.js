@@ -1,15 +1,26 @@
+
 import React from 'react';
 
-const IndustriesCards = ({ title, description, industriesData }) => {
+const IndustriesCards = ({
+  title,
+  description,
+  industriesData,
+  titleWidth = 'lg:w-1/6', // Default title width
+  showDescription = true // Control description visibility
+}) => {
   return (
     <section className="text-white py-36">
       <div className="container mx-auto px-4">
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row lg:items-center mb-12">
-          <h2 className="text-4xl mb-4 lg:mb-0 lg:w-1/6 w-full">{title}</h2>
-          <p className="text-xl font-normal lg:w-11/12 w-full lg:pl-12">
-            {description}
-          </p>
+          <h2 className={`text-4xl mb-4 lg:mb-0 ${titleWidth} w-full`}>
+            {title}
+          </h2>
+          {showDescription && (
+            <p className="text-xl font-normal lg:w-11/12 w-full lg:pl-12">
+              {description}
+            </p>
+          )}
         </div>
 
         {/* Cards Grid */}
@@ -17,7 +28,7 @@ const IndustriesCards = ({ title, description, industriesData }) => {
           {industriesData.map((industry, index) => (
             <div
               key={index}
-              className="relative h-[300px] lg:h-[13vh] w-full lg:w-[82.5vh] overflow-hidden rounded-lg group"
+              className="relative h-[300px] lg:h-[13vh] w-full lg:max-w-7xl overflow-hidden rounded-lg group"
             >
               <div className="absolute inset-0 bg-black bg-opacity-60 group-hover:bg-opacity-10 flex items-center justify-center transition-all duration-300 ease-in-out z-10">
                 <h3 className="text-3xl text-center text-[#e3e5e6]">
@@ -38,5 +49,3 @@ const IndustriesCards = ({ title, description, industriesData }) => {
 };
 
 export default IndustriesCards;
-
-

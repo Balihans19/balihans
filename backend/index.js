@@ -4,6 +4,8 @@ const express = require('express');
 const cors = require('cors');
 const connectDB = require('./config/db');
 const homePageRoutes = require('./routes/homePageRoutes');
+const aboutusPageRoutes = require('./routes/aboutusPageRoutes');
+const leadershipPageRoutes = require('./routes/leadershipPageRoutes');
 require('dotenv').config(); // Load environment variables
 
 // Initializing the Express application
@@ -22,6 +24,8 @@ connectDB();
 
 // API routes
 app.use('/api/homepage', homePageRoutes);
+app.use('/api/aboutuspage', aboutusPageRoutes);
+app.use('/api/leadershippage', leadershipPageRoutes);
 
 // Health check endpoint
 app.get('/health', (req, res) => {

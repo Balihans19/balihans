@@ -11,6 +11,8 @@ const homepageSchema = new mongoose.Schema({
   headerDescription: { type: String, required: true },
   backgroundImageUrl: { type: String, required: true },
   knowMoreText: { type: String, required: true },
+  footerText: { type: String, required: true },
+  footerItalicWords:  {type: [String],  required: true,},
   capabilities: {
     primaryHeading: { type: String, required: true },
     paragraph: { type: String, required: true },

@@ -21,14 +21,14 @@ const DesktopNavbar = ({ navItems, activeDropdown, setActiveDropdown }) => {
       onMouseLeave={() => setActiveDropdown(null)}
     >
       {/* Main container with max-width and auto margins */}
-      <div className="max-w-full mx-auto px-4 py-4 lg:px-36">
+      <div className="max-w-full mx-auto px-4 py-4 md:px-20 xl:px-36">
         <div className="flex items-center justify-between h-20">
           {/* Logo section */}
           <NavLink to="/" className="flex-shrink-0">
             <img
-              src="https://res.cloudinary.com/dbmwkp9a9/image/upload/v1729842945/Balihans_-_logo_off-white_semxwr.png"
+              src="https://res.cloudinary.com/dnijlfi48/image/upload/v1730877884/Balihans_-_logo_off-white_l9zoqc.png"
               alt="Balihans Logo"
-              className="h-[5vh] lg:h-[6vh]"
+              className="h-[5vh] xl:h-[6vh]"
             />
           </NavLink>
 
@@ -43,7 +43,7 @@ const DesktopNavbar = ({ navItems, activeDropdown, setActiveDropdown }) => {
                 <NavLink
                   to={`/${item.name.toLowerCase().replace(/\s+/g, '-')}`}
                   className={({ isActive }) =>
-                    `text-[#FAF9F6] text-base lg:text-lg relative after:content-[''] after:absolute after:w-full after:h-px after:bottom-[-5px] after:left-0 after:transition-transform after:duration-300 ${
+                    `text-[#FAF9F6] text-lg relative after:content-[''] after:absolute after:w-full after:h-px after:bottom-[-5px] after:left-0 after:transition-transform after:duration-300 ${
                       isActive
                         ? 'after:bg-white after:scale-x-100'
                         : 'after:bg-black after:scale-x-0 hover:after:scale-x-100'
@@ -59,9 +59,9 @@ const DesktopNavbar = ({ navItems, activeDropdown, setActiveDropdown }) => {
       </div>
 
       {/* Dropdown Content */}
-   
+      
        {activeDropdown !== null && (
-        <div className="absolute top-full left-0 right-0 bg-[#191c20] z-10 w-screen">
+        <div className="absolute top-full left-0 right-0 bg-[#191c20] z-10 ">
           <hr className="border border-[#191c20]" />
           {navItems[activeDropdown].content}
         </div>
@@ -69,6 +69,8 @@ const DesktopNavbar = ({ navItems, activeDropdown, setActiveDropdown }) => {
     </nav>
   );
 };
+
+
 
 
 /**
@@ -280,4 +282,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
 
