@@ -9,8 +9,8 @@ const TriCarousel = ({
 }) => {
   const [startIndex, setStartIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  
-  // Auto-play functionality
+
+  // Auto-play functionality with slides.length dependency added
   useEffect(() => {
     let interval;
     if (isAutoPlaying) {
@@ -19,7 +19,7 @@ const TriCarousel = ({
       }, 5000);
     }
     return () => clearInterval(interval);
-  }, [isAutoPlaying]);
+  }, [isAutoPlaying, slides.length]);
 
   // Get visible slides based on current index
   const getVisibleSlides = () => {
@@ -30,6 +30,8 @@ const TriCarousel = ({
     }
     return visibleSlides;
   };
+
+
 
   // Navigation functions
   const nextSlide = () => {
