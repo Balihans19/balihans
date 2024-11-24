@@ -1,4 +1,5 @@
 
+
 // Importing required modules
 const express = require('express');
 const cors = require('cors');
@@ -55,6 +56,3 @@ app.listen(PORT, () => {
   console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
   console.log(`Accepting requests from: ${process.env.FRONTEND_URL}`);
 });
-
-
-

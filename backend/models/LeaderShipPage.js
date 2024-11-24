@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 
-//  schema for the homepage
+//  schema for the leadershippage
 const leadershippageSchema = new mongoose.Schema({
 
 

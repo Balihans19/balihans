@@ -1,23 +1,23 @@
 const express = require('express');
 const router = express.Router();
-const Homepage = require('../models/aboutusPage');
+const AboutUspage = require('../models/aboutusPage');
 
 /**
- * @route   GET /api/homepage
- * @desc    Retrieve homepage data from the database
+ * @route   GET /api/aboutuspage
+ * @desc    Retrieve aboutus data from the database
  * @access  Public
  */
 router.get('/', async (req, res) => {
   try {
-    // Fetch the homepage data from the database
-    const aboutuspageData = await Homepage.findOne();
+    // Fetch the aboutus data from the database
+    const aboutuspageData = await AboutUspage.findOne();
     
     // If no data is found, return a 404 error
     if (!aboutuspageData) {
       return res.status(404).json({ message: 'Aboutuspage data not found' });
     }
     
-    // Return the homepage data as JSON
+    // Return the aboutus data as JSON
     res.json(aboutuspageData);
   } catch (error) {
     // Handle server errors and return a 500 status code
