@@ -44,6 +44,7 @@ function Home() {
              isSlideshow= "true"
              footerText={homepageData.footerText}
              footerItalicWords={homepageData.footerItalicWords}
+             showLetsTalkButton={false}
           />
 
           <MemoizedCards

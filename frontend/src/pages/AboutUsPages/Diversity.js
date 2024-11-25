@@ -1,3 +1,6 @@
+
+
+
 import React, { memo } from 'react';
 import { usePageData } from '../../hooks/usePageData';
 import { LoadingSpinner, ErrorFallback, PageWrapper } from '../../components/common/PageWrapper';
@@ -5,8 +8,8 @@ import UsePageTitle from '../../components/Resuable/UsePageTitle';
 
 // Lazy load components
 const AboutUsMainPage = React.lazy(() => import('../../components/Resuable/AboutUsMainPage'));
-const LeaderShipRole = React.lazy(() => import('../../components/LeaderShipComponents/LeaderShipRole'))
-const InvestorSection = React.lazy(() => import('../../components/LeaderShipComponents/InvestorSection'))
+const DiversitySlides = React.lazy(() => import('../../components/DiversityComponents/DiversitySlides'))
+const ContentSwitcher = React.lazy(() => import('../../components/Resuable/ContentSwitcher'))
 const AboutSection = React.lazy(() => import('../../components/Resuable/AboutSection'));
 const ScrollToTop = React.lazy(() => import('../../components/Resuable/ScrollToTop'));
 const TriCarousel = React.lazy(() => import('../../components/Resuable/TriCarousel'));
@@ -15,48 +18,50 @@ const ContactCareers = React.lazy(() => import('../../components/Resuable/Contac
 
 // Memoized components
 const MemoizedAboutUsMainPage = memo(AboutUsMainPage);
-const MemoizedLeaderShipRole = memo(LeaderShipRole);
-const MemoizedInvestorSection = memo(InvestorSection);
+const MemoizedDiversitySlides = memo(DiversitySlides);
+const MemoizedContentSwitcher = memo(ContentSwitcher);
 const MemoizedAboutSection = memo(AboutSection);
 const MemoizedTriCarousel = memo(TriCarousel);
 const MemoizedContactCareers = memo(ContactCareers);
 
-function LeaderShip() {
-  UsePageTitle('LeaderShip');
+function Diversity() {
+  UsePageTitle('Diversity, Equity, & Inclusion');
   
-  const { data: leadershippageData, loading, error } = usePageData('leadershippage');
+  const { data: diversitypageData, loading, error } = usePageData('diversitypage');
 
   if (loading) return <LoadingSpinner />;
   if (error) return <ErrorFallback error={{ message: error }} />;
-  if (!leadershippageData) return null;
+  if (!diversitypageData) return null;
 
   return (
     <PageWrapper>
       <MemoizedAboutUsMainPage
-        headerText={leadershippageData.headerText}
-        values={leadershippageData.values}
-        description={leadershippageData.description}
-        backgroundImage={leadershippageData.backgroundImage}
-        missionTitle={leadershippageData.missionTitle}
-        missionText={leadershippageData.missionText}
+        headerText={diversitypageData.headerText}
+        values={diversitypageData.values}
+        description={diversitypageData.description}
+        backgroundImage={diversitypageData.backgroundImage}
+        missionTitle={diversitypageData.missionTitle}
+        missionText={diversitypageData.missionText}
       />
     
-    <MemoizedLeaderShipRole
-        leadershipData={leadershippageData.leadership.leadershipData}
+    <MemoizedDiversitySlides
+         diversitySlides={diversitypageData.diversity.diversitySlides}
       />
 
-    <MemoizedInvestorSection
-        backgroundImageUrl={leadershippageData.InvestorSection.backgroundImageUrl}
+<MemoizedContentSwitcher
+        title={diversitypageData.DeiInitiatives.title}
+        slides={diversitypageData.DeiInitiatives.DeiInitiativesData}
+        showButton={false}
       />
       
 
       <MemoizedAboutSection
-        backgroundImageUrl={leadershippageData.AboutSection.backgroundImageUrl}
+        backgroundImageUrl={diversitypageData.AboutSection.backgroundImageUrl}
       />
 
       <MemoizedTriCarousel
-        slides={leadershippageData.Impact.carouselSlides}
-        title={leadershippageData.Impact.title}
+        slides={diversitypageData.Impact.carouselSlides}
+        title={diversitypageData.Impact.title}
       />
 
       <MemoizedContactCareers variant="light" />
@@ -66,4 +71,4 @@ function LeaderShip() {
   );
 }
 
-export default memo(LeaderShip);
+export default memo(Diversity);

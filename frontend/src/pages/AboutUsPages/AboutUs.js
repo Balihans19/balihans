@@ -39,8 +39,7 @@ function AboutUs() {
       />
 
       <MemoizedContentSwitcher
-        primaryHeading={aboutuspageData.CoreValues.primaryHeading}
-        paragraph={aboutuspageData.CoreValues.paragraph}
+        title={aboutuspageData.CoreValues.title}
         slides={aboutuspageData.CoreValues.CoreValuesData}
         showButton={true}
       />

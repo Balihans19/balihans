@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import {ArrowRight } from 'lucide-react';
 
 const MainDiv = ({
   headerTitle,
@@ -11,6 +12,7 @@ const MainDiv = ({
   // Footer props
   footerText,
   footerItalicWords = [], // Default value for italic words
+  showLetsTalkButton
 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -63,6 +65,16 @@ const MainDiv = ({
             <p className="text-base md:text-lg xl:text-xl text-gray-100 max-w-lg lg:max-w-2xl">
               {headerDescription}
             </p>
+            {showLetsTalkButton && (
+              <button className="mt-4 flex items-center text-base md:text-lg xl:text-xl text-white">
+                     Let’s Talk
+                 <div 
+                   className="ml-4 w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 transition-colors"
+                    >
+                   <ArrowRight size={32} className="text-gray-500" />
+               </div>
+            </button>
+            )}
           </div>
         </div>
 

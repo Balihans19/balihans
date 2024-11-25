@@ -4,6 +4,10 @@ const connectDB = require('./config/db');
 const homePageRoutes = require('./routes/homePageRoutes');
 const aboutusPageRoutes = require('./routes/aboutusPageRoutes');
 const leadershipPageRoutes = require('./routes/leadershipPageRoutes');
+const diversityPageRoutes = require('./routes/diversityPageRoutes');
+const sustainabilityPageRoutes = require('./routes/sustainabilityPageRoutes');
+const whatwedoPageRoutes = require('./routes/whatwedoPageRoutes');
+const bsfiPageRoutes=require('./routes/bsfiPageRoutes.js');
 require('dotenv').config();
 
 // Initializing the Express application
@@ -38,6 +42,10 @@ const initializeMongoDB = async () => {
 app.use('/api/homepage', homePageRoutes);
 app.use('/api/aboutuspage', aboutusPageRoutes);
 app.use('/api/leadershippage', leadershipPageRoutes);
+app.use('/api/diversitypage', diversityPageRoutes);
+app.use('/api/sustainabilitypage', sustainabilityPageRoutes);
+app.use('/api/whatwedopage', whatwedoPageRoutes);
+app.use('/api/bsfipage', bsfiPageRoutes);
 
 // Health check endpoint
 app.get('/health', (req, res) => {
