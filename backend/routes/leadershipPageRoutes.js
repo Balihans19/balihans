@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const LeaderShippage = require('../models/leadershipPage');
+const LeaderShippage = require('../models/LeaderShipPage');
 
 /**
  * @route   GET /api/leadershippage

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const AboutUspage = require('../models/aboutusPage');
+const AboutUspage = require('../models/AboutUsPage');
 
 /**
  * @route   GET /api/aboutuspage
