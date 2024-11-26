@@ -8,6 +8,10 @@ const diversityPageRoutes = require('./routes/diversityPageRoutes');
 const sustainabilityPageRoutes = require('./routes/sustainabilityPageRoutes');
 const whatwedoPageRoutes = require('./routes/whatwedoPageRoutes');
 const bsfiPageRoutes=require('./routes/bsfiPageRoutes.js');
+const energyPageRoutes=require('./routes/energyPageRoutes.js');
+const healthcarePageRoutes=require('./routes/healthcarePageRoutes.js');
+const communicationsPageRoutes=require('./routes/communicationsPageRoutes.js');
+const hightechPageRoutes=require('./routes/hightechPageRoutes.js');
 require('dotenv').config();
 
 // Initializing the Express application
@@ -46,6 +50,10 @@ app.use('/api/diversitypage', diversityPageRoutes);
 app.use('/api/sustainabilitypage', sustainabilityPageRoutes);
 app.use('/api/whatwedopage', whatwedoPageRoutes);
 app.use('/api/bsfipage', bsfiPageRoutes);
+app.use('/api/energypage', energyPageRoutes);
+app.use('/api/healthcarepage', healthcarePageRoutes);
+app.use('/api/communicationspage', communicationsPageRoutes);
+app.use('/api/hightechpage', hightechPageRoutes);
 
 // Health check endpoint
 app.get('/health', (req, res) => {

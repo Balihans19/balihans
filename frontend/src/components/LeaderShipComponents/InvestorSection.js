@@ -5,7 +5,7 @@ const InvestorSection = ({backgroundImageUrl}) => {
   return (
     <div className="min-h-screen  text-white p-6 lg:p-12">
       <div className="max-w-full mx-24">
-        <div className="grid lg:grid-cols-2 gap-8 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 items-start">
           {/* Text Content */}
           <div className="space-y-6">
             <h1 className="text-3xl lg:text-4xl  mb-6">

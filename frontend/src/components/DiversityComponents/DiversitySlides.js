@@ -47,10 +47,9 @@ const DiversitySlides = ({ diversitySlides = [] }) => {
     setStartIndex((prev) => (prev - 1 + slides.length) % slides.length);
     setIsAutoPlaying(false);
   };
-
   const SlideCard = ({ slide, index }) => {
     if (!slide) return null;
-    
+  
     return (
       <div className="relative group cursor-pointer w-full">
         <div className="relative aspect-[3/4] overflow-hidden rounded-lg">
@@ -59,12 +58,20 @@ const DiversitySlides = ({ diversitySlides = [] }) => {
             alt={slide.title}
             className="object-cover w-full h-full"
           />
+          {/* Text Content with Fixed Height */}
           <div className="absolute inset-0">
-            <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-6 w-full bg-black/80">
-              <h3 className="text-lg lg:text-3xl text-white mb-2 w-2/3">
+            <div
+              className="absolute bottom-0 left-0 right-0 p-4 lg:p-6 w-full bg-black/80 flex flex-col justify-start"
+              style={{
+                height: "250px", // Set a fixed height to align titles/descriptions
+              }}
+            >
+              {/* Title */}
+              <h3 className="text-lg lg:text-3xl text-white mb-2 line-clamp-2">
                 {slide.title}
               </h3>
-              <p className="text-lg text-white mb-2">
+              {/* Description */}
+              <p className="text-sm lg:text-lg text-white ">
                 {slide.description}
               </p>
             </div>
@@ -73,7 +80,6 @@ const DiversitySlides = ({ diversitySlides = [] }) => {
       </div>
     );
   };
-
   return (
     <div className="w-full max-w-7xl mx-auto px-4 my-36">
       <h2 className="text-3xl md:text-4xl text-center mb-24 text-white">
@@ -122,3 +128,4 @@ const DiversitySlides = ({ diversitySlides = [] }) => {
 };
 
 export default DiversitySlides;
+

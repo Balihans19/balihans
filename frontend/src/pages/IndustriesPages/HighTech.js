@@ -24,50 +24,50 @@ const MemoizedServices = memo(Services);
 const MemoizedDuoCarousel = memo(DuoCarousel);
 const MemoizedContactCareers = memo(ContactCareers);
 
-function BSFI() {
+function HighTech() {
 
-  UsePageTitle('BSFI');
+  UsePageTitle('High-Tech');
 
-  const { data: bsfipageData, loading, error } = usePageData('bsfipage');
+  const { data: hightechpageData, loading, error } = usePageData('hightechpage');
 
   if (loading) return <LoadingSpinner />;
   if (error) return <ErrorFallback error={{ message: error }} />;
-  if (!bsfipageData) return null;
+  if (!hightechpageData) return null;
 
   return (
     <PageWrapper>
           <MemoizedMainDiv
-            videoData={bsfipageData.videoData}
-            headerTitle={bsfipageData.headerTitle}
-            headerDescription={bsfipageData.headerDescription}
-            backgroundImageUrl={bsfipageData.backgroundImageUrl}
-            knowMoreText={bsfipageData.knowMoreText}
+            videoData={hightechpageData.videoData}
+            headerTitle={hightechpageData.headerTitle}
+            headerDescription={hightechpageData.headerDescription}
+            backgroundImageUrl={hightechpageData.backgroundImageUrl}
+            knowMoreText={hightechpageData.knowMoreText}
              isSlideshow= "true"
-             footerText={bsfipageData.footerText}
-             footerItalicWords={bsfipageData.footerItalicWords}
+             footerText={hightechpageData.footerText}
+             footerItalicWords={hightechpageData.footerItalicWords}
              showLetsTalkButton={true}
           />
 
           <MemoizedBankingSolutions
-             title={bsfipageData.BankingSolutions.title}
-             solutionsData={bsfipageData.BankingSolutions.solutionData}
+             title={hightechpageData.BankingSolutions.title}
+             solutionsData={hightechpageData.BankingSolutions.solutionData}
           />
 
           <MemoizedSpotlight
-            spotlightItems={bsfipageData.Spotlight.spotlightItems}
+            spotlightItems={hightechpageData.Spotlight.spotlightItems}
           />
 
           <MemoizedServices
-            title={bsfipageData.Services.title}
-            backgroundImage={bsfipageData.Services.backgroundImage}
-            services={bsfipageData.Services.services}
-            backgroundType="image"
+            title={hightechpageData.Services.title}
+            backgroundVideo={hightechpageData.Services.backgroundVideo}
+            services={hightechpageData.Services.services}
+            backgroundType="video"
           />
 
         
-<MemoizedDuoCarousel
-            slides={bsfipageData.transformingBusinesses.carouselSlides}
-            title={bsfipageData.transformingBusinesses.title}
+         <MemoizedDuoCarousel
+            slides={hightechpageData.transformingEnterprises.carouselSlides}
+            title={hightechpageData.transformingEnterprises.title}
           />
 
           <MemoizedContactCareers 
@@ -78,5 +78,4 @@ function BSFI() {
   );
 }
 
-export default memo(BSFI);
-
+export default memo(HighTech);

@@ -4,12 +4,12 @@ const BSFIpage = require('../models/BSFI');
 
 /**
  * @route   GET /api/bsfipage
- * @desc    Retrieve homepage data from the database
+ * @desc    Retrieve bsfipage data from the database
  * @access  Public
  */
 router.get('/', async (req, res) => {
   try {
-    // Fetch the homepage data from the database
+    // Fetch the bsfipage data from the database
     const bsfipageData = await BSFIpage.findOne();
     
     // If no data is found, return a 404 error

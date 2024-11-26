@@ -1,5 +1,4 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {ArrowRight } from 'lucide-react';
 
 const MainDiv = ({
@@ -9,12 +8,26 @@ const MainDiv = ({
   knowMoreText = "Know More",
   videoData,
   isSlideshow = false,
+  slideshowInterval = 5000, // Default 5 seconds between slides
   // Footer props
   footerText,
   footerItalicWords = [], // Default value for italic words
   showLetsTalkButton
 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Auto-sliding effect
+  useEffect(() => {
+    // Only run auto-sliding if slideshow is enabled and multiple videos exist
+    if (isSlideshow && Array.isArray(videoData) && videoData.length > 1) {
+      const interval = setInterval(() => {
+        setCurrentSlide((prevSlide) => (prevSlide + 1) % videoData.length);
+      }, slideshowInterval);
+
+      // Cleanup interval on component unmount or when dependencies change
+      return () => clearInterval(interval);
+    }
+  }, [isSlideshow, videoData, slideshowInterval]);
 
   // Early return if no video data
   if (!videoData || (Array.isArray(videoData) && !videoData.length)) {
@@ -67,7 +80,7 @@ const MainDiv = ({
             </p>
             {showLetsTalkButton && (
               <button className="mt-4 flex items-center text-base md:text-lg xl:text-xl text-white">
-                     Let’s Talk
+                     Let's Talk
                  <div 
                    className="ml-4 w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 transition-colors"
                     >
@@ -145,7 +158,4 @@ const MainDiv = ({
   );
 };
 
-
-
 export default MainDiv;
-

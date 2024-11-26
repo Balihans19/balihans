@@ -145,10 +145,18 @@ export const desktopContent = [
               <li className="mb-2">
                 <Link to="/bsfi" className="text-white hover:underline">Banking & Financial Services</Link>
               </li>
-              <li className="mb-2">Communications & Information Services</li>
-              <li className="mb-2">Energy, Resources & Utilities</li>
-              <li className="mb-2">Healthcare & Life Sciences</li>
-              <li className="mb-2">High Tech</li>
+              <li className="mb-2">
+                <Link to="/communications" className="text-white hover:underline">Communications & Information Services</Link>
+              </li>
+              <li className="mb-2">
+                <Link to="/energy" className="text-white hover:underline">Energy, Resources & Utilities</Link>
+              </li>
+              <li className="mb-2">
+                <Link to="/health-care" className="text-white hover:underline">Healthcare & Life Sciences</Link>
+              </li>
+              <li className="mb-2">
+                <Link to="/high-tech" className="text-white hover:underline">High Tech</Link>
+              </li>
               <li className="mb-2">Hospitality</li>
               <li className="mb-2">Insurance</li>
             </ul>

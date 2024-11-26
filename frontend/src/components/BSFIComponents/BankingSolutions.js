@@ -5,31 +5,12 @@ const BankingSolutions = ({ solutionsData, title }) => {
   const contentRef = useRef(null);
   const [activeSection, setActiveSection] = useState(1);
 
-  // Handle scroll synchronization
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!contentRef.current) return;
-
-      const scrollTop = contentRef.current.scrollTop;
-      const sectionHeight = contentRef.current.clientHeight;
-
-      // Calculate which section is most visible
-      const currentSection = Math.floor(scrollTop / sectionHeight) + 1;
-      if (currentSection !== activeSection && currentSection <= solutionsData.length) {
-        setActiveSection(currentSection);
-      }
-    };
-
-    const contentElement = contentRef.current;
-    if (contentElement) {
-      contentElement.addEventListener('scroll', handleScroll);
-      return () => contentElement.removeEventListener('scroll', handleScroll);
-    }
-  }, [activeSection, solutionsData]);
-
   // Handle navigation click
   const handleNavClick = (sectionId) => {
+    // Explicitly set the active section to the clicked item
     setActiveSection(sectionId);
+
+    // Scroll to the specific section
     if (contentRef.current) {
       const sectionHeight = contentRef.current.clientHeight;
       contentRef.current.scrollTo({
@@ -38,6 +19,47 @@ const BankingSolutions = ({ solutionsData, title }) => {
       });
     }
   };
+
+  // Handle scroll synchronization
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!contentRef.current) return;
+
+      const scrollTop = contentRef.current.scrollTop;
+      const sectionHeight = contentRef.current.clientHeight;
+
+      // Calculate the most visible section
+      let mostVisibleSection = 1;
+      let maxVisibility = 0;
+
+      solutionsData.forEach((solution, index) => {
+        const sectionTop = index * sectionHeight;
+        const sectionBottom = (index + 1) * sectionHeight;
+
+        // Calculate how much of the section is visible
+        const visibleTop = Math.max(scrollTop, sectionTop);
+        const visibleBottom = Math.min(scrollTop + sectionHeight, sectionBottom);
+        const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+
+        // Update most visible section
+        if (visibleHeight > maxVisibility) {
+          maxVisibility = visibleHeight;
+          mostVisibleSection = solution.id;
+        }
+      });
+
+      // Update active section if changed
+      if (mostVisibleSection !== activeSection) {
+        setActiveSection(mostVisibleSection);
+      }
+    };
+
+    const contentElement = contentRef.current;
+    if (contentElement) {
+      contentElement.addEventListener('scroll', handleScroll);
+      return () => contentElement.removeEventListener('scroll', handleScroll);
+    }
+  }, [solutionsData, activeSection]);
 
   const scrollContent = (direction) => {
     if (contentRef.current) {
@@ -94,7 +116,14 @@ const BankingSolutions = ({ solutionsData, title }) => {
 
           {/* Right side - Content */}
           <div className="md:w-2/3">
-            <div ref={contentRef} className="h-[500px] overflow-y-auto hide-scrollbar">
+            <div 
+              ref={contentRef} 
+              className="h-[500px] overflow-y-auto scrollbar-hide" 
+              style={{
+                scrollbarWidth: 'none', 
+                msOverflowStyle: 'none',
+              }}
+            >
               {solutionsData.map((solution, index) => (
                 <div
                   key={index}

@@ -25,16 +25,16 @@ const Spotlight = ({ spotlightItems }) => {
       <div className="flex justify-between items-center">
         <button
           onClick={showPrevSlide}
-          className="w-12 h-12 flex items-center justify-center bg-gray-200   rounded-full shadow z-10"
+          className="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full shadow z-10"
         >
-          <ArrowLeft size={40} color='black' />
+          <ArrowLeft size={40} color="black" />
         </button>
 
         <div className="grid grid-cols-3 gap-36 mx-auto">
           {visibleItems.map((item, index) => (
             <div
               key={index}
-              className="flex flex-col text-left w-[35vh] h-[50vh] transform transition-all duration-500 ease-in-out"
+              className="flex flex-col text-left w-[35vh] h-[50vh] transform transition-transform duration-500 ease-in-out"
             >
               <img
                 src={item.imageUrl}
@@ -51,9 +51,9 @@ const Spotlight = ({ spotlightItems }) => {
 
         <button
           onClick={showNextSlide}
-          className=" w-12 h-12 flex items-center justify-center bg-gray-200   rounded-full shadow z-10"
+          className="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full shadow z-10"
         >
-          <ArrowRight size={40} color='black' />
+          <ArrowRight size={40} color="black" />
         </button>
       </div>
     </div>

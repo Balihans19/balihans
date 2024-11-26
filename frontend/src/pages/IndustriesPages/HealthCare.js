@@ -24,50 +24,50 @@ const MemoizedServices = memo(Services);
 const MemoizedDuoCarousel = memo(DuoCarousel);
 const MemoizedContactCareers = memo(ContactCareers);
 
-function BSFI() {
+function HealthCare() {
 
-  UsePageTitle('BSFI');
+  UsePageTitle('Healthcare & Life Sciences');
 
-  const { data: bsfipageData, loading, error } = usePageData('bsfipage');
+  const { data: healthcarepageData, loading, error } = usePageData('healthcarepage');
 
   if (loading) return <LoadingSpinner />;
   if (error) return <ErrorFallback error={{ message: error }} />;
-  if (!bsfipageData) return null;
+  if (!healthcarepageData) return null;
 
   return (
     <PageWrapper>
           <MemoizedMainDiv
-            videoData={bsfipageData.videoData}
-            headerTitle={bsfipageData.headerTitle}
-            headerDescription={bsfipageData.headerDescription}
-            backgroundImageUrl={bsfipageData.backgroundImageUrl}
-            knowMoreText={bsfipageData.knowMoreText}
+            videoData={healthcarepageData.videoData}
+            headerTitle={healthcarepageData.headerTitle}
+            headerDescription={healthcarepageData.headerDescription}
+            backgroundImageUrl={healthcarepageData.backgroundImageUrl}
+            knowMoreText={healthcarepageData.knowMoreText}
              isSlideshow= "true"
-             footerText={bsfipageData.footerText}
-             footerItalicWords={bsfipageData.footerItalicWords}
+             footerText={healthcarepageData.footerText}
+             footerItalicWords={healthcarepageData.footerItalicWords}
              showLetsTalkButton={true}
           />
 
           <MemoizedBankingSolutions
-             title={bsfipageData.BankingSolutions.title}
-             solutionsData={bsfipageData.BankingSolutions.solutionData}
+             title={healthcarepageData.BankingSolutions.title}
+             solutionsData={healthcarepageData.BankingSolutions.solutionData}
           />
 
           <MemoizedSpotlight
-            spotlightItems={bsfipageData.Spotlight.spotlightItems}
+            spotlightItems={healthcarepageData.Spotlight.spotlightItems}
           />
 
           <MemoizedServices
-            title={bsfipageData.Services.title}
-            backgroundImage={bsfipageData.Services.backgroundImage}
-            services={bsfipageData.Services.services}
-            backgroundType="image"
+            title={healthcarepageData.Services.title}
+            backgroundVideo={healthcarepageData.Services.backgroundVideo}
+            services={healthcarepageData.Services.services}
+            backgroundType="video"
           />
 
         
-<MemoizedDuoCarousel
-            slides={bsfipageData.transformingBusinesses.carouselSlides}
-            title={bsfipageData.transformingBusinesses.title}
+         <MemoizedDuoCarousel
+            slides={healthcarepageData.transformingEnterprises.carouselSlides}
+            title={healthcarepageData.transformingEnterprises.title}
           />
 
           <MemoizedContactCareers 
@@ -78,5 +78,4 @@ function BSFI() {
   );
 }
 
-export default memo(BSFI);
-
+export default memo(HealthCare);
