@@ -41,7 +41,7 @@ function Home() {
             headerDescription={homepageData.headerDescription}
             backgroundImageUrl={homepageData.backgroundImageUrl}
             knowMoreText={homepageData.knowMoreText}
-             isSlideshow= "true"
+             isSlideshow={true}
              footerText={homepageData.footerText}
              footerItalicWords={homepageData.footerItalicWords}
              showLetsTalkButton={false}

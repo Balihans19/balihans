@@ -42,7 +42,7 @@ function Communications() {
             headerDescription={communicationspageData.headerDescription}
             backgroundImageUrl={communicationspageData.backgroundImageUrl}
             knowMoreText={communicationspageData.knowMoreText}
-             isSlideshow= "true"
+             isSlideshow= {false}
              footerText={communicationspageData.footerText}
              footerItalicWords={communicationspageData.footerItalicWords}
              showLetsTalkButton={true}

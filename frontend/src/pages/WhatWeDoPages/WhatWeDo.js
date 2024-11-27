@@ -35,7 +35,7 @@ function  WhatWeDo() {
             headerDescription={whatwedopageData.headerDescription}
             backgroundImageUrl={whatwedopageData.backgroundImageUrl}
             knowMoreText={whatwedopageData.knowMoreText}
-             isSlideshow= "false"
+             isSlideshow= {false}
              footerText={whatwedopageData.footerText}
              footerItalicWords={whatwedopageData.footerItalicWords}
           />

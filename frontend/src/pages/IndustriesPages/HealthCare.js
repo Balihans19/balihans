@@ -42,7 +42,7 @@ function HealthCare() {
             headerDescription={healthcarepageData.headerDescription}
             backgroundImageUrl={healthcarepageData.backgroundImageUrl}
             knowMoreText={healthcarepageData.knowMoreText}
-             isSlideshow= "true"
+             isSlideshow= {false}
              footerText={healthcarepageData.footerText}
              footerItalicWords={healthcarepageData.footerItalicWords}
              showLetsTalkButton={true}

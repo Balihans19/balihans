@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const MainDiv = ({
   headerTitle,
@@ -12,13 +12,14 @@ const MainDiv = ({
   // Footer props
   footerText,
   footerItalicWords = [], // Default value for italic words
-  showLetsTalkButton
+  showLetsTalkButton,
+  descriptionWidths = ['lg:max-w-xs', 'lg:max-w-3xl', 'lg:max-w-4xl', 'lg:max-w-xl'], // Custom widths for each slide
+  defaultDescriptionWidth = 'lg:max-w-2xl', // Default width when slideshow is false
 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   // Auto-sliding effect
   useEffect(() => {
-    // Only run auto-sliding if slideshow is enabled and multiple videos exist
     if (isSlideshow && Array.isArray(videoData) && videoData.length > 1) {
       const interval = setInterval(() => {
         setCurrentSlide((prevSlide) => (prevSlide + 1) % videoData.length);
@@ -72,21 +73,19 @@ const MainDiv = ({
           )}
 
           <div className="relative z-10 max-w-6xl pl-6 lg:pl-20 xl:pl-36 pb-44 h-full flex flex-col justify-center">
-            <h1 className="text-2xl md:text-3xl xl:text-4xl text-[#FAF9F6] mb-4">
+            <h1 className="text-2xl md:text-3xl xl:text-4xl text-[#FAF9F6] ">
               {headerTitle}
             </h1>
-            <p className="text-base md:text-lg xl:text-xl text-gray-100 max-w-lg lg:max-w-2xl">
+            <p className="text-base md:text-lg xl:text-xl text-gray-100 max-w-lg lg:max-w-2xl tracking-tighter">
               {headerDescription}
             </p>
             {showLetsTalkButton && (
-              <button className="mt-4 flex items-center text-base md:text-lg xl:text-xl text-white">
-                     Let's Talk
-                 <div 
-                   className="ml-4 w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 transition-colors"
-                    >
-                   <ArrowRight size={32} className="text-gray-500" />
-               </div>
-            </button>
+              <button className="mt-6 flex items-center text-base md:text-lg xl:text-xl text-white">
+                Let's Talk
+                <div className="ml-4 w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 transition-colors">
+                  <ArrowRight size={32} className="text-gray-500" />
+                </div>
+              </button>
             )}
           </div>
         </div>
@@ -114,10 +113,16 @@ const MainDiv = ({
           <div className="relative z-10 flex h-full">
             <div className="absolute right-6 lg:right-12 xl:right-36 bottom-16 w-[50vh] flex flex-col items-end justify-center text-white">
               <div className="flex flex-col items-start p-2 rounded mb-4">
-                <h1 className="text-3xl xl:text-4xl mb-4 transition-all duration-500">
+                <h1 className="text-3xl xl:text-4xl  transition-all duration-500">
                   {videos[currentSlide].heading}
                 </h1>
-                <p className="text-sm md:text-base lg:text-xl mb-4 max-w-sm">
+                <p
+                  className={`text-sm md:text-base lg:text-xl mb-6 tracking-tighter ${
+                    isSlideshow
+                      ? descriptionWidths[currentSlide] || 'lg:max-w-2xl'
+                      : defaultDescriptionWidth
+                  }`}
+                >
                   {videos[currentSlide].description}
                 </p>
                 <button className="bg-transparent border border-white text-sm lg:text-base font-semibold py-3 px-6 lg:py-4 lg:px-8 cursor-pointer hover:bg-[#2c2c2c] hover:text-white transition-colors">
@@ -159,3 +164,4 @@ const MainDiv = ({
 };
 
 export default MainDiv;
+

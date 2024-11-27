@@ -42,7 +42,7 @@ function BSFI() {
             headerDescription={bsfipageData.headerDescription}
             backgroundImageUrl={bsfipageData.backgroundImageUrl}
             knowMoreText={bsfipageData.knowMoreText}
-             isSlideshow= "true"
+             isSlideshow= {false}
              footerText={bsfipageData.footerText}
              footerItalicWords={bsfipageData.footerItalicWords}
              showLetsTalkButton={true}

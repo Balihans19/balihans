@@ -42,7 +42,7 @@ function HighTech() {
             headerDescription={hightechpageData.headerDescription}
             backgroundImageUrl={hightechpageData.backgroundImageUrl}
             knowMoreText={hightechpageData.knowMoreText}
-             isSlideshow= "true"
+             isSlideshow= {false}
              footerText={hightechpageData.footerText}
              footerItalicWords={hightechpageData.footerItalicWords}
              showLetsTalkButton={true}

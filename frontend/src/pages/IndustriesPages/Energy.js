@@ -42,7 +42,7 @@ function Energy() {
             headerDescription={energypageData.headerDescription}
             backgroundImageUrl={energypageData.backgroundImageUrl}
             knowMoreText={energypageData.knowMoreText}
-             isSlideshow= "true"
+             isSlideshow= {false}
              footerText={energypageData.footerText}
              footerItalicWords={energypageData.footerItalicWords}
              showLetsTalkButton={true}

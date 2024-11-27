@@ -4,13 +4,11 @@ import { ChevronRight, ChevronLeft } from 'lucide-react';
 const BankingSolutions = ({ solutionsData, title }) => {
   const contentRef = useRef(null);
   const [activeSection, setActiveSection] = useState(1);
+  const [scrollProgress, setScrollProgress] = useState(5);
 
   // Handle navigation click
   const handleNavClick = (sectionId) => {
-    // Explicitly set the active section to the clicked item
     setActiveSection(sectionId);
-
-    // Scroll to the specific section
     if (contentRef.current) {
       const sectionHeight = contentRef.current.clientHeight;
       contentRef.current.scrollTo({
@@ -27,6 +25,11 @@ const BankingSolutions = ({ solutionsData, title }) => {
 
       const scrollTop = contentRef.current.scrollTop;
       const sectionHeight = contentRef.current.clientHeight;
+      const totalScrollHeight = contentRef.current.scrollHeight - sectionHeight;
+
+      // Calculate scroll progress percentage
+      const progress = (scrollTop / totalScrollHeight) * 100;
+      setScrollProgress(progress);
 
       // Calculate the most visible section
       let mostVisibleSection = 1;
@@ -61,20 +64,31 @@ const BankingSolutions = ({ solutionsData, title }) => {
     }
   }, [solutionsData, activeSection]);
 
+  // Modified scrollContent function for slower and smoother scroll
   const scrollContent = (direction) => {
     if (contentRef.current) {
-      const scrollAmount = contentRef.current.clientHeight;
-      if (direction === 'next') {
-        contentRef.current.scrollBy({ top: scrollAmount, behavior: 'smooth' });
-      } else {
-        contentRef.current.scrollBy({ top: -scrollAmount, behavior: 'smooth' });
-      }
+      // Scroll slower by reducing the scroll amount
+      const scrollAmount = contentRef.current.clientHeight / 5; // Adjust the denominator for slower scroll
+
+      // Smooth scrolling with a very slow duration
+      contentRef.current.scrollBy({
+        top: direction === 'next' ? scrollAmount : -scrollAmount,
+        behavior: 'smooth',
+      });
     }
   };
 
   return (
-    <div className="min-h-screen text-white p-4 md:p-8">
-      <div className="mx-28 my-24">
+    <div className="min-h-screen text-white p-8 md:p-16">
+      <div className="mx-28 my-24 relative">
+        {/* Scroll Progress Line */}
+        <div className="absolute -top-8 left-0 w-full h-1 z-5 overflow-hidden">
+          <div 
+            className="h-full bg-[#737373] transition-all duration-300 ease-in-out origin-left" 
+            style={{ width: `${scrollProgress}%`, transformOrigin: 'left center' }}
+          />
+        </div>
+
         <h1 className="text-2xl md:text-4xl mb-12">{title}</h1>
         <div className="flex flex-col md:flex-row gap-8">
           {/* Left side - Navigation */}
@@ -89,20 +103,14 @@ const BankingSolutions = ({ solutionsData, title }) => {
                   <div className="flex items-start gap-4">
                     <div className="relative w-1 h-16">
                       <div
-                        className={`absolute left-0 w-1 h-full transition-all duration-300 ${
-                          activeSection === solution.id
-                            ? 'bg-white'
-                            : 'bg-transparent'
-                        }`}
+                        className={`absolute left-0 w-1 h-full transition-all duration-300 ${activeSection === solution.id ? 'bg-white' : 'bg-transparent'}`}
                       />
                     </div>
                     <div className="flex-1">
                       <div className="text-xl text-gray-400 mb-1">{solution.number}</div>
                       <div
                         className={`text-2xl transition-colors duration-300 ${
-                          activeSection === solution.id
-                            ? 'text-white'
-                            : 'text-gray-400 group-hover:text-gray-300'
+                          activeSection === solution.id ? 'text-white' : 'text-gray-400 group-hover:text-gray-300'
                         }`}
                       >
                         {solution.title}
@@ -127,9 +135,7 @@ const BankingSolutions = ({ solutionsData, title }) => {
               {solutionsData.map((solution, index) => (
                 <div
                   key={index}
-                  className={`flex flex-col gap-8 min-h-[400px] ${
-                    index < solutionsData.length - 1 ? 'mb-16' : ''
-                  }`}
+                  className={`flex flex-col gap-8 min-h-[400px] ${index < solutionsData.length - 1 ? 'mb-16' : ''}`}
                 >
                   {solution.contents.map((content, idx) => (
                     <div key={idx} className="mb-8">
@@ -164,3 +170,4 @@ const BankingSolutions = ({ solutionsData, title }) => {
 };
 
 export default BankingSolutions;
+
