@@ -87,7 +87,9 @@ export const desktopContent = [
     
           <div className="w-full min-w-[200px] my-4 md:my-8">
             <ul className="list-none text-base lg:text-lg p-0">
-              <li className="mb-2">Artificial Intelligence</li>
+            <li className="mb-2">
+                <Link to="/ai" className="text-white hover:underline">Artificial Intelligence</Link>
+              </li>
               <li className="mb-2">Cloud & Infrastructure</li>
               <li className="mb-2">Cognitive Operations</li>
               <li className="mb-2">Network Solutions</li>

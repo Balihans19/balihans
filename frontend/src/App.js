@@ -14,6 +14,7 @@ import Energy from './pages/IndustriesPages/Energy';
 import HealthCare from './pages/IndustriesPages/HealthCare';
 import Communications from './pages/IndustriesPages/Communications';
 import HighTech from './pages/IndustriesPages/HighTech';
+import AI from './pages/WhatWeDoPages/AI';
 
 
 
@@ -34,6 +35,11 @@ function App() {
         <Route path="sustainability" element={<Sustainability />} />
 
         <Route path="/what-we-do" element={<WhatWeDo />} />
+        <Route path="/ai" element={<AI />} />
+
+
+
+
 
         <Route path="/bsfi" element={<BSFI/>} />
         <Route path="/energy" element={<Energy />} />

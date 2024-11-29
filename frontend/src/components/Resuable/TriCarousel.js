@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react'; 
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 const TriCarousel = ({ slides, title }) => {
@@ -39,7 +39,7 @@ const TriCarousel = ({ slides, title }) => {
         <h2 className="text-3xl md:text-4xl text-center mb-24 text-white">
           {title}
         </h2>
-
+        
         <div className="relative">
           <div className="overflow-hidden relative">
             <div
@@ -48,17 +48,23 @@ const TriCarousel = ({ slides, title }) => {
             >
               {slides.map((slide, index) => (
                 <div key={`${slide.id}-${index}`} className="w-1/3 flex-shrink-0 px-4 md:px-10">
-                  <div className="relative aspect-[3/4] overflow-hidden rounded-lg">
+                  <div className="relative h-[500px]">
                     <img
                       src={slide.image}
                       alt={slide.title}
-                      className="object-cover w-full h-full"
+                      className="object-cover rounded-lg w-full h-full"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-100">
-                      <div className="absolute bottom-20 left-0 right-0 p-4 lg:p-6">
-                        <div className="text-lg lg:text-2xl text-white mb-2">
+                    <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                      <div
+                        className="absolute bottom-0 left-0 right-0 p-4 lg:p-6  flex flex-col justify-start"
+                        style={{
+                          height: '300px', // Fixed height for uniform alignment
+                        }}
+                      >
+                        {/* Title */}
+                        <h2 className="text-lg lg:text-2xl text-white mb-2 line-clamp-5">
                           {slide.title}
-                        </div>
+                        </h2>
                       </div>
                     </div>
                   </div>
@@ -93,4 +99,3 @@ const TriCarousel = ({ slides, title }) => {
 };
 
 export default TriCarousel;
-

@@ -111,9 +111,9 @@ const MainDiv = ({
 
           {/* Content Overlay */}
           <div className="relative z-10 flex h-full">
-            <div className="absolute right-6 lg:right-12 xl:right-36 bottom-16 w-[50vh] flex flex-col items-end justify-center text-white">
+            <div className="absolute right-6 lg:right-12 xl:right-36 bottom-16 w-[60vh] flex flex-col items-end justify-center text-white">
               <div className="flex flex-col items-start p-2 rounded mb-4">
-                <h1 className="text-3xl xl:text-4xl  transition-all duration-500">
+                <h1 className="text-3xl xl:text-4xl   transition-all duration-500">
                   {videos[currentSlide].heading}
                 </h1>
                 <p
