@@ -15,6 +15,7 @@ import HealthCare from './pages/IndustriesPages/HealthCare';
 import Communications from './pages/IndustriesPages/Communications';
 import HighTech from './pages/IndustriesPages/HighTech';
 import AI from './pages/WhatWeDoPages/AI';
+import StrategyAndConsulting from './pages/WhatWeDoPages/StrategyAndConsulting';
 
 
 
@@ -35,6 +36,7 @@ function App() {
         <Route path="sustainability" element={<Sustainability />} />
 
         <Route path="/what-we-do" element={<WhatWeDo />} />
+        <Route path="/strategy-and-consulting" element={<StrategyAndConsulting />} />
         <Route path="/ai" element={<AI />} />
 
 

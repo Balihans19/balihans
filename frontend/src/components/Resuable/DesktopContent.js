@@ -77,7 +77,7 @@ export const desktopContent = [
           </div>
           
           <div className="w-full min-w-[200px] my-4 md:my-8">
-            <h3 className="text-xl lg:text-2xl mb-5">Strategy & Consulting</h3>
+            <h3 className="text-xl lg:text-2xl mb-5"><Link to="/strategy-and-consulting" className="text-white hover:underline">Strategy & Consulting</Link> </h3>
             <ul className="list-none text-base lg:text-lg p-0">
               <li className="mb-2">Enterprise Process Optimization</li>
               <li className="mb-2">Digital Transformation</li>

@@ -107,7 +107,7 @@ const BankingSolutions = ({ solutionsData, title }) => {
                       />
                     </div>
                     <div className="flex-1">
-                      <div className="text-xl text-gray-400 mb-1">{solution.number}</div>
+                      <div className="text-3xl text-gray-400 mb-3">{solution.number}</div>
                       <div
                         className={`text-2xl transition-colors duration-300 ${
                           activeSection === solution.id ? 'text-white' : 'text-gray-400 group-hover:text-gray-300'
@@ -135,10 +135,10 @@ const BankingSolutions = ({ solutionsData, title }) => {
               {solutionsData.map((solution, index) => (
                 <div
                   key={index}
-                  className={`flex flex-col gap-8 min-h-[400px] ${index < solutionsData.length - 1 ? 'mb-16' : ''}`}
+                  className={`flex flex-col gap-8 min-h-[400px] ${index < solutionsData.length - 1 ? 'mb-12' : ''}`}
                 >
                   {solution.contents.map((content, idx) => (
-                    <div key={idx} className="mb-8">
+                    <div key={idx} className="mb-2">
                       <h3 className="text-3xl">{content.heading}</h3>
                       <p className="text-xl text-gray-300">{content.description}</p>
                     </div>
