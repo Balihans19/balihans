@@ -90,7 +90,9 @@ export const desktopContent = [
             <li className="mb-2">
                 <Link to="/ai" className="text-white hover:underline">Artificial Intelligence</Link>
               </li>
-              <li className="mb-2">Cloud & Infrastructure</li>
+              <li className="mb-2">
+                <Link to="/cloud-and-infrastructure" className="text-white hover:underline">Cloud & Infrastructure</Link>
+              </li>
               <li className="mb-2">Cognitive Operations</li>
               <li className="mb-2">Network Solutions</li>
             </ul>

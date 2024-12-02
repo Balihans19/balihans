@@ -14,7 +14,7 @@ const MainDiv = ({
   footerItalicWords = [], // Default value for italic words
   showLetsTalkButton,
   descriptionWidths = ['lg:max-w-xs', 'lg:max-w-3xl', 'lg:max-w-4xl', 'lg:max-w-xl'], // Custom widths for each slide
-  defaultDescriptionWidth = 'lg:max-w-2xl', // Default width when slideshow is false
+  defaultDescriptionWidth = 'lg:max-w-4xl', // Default width when slideshow is false
 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -73,10 +73,10 @@ const MainDiv = ({
           )}
 
           <div className="relative z-10 max-w-6xl pl-6 lg:pl-20 xl:pl-36 pb-44 h-full flex flex-col justify-center">
-            <h1 className="text-2xl md:text-3xl xl:text-4xl text-[#FAF9F6] ">
+            <h1 className="text-xl sm:text-2xl md:text-3xl xl:text-4xl text-[#FAF9F6] ">
               {headerTitle}
             </h1>
-            <p className="text-base md:text-lg xl:text-xl text-gray-100 max-w-lg lg:max-w-2xl tracking-tighter">
+            <p className="text-sm sm:text-base md:text-lg xl:text-xl text-gray-100 max-w-sm sm:max-w-md lg:max-w-2xl tracking-tighter">
               {headerDescription}
             </p>
             {showLetsTalkButton && (
@@ -111,15 +111,15 @@ const MainDiv = ({
 
           {/* Content Overlay */}
           <div className="relative z-10 flex h-full">
-            <div className="absolute right-6 lg:right-12 xl:right-36 bottom-16 w-[60vh] flex flex-col items-end justify-center text-white">
+            <div className="absolute right-6 lg:right-12 xl:right-36 bottom-16 w-[50vh] flex flex-col items-end justify-center text-white">
               <div className="flex flex-col items-start p-2 rounded mb-4">
-                <h1 className="text-3xl xl:text-4xl   transition-all duration-500">
+                <h1 className="text-3xl xl:text-4xl  transition-all duration-500">
                   {videos[currentSlide].heading}
                 </h1>
                 <p
                   className={`text-sm md:text-base lg:text-xl mb-6 tracking-tighter ${
                     isSlideshow
-                      ? descriptionWidths[currentSlide] || 'lg:max-w-2xl'
+                      ? descriptionWidths[currentSlide] || 'lg:max-w-4xl'
                       : defaultDescriptionWidth
                   }`}
                 >
@@ -134,7 +134,7 @@ const MainDiv = ({
 
           {/* Slideshow Bullets */}
           {isSlideshow && videos.length > 1 && (
-            <div className="absolute inset-x-0 bottom-5 flex justify-end mr-6 lg:mr-10 xl:mr-36 space-x-2 z-10">
+            <div className="absolute inset-x-0 bottom-5 flex justify-end mr-8 lg:mr-20 xl:mr-36 space-x-2 z-10">
               {videos.map((_, index) => (
                 <span
                   key={index}
@@ -152,7 +152,7 @@ const MainDiv = ({
 
         {/* Footer Section */}
         <div className="bg-[#f8f9fa] text-black py-12">
-          <div className="max-w-full px-4 md:px-8 lg:px-12 xl:mx-24 text-left">
+          <div className="max-w-full px-4 md:px-7 lg:px-20 xl:px-36  text-left">
             <p className="text-xl md:text-2xl lg:text-2xl">
               {renderTextWithItalics(footerText, footerItalicWords)}
             </p>
@@ -164,4 +164,5 @@ const MainDiv = ({
 };
 
 export default MainDiv;
+
 

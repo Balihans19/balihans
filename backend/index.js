@@ -14,6 +14,7 @@ const communicationsPageRoutes=require('./routes/communicationsPageRoutes.js');
 const hightechPageRoutes=require('./routes/hightechPageRoutes.js');
 const aiPageRoutes=require('./routes/aiPageRoutes.js');
 const strategyandconsultingPageRoutes=require('./routes/strategyandconsultingPageRoutes.js');
+const cloudandinfrastructurePageRoutes=require('./routes/cloudandinfrastructurePageRoutes.js');
 require('dotenv').config();
 
 // Initializing the Express application
@@ -58,6 +59,8 @@ app.use('/api/communicationspage', communicationsPageRoutes);
 app.use('/api/hightechpage', hightechPageRoutes);
 app.use('/api/aipage', aiPageRoutes);
 app.use('/api/strategyandconsultingpage', strategyandconsultingPageRoutes);
+app.use('/api/cloudandinfrastructurepage', cloudandinfrastructurePageRoutes);
+
 
 // Health check endpoint
 app.get('/health', (req, res) => {
