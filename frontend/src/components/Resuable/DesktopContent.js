@@ -100,7 +100,9 @@ export const desktopContent = [
           <div className="w-full min-w-[200px] my-4 md:my-8">
 
             <ul className="list-none text-lg p-0">
-              <li className="mb-2">Cybersecurity</li>
+            <li className="mb-2">
+                <Link to="/cloud-and-infrastructure" className="text-white hover:underline">Cybersecurity</Link>
+              </li>
               <li className="mb-2">Data & Analytics</li>
               <li className="mb-2">Engineering Services</li>
               <li className="mb-2">Sustainability Services</li>

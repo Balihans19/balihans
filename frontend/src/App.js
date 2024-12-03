@@ -17,6 +17,7 @@ import HighTech from './pages/IndustriesPages/HighTech';
 import AI from './pages/WhatWeDoPages/AI';
 import StrategyAndConsulting from './pages/WhatWeDoPages/StrategyAndConsulting';
 import CloudAndInfrastructure from './pages/WhatWeDoPages/CloudAndInfrastructure';
+import Cybersecurity from './pages/WhatWeDoPages/Cybersecurity';
 
 
 
@@ -40,6 +41,8 @@ function App() {
         <Route path="/strategy-and-consulting" element={<StrategyAndConsulting />} />
         <Route path="/cloud-and-infrastructure" element={<CloudAndInfrastructure />} />
         <Route path="/ai" element={<AI />} />
+        <Route path="/cybersecurity" element={<Cybersecurity />} />
+
 
 
 

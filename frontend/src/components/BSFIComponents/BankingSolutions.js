@@ -80,7 +80,7 @@ const BankingSolutions = ({ solutionsData, title }) => {
 
   return (
     <div className="min-h-screen text-white p-8 md:p-16">
-      <div className="mx-28 my-24 relative">
+      <div className="mx-20 my-24 relative">
         {/* Scroll Progress Line */}
         <div className="absolute -top-8 left-0 w-full h-1 z-5 overflow-hidden">
           <div 
@@ -94,31 +94,40 @@ const BankingSolutions = ({ solutionsData, title }) => {
           {/* Left side - Navigation */}
           <div className="md:w-1/3">
             <div className="space-y-6">
-              {solutionsData.map((solution) => (
-                <div
-                  key={solution.id}
-                  className="cursor-pointer group"
-                  onClick={() => handleNavClick(solution.id)}
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="relative w-1 h-16">
-                      <div
-                        className={`absolute left-0 w-1 h-full transition-all duration-300 ${activeSection === solution.id ? 'bg-white' : 'bg-transparent'}`}
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <div className="text-3xl text-gray-400 mb-3">{solution.number}</div>
-                      <div
-                        className={`text-2xl transition-colors duration-300 ${
-                          activeSection === solution.id ? 'text-white' : 'text-gray-400 group-hover:text-gray-300'
-                        }`}
-                      >
-                        {solution.title}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
+            {solutionsData.map((solution) => (
+  <div
+    key={solution.id}
+    className="cursor-pointer group"
+    onClick={() => handleNavClick(solution.id)}
+  >
+    <div className="flex items-start gap-4">
+      <div className="relative w-1 h-20">
+        <div
+          className={`absolute left-0 w-1 h-full transition-all duration-300 ${activeSection === solution.id ? 'bg-white' : 'bg-transparent'}`}
+        />
+      </div>
+      <div className="flex-1">
+      <div
+  className={`text-3xl transition-all duration-300 
+    ${activeSection === solution.id 
+      ? 'text-4xl' 
+      : 'text-xl'} 
+    text-[#bdd4ff] mb-3`}
+>
+  {solution.number}
+</div>
+
+        <div
+          className={`text-2xl transition-colors duration-300 ${
+            activeSection === solution.id ? 'text-white' : 'text-gray-400 group-hover:text-gray-300'
+          }`}
+        >
+          {solution.title}
+        </div>
+      </div>
+    </div>
+  </div>
+))}
             </div>
           </div>
 
@@ -170,4 +179,5 @@ const BankingSolutions = ({ solutionsData, title }) => {
 };
 
 export default BankingSolutions;
+
 

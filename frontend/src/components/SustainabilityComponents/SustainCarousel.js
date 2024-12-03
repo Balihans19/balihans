@@ -38,7 +38,7 @@ const SustainCarousel = ({ slidesdata }) => {
           <img
             src={slide.image}
             alt={slide.title}
-            className="object-cover w-full h-full"
+            className="object-cover w-full h-full transition-transform duration-500 ease-in-out group-hover:scale-110"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-100 flex items-center">
             <div className="absolute left-0 pl-8 lg:pl-12 text-left">

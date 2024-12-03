@@ -41,17 +41,19 @@ const MainDiv = ({
   // Function to render text with italic words
   const renderTextWithItalics = (text, italicWords) => {
     if (!Array.isArray(italicWords) || !italicWords.length) return text;
-
+  
     const words = text.split(' ');
     return words.map((word, index) => {
-      const shouldItalicize = italicWords.some(
-        italicWord => word.toLowerCase().includes(italicWord.toLowerCase())
+      const shouldItalicize = italicWords.some((italicWord) =>
+        word.toLowerCase().includes(italicWord.toLowerCase())
       );
-
+  
+      console.log(`Word: "${word}", Italicized: ${shouldItalicize}`);
+  
       return (
         <React.Fragment key={index}>
           {shouldItalicize ? <span className="italic">{word}</span> : word}
-          {index < words.length - 1 ? ' ' : ''}
+          {index < words.length - 1 ? ' ' : ''} {/* Add space between words */}
         </React.Fragment>
       );
     });
