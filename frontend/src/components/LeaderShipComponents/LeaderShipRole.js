@@ -34,14 +34,14 @@ const LeaderShipRole = ({leadershipData}) => {
         <div className="flex flex-col md:flex-row justify-between gap-8">
           <button
             onClick={() => handleTypeChange('executive')}
-            className={`text-3xl md:text-4xl pl-20  transition-colors duration-300
+            className={`text-3xl md:text-4xl font-bold pl-20  transition-colors duration-300
               ${activeType === 'executive' ? 'text-white' : 'text-gray-500'}`}
           >
             Executive leadership
           </button>
           <button
             onClick={() => handleTypeChange('nonExecutive')}
-            className={`text-3xl md:text-4xl pr-20 transition-colors duration-300
+            className={`text-3xl md:text-4xl font-bold pr-20 transition-colors duration-300
               ${activeType === 'nonExecutive' ? 'text-white' : 'text-gray-500'}`}
           >
             Non-executive leadership

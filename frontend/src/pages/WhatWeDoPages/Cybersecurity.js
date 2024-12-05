@@ -44,7 +44,7 @@ function Cybersecurity() {
             knowMoreText={cybersecuritypageData.knowMoreText}
              isSlideshow= {false}
              footerText={cybersecuritypageData.footerText}
-             footerItalicWords={cybersecuritypageData.footerItalicWords}
+            //  footerItalicWords={cybersecuritypageData.footerItalicWords}
              showLetsTalkButton={true}
           />
 

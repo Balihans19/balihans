@@ -23,12 +23,12 @@ export const desktopContent = [
  {
       name: 'ABOUT US',
       content: (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-5xl mx-auto px-4 text-white">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 w-full max-w-6xl mx-auto px-4 text-white">
           <div className="w-full min-w-[200px] my-4 md:my-8">
             <h3 className="text-3xl lg:text-4xl mb-5">About Us</h3>
           </div>
           
-          <div className="w-full min-w-[200px] my-4 md:my-8">
+          <div className="w-full min-w-[250px] my-4 md:my-8">
             <h3 className="text-xl lg:text-2xl mb-5">Corporate Overview</h3>
             <ul className="list-none text-base lg:text-lg p-0">
               <li className="mb-2">
@@ -41,7 +41,7 @@ export const desktopContent = [
             </ul>
           </div>
 
-          <div className="w-full min-w-[200px] my-4 md:my-8">
+          <div className="w-full min-w-[300px] my-4 md:my-8">
             <ul className="list-none text-base lg:text-lg p-0">
               <li className="mb-2">
                 <Link to="/diversity" className="text-white hover:underline">Diversity, Equity, and Inclusion</Link>
@@ -69,23 +69,15 @@ export const desktopContent = [
     {
       name: 'WHAT WE DO',
       content: (
-        <div className="grid grid-cols-1 gap-8 w-full max-w-5xl mx-auto px-4 text-white">
+        <div className="grid grid-cols-1 gap-8 w-full max-w-6xl mx-auto px-4 text-white">
         {/* What We Do Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="w-full min-w-[200px] my-4 md:my-8">
             <h3 className="text-3xl lg:text-4xl mb-5">Our Services</h3>
           </div>
           
-          <div className="w-full min-w-[200px] my-4 md:my-8">
+          <div className="w-full min-w-[280px] my-4 md:my-8">
             <h3 className="text-xl lg:text-2xl mb-5"><Link to="/strategy-and-consulting" className="text-white hover:underline">Strategy & Consulting</Link> </h3>
-            <ul className="list-none text-base lg:text-lg p-0">
-              <li className="mb-2">Enterprise Process Optimization</li>
-              <li className="mb-2">Digital Transformation</li>
-              <li className="mb-2">Technology Modernization</li>
-            </ul>
-          </div>
-    
-          <div className="w-full min-w-[200px] my-4 md:my-8">
             <ul className="list-none text-base lg:text-lg p-0">
             <li className="mb-2">
                 <Link to="/ai" className="text-white hover:underline">Artificial Intelligence</Link>
@@ -93,20 +85,25 @@ export const desktopContent = [
               <li className="mb-2">
                 <Link to="/cloud-and-infrastructure" className="text-white hover:underline">Cloud & Infrastructure</Link>
               </li>
-              <li className="mb-2">Cognitive Operations</li>
-              <li className="mb-2">Network Solutions</li>
+              <li className="mb-2">Digital Enterprise</li>
+            </ul>
+          </div>
+    
+          <div className="w-full min-w-[200px] my-4 md:my-8">
+            <ul className="list-none text-base lg:text-lg p-0">
+            <li className="mb-2">Network Solutions</li>
+              <li className="mb-2">
+                <Link to="/cybersecurity" className="text-white hover:underline">Cybersecurity</Link>
+              </li>
+              <li className="mb-2">
+                <Link to="/data-and-analytics" className="text-white hover:underline">Data & Analytics</Link>
+              </li>
             </ul>
           </div>
           <div className="w-full min-w-[200px] my-4 md:my-8">
-
             <ul className="list-none text-lg p-0">
-            <li className="mb-2">
-                <Link to="/cloud-and-infrastructure" className="text-white hover:underline">Cybersecurity</Link>
-              </li>
-              <li className="mb-2">Data & Analytics</li>
               <li className="mb-2">Engineering Services</li>
               <li className="mb-2">Sustainability Services</li>
-              <li className="mb-2">Business Process Solutions</li>
           </ul>
        </div>
         </div>
@@ -140,7 +137,7 @@ export const desktopContent = [
     {
       name: 'INDUSTRIES',
       content: (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-5xl mx-auto px-4 text-white">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-6xl mx-auto px-4 text-white">
           <div className="w-full min-w-[200px] my-4 md:my-8">
             <h3 className="text-3xl lg:text-4xl mb-5">Industries</h3>
           </div>
@@ -197,7 +194,7 @@ export const desktopContent = [
     {
       name: 'INSIGHTS',
       content: (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-5xl mx-auto px-4 text-white">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-6xl mx-auto px-4 text-white">
           <div className="w-full min-w-[200px] my-4 md:my-8">
             <h3 className="text-3xl lg:text-4xl mb-5">Insights</h3>
           </div>
@@ -234,7 +231,7 @@ export const desktopContent = [
     {
       name: 'CAREERS',
       content: (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-5xl mx-auto px-4 text-white">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-6xl mx-auto px-4 text-white">
           <div className="w-full min-w-[200px] my-4 md:my-8">
             <h3 className="text-3xl lg:text-4xl mb-5">Careers</h3>
           </div>

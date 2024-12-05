@@ -31,7 +31,7 @@ function AboutUsMainPage({
         {/* Content */}
         <div className="relative w-full">
           <div className="mx-36 text-center">
-            <h1 className="text-3xl md:text-5xl mb-6">
+            <h1 className="text-3xl md:text-5xl font-bold mb-6">
               {headerText}
             </h1>
             <p className="text-lg md:text-2xl text-left">
@@ -60,7 +60,7 @@ function AboutUsMainPage({
 
             {/* Mission Section */}
             <div className="w-full">
-              <h2 className="text-3xl md:text-5xl mb-10">
+              <h2 className="text-3xl md:text-5xl font-bold mb-10">
                 {missionTitle}
               </h2>
               <p className="text-lg md:text-2xl text-gray-200">

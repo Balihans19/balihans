@@ -54,7 +54,7 @@ const ExpandableMenu = ({ title, videoUrl, sections }) => {
         {/* Overlay with title */}
         <div className="absolute inset-0 flex items-end justify-center">
           <div className="bg-black bg-opacity-50 p-9 w-[75vh] text-center mb-10">
-            <h1 className="text-xl sm:text-2xl md:text-4xl text-white">
+            <h1 className="text-xl sm:text-2xl md:text-4xl font-bold text-white">
               {title}
             </h1>
           </div>

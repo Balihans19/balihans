@@ -12,7 +12,7 @@ const MainDiv = React.lazy(() => import('../../components/Resuable/MainDiv'));
 const BankingSolutions = React.lazy(() => import('../../components/BSFIComponents/BankingSolutions'));
 const Spotlight = React.lazy(() => import('../../components/BSFIComponents/Spotlight'));
 const ContactCareers = React.lazy(() => import('../../components/Resuable/ContactCareers'));
-const Services = React.lazy(() => import('../../components/Resuable/Services'));
+const AiServices = React.lazy(() => import('../../components/AIComponents/AiServices'));
 const DuoCarousel = React.lazy(() => import('../../components/Resuable/DuoCarousel'));
 
 
@@ -20,54 +20,53 @@ const DuoCarousel = React.lazy(() => import('../../components/Resuable/DuoCarous
 const MemoizedMainDiv = memo(MainDiv);
 const MemoizedBankingSolutions = memo(BankingSolutions);
 const MemoizedSpotlight = memo(Spotlight);
-const MemoizedServices = memo(Services);
+const MemoizedAiServices = memo(AiServices);
 const MemoizedDuoCarousel = memo(DuoCarousel);
 const MemoizedContactCareers = memo(ContactCareers);
 
-function HighTech() {
+function DataAndAnalytics() {
 
-  UsePageTitle('High-Tech');
+  UsePageTitle('Data And Analytics');
 
-  const { data: hightechpageData, loading, error } = usePageData('hightechpage');
+  const { data: dataandanalyticspageData, loading, error } = usePageData('dataandanalyticspage');
 
   if (loading) return <LoadingSpinner />;
   if (error) return <ErrorFallback error={{ message: error }} />;
-  if (!hightechpageData) return null;
+  if (!dataandanalyticspageData) return null;
 
   return (
     <PageWrapper>
           <MemoizedMainDiv
-            videoData={hightechpageData.videoData}
-            headerTitle={hightechpageData.headerTitle}
-            headerDescription={hightechpageData.headerDescription}
-            backgroundImageUrl={hightechpageData.backgroundImageUrl}
-            knowMoreText={hightechpageData.knowMoreText}
+            videoData={dataandanalyticspageData.videoData}
+            headerTitle={dataandanalyticspageData.headerTitle}
+            headerDescription={dataandanalyticspageData.headerDescription}
+            backgroundImageUrl={dataandanalyticspageData.backgroundImageUrl}
+            knowMoreText={dataandanalyticspageData.knowMoreText}
              isSlideshow= {false}
-             footerText={hightechpageData.footerText}
-            //  footerItalicWords={hightechpageData.footerItalicWords}
+             footerText={dataandanalyticspageData.footerText}
+            //  footerItalicWords={dataandanalyticspageData.footerItalicWords}
              showLetsTalkButton={true}
           />
 
           <MemoizedBankingSolutions
-             title={hightechpageData.BankingSolutions.title}
-             solutionsData={hightechpageData.BankingSolutions.solutionData}
+             title={dataandanalyticspageData.BankingSolutions.title}
+             solutionsData={dataandanalyticspageData.BankingSolutions.solutionData}
           />
 
           <MemoizedSpotlight
-            spotlightItems={hightechpageData.Spotlight.spotlightItems}
+            spotlightItems={dataandanalyticspageData.Spotlight.spotlightItems}
           />
 
-          <MemoizedServices
-            title={hightechpageData.Services.title}
-            backgroundVideo={hightechpageData.Services.backgroundVideo}
-            services={hightechpageData.Services.services}
+          <MemoizedAiServices
+            title={dataandanalyticspageData.AiServices.title}
+            backgroundVideo={dataandanalyticspageData.AiServices.backgroundVideo}
             backgroundType="video"
           />
 
         
          <MemoizedDuoCarousel
-            slides={hightechpageData.transformingEnterprises.carouselSlides}
-            title={hightechpageData.transformingEnterprises.title}
+            slides={dataandanalyticspageData.transformingEnterprises.carouselSlides}
+            title={dataandanalyticspageData.transformingEnterprises.title}
           />
 
           <MemoizedContactCareers 
@@ -78,4 +77,4 @@ function HighTech() {
   );
 }
 
-export default memo(HighTech);
+export default memo(DataAndAnalytics);

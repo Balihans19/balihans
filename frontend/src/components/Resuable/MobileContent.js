@@ -31,24 +31,17 @@ export const mobileContent =  [
           { 
             name: 'Strategy & Consulting',
             subContent: [
-              'Enterprise Process Optimization',
-              'Digital Transformation',
-              'Technology Modernization',
-              
+              'Digital Enterprise',
             ]
           },
          
           { name: 'Artificial Intelligence' },
           { name: 'Cloud & Infrastructure' },
-          { name: 'Cognitive Operations' },
-          { name: 'Application Services' },
           { name: 'Network Solutions' },
-          
           { name: 'Cybersecurity' },
           { name: 'Data & Analytics' },
           { name: 'Engineering Services' },
           { name: 'Sustainability Services' },
-          { name: 'Business Process Solutions' },
 
 
           { name: '' },

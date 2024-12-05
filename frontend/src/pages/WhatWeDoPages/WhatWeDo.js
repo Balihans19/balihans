@@ -37,7 +37,7 @@ function  WhatWeDo() {
             knowMoreText={whatwedopageData.knowMoreText}
              isSlideshow= {false}
              footerText={whatwedopageData.footerText}
-             footerItalicWords={whatwedopageData.footerItalicWords}
+            //  footerItalicWords={whatwedopageData.footerItalicWords}
           />
 
       <MemoizedBusinessServices

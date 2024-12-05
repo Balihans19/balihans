@@ -26,7 +26,7 @@ const Card = ({ title, description, imgSrc }) => {
           isMobile ? 'bg-opacity-60' : 'bg-opacity-60 group-hover:bg-opacity-60'
         } text-white transition-opacity duration-300 ease-in-out`}
       >
-        <h2 className="text-3xl  text-left mb-2 text-white z-10 absolute top-[100px] ml-5 w-4/5">
+        <h2 className="text-3xl   text-left mb-2 text-white z-10 absolute top-[100px] ml-5 w-4/5">
           {title}
         </h2>
         <p 
@@ -57,7 +57,7 @@ const Cards = ({ primaryHeading, paragraph, cardsData }) => {
       <div className="max-w-[1200px] mx-auto px-4">
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row lg:items-start gap-12 mb-12">
-          <h2 className="text-4xl  lg:w-1/4 xl:w-1/5 shrink-0">
+          <h2 className="text-4xl font-bold  lg:w-1/4 xl:w-1/5 shrink-0">
             {primaryHeading}
           </h2>
           <p className="text-xl font-normal text-left lg:w-3/4 xl:w-4/5">

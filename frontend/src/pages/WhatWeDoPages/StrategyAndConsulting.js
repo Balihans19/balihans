@@ -44,7 +44,7 @@ function StrategyAndConsulting() {
             knowMoreText={strategyandconsultingpageData.knowMoreText}
              isSlideshow= {false}
              footerText={strategyandconsultingpageData.footerText}
-             footerItalicWords={strategyandconsultingpageData.footerItalicWords}
+            //  footerItalicWords={strategyandconsultingpageData.footerItalicWords}
              showLetsTalkButton={true}
           />
 

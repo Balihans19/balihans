@@ -1,10 +1,11 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @import url('https://res.cloudinary.com/dnijlfi48/raw/upload/v1733222225/Gotham_Rounded_Medium_f6culz.otf');
+
 
 
 
@@ -16,4 +17,27 @@ body {
 body{
   background: #191c20;
 }
+ */
 
+ @tailwind base;
+ @tailwind components;
+ @tailwind utilities;
+ 
+ 
+ 
+ 
+ body{
+   background: #191c20;
+ }
+ 
+ @font-face {
+   font-family: 'MyCustomFont';
+   src: url('/public/fonts/MyCustomFont2.otf') format('opentype'); /* Absolute path */
+   font-weight: normal;
+   font-style: normal;
+ }
+ 
+ body {
+   font-family: 'MyCustomFont', sans-serif;
+ }
+ 

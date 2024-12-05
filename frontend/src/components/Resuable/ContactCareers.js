@@ -35,7 +35,7 @@ const ContactCareers = ({ variant}) => {
         {/* Contact Us Section */}
         <div className="flex flex-col items-center justify-center py-16">
           <div className="max-w-md text-center">
-            <h2 className={`text-5xl mb-4 ${currentStyle.text}`}>Contact Us</h2>
+            <h2 className={`text-5xl font-bold mb-4 ${currentStyle.text}`}>Contact Us</h2>
             <p className={`${currentStyle.subtext} text-xl mb-6`}>
               Find out what can we help you achieve.
             </p>
@@ -48,7 +48,7 @@ const ContactCareers = ({ variant}) => {
         {/* Careers Section */}
         <div className="flex flex-col items-center justify-center py-16">
           <div className="max-w-md text-center">
-            <h2 className={`text-5xl mb-4 ${currentStyle.text}`}>Careers</h2>
+            <h2 className={`text-5xl font-bold mb-4 ${currentStyle.text}`}>Careers</h2>
             <p className={`${currentStyle.subtext} text-xl mb-6`}>
               Join our team. Realize your potential.
             </p>

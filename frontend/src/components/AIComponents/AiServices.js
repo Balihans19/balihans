@@ -51,8 +51,8 @@ const AiServices = ({
       {/* Content Container */}
       <div className="relative z-10 h-full flex flex-col justify-end">
         <div className="w-full bg-black/80 pb-10 pt-10">
-          <div className="container mx-auto px-8">
-            <h2 className="text-4xl font-normal text-white mb-5">
+          <div className="container mx-auto px-3">
+            <h2 className="text-4xl font-bold text-white mb-5">
             {title}
             </h2>
 

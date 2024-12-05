@@ -44,7 +44,7 @@ function BSFI() {
             knowMoreText={bsfipageData.knowMoreText}
              isSlideshow= {false}
              footerText={bsfipageData.footerText}
-             footerItalicWords={bsfipageData.footerItalicWords}
+            //  footerItalicWords={bsfipageData.footerItalicWords}
              showLetsTalkButton={true}
           />
 

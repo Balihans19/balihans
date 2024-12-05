@@ -8,7 +8,7 @@ const InvestorSection = ({backgroundImageUrl}) => {
         <div className="grid lg:grid-cols-2 gap-8 items-start">
           {/* Text Content */}
           <div className="space-y-6">
-            <h1 className="text-3xl lg:text-4xl  mb-6">
+            <h1 className="text-3xl lg:text-4xl font-bold  mb-6">
               INVESTORS
             </h1>
             

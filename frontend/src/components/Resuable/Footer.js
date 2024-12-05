@@ -22,20 +22,15 @@ const Footer = () => {
 
   // Mapping for Services
   const services = [
-    { name: "Strategy and Consulting", route: "/strategyandconsulting" },
-    { name: "Enterprise Process Optimization", route: "" },
-    { name: "Digital Transformation", route: "" },
-    { name: "Technology Modernization", route: "" },
+    { name: "Strategy and Consulting", route: "/strategy-and-consulting" },
     { name: "Artificial Intelligence", route: "/ai" },
-    { name: "Cloud & Infrastructure", route: "" },
-    { name: "Cognitive Operations", route: "" },
-    { name: "Application Services", route: "" },
+    { name: "Cloud & Infrastructure", route: "/cloud-and-infrastrucute" },
+    { name: "Digital Enterprise", route: "" },
     { name: "Network Solutions", route: "" },
-    { name: "Cybersecurity", route: "" },
-    { name: "Data & Analytics", route: "" },
+    { name: "Cybersecurity", route: "/cybersecurity" },
+    { name: "Data & Analytics", route: "/data-and-analytics" },
     { name: "Engineering Services", route: "" },
     { name: "Sustainability Services", route: "" },
-    { name: "Business Process Solutions", route: "" },
   ];
 
   // Mapping for About Balihans

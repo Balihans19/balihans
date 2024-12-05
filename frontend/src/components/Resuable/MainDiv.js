@@ -13,7 +13,7 @@ const MainDiv = ({
   footerText,
   footerItalicWords = [], // Default value for italic words
   showLetsTalkButton,
-  descriptionWidths = ['lg:max-w-xs', 'lg:max-w-3xl', 'lg:max-w-4xl', 'lg:max-w-xl'], // Custom widths for each slide
+  descriptionWidths = ['lg:max-w-xl', 'lg:max-w-xl', 'lg:max-w-xl', 'lg:max-w-xl'], // Custom widths for each slide
   defaultDescriptionWidth = 'lg:max-w-4xl', // Default width when slideshow is false
 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -75,7 +75,7 @@ const MainDiv = ({
           )}
 
           <div className="relative z-10 max-w-6xl pl-6 lg:pl-20 xl:pl-36 pb-44 h-full flex flex-col justify-center">
-            <h1 className="text-xl sm:text-2xl md:text-3xl xl:text-4xl text-[#FAF9F6] ">
+            <h1 className="text-xl sm:text-2xl md:text-3xl xl:text-4xl font-bold text-[#FAF9F6] ">
               {headerTitle}
             </h1>
             <p className="text-sm sm:text-base md:text-lg xl:text-xl text-gray-100 max-w-sm sm:max-w-md lg:max-w-2xl tracking-tighter">
@@ -112,27 +112,27 @@ const MainDiv = ({
           </div>
 
           {/* Content Overlay */}
-          <div className="relative z-10 flex h-full">
-            <div className="absolute right-6 lg:right-12 xl:right-36 bottom-16 w-[50vh] flex flex-col items-end justify-center text-white">
-              <div className="flex flex-col items-start p-2 rounded mb-4">
-                <h1 className="text-3xl xl:text-4xl  transition-all duration-500">
-                  {videos[currentSlide].heading}
-                </h1>
-                <p
-                  className={`text-sm md:text-base lg:text-xl mb-6 tracking-tighter ${
-                    isSlideshow
-                      ? descriptionWidths[currentSlide] || 'lg:max-w-4xl'
-                      : defaultDescriptionWidth
-                  }`}
-                >
-                  {videos[currentSlide].description}
-                </p>
-                <button className="bg-transparent border border-white text-sm lg:text-base font-semibold py-3 px-6 lg:py-4 lg:px-8 cursor-pointer hover:bg-[#2c2c2c] hover:text-white transition-colors">
-                  {knowMoreText}
-                </button>
-              </div>
-            </div>
-          </div>
+          <div className="text-white relative z-10 flex h-full">
+  <div className="absolute right-6 lg:right-12 xl:right-16 bottom-16 w-[50vh] flex flex-col items-start"> {/* Changed items-end to items-start */}
+    <div className="flex flex-col items-start p-2 rounded mb-4 w-full"> {/* Added w-full to ensure consistent width */}
+      <h1 className="text-3xl xl:text-4xl font-bold transition-all duration-500">
+        {videos[currentSlide].heading}
+      </h1>
+      <p
+        className={`text-sm md:text-base lg:text-xl mb-6 tracking-tighter ${
+          isSlideshow
+            ? descriptionWidths[currentSlide] || 'lg:max-w-4xl'
+            : defaultDescriptionWidth
+        }`}
+      >
+        {videos[currentSlide].description}
+      </p>
+      <button className="bg-transparent border border-white text-sm lg:text-base font-semibold py-3 px-6 lg:py-4 lg:px-8 cursor-pointer hover:bg-[#2c2c2c] hover:text-white transition-colors">
+        {knowMoreText}
+      </button>
+    </div>
+  </div>
+</div>
 
           {/* Slideshow Bullets */}
           {isSlideshow && videos.length > 1 && (

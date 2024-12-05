@@ -43,7 +43,7 @@ function Home() {
             knowMoreText={homepageData.knowMoreText}
              isSlideshow={true}
              footerText={homepageData.footerText}
-             footerItalicWords={homepageData.footerItalicWords}
+            //  footerItalicWords={homepageData.footerItalicWords}
              showLetsTalkButton={true}
           />
 

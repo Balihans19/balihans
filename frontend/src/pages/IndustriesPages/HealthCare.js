@@ -44,7 +44,7 @@ function HealthCare() {
             knowMoreText={healthcarepageData.knowMoreText}
              isSlideshow= {false}
              footerText={healthcarepageData.footerText}
-             footerItalicWords={healthcarepageData.footerItalicWords}
+            //  footerItalicWords={healthcarepageData.footerItalicWords}
              showLetsTalkButton={true}
           />
 

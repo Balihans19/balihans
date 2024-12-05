@@ -1,3 +1,6 @@
+
+
+
 import React, { useState, useEffect, useCallback } from 'react'; 
 import { ArrowLeft, ArrowRight } from 'lucide-react';  
 
@@ -34,7 +37,7 @@ const DiversitySlides = ({ diversitySlides = [] }) => {
   return (     
     <div className="w-full">       
       <div className="max-w-4xl xl:max-w-7xl mx-auto px-4 py-20 md:py-36">         
-        <h1 className="text-3xl md:text-4xl text-center text-white mb-16">           
+        <h1 className="text-3xl md:text-4xl font-bold text-center text-white mb-16">           
           Our DEI Goals         
         </h1>         
         <div className="relative">           
@@ -49,7 +52,7 @@ const DiversitySlides = ({ diversitySlides = [] }) => {
                     <img                       
                       src={slide.image}                       
                       alt={slide.title}                       
-                      className="object-cover rounded-lg w-full h-full transition-transform duration-500 ease-in-out group-hover:scale-110"                     
+                      className="object-cover  w-full h-full transition-transform duration-500 ease-in-out group-hover:scale-110"                     
                     />                     
                     <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">                       
                       <div                         
@@ -59,7 +62,7 @@ const DiversitySlides = ({ diversitySlides = [] }) => {
                         }}                       
                       >                         
                         {/* Title */}                         
-                        <h2 className="text-lg lg:text-3xl text-white mb-2 line-clamp-2">                           
+                        <h2 className="text-lg lg:text-3xl font-bold text-white mb-2 line-clamp-2">                           
                           {slide.title}                         
                         </h2>                         
                         {/* Description */}                         

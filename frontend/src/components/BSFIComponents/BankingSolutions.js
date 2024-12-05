@@ -89,7 +89,7 @@ const BankingSolutions = ({ solutionsData, title }) => {
           />
         </div>
 
-        <h1 className="text-2xl md:text-4xl mb-12">{title}</h1>
+        <h1 className="text-2xl md:text-4xl font-bold mb-12">{title}</h1>
         <div className="flex flex-col md:flex-row gap-8">
           {/* Left side - Navigation */}
           <div className="md:w-1/3">
@@ -112,14 +112,14 @@ const BankingSolutions = ({ solutionsData, title }) => {
     ${activeSection === solution.id 
       ? 'text-4xl' 
       : 'text-xl'} 
-    text-[#bdd4ff] mb-3`}
+    text-[#bdd4ff] mb-3 font-bold`}
 >
   {solution.number}
 </div>
 
         <div
           className={`text-2xl transition-colors duration-300 ${
-            activeSection === solution.id ? 'text-white' : 'text-gray-400 group-hover:text-gray-300'
+            activeSection === solution.id ? 'text-white' : 'text-gray-400 group-hover:text-gray-300 font-bold'
           }`}
         >
           {solution.title}

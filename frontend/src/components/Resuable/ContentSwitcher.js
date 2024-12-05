@@ -16,15 +16,15 @@ const ContentSwitcher = ({
   return (
     <div className={'min-h-screen bg-[#f8f9fa] py-36'}>
       <div className="max-w-max mx-24 pl-12">
-        <h1 className="text-4xl md:text-5xl mb-16">{title}</h1>
+        <h1 className="text-4xl md:text-5xl font-bold mb-16">{title}</h1>
 
         {/* Navigation */}
-        <div className="flex flex-wrap gap-[24.8vh] mb-12 border-b border-gray-700 pb-4">
+        <div className="flex flex-wrap gap-[22vh] mb-12 border-b border-gray-700 pb-4">
           {slides.map((slide) => (
             <button
               key={slide.title}
               onClick={() => setActiveSlide(slide.title)}
-              className={`text-lg md:text-2xl transition-colors duration-300 pb-2 ${
+              className={`text-lg md:text-2xl font-bold transition-colors duration-300 pb-2 ${
                 activeSlide === slide.title 
                   ? 'text-black' 
                   : 'text-gray-400 hover:text-black'

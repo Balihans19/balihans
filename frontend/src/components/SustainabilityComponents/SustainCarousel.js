@@ -42,7 +42,7 @@ const SustainCarousel = ({ slidesdata }) => {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-100 flex items-center">
             <div className="absolute left-0 pl-8 lg:pl-12 text-left">
-              <h1 className="text-lg lg:text-4xl mb-4 text-white">
+              <h1 className="text-lg lg:text-4xl font-bold mb-4 text-white">
                 {slide.title}
               </h1>
               <p className="text-lg lg:text-2xl text-white max-w-lg">
@@ -61,7 +61,7 @@ const SustainCarousel = ({ slidesdata }) => {
   
     return (
       <div className="w-full max-w-7xl mx-auto px-4 my-36">
-        <h2 className="text-3xl md:text-4xl text-center mb-24 text-white">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-24 text-white">
           Our Sustainability Initiatives
         </h2>
   

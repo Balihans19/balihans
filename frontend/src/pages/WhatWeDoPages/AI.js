@@ -46,7 +46,7 @@ function AI() {
             knowMoreText={aipageData.knowMoreText}
              isSlideshow= {false}
              footerText={aipageData.footerText}
-             footerItalicWords={aipageData.footerItalicWords}
+            //  footerItalicWords={aipageData.footerItalicWords}
              showLetsTalkButton={true}
           />
 

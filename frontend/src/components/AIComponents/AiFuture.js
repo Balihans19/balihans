@@ -4,12 +4,12 @@ const AIFuture = ({ imageUrl, quoteImageUrl }) => {
   return (
     <div className="min-h-screen text-white py-24 lg:py-24 px-6 lg:px-32 rounded-lg flex flex-col lg:flex-row gap-10 items-center justify-center max-w-full mx-auto">
       {/* Image Section */}
-      <div className="w-full lg:w-[25%] flex-shrink-0 mb-12 lg:mb-0 group">
+      <div className="w-full lg:w-[25%] flex-shrink-0 mb-12 lg:mb-0">
         <div className="relative h-[300px] lg:h-[500px] overflow-hidden">
           <img
             src={imageUrl}
             alt="Background"
-            className="absolute inset-0 w-full h-full object-cover rounded-md shadow-lg transition-transform duration-500 ease-in-out group-hover:scale-110"
+            className="absolute inset-0 w-full h-full object-cover "
           />
         </div>
       </div>

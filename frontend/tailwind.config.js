@@ -6,14 +6,12 @@ module.exports = {
     extend: {
       fontFamily: {
         barlow: ['Barlow', 'sans-serif'],
+        custom: ['MyCustomFont2', 'sans-serif'], 
       },
       screens: {
         '3xl': '1630px',
       },
-      fontFamily: {
-        rounded: ['Gotham Rounded', 'sans-serif'], // Use the custom font name here
-      },
-
+  
     },
   },
   plugins: [

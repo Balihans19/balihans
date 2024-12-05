@@ -17,7 +17,7 @@ const SustainabilityGoals = ({ title, description, goals, backgroundImage }) => 
       {/* Header Section */}
       <div className="w-full px-4 md:px-8 py-12">
         <div className="max-w-full mx-28 mb-12 flex flex-col md:flex-row md:items-center gap-6 md:gap-12">
-          <h1 className="text-3xl md:text-4xl whitespace-nowrap">{title}</h1>
+          <h1 className="text-3xl md:text-4xl font-bold whitespace-nowrap">{title}</h1>
           <p className="text-xl text-gray-300">{description}</p>
         </div>
       </div>
@@ -33,7 +33,7 @@ const SustainabilityGoals = ({ title, description, goals, backgroundImage }) => 
         <div className="absolute inset-0 bg-gray-900/50"></div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <h2 className="text-2xl md:text-4xl text-center mb-20">Our Sustainability Goals</h2>
+          <h2 className="text-2xl md:text-4xl font-bold text-center mb-20">Our Sustainability Goals</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {goals.map((goal, index) => (
               <GoalCard key={index} title={goal.title} subtitle={goal.subtitle} />

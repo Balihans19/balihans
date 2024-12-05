@@ -40,7 +40,7 @@ function SustainabilityMainDiv({
             />
           </div>
           <div className="flex flex-col justify-center">
-            <h1 className="text-6xl mb-10">{title}</h1>
+            <h1 className="text-6xl font-bold mb-10">{title}</h1>
             <h2 className="text-4xl mb-6">{subtitle}</h2>
             <p className="text-lg leading-relaxed">{description}</p>
           </div>

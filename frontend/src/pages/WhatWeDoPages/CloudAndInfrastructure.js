@@ -44,7 +44,7 @@ function CloudAndInfrastructure() {
             knowMoreText={cloudandinfrastructurepageData.knowMoreText}
              isSlideshow= {false}
              footerText={cloudandinfrastructurepageData.footerText}
-             footerItalicWords={cloudandinfrastructurepageData.footerItalicWords}
+            //  footerItalicWords={cloudandinfrastructurepageData.footerItalicWords}
              showLetsTalkButton={true}
           />
 

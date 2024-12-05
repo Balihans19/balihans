@@ -13,7 +13,7 @@ const IndustriesCards = ({
       <div className="container mx-auto px-4">
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row lg:items-center mb-12">
-          <h2 className={`text-4xl mb-4 lg:mb-0 ${titleWidth} w-full`}>
+          <h2 className={`text-4xl font-bold mb-4 lg:mb-0 ${titleWidth} w-full`}>
             {title}
           </h2>
           {showDescription && (

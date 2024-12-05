@@ -44,7 +44,7 @@ function Communications() {
             knowMoreText={communicationspageData.knowMoreText}
              isSlideshow= {false}
              footerText={communicationspageData.footerText}
-             footerItalicWords={communicationspageData.footerItalicWords}
+            //  footerItalicWords={communicationspageData.footerItalicWords}
              showLetsTalkButton={true}
           />
 

@@ -44,7 +44,7 @@ function Energy() {
             knowMoreText={energypageData.knowMoreText}
              isSlideshow= {false}
              footerText={energypageData.footerText}
-             footerItalicWords={energypageData.footerItalicWords}
+            //  footerItalicWords={energypageData.footerItalicWords}
              showLetsTalkButton={true}
           />
 

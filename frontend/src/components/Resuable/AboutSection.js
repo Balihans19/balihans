@@ -49,7 +49,7 @@ const AboutSection = ({ backgroundImageUrl }) => {
       <div className="absolute left-0 bg-black/70 h-full w-1/2 ">
         <div className="h-full w-full p-12 mx-24">
           <div className="space-y-8">
-            <h2 className="text-4xl text-white mb-8">
+            <h2 className="text-4xl font-bold text-white mb-8">
               More about us.
             </h2>
             <nav className="space-y-4 w-2/3">
