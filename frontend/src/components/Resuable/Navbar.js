@@ -43,7 +43,7 @@ const DesktopNavbar = ({ navItems, activeDropdown, setActiveDropdown }) => {
                 <NavLink
                   to={`/${item.name.toLowerCase().replace(/\s+/g, '-')}`}
                   className={({ isActive }) =>
-                    `text-[#FAF9F6] text-lg relative after:content-[''] after:absolute after:w-full after:h-px after:bottom-[-5px] after:left-0 after:transition-transform after:duration-300 ${
+                    `text-[#FAF9F6] text-base xl:text-lg relative after:content-[''] after:absolute after:w-full after:h-px after:bottom-[-5px] after:left-0 after:transition-transform after:duration-300 ${
                       isActive
                         ? 'after:bg-white after:scale-x-100'
                         : 'after:bg-black after:scale-x-0 hover:after:scale-x-100'

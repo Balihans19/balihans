@@ -1,3 +1,5 @@
+
+
 const express = require('express');
 const cors = require('cors');
 const connectDB = require('./config/db');
@@ -17,6 +19,7 @@ const strategyandconsultingPageRoutes=require('./routes/strategyandconsultingPag
 const cloudandinfrastructurePageRoutes=require('./routes/cloudandinfrastructurePageRoutes.js');
 const cybersecurityPageRoutes=require('./routes/cybersecurityPageRoutes.js');
 const dataandanalyticsPageRoutes=require('./routes/dataandanalyticsPageRoutes.js');
+const digitalenterprisePageRoutes=require('./routes/digitalenterprisePageRoutes.js');
 require('dotenv').config();
 
 // Initializing the Express application
@@ -64,6 +67,8 @@ app.use('/api/strategyandconsultingpage', strategyandconsultingPageRoutes);
 app.use('/api/cloudandinfrastructurepage', cloudandinfrastructurePageRoutes);
 app.use('/api/cybersecuritypage', cybersecurityPageRoutes);
 app.use('/api/dataandanalyticspage', dataandanalyticsPageRoutes);
+app.use('/api/digitalenterprisepage', digitalenterprisePageRoutes);
+
 
 
 // Health check endpoint

@@ -85,7 +85,9 @@ export const desktopContent = [
               <li className="mb-2">
                 <Link to="/cloud-and-infrastructure" className="text-white hover:underline">Cloud & Infrastructure</Link>
               </li>
-              <li className="mb-2">Digital Enterprise</li>
+              <li className="mb-2">
+                <Link to="/digital-enterprise" className="text-white hover:underline">Digital Enterprise</Link>
+              </li>
             </ul>
           </div>
     

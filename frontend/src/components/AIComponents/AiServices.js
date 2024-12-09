@@ -2,19 +2,18 @@ import React from 'react';
 import { MoveRight } from 'lucide-react';
 
 const services = [
-    { title: 'Banking & Financial Services', href: '' },
-    { title: 'Communications & Information Services', href: '' },
-    { title: 'Energy, Resources & Utilities', href: '' },
-    { title: 'Healthcare & Life Sciences', href: '' },
-    { title: 'High-Tech', href: '' },
-    { title: 'Hospitality', href: '' },
-    { title: 'Insurance', href: '' },
-    { title: 'Manufacturing', href: '' },
-    { title: 'Media & Entertainment', href: '' },
-    { title: 'Professional Services', href: '' },
-    { title: 'Retail & Consumer Goods', href: '' },
-    { title: 'Travel & Logistics', href: '' },
-  
+    { title: 'Banking & Financial Services', href: '/bsfi' },
+    { title: 'Communications & Information Services', href: '/communications' },
+    { title: 'Energy, Resources & Utilities', href: '/energy' },
+    { title: 'Healthcare & Life Sciences', href: '/health-care' },
+    { title: 'High-Tech', href: '/high-tech' },
+    { title: 'Hospitality', href: '/hospitality' },
+    { title: 'Insurance', href: '/insurance' },
+    { title: 'Manufacturing', href: '/manufacturing' },
+    { title: 'Media & Entertainment', href: '/media' },
+    { title: 'Professional Services', href: '/professional' },
+    { title: 'Retail & Consumer Goods', href: '/retail' },
+    { title: 'Travel & Logistics', href: '/travel' },
   ];
   
 

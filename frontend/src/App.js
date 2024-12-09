@@ -19,6 +19,7 @@ import StrategyAndConsulting from './pages/WhatWeDoPages/StrategyAndConsulting';
 import CloudAndInfrastructure from './pages/WhatWeDoPages/CloudAndInfrastructure';
 import Cybersecurity from './pages/WhatWeDoPages/Cybersecurity';
 import DataAndAnalytics from './pages/WhatWeDoPages/DataAndAnalytics';
+import DigitalEnterprise from './pages/WhatWeDoPages/DigitalEnterprise';
 
 
 
@@ -44,6 +45,7 @@ function App() {
         <Route path="/ai" element={<AI />} />
         <Route path="/cybersecurity" element={<Cybersecurity />} />
         <Route path="/data-and-analytics" element={<DataAndAnalytics />} />
+        <Route path="/digital-enterprise" element={<DigitalEnterprise />} />
 
 
 

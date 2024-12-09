@@ -33,7 +33,7 @@ const BusinessServices = ({ title, description, heroImage, services }) => {
           />
         </div>
         {/* Hero Content */}
-        <div className="relative h-full flex flex-col justify-center px-6 md:px-12 lg:px-16 max-w-6xl mx-20">
+        <div className="relative h-full flex flex-col justify-center px-7 lg:px-20 xl:px-36 max-w-6xl">
           <h1 className="text-2xl md:text-3xl  lg:text-4xl font-bold text-white mb-6">
             {title}
           </h1>
@@ -45,7 +45,7 @@ const BusinessServices = ({ title, description, heroImage, services }) => {
 
       {/* Services Section */}
       <div className="bg-[#f8f9fa] py-16">
-        <div className="max-w-full px-6 md:px-12 lg:px-16 mx-20">
+        <div className="max-w-full px-7 lg:px-20 xl:px-36">
           <h2 className="text-2xl md:text-4xl font-bold mb-12">Our services</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-6">
             {services.map((service, index) => (
