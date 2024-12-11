@@ -50,8 +50,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {/* Industries Column */}
           <div>
-            <h2 className="text-2xl mb-4">Industries</h2>
-            <ul className="space-y-2 text-[#e3e5e6]">
+            <h2 className="text-xl font-bold mb-4">Industries</h2>
+            <ul className="space-y-5 text-sm text-[#e3e5e6]">
               {industries.map((industry, index) => (
                 <li key={index} className="hover:underline">
                   <Link to={industry.route}>{industry.name}</Link>
@@ -62,8 +62,8 @@ const Footer = () => {
 
           {/* Services Column */}
           <div>
-            <h2 className="text-2xl  mb-4">Services</h2>
-            <ul className="space-y-2  text-[#e3e5e6]">
+            <h2 className="text-xl font-bold  mb-4">Services</h2>
+            <ul className="space-y-5 text-sm  text-[#e3e5e6]">
               {services.map((service, index) => (
                 <li key={index} className="hover:underline">
                   <Link to={service.route}>{service.name}</Link>
@@ -74,8 +74,8 @@ const Footer = () => {
 
           {/* About Balihans Column */}
           <div>
-            <h2 className="text-2xl  mb-4">About Balihans</h2>
-            <ul className="space-y-2  text-[#e3e5e6]">
+            <h2 className="text-xl font-bold  mb-4">About Balihans</h2>
+            <ul className="space-y-5 text-sm text-[#e3e5e6]">
               {aboutBalihans.map((about, index) => (
                 <li key={index} className="hover:underline">
                   <Link to={about.route}>{about.name}</Link>
@@ -86,13 +86,13 @@ const Footer = () => {
 
           {/* Social Links */}
           <div>
-            <h2 className="text-2xl  mb-4">Follow us</h2>
+            <h2 className="text-xl font-bold  mb-4">Follow us</h2>
             <div className="flex space-x-4 mb-4">
                 <a href="/linedin" target="_blank" rel="noopener noreferrer">
                   <Linkedin size={24} />
                </a>
             </div>
-            <h2 className="text-2xl  mb-4">Featured case-study</h2>
+            <h2 className="text-xl font-bold  mb-4">Featured case-study</h2>
             <div className="space-y-4">
               {/* Case Study 1 */}
               <div className="relative">
@@ -101,7 +101,7 @@ const Footer = () => {
                   alt="E-commerce"
                   className="w-[20vh] lg:w-[25vh] h-32 object-cover"
                 />
-                <p className="absolute inset-0 flex items-center text-[#e3e5e6]  justify-center bg-black bg-opacity-50 text-center px-4 w-[20vh] lg:w-[25vh]">
+                <p className="absolute inset-0 flex items-center text-[#e3e5e6] text-sm justify-center bg-black bg-opacity-50 text-center px-4 w-[20vh] lg:w-[25vh]">
                   52% increase in customer satisfaction for e-commerce refund
                 </p>
               </div>
@@ -113,7 +113,7 @@ const Footer = () => {
                   alt="Insurance"
                   className="w-[20vh] lg:w-[25vh] h-32 object-cover"
                 />
-                <p className="absolute inset-0 flex items-center justify-center  text-[#e3e5e6] bg-black bg-opacity-50 text-center px-4 w-[20vh] lg:w-[25vh]">
+                <p className="absolute inset-0 flex items-center justify-center  text-[#e3e5e6]  text-sm bg-black bg-opacity-50 text-center px-4 w-[20vh] lg:w-[25vh]">
                   Faster claim settlement for insurance company
                 </p>
               </div>
@@ -133,13 +133,13 @@ const Footer = () => {
     </div>
 
     {/* Column 2: Company Name & Copyright */}
-    <div className="text-left md:text-left">
+    <div className="text-left  text-sm md:text-left">
       <p>@2024 Balihans LLC</p>
       <p>@2024 Balihans Software Private Limited</p>
     </div>
 
     {/* Column 3: Privacy Links */}
-    <div className="text-left md:col-span-2 lg:col-span-1 lg:text-right space-x-4">
+    <div className="text-left text-sm md:col-span-2 lg:col-span-1 lg:text-right space-x-4">
       <a href="/privacy" className="hover:underline">
         Privacy Notice
       </a>

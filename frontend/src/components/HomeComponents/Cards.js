@@ -5,8 +5,9 @@ import { Link } from 'react-router-dom'; // Import Link for navigation
 const links = [
   "/strategy-and-consulting",
   "/cloud-and-infrastructure",
-  "/page3",
-  "/page4",
+  "/ai",
+  "/cybersecurity",
+  "/digital-enterprise",
 ];
 
 // Reusable Card component
@@ -33,7 +34,7 @@ const Card = ({ title, description, imgSrc, link }) => {
       <div className="relative w-full h-[450px] overflow-hidden transition-transform duration-300 ease-in-out group">
         <div
           className={`absolute inset-0 flex flex-col justify-center items-start bg-black ${
-            isMobile ? 'bg-opacity-60' : 'bg-opacity-60 group-hover:bg-opacity-60'
+            isMobile ? 'bg-opacity-50' : 'bg-opacity-50 group-hover:bg-opacity-60'
           } text-white transition-opacity duration-300 ease-in-out`}
         >
           <h2 className="text-3xl text-left mb-2 text-white z-10 absolute top-[100px] ml-5 w-4/5">
