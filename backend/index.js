@@ -3,16 +3,26 @@
 const express = require('express');
 const cors = require('cors');
 const connectDB = require('./config/db');
+
 const homePageRoutes = require('./routes/homePageRoutes');
+const homecasestudyonePageRoutes = require('./routes/homecasestudyonePageRoutes.js');
+const homecasestudytwoPageRoutes = require('./routes/homecasestudytwoPageRoutes.js');
+const homecasestudythreePageRoutes = require('./routes/homecasestudythreePageRoutes.js');
+
+
 const aboutusPageRoutes = require('./routes/aboutusPageRoutes');
 const leadershipPageRoutes = require('./routes/leadershipPageRoutes');
 const diversityPageRoutes = require('./routes/diversityPageRoutes');
 const sustainabilityPageRoutes = require('./routes/sustainabilityPageRoutes');
+
+
 const whatwedoPageRoutes = require('./routes/whatwedoPageRoutes');
 const bsfiPageRoutes=require('./routes/bsfiPageRoutes.js');
 const energyPageRoutes=require('./routes/energyPageRoutes.js');
 const healthcarePageRoutes=require('./routes/healthcarePageRoutes.js');
 const communicationsPageRoutes=require('./routes/communicationsPageRoutes.js');
+
+
 const hightechPageRoutes=require('./routes/hightechPageRoutes.js');
 const aiPageRoutes=require('./routes/aiPageRoutes.js');
 const strategyandconsultingPageRoutes=require('./routes/strategyandconsultingPageRoutes.js');
@@ -20,6 +30,7 @@ const cloudandinfrastructurePageRoutes=require('./routes/cloudandinfrastructureP
 const cybersecurityPageRoutes=require('./routes/cybersecurityPageRoutes.js');
 const dataandanalyticsPageRoutes=require('./routes/dataandanalyticsPageRoutes.js');
 const digitalenterprisePageRoutes=require('./routes/digitalenterprisePageRoutes.js');
+
 require('dotenv').config();
 
 // Initializing the Express application
@@ -52,16 +63,25 @@ const initializeMongoDB = async () => {
 
 // API routes
 app.use('/api/homepage', homePageRoutes);
+app.use('/api/homecasestudyonepage', homecasestudyonePageRoutes);
+app.use('/api/homecasestudytwopage', homecasestudytwoPageRoutes);
+app.use('/api/homecasestudythreepage', homecasestudythreePageRoutes);
+
+
 app.use('/api/aboutuspage', aboutusPageRoutes);
 app.use('/api/leadershippage', leadershipPageRoutes);
 app.use('/api/diversitypage', diversityPageRoutes);
 app.use('/api/sustainabilitypage', sustainabilityPageRoutes);
+
+
 app.use('/api/whatwedopage', whatwedoPageRoutes);
 app.use('/api/bsfipage', bsfiPageRoutes);
 app.use('/api/energypage', energyPageRoutes);
 app.use('/api/healthcarepage', healthcarePageRoutes);
 app.use('/api/communicationspage', communicationsPageRoutes);
 app.use('/api/hightechpage', hightechPageRoutes);
+
+
 app.use('/api/aipage', aiPageRoutes);
 app.use('/api/strategyandconsultingpage', strategyandconsultingPageRoutes);
 app.use('/api/cloudandinfrastructurepage', cloudandinfrastructurePageRoutes);

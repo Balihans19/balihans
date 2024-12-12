@@ -36,7 +36,8 @@ const homepageSchema = new mongoose.Schema({
       id: { type: Number, required: true },
       title: { type: String, required: true },
       image: { type: String, required: true },
-      alt: { type: String, required: true }
+      alt: { type: String, required: true },
+      link: { type: String, required: true }
     }]
   },
   expandableMenu: {

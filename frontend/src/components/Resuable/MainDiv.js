@@ -85,7 +85,7 @@ const MainDiv = ({
               <button className="mt-6 flex items-center text-base md:text-lg xl:text-xl text-white">
                 Let's Talk
                 <div className="ml-4 w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 transition-colors">
-                  <ArrowRight size={32} className="text-gray-500" />
+                  <ArrowRight size={32} className="text-black" />
                 </div>
               </button>
             )}

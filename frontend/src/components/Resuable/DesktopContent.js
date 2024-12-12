@@ -25,11 +25,11 @@ export const desktopContent = [
       content: (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 w-full max-w-6xl mx-auto px-4 text-white">
           <div className="w-full min-w-[200px] my-4 md:my-8">
-            <h3 className="text-3xl lg:text-4xl mb-5">About Us</h3>
+            <h3 className="text-2xl lg:text-3xl mb-5">About Us</h3>
           </div>
           
           <div className="w-full min-w-[250px] my-4 md:my-8">
-            <h3 className="text-xl lg:text-2xl mb-5">Corporate Overview</h3>
+            <h3 className="text-lg lg:text-xl mb-5">Corporate Overview</h3>
             <ul className="list-none text-base lg:text-lg p-0">
               <li className="mb-2">
                 <Link to="/leadership" className="text-white hover:underline">Leadership</Link>
@@ -73,11 +73,11 @@ export const desktopContent = [
         {/* What We Do Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="w-full min-w-[200px] my-4 md:my-8">
-            <h3 className="text-3xl lg:text-4xl mb-5">Our Services</h3>
+            <h3 className="text-2xl lg:text-3xl mb-5">Our Services</h3>
           </div>
           
           <div className="w-full min-w-[280px] my-4 md:my-8">
-            <h3 className="text-xl lg:text-2xl mb-5"><Link to="/strategy-and-consulting" className="text-white hover:underline">Strategy & Consulting</Link> </h3>
+            <h3 className="text-lg lg:text-xl mb-5"><Link to="/strategy-and-consulting" className="text-white hover:underline">Strategy & Consulting</Link> </h3>
             <ul className="list-none text-base lg:text-lg p-0">
             <li className="mb-2">
                 <Link to="/ai" className="text-white hover:underline">Artificial Intelligence</Link>
@@ -113,7 +113,7 @@ export const desktopContent = [
         {/* Spotlight Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="w-full min-w-[200px] my-4 md:my-8">
-            <h3 className="text-3xl lg:text-4xl mb-5">Spotlight</h3>
+            <h3 className="text-2xl lg:text-3xl mb-5">Spotlight</h3>
           </div>
           
           <div className="w-full min-w-[200px] my-4 md:my-8">
@@ -141,7 +141,7 @@ export const desktopContent = [
       content: (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-6xl mx-auto px-4 text-white">
           <div className="w-full min-w-[200px] my-4 md:my-8">
-            <h3 className="text-3xl lg:text-4xl mb-5">Industries</h3>
+            <h3 className="text-2xl lg:text-3xl mb-5">Industries</h3>
           </div>
 
           <div className="w-full min-w-[200px] my-4 md:my-8">
@@ -198,7 +198,7 @@ export const desktopContent = [
       content: (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-6xl mx-auto px-4 text-white">
           <div className="w-full min-w-[200px] my-4 md:my-8">
-            <h3 className="text-3xl lg:text-4xl mb-5">Insights</h3>
+            <h3 className="text-2xl lg:text-3xl mb-5">Insights</h3>
           </div>
 
           <div className="w-full min-w-[200px] my-4 md:my-8">
@@ -235,7 +235,7 @@ export const desktopContent = [
       content: (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-6xl mx-auto px-4 text-white">
           <div className="w-full min-w-[200px] my-4 md:my-8">
-            <h3 className="text-3xl lg:text-4xl mb-5">Careers</h3>
+            <h3 className="text-2xl lg:text-3xl mb-5">Careers</h3>
           </div>
 
           <div className="w-full min-w-[200px] my-4 md:my-8">

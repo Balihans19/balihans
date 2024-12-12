@@ -4,18 +4,18 @@
 
 
 import React, { memo } from 'react';
-import { usePageData} from '../hooks/usePageData';
-import { LoadingSpinner, ErrorFallback, PageWrapper } from '../components/common/PageWrapper';
-import UsePageTitle from '../components/Resuable/UsePageTitle';
+import { usePageData} from '../../hooks/usePageData';
+import { LoadingSpinner, ErrorFallback, PageWrapper } from '../../components/common/PageWrapper';
+import UsePageTitle from '../../components/Resuable/UsePageTitle';
 
 // Lazy load components
-const Cards = React.lazy(() => import('../components/HomeComponents/Cards'));
-const ScrollToTop = React.lazy(() => import('../components/Resuable/ScrollToTop'));
-const MainDiv = React.lazy(() => import('../components/Resuable/MainDiv'));
-const IndustriesCards = React.lazy(() => import('../components/HomeComponents/IndustriesCards'));
-const DuoCarousel = React.lazy(() => import('../components/Resuable/DuoCarousel'));
-const ContactCareers = React.lazy(() => import('../components/Resuable/ContactCareers'));
-const ExpandableMenu = React.lazy(() => import('../components/HomeComponents/ExpandableMenu'));
+const Cards = React.lazy(() => import('../../components/HomeComponents/Cards'));
+const ScrollToTop = React.lazy(() => import('../../components/Resuable/ScrollToTop'));
+const MainDiv = React.lazy(() => import('../../components/Resuable/MainDiv'));
+const IndustriesCards = React.lazy(() => import('../../components/HomeComponents/IndustriesCards'));
+const DuoCarousel = React.lazy(() => import('../../components/Resuable/DuoCarousel'));
+const ContactCareers = React.lazy(() => import('../../components/Resuable/ContactCareers'));
+const ExpandableMenu = React.lazy(() => import('../../components/HomeComponents/ExpandableMenu'));
 
 
 // Memoized section components
