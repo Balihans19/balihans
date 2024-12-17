@@ -19,7 +19,7 @@ const MemoizedTriCarousel = memo(TriCarousel);
 const MemoizedContactCareers = memo(ContactCareers);
 
 function AboutUs() {
-  UsePageTitle('AboutUs');
+  UsePageTitle('About Us');
   
   const { data: aboutuspageData, loading, error } = usePageData('aboutuspage');
 

@@ -23,7 +23,7 @@ const MemoizedTriCarousel = memo(TriCarousel);
 const MemoizedContactCareers = memo(ContactCareers);
 
 function Sustainability() {
-  UsePageTitle('Sustainability');
+  UsePageTitle('Corporate Sustainability');
   
   const { data: sustainabilitypageData, loading, error } = usePageData('sustainabilitypage');
 
@@ -48,7 +48,7 @@ function Sustainability() {
          goals={sustainabilitypageData.SustainabilityGoals.GoalsData}
          
       />
-
+ 
 <MemoizedSustainCarousel
         slidesdata={sustainabilitypageData.SustainCarousel.slidesdata}
       />

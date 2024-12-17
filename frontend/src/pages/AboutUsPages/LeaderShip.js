@@ -22,7 +22,7 @@ const MemoizedTriCarousel = memo(TriCarousel);
 const MemoizedContactCareers = memo(ContactCareers);
 
 function LeaderShip() {
-  UsePageTitle('LeaderShip');
+  UsePageTitle('Leadership');
   
   const { data: leadershippageData, loading, error } = usePageData('leadershippage');
 

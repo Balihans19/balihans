@@ -9,7 +9,8 @@ module.exports = {
         custom: ['MyCustomFont2', 'sans-serif'], 
       },
       screens: {
-        '3xl': '1630px',
+        'xs':'400px',
+        '3xl': '1630px'
       },
   
     },

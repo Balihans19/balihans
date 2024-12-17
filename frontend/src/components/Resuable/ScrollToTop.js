@@ -30,7 +30,7 @@ const ScrollToTop = () => {
   }, []);
 
   return (
-    <div className="fixed bottom-5 right-16">
+    <div className="fixed bottom-5 right-28 md:right-24 lg:right-16">
       {isVisible && (
         <MoveUp
            size={40}

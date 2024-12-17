@@ -75,7 +75,7 @@ function Home() {
 
           <MemoizedContactCareers 
           variant="light" 
-          />
+          /> 
           <ScrollToTop />
           </PageWrapper>
   );

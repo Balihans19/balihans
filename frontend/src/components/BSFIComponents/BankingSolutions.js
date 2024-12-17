@@ -1,6 +1,4 @@
 
-
-
 import React, { useState, useRef, useEffect } from 'react';
 import { ChevronRight, ChevronLeft } from 'lucide-react';
 
@@ -82,63 +80,82 @@ const BankingSolutions = ({ solutionsData, title }) => {
   };
 
   return (
-    <div className="min-h-screen text-white p-8 md:p-16">
-      <div className="mx-20 my-24 relative">
+    <div className="min-h-screen text-white p-4 sm:p-6 md:p-8 lg:p-10 xl:p-16 my-10 lg:my-0 ">
+      <div className="container  px-0 lg:px-12 xl:px-20  relative">
         {/* Scroll Progress Line */}
-        <div className="absolute -top-8 left-0 w-full h-1 z-5 overflow-hidden">
+        <div className="absolute -top-4 sm:-top-6 left-0 lg:left-11 xl:left-20 w-full h-1 z-5 overflow-hidden">
           <div 
             className="h-full bg-[#737373] transition-all duration-300 ease-in-out origin-left" 
             style={{ width: `${scrollProgress}%`, transformOrigin: 'left center' }}
           />
         </div>
 
-        <h1 className="text-2xl md:text-4xl font-bold mb-12">{title}</h1>
-        <div className="flex flex-col md:flex-row gap-8">
-          {/* Left side - Navigation */}
-          <div className="md:w-1/3">
-            <div className="space-y-6">
-            {solutionsData.map((solution) => (
-  <div
-    key={solution.id}
-    className="cursor-pointer group"
-    onClick={() => handleNavClick(solution.id)}
-  >
-    <div className="flex items-start gap-4">
-      <div className="relative w-1 h-20">
-        <div
-          className={`absolute left-0 w-1 h-full transition-all duration-300 ${activeSection === solution.id ? 'bg-white' : 'bg-transparent'}`}
-        />
-      </div>
-      <div className="flex-1">
-      <div
-  className={`text-3xl transition-all duration-300 
-    ${activeSection === solution.id 
-      ? 'text-4xl' 
-      : 'text-xl'} 
-    text-[#bdd4ff] mb-3 font-bold`}
->
-  {solution.number}
-</div>
-
-        <div
-          className={`text-2xl transition-colors duration-300 ${
-            activeSection === solution.id ? 'text-white' : 'text-gray-400 group-hover:text-gray-300 font-bold'
-          }`}
-        >
-          {solution.title}
+        <div className="flex items-center justify-between mb-8 sm:mb-10 md:mb-12 lg:mb-16">
+          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
+            {title}
+          </h1>
+          {/* Navigation buttons for mobile and tablet */}
+          <div className="flex items-center gap-2 lg:hidden">
+            <button
+              onClick={() => scrollContent('prev')}
+              className="p-2 rounded-full text-white hover:bg-gray-800 transition-colors"
+            >
+              <ChevronLeft size={28}/>
+            </button>
+            <button
+              onClick={() => scrollContent('next')}
+              className="p-2 rounded-full text-white hover:bg-gray-800 transition-colors"
+            >
+              <ChevronRight size={28}  />
+            </button>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-))}
+
+        <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 md:gap-10 lg:gap-12">
+          {/* Left side - Navigation */}
+          <div className="w-full lg:w-1/3">
+            <div className="space-y-4 sm:space-y-5 md:space-y-6">
+              {solutionsData.map((solution) => (
+                <div
+                  key={solution.id}
+                  className="cursor-pointer group"
+                  onClick={() => handleNavClick(solution.id)}
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="relative w-1 h-16 sm:h-18 md:h-20">
+                      <div
+                        className={`absolute left-0 w-1 h-full transition-all duration-300 ${activeSection === solution.id ? 'bg-white' : 'bg-transparent'}`}
+                      />
+                    </div>
+                    <div className="flex-1">
+                      <div
+                        className={`transition-all duration-300 
+                          ${activeSection === solution.id 
+                            ? 'text-3xl sm:text-4xl' 
+                            : 'text-lg sm:text-xl'} 
+                          text-[#bdd4ff] mb-2 font-bold`}
+                      >
+                        {solution.number}
+                      </div>
+                      <div
+                        className={`text-xl sm:text-2xl transition-colors duration-300 ${
+                          activeSection === solution.id ? 'text-white' : 'text-gray-400 group-hover:text-gray-300 font-bold'
+                        }`}
+                      >
+                        {solution.title}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
           {/* Right side - Content */}
-          <div className="md:w-2/3">
+          <div className="w-full lg:w-2/3">
             <div 
               ref={contentRef} 
-              className="h-[500px] overflow-y-auto scrollbar-hide" 
+              className="h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] overflow-y-auto scrollbar-hide" 
               style={{
                 scrollbarWidth: 'none', 
                 msOverflowStyle: 'none',
@@ -147,32 +164,16 @@ const BankingSolutions = ({ solutionsData, title }) => {
               {solutionsData.map((solution, index) => (
                 <div
                   key={index}
-                  className={`flex flex-col gap-8 min-h-[400px] ${index < solutionsData.length - 1 ? 'mb-12' : ''}`}
+                  className={`flex flex-col gap-6 sm:gap-8 min-h-[300px] sm:min-h-[400px] ${index < solutionsData.length - 1 ? 'mb-8 sm:mb-10 md:mb-12' : ''}`}
                 >
                   {solution.contents.map((content, idx) => (
                     <div key={idx} className="mb-2">
-                      <h3 className="text-3xl">{content.heading}</h3>
-                      <p className="text-xl text-gray-300">{content.description}</p>
+                      <h3 className="text-xl sm:text-2xl md:text-3xl">{content.heading}</h3>
+                      <p className="text-base sm:text-lg md:text-xl text-gray-300">{content.description}</p>
                     </div>
                   ))}
                 </div>
               ))}
-            </div>
-
-            {/* Navigation buttons for mobile */}
-            <div className="flex justify-between mt-8 md:hidden">
-              <button
-                onClick={() => scrollContent('prev')}
-                className="p-2 rounded-full text-white hover:bg-gray-800"
-              >
-                <ChevronLeft size={24} />
-              </button>
-              <button
-                onClick={() => scrollContent('next')}
-                className="p-2 rounded-full text-white hover:bg-gray-800"
-              >
-                <ChevronRight size={24} />
-              </button>
             </div>
           </div>
         </div>
@@ -182,7 +183,6 @@ const BankingSolutions = ({ solutionsData, title }) => {
 };
 
 export default BankingSolutions;
-
 
 
 

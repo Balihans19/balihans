@@ -61,7 +61,7 @@ const Spotlight = ({ spotlightItems, title = "Spotlight" }) => {
                       />
                     </div>
                     <div className="flex-grow flex flex-col">
-                      <h3 className="text-black text-lg xl:text-2xl font-bold mb-2 line-clamp-4">
+                      <h3 className="text-black text-sm sm:text-lg xl:text-2xl font-bold mb-2 line-clamp-4">
                         {item.title}
                       </h3>
                       <p className="text-gray-500 text-md flex-grow line-clamp-3">

@@ -208,7 +208,7 @@ const MobileNavbar = ({ navItems }) => {
   return (
     <>
       {/* Mobile Header */}
-      <div className="fixed inset-x-0 top-0 z-50 bg-[#191c20] flex justify-between items-center py-4 px-6 border-b border-gray-600 lg:hidden">
+      <div className="fixed inset-x-0 top-0 z-50 bg-[#191c20] flex justify-between items-center py-4 px-6  border-b border-gray-600 lg:hidden">
         <Link to="/" onClick={closeMenu}>
           <img
             src="https://res.cloudinary.com/dbmwkp9a9/image/upload/v1729842945/Balihans_-_logo_off-white_semxwr.png"

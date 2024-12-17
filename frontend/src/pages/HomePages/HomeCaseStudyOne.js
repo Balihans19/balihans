@@ -40,7 +40,9 @@ function HomeCaseStudyOne() {
             backgroundImageUrl={homecasestudyonepageData.backgroundImageUrl}
             sectionTitle={homecasestudyonepageData.sectionTitle}
             categories={homecasestudyonepageData.categories}
+            heading={homecasestudyonepageData.heading}
             description={homecasestudyonepageData.description}
+            contentWidth="max-w-xl"
           />
 
           <MemoizedCaseStudySolutions

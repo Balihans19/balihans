@@ -10,7 +10,7 @@ function SustainabilityMainDiv({
   return (
     <div className="flex flex-col min-h-screen bg-[#191c20]">
       {/* Header Section */}
-      <div className="relative text-white min-h-[55vh] flex items-center">
+      <div className="relative text-white min-h-[50vh] sm:min-h-[55vh] flex items-center">
         {/* Diagonal Background with Overlay */}
         <div
           className="absolute inset-0 overflow-hidden"
@@ -30,19 +30,28 @@ function SustainabilityMainDiv({
       </div>
 
       {/* Content Section with Overlap */}
-      <div className="relative text-white px-4 sm:px-6 lg:px-8 -mt-48 z-20">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[30%_80%] gap-12">
-          <div className="relative z-30">
+      <div className="relative text-white px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 -mt-36 sm:-mt-40 md:-mt-44 lg:-mt-48 z-20">
+        <div className="max-w-2xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[35%_65%] lg:grid-cols-[30%_70%] gap-8 md:gap-10 lg:gap-12">
+          {/* Image Section */}
+          <div className="relative z-30 flex justify-center md:justify-start">
             <img
               src={imageSrc}
               alt="Leadership"
-              className="w-[35vh] h-[40vh] object-cover"
+              className="w-[20vh] h-[25vh] sm:w-[30vh] sm:h-[35vh] md:w-[35vh] md:h-[40vh] lg:w-[35vh] lg:h-[40vh] object-cover rounded-lg shadow-md"
             />
           </div>
-          <div className="flex flex-col justify-center">
-            <h1 className="text-6xl font-bold mb-10">{title}</h1>
-            <h2 className="text-4xl mb-6">{subtitle}</h2>
-            <p className="text-lg leading-relaxed">{description}</p>
+
+          {/* Text Content */}
+          <div className="flex flex-col justify-center text-center md:text-left">
+            <h1 className="text-xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8">
+              {title}
+            </h1>
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-4 sm:mb-6">
+              {subtitle}
+            </h2>
+            <p className="text-sm sm:text-base md:text-lg leading-relaxed">
+              {description}
+            </p>
           </div>
         </div>
       </div>

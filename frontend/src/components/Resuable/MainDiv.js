@@ -74,8 +74,8 @@ const MainDiv = ({
             />
           )}
 
-          <div className="relative z-10 max-w-6xl pl-6 lg:pl-20 xl:pl-36 pb-44 h-full flex flex-col justify-center">
-            <h1 className="text-xl sm:text-2xl md:text-3xl xl:text-4xl font-bold text-[#FAF9F6] ">
+          <div className="relative z-10 max-w-60 xs:max-w-xs md:max-w-6xl pl-6 lg:pl-20 xl:pl-36 pb-44 h-full flex flex-col justify-center">
+            <h1 className="text-lg sm:text-xl md:text-3xl xl:text-4xl font-bold text-[#FAF9F6] ">
               {headerTitle}
             </h1>
             <p className="text-sm sm:text-base md:text-lg xl:text-xl text-gray-100 max-w-sm sm:max-w-md lg:max-w-2xl tracking-tighter">
@@ -112,10 +112,10 @@ const MainDiv = ({
           </div>
 
           {/* Content Overlay */}
-          <div className="text-white relative z-10 flex h-full">
-  <div className="absolute right-6 lg:right-12 xl:right-16 bottom-16 w-[50vh] flex flex-col items-start"> {/* Changed items-end to items-start */}
-    <div className="flex flex-col items-start p-2 rounded mb-4 w-full"> {/* Added w-full to ensure consistent width */}
-      <h1 className="text-3xl xl:text-4xl font-bold transition-all duration-500">
+          <div className="relative z-10 flex h-full">
+  <div className="absolute  right-4 md:right-0 lg:right-12 xl:right-16  bottom-16 w-[20vh] sm:w-[40vh] md:w-[50vh] flex flex-col items-start justify-start text-white">
+    <div className="flex flex-col items-start p-2 rounded mb-4">
+      <h1 className="text-md sm:text-xl md:text-3xl xl:text-4xl font-bold transition-all duration-500">
         {videos[currentSlide].heading}
       </h1>
       <p
@@ -134,9 +134,10 @@ const MainDiv = ({
   </div>
 </div>
 
+          
           {/* Slideshow Bullets */}
           {isSlideshow && videos.length > 1 && (
-            <div className="absolute inset-x-0 bottom-5 flex justify-end mr-8 lg:mr-20 xl:mr-36 space-x-2 z-10">
+            <div className="absolute inset-x-0 bottom-5 flex justify-end mr-8 sm:mr-16 md:mr-16 lg:mr-20 xl:mr-36 space-x-2 z-10">
               {videos.map((_, index) => (
                 <span
                   key={index}

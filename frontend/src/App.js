@@ -34,13 +34,13 @@ function App() {
       <PageTopNavigator />
 
       <Navbar />
-      <Routes>
+     <Routes>
 
         <Route path="/" element={<Home />} />
-        <Route path="/home-case-study-one" element={<HomeCaseStudyOne />} />
-        <Route path="/home-case-study-two" element={<HomeCaseStudyTwo />} />
-        <Route path="/home-case-study-three" element={<HomeCaseStudyThree />} />
-
+        <Route path="/balihans-helps-us-based-manufacturing-company-modernize-shop-floor" element={<HomeCaseStudyOne />} />
+        <Route path="/elevating-security-posture-with-a-24/7-soc" element={<HomeCaseStudyTwo />} />
+        <Route path="/balihans-empowers-media-company-through-digital-transformation" element={<HomeCaseStudyThree />} />
+ 
         {/* AboutUs Pages */}
         <Route path="/about-us" element={<AboutUs />} />
 

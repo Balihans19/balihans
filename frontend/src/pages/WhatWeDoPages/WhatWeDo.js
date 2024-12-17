@@ -19,7 +19,7 @@ const MemoizedIndustriesCards = memo(IndustriesCards);
 const MemoizedContactCareers = memo(ContactCareers);
 
 function  WhatWeDo() {
-  UsePageTitle('WhatWeDo');
+  UsePageTitle('What We Do');
   
   const { data: whatwedopageData, loading, error } = usePageData('whatwedopage');
 
