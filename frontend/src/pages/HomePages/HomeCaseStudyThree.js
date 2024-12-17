@@ -38,7 +38,6 @@ function HomeCaseStudyThree() {
     <PageWrapper>
           <MemoizedCaseStudyMainDiv
             backgroundImageUrl={homecasestudythreepageData.backgroundImageUrl}
-            sectionTitle={homecasestudythreepageData.sectionTitle}
             categories={homecasestudythreepageData.categories}
             heading={homecasestudythreepageData.heading}
             description={homecasestudythreepageData.description}

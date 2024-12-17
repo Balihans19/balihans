@@ -129,7 +129,7 @@ const Footer = () => {
     
     {/* Column 1: Logo */}
     <div className="text-left">
-      <img src="https://res.cloudinary.com/dbmwkp9a9/image/upload/f_webp,q_auto/v1729842945/Balihans_-_logo_off-white_semxwr.png" alt="Balihans Logo" className="h-[5vh] xl:h-[6vh]  md:mx-0" />
+      <img src="https://res.cloudinary.com/dnijlfi48/image/upload/v1734432935/Balihans_-_logo_off-white_m6wkoi.webp" alt="Balihans Logo" className="h-[5vh] xl:h-[6vh]  md:mx-0" />
     </div>
 
     {/* Column 2: Company Name & Copyright */}

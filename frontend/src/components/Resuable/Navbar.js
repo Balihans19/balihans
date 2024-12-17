@@ -26,7 +26,7 @@ const DesktopNavbar = ({ navItems, activeDropdown, setActiveDropdown }) => {
           {/* Logo section */}
           <NavLink to="/" className="flex-shrink-0">
             <img
-              src="https://res.cloudinary.com/dnijlfi48/image/upload/v1730877884/Balihans_-_logo_off-white_l9zoqc.png"
+              src="https://res.cloudinary.com/dnijlfi48/image/upload/v1734432935/Balihans_-_logo_off-white_m6wkoi.webp"
               alt="Balihans Logo"
               className="h-[5vh] xl:h-[6vh]"
             />
@@ -211,7 +211,7 @@ const MobileNavbar = ({ navItems }) => {
       <div className="fixed inset-x-0 top-0 z-50 bg-[#191c20] flex justify-between items-center py-4 px-6  border-b border-gray-600 lg:hidden">
         <Link to="/" onClick={closeMenu}>
           <img
-            src="https://res.cloudinary.com/dbmwkp9a9/image/upload/v1729842945/Balihans_-_logo_off-white_semxwr.png"
+            src="https://res.cloudinary.com/dnijlfi48/image/upload/v1734432935/Balihans_-_logo_off-white_m6wkoi.webp"
             alt="Tech Mahindra"
             className="h-12 "
           />

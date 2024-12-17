@@ -24,45 +24,46 @@ const MemoizedAiServices = memo(AiServices);
 const MemoizedDuoCarousel = memo(DuoCarousel);
 const MemoizedContactCareers = memo(ContactCareers);
 
-function HomeCaseStudyOne() {
+function HomeCaseStudyFour() {
 
-  UsePageTitle('Case study: Balihans Helps US Based Manufacturing Company Modernize Shop Floor');
+  UsePageTitle('Case study: Optimizing E-commerce Payments for Seamless Checkout');
 
-  const { data: homecasestudyonepageData, loading, error } = usePageData('homecasestudyonepage');
+  const { data: homecasestudyfourpageData, loading, error } = usePageData('homecasestudyfourpage');
 
   if (loading) return <LoadingSpinner />;
   if (error) return <ErrorFallback error={{ message: error }} />;
-  if (!homecasestudyonepageData) return null;
+  if (!homecasestudyfourpageData) return null;
 
   return (
     <PageWrapper>
           <MemoizedCaseStudyMainDiv
-            backgroundImageUrl={homecasestudyonepageData.backgroundImageUrl}
-            categories={homecasestudyonepageData.categories}
-            heading={homecasestudyonepageData.heading}
-            description={homecasestudyonepageData.description}
-            contentWidth="max-w-xl"
+            backgroundImageUrl={homecasestudyfourpageData.backgroundImageUrl}
+            sectionTitle={homecasestudyfourpageData.sectionTitle}
+            categories={homecasestudyfourpageData.categories}
+            heading={homecasestudyfourpageData.heading}
+            description={homecasestudyfourpageData.description}
+            contentWidth="max-w-4xl"
           />
 
           <MemoizedCaseStudySolutions
-             title={homecasestudyonepageData.CaseStudySolutions.title}
-             solutionsData={homecasestudyonepageData.CaseStudySolutions.solutionData}
+             title={homecasestudyfourpageData.CaseStudySolutions.title}
+             solutionsData={homecasestudyfourpageData.CaseStudySolutions.solutionData}
           />
 
           <MemoizedSpotlight
-            spotlightItems={homecasestudyonepageData.Spotlight.spotlightItems}
+            spotlightItems={homecasestudyfourpageData.Spotlight.spotlightItems}
           />
 
           <MemoizedAiServices
-            title={homecasestudyonepageData.AiServices.title}
-            backgroundVideo={homecasestudyonepageData.AiServices.backgroundVideo}
+            title={homecasestudyfourpageData.AiServices.title}
+            backgroundVideo={homecasestudyfourpageData.AiServices.backgroundVideo}
             backgroundType="video"
           />
  
         
          <MemoizedDuoCarousel
-            slides={homecasestudyonepageData.transformingEnterprises.carouselSlides}
-            title={homecasestudyonepageData.transformingEnterprises.title}
+            slides={homecasestudyfourpageData.transformingEnterprises.carouselSlides}
+            title={homecasestudyfourpageData.transformingEnterprises.title}
           />
 
           <MemoizedContactCareers 
@@ -73,4 +74,4 @@ function HomeCaseStudyOne() {
   );
 }
 
-export default memo(HomeCaseStudyOne);
+export default memo(HomeCaseStudyFour);

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom'; // Import the hook for navigation if using React Router
 
 const MainDiv = ({
   headerTitle,
@@ -9,14 +10,14 @@ const MainDiv = ({
   videoData,
   isSlideshow = false,
   slideshowInterval = 5000, // Default 5 seconds between slides
-  // Footer props
   footerText,
-  footerItalicWords = [], // Default value for italic words
+  footerItalicWords = [],
   showLetsTalkButton,
   descriptionWidths = ['lg:max-w-xl', 'lg:max-w-xl', 'lg:max-w-xl', 'lg:max-w-xl'], // Custom widths for each slide
   defaultDescriptionWidth = 'lg:max-w-4xl', // Default width when slideshow is false
 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const navigate = useNavigate(); // Initialize the navigation function
 
   // Auto-sliding effect
   useEffect(() => {
@@ -25,35 +26,29 @@ const MainDiv = ({
         setCurrentSlide((prevSlide) => (prevSlide + 1) % videoData.length);
       }, slideshowInterval);
 
-      // Cleanup interval on component unmount or when dependencies change
       return () => clearInterval(interval);
     }
   }, [isSlideshow, videoData, slideshowInterval]);
 
-  // Early return if no video data
   if (!videoData || (Array.isArray(videoData) && !videoData.length)) {
     return null;
   }
 
-  // Normalize video data to always be an array
   const videos = Array.isArray(videoData) ? videoData : [videoData];
 
-  // Function to render text with italic words
   const renderTextWithItalics = (text, italicWords) => {
     if (!Array.isArray(italicWords) || !italicWords.length) return text;
-  
+
     const words = text.split(' ');
     return words.map((word, index) => {
       const shouldItalicize = italicWords.some((italicWord) =>
         word.toLowerCase().includes(italicWord.toLowerCase())
       );
-  
-      console.log(`Word: "${word}", Italicized: ${shouldItalicize}`);
-  
+
       return (
         <React.Fragment key={index}>
           {shouldItalicize ? <span className="italic">{word}</span> : word}
-          {index < words.length - 1 ? ' ' : ''} {/* Add space between words */}
+          {index < words.length - 1 ? ' ' : ''}
         </React.Fragment>
       );
     });
@@ -74,17 +69,17 @@ const MainDiv = ({
             />
           )}
 
-          <div className="relative z-10 max-w-60 xs:max-w-xs md:max-w-6xl pl-6 lg:pl-20 xl:pl-36 pb-44 h-full flex flex-col justify-center">
-            <h1 className="text-lg sm:text-xl md:text-3xl xl:text-4xl font-bold text-[#FAF9F6] ">
+          <div className="relative z-10 max-w-44 xs:max-w-xs md:max-w-6xl pl-6 lg:pl-20 xl:pl-36 pb-44 h-full flex flex-col justify-center">
+            <h1 className="text-sm xs:text-lg sm:text-xl md:text-3xl xl:text-4xl mt-5 md:mt-0 font-bold text-[#FAF9F6] ">
               {headerTitle}
             </h1>
-            <p className="text-sm sm:text-base md:text-lg xl:text-xl text-gray-100 max-w-sm sm:max-w-md lg:max-w-2xl tracking-tighter">
+            <p className="text-xs xs:text-sm sm:text-base md:text-lg xl:text-xl text-gray-100 max-w-sm sm:max-w-md lg:max-w-2xl tracking-tighter">
               {headerDescription}
             </p>
             {showLetsTalkButton && (
-              <button className="mt-6 flex items-center text-base md:text-lg xl:text-xl text-white">
+              <button className="mt-6 flex items-center text-sm xs:text-base md:text-lg xl:text-xl text-white">
                 Let's Talk
-                <div className="ml-4 w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 transition-colors">
+                <div className="ml-4 xs:w-10 xs:h-10 w-5 h-5 flex items-center justify-center rounded-full bg-gray-200 transition-colors">
                   <ArrowRight size={32} className="text-black" />
                 </div>
               </button>
@@ -113,28 +108,32 @@ const MainDiv = ({
 
           {/* Content Overlay */}
           <div className="relative z-10 flex h-full">
-  <div className="absolute  right-4 md:right-0 lg:right-12 xl:right-16  bottom-16 w-[20vh] sm:w-[40vh] md:w-[50vh] flex flex-col items-start justify-start text-white">
-    <div className="flex flex-col items-start p-2 rounded mb-4">
-      <h1 className="text-md sm:text-xl md:text-3xl xl:text-4xl font-bold transition-all duration-500">
-        {videos[currentSlide].heading}
-      </h1>
-      <p
-        className={`text-sm md:text-base lg:text-xl mb-6 tracking-tighter ${
-          isSlideshow
-            ? descriptionWidths[currentSlide] || 'lg:max-w-4xl'
-            : defaultDescriptionWidth
-        }`}
-      >
-        {videos[currentSlide].description}
-      </p>
-      <button className="bg-transparent border border-white text-sm lg:text-base font-semibold py-3 px-6 lg:py-4 lg:px-8 cursor-pointer hover:bg-[#2c2c2c] hover:text-white transition-colors">
-        {knowMoreText}
-      </button>
-    </div>
-  </div>
-</div>
+            <div className="absolute right-12 md:right-0 lg:right-12 xl:right-16 bottom-16 w-[10vh] sm:w-[40vh] md:w-[50vh] flex flex-col items-start justify-start text-white">
+              <div className="flex flex-col items-start p-2 rounded mb-4">
+                <h1 className="text-md sm:text-xl md:text-3xl xl:text-4xl font-bold transition-all duration-500">
+                  {videos[currentSlide].heading}
+                </h1>
+                <p
+                  className={`text-sm md:text-base lg:text-xl mb-6 tracking-tighter ${
+                    isSlideshow
+                      ? descriptionWidths[currentSlide] || 'lg:max-w-4xl'
+                      : defaultDescriptionWidth
+                  }`}
+                >
+                  {videos[currentSlide].description}
+                </p>
+                <button
+                  className="bg-transparent border border-white text-xs sm:text-sm lg:text-base font-semibold py-3 px-6 lg:py-4 lg:px-8 cursor-pointer hover:bg-[#2c2c2c] hover:text-white transition-colors"
+                  onClick={() =>
+                    navigate(videos[currentSlide].linkUrl || '/')
+                  } // Navigate to the URL
+                >
+                  {knowMoreText}
+                </button>
+              </div>
+            </div>
+          </div>
 
-          
           {/* Slideshow Bullets */}
           {isSlideshow && videos.length > 1 && (
             <div className="absolute inset-x-0 bottom-5 flex justify-end mr-8 sm:mr-16 md:mr-16 lg:mr-20 xl:mr-36 space-x-2 z-10">
@@ -167,5 +166,8 @@ const MainDiv = ({
 };
 
 export default MainDiv;
+
+
+
 
 

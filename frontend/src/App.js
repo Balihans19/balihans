@@ -23,6 +23,7 @@ import DigitalEnterprise from './pages/WhatWeDoPages/DigitalEnterprise';
 import HomeCaseStudyOne from './pages/HomePages/HomeCaseStudyOne';
 import HomeCaseStudyTwo from './pages/HomePages/HomeCaseStudyTwo';
 import HomeCaseStudyThree from './pages/HomePages/HomeCaseStudyThree';
+import HomeCaseStudyFour from './pages/HomePages/HomeCaseStudyFour';
 
 
 
@@ -36,10 +37,13 @@ function App() {
       <Navbar />
      <Routes>
 
+        {/* Home Pages */}
         <Route path="/" element={<Home />} />
+        
         <Route path="/balihans-helps-us-based-manufacturing-company-modernize-shop-floor" element={<HomeCaseStudyOne />} />
         <Route path="/elevating-security-posture-with-a-24/7-soc" element={<HomeCaseStudyTwo />} />
         <Route path="/balihans-empowers-media-company-through-digital-transformation" element={<HomeCaseStudyThree />} />
+        <Route path="/optimizing-ecommerce-payments-for-seamless-checkout" element={<HomeCaseStudyFour />} />
  
         {/* AboutUs Pages */}
         <Route path="/about-us" element={<AboutUs />} />
