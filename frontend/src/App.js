@@ -24,6 +24,11 @@ import HomeCaseStudyOne from './pages/HomePages/HomeCaseStudyOne';
 import HomeCaseStudyTwo from './pages/HomePages/HomeCaseStudyTwo';
 import HomeCaseStudyThree from './pages/HomePages/HomeCaseStudyThree';
 import HomeCaseStudyFour from './pages/HomePages/HomeCaseStudyFour';
+import CustomerSpeak from './pages/AboutUsPages/CustomerSpeak';
+import PrivacyPolicy from './pages/OtherPages/PrivacyPolicy';
+import ContactUs from './pages/ContactUsPage/ContactUs';
+import CookiePolicy from './pages/OtherPages/CookiePolicy';
+
 
 
 
@@ -48,9 +53,10 @@ function App() {
         {/* AboutUs Pages */}
         <Route path="/about-us" element={<AboutUs />} />
 
-        <Route path="leadership" element={<LeaderShip />} />
-        <Route path="diversity" element={<Diversity />} />
-        <Route path="sustainability" element={<Sustainability />} />
+        <Route path="/leadership" element={<LeaderShip />} />
+        <Route path="/diversity" element={<Diversity />} />
+        <Route path="/sustainability" element={<Sustainability />} />
+        <Route path="/customer-speak" element={<CustomerSpeak />} />
 
          {/* What we do Pages */}
         <Route path="/what-we-do" element={<WhatWeDo />} />
@@ -69,6 +75,16 @@ function App() {
         <Route path="/health-care" element={<HealthCare />} />
         <Route path="/communications" element={<Communications />} />
         <Route path="/high-tech" element={<HighTech />} />
+
+
+
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/cookie-policy" element={<CookiePolicy />} />
+
+
+        <Route path="/contact-us" element={<ContactUs />} />
+
+
         
       </Routes>
       <Footer />

@@ -12,7 +12,9 @@ module.exports = {
         'xs':'400px',
         '3xl': '1630px'
       },
-  
+      fontSize: {
+        'xxs': '0.625rem', // 10px
+      },
     },
   },
   plugins: [

@@ -37,11 +37,11 @@ const Footer = () => {
   const aboutBalihans = [
     { name: "Corporate Overview", route: "" },
     { name: "Leadership", route: "/leadership" },
-    { name: "Our Brand", route: "" },
+    { name: "Our Brand", route: "/" },
     { name: "Corporate Sustainability", route: "/sustainability" },
     { name: "Diversity, Equity, and Inclusion", route: "/diversity" },
-    { name: "Recognition", route: "" },
-    { name: "Customer Speak", route: "" },
+    { name: "Recognition", route: "/" },
+    { name: "Customer Speak", route: "/customer-speak" },
   ];
 
   return (
@@ -140,10 +140,10 @@ const Footer = () => {
 
     {/* Column 3: Privacy Links */}
     <div className="text-left text-sm md:col-span-2 lg:col-span-1 lg:text-right space-x-4">
-      <a href="/privacy" className="hover:underline">
+      <a href="/privacy-policy" className="hover:underline">
         Privacy Notice
       </a>
-      <a href="/cookie" className="hover:underline">
+      <a href="/cookie-policy" className="hover:underline">
         Cookie Policy
       </a>
       <a href="/disclaimer" className="hover:underline">

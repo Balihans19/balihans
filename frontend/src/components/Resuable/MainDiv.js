@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom'; 
 import { useNavigate } from 'react-router-dom'; // Import the hook for navigation if using React Router
 
 const MainDiv = ({
@@ -77,13 +78,16 @@ const MainDiv = ({
               {headerDescription}
             </p>
             {showLetsTalkButton && (
-              <button className="mt-6 flex items-center text-sm xs:text-base md:text-lg xl:text-xl text-white">
-                Let's Talk
-                <div className="ml-4 xs:w-10 xs:h-10 w-5 h-5 flex items-center justify-center rounded-full bg-gray-200 transition-colors">
-                  <ArrowRight size={32} className="text-black" />
-                </div>
-              </button>
-            )}
+        <Link
+          to="/contact-us"  // Use Link to navigate to the Contact Us page
+          className="mt-6 flex items-center text-sm xs:text-base md:text-lg xl:text-xl text-white"
+        >
+          Let's Talk
+          <div className="ml-4 xs:w-10 xs:h-10 w-5 h-5 flex items-center justify-center rounded-full bg-gray-200 transition-colors">
+            <ArrowRight size={32} className="text-black" />
+          </div>
+        </Link>
+      )}
           </div>
         </div>
 

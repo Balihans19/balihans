@@ -15,6 +15,7 @@ const aboutusPageRoutes = require('./routes/aboutusPageRoutes');
 const leadershipPageRoutes = require('./routes/leadershipPageRoutes');
 const diversityPageRoutes = require('./routes/diversityPageRoutes');
 const sustainabilityPageRoutes = require('./routes/sustainabilityPageRoutes');
+const customerspeakPageRoutes = require('./routes/customerspeakPageRoutes');
 
 
 const whatwedoPageRoutes = require('./routes/whatwedoPageRoutes');
@@ -32,6 +33,15 @@ const cybersecurityPageRoutes=require('./routes/cybersecurityPageRoutes.js');
 const dataandanalyticsPageRoutes=require('./routes/dataandanalyticsPageRoutes.js');
 const digitalenterprisePageRoutes=require('./routes/digitalenterprisePageRoutes.js');
 
+
+const privacypolicyPageRoutes=require('./routes/privacypolicyPageRoutes.js');
+const cookiepolicyPageRoutes=require('./routes/cookiepolicyPageRoutes.js');
+
+const contactusPageRoutes=require('./routes/contactusPageRoutes.js');
+const contactRoutes = require("./routes/contactRoutes");
+
+
+
 require('dotenv').config();
 
 // Initializing the Express application
@@ -40,7 +50,7 @@ const app = express();
 // Middleware setup
 app.use(express.json());
 app.use(cors({
-  origin: process.env.FRONTEND_URL || '*', // Fallback to allow all origins if FRONTEND_URL is not set
+  origin: process.env.FRONTEND_URL || '', // Fallback to allow all origins if FRONTEND_URL is not set
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
@@ -74,6 +84,7 @@ app.use('/api/aboutuspage', aboutusPageRoutes);
 app.use('/api/leadershippage', leadershipPageRoutes);
 app.use('/api/diversitypage', diversityPageRoutes);
 app.use('/api/sustainabilitypage', sustainabilityPageRoutes);
+app.use('/api/customerspeakpage', customerspeakPageRoutes);
 
 
 app.use('/api/whatwedopage', whatwedoPageRoutes);
@@ -91,7 +102,11 @@ app.use('/api/cybersecuritypage', cybersecurityPageRoutes);
 app.use('/api/dataandanalyticspage', dataandanalyticsPageRoutes);
 app.use('/api/digitalenterprisepage', digitalenterprisePageRoutes);
 
+app.use('/api/privacypolicypage', privacypolicyPageRoutes);
+app.use('/api/cookiepolicypage', cookiepolicyPageRoutes);
 
+app.use("/api/contactuspage", contactusPageRoutes);
+app.use("/api/contact", contactRoutes);
 
 // Health check endpoint
 app.get('/health', (req, res) => {

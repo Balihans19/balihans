@@ -69,7 +69,7 @@ const ExpandableMenu = ({ title, videoUrl, sections }) => {
               className="w-full flex justify-between items-center p-4 bg-gray-100 hover:bg-gray-200 transition-colors"
               onClick={() => toggleSection(section.id)}
             >
-              <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl">{section.title}</span>
+              <span className="text-lg sm:text-xl md:text-2xl font-bold">{section.title}</span>
               <div className="rounded-full bg-black p-2">
                 {expandedSections.includes(section.id) ? (
                   <ArrowUp className="w-6 h-6 text-white" />

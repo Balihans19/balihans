@@ -34,7 +34,9 @@ export const desktopContent = [
               <li className="mb-2">
                 <Link to="/leadership" className="text-white hover:underline">Leadership</Link>
               </li>
-              <li className="mb-2">Our Brand</li>
+              <li className="mb-2">
+                <Link to="/" className="text-white hover:underline">Our Brand</Link>
+              </li>
               <li className="mb-2">
                 <Link to="/sustainability" className="text-white hover:underline">Corporate Sustainability</Link>
               </li>
@@ -46,8 +48,12 @@ export const desktopContent = [
               <li className="mb-2">
                 <Link to="/diversity" className="text-white hover:underline">Diversity, Equity, and Inclusion</Link>
               </li>
-              <li className="mb-2">Recognition</li>
-              <li className="mb-2">Customer Speak</li>
+              <li className="mb-2">
+                <Link to="/" className="text-white hover:underline">Recogintion</Link>
+              </li>
+              <li className="mb-2">
+                <Link to="/customer-speak" className="text-white hover:underline">Customer Speak</Link>
+              </li>
             </ul>
           </div>
 
@@ -125,7 +131,9 @@ export const desktopContent = [
     
           <div className="w-full min-w-[200px] my-4 md:my-8">
             <ul className="list-none text-base lg:text-lg p-0">
-              <li className="mb-2">Balihans Innovation</li>
+            <li className="mb-2">
+                <Link to="/what-we-do" className="text-white hover:underline">Balihans Innovation</Link>
+              </li>
               
             </ul>
           </div>
