@@ -33,40 +33,40 @@ const ContactUsMainDiv = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!captchaValue) {
-      showNotification("Please complete the reCAPTCHA", "error");
-      return;
+        showNotification("Please complete the reCAPTCHA", "error");
+        return;
     }
 
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("http://localhost:8080/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ ...formData, captchaValue }),
-      });
-  
-      if (response.ok) {
-        showNotification("Thank you for contacting us.", "success");
-        setFormData({
-          name: "",
-          email: "",
-          industry: "",
-          message: "",
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/contact`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ ...formData, captchaValue }),
         });
-        setCaptchaValue(null);
-      } else {
-        showNotification("Failed to send message. Please try again later.", "error");
-      }
+
+        if (response.ok) {
+            showNotification("Thank you for contacting us.", "success");
+            setFormData({
+                name: "",
+                email: "",
+                industry: "",
+                message: "",
+            });
+            setCaptchaValue(null);
+        } else {
+            showNotification("Failed to send message. Please try again later.", "error");
+        }
     } catch (error) {
-      console.error("Error submitting form:", error);
-      showNotification("An error occurred. Please try again later.", "error");
+        console.error("Error submitting form:", error);
+        showNotification("An error occurred. Please try again later.", "error");
     } finally {
-      setIsSubmitting(false);
+        setIsSubmitting(false);
     }
-  };
+};
 
   return (
     <div       
