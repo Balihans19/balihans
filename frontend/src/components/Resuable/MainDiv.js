@@ -10,7 +10,7 @@ const MainDiv = ({
   knowMoreText = "Know More",
   videoData,
   isSlideshow = false,
-  slideshowInterval = 5000, // Default 5 seconds between slides
+  slideshowInterval = 8000, // Default 5 seconds between slides
   footerText,
   footerItalicWords = [],
   showLetsTalkButton,
@@ -79,14 +79,16 @@ const MainDiv = ({
             </p>
             {showLetsTalkButton && (
         <Link
-          to="/contact-us"  // Use Link to navigate to the Contact Us page
+          to="/contact-us" // Use Link to navigate to the Contact Us page
           className="mt-6 flex items-center text-sm xs:text-base md:text-lg xl:text-xl text-white"
-        >
-          Let's Talk
-          <div className="ml-4 xs:w-10 xs:h-10 w-5 h-5 flex items-center justify-center rounded-full bg-gray-200 transition-colors">
-            <ArrowRight size={32} className="text-black" />
-          </div>
-        </Link>
+         >
+            Let's Talk
+            <div className="ml-4 xs:w-10 xs:h-10 w-5 h-5 flex items-center justify-center rounded-full bg-gray-200">
+              <ArrowRight size={32} className="text-black transition-transform transform hover:-rotate-45" />
+            </div>
+       </Link>
+ 
+     
       )}
           </div>
         </div>

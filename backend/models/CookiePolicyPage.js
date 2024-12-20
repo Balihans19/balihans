@@ -4,8 +4,14 @@ const mongoose = require('mongoose');
 const cookiepolicypageSchema = new mongoose.Schema({
 
   backgroundImage:{ type: String, required: true },
-  content: [{  type: String, required: true }],
   categories: [{type: String,required: true}],
+  content: [
+    {
+      title: { type: String, required: true },
+      text: { type: String, required: true },
+    },
+  ],
+  
 
   sections:{
   title: { type: String, required: true },

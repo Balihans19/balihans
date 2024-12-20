@@ -49,7 +49,7 @@ const ContactUsMainDiv = () => {
         });
 
         if (response.ok) {
-            showNotification("Thank you for contacting us.", "success");
+            showNotification("Thank you for contacting us. We'll get back to you shortly over email", "success");
             setFormData({
                 name: "",
                 email: "",
@@ -127,7 +127,7 @@ const ContactUsMainDiv = () => {
             <div>
               <p className="mb-4 text-sm">
                 Before connecting you with the right expert, we'll need a few details
-                to understand your specific needs better.
+                to understand your specific needs better. *Mandatory fields
               </p>
             </div>
 
@@ -142,7 +142,7 @@ const ContactUsMainDiv = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="Name**"
+                    placeholder="Name*"
                     required
                     className="w-full p-2 rounded border border-white bg-transparent text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-white/50"
                     disabled={isSubmitting}
@@ -156,7 +156,7 @@ const ContactUsMainDiv = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="Email**"
+                    placeholder="Email*"
                     required
                     className="w-full p-2 rounded border border-white bg-transparent text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-white/50"
                     disabled={isSubmitting}
@@ -175,7 +175,7 @@ const ContactUsMainDiv = () => {
                   className="w-full p-2 rounded border border-white bg-transparent text-white placeholder-white appearance-none focus:outline-none focus:ring-2 focus:ring-white/50"
                   disabled={isSubmitting}
                 >
-                  <option value="" disabled className="bg-transparent text-white">Industry**</option>
+                  <option value="" disabled className="bg-transparent text-white">Industry*</option>
                   <option value="Finance" className="bg-black text-white">Banking & Financial Services</option>
                   <option value="Finance" className="bg-black text-white">Communications & Information Services</option>
                   <option value="Finance" className="bg-black text-white">Energy, Resources & Utilities</option>
@@ -201,7 +201,7 @@ const ContactUsMainDiv = () => {
                   rows="4"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="How can we help you?****"
+                  placeholder="How can we help you?*"
                   required
                   className="w-full p-2 rounded border border-white bg-transparent text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-white/50"
                   disabled={isSubmitting}

@@ -17,7 +17,7 @@ import '../../App.css';
 const DesktopNavbar = ({ navItems, activeDropdown, setActiveDropdown }) => {
   return (
     <nav 
-      className="hidden lg:block bg-[#191c20] sticky top-0 z-50"
+      className="hidden lg:block bg-[#101215] sticky top-0 z-50"
       onMouseLeave={() => setActiveDropdown(null)}
     >
       {/* Main container with max-width and auto margins */}
@@ -61,7 +61,7 @@ const DesktopNavbar = ({ navItems, activeDropdown, setActiveDropdown }) => {
       {/* Dropdown Content */}
       
        {activeDropdown !== null && (
-        <div className="absolute top-full left-0 right-0 bg-[#191c20] z-10 ">
+        <div className="absolute top-full left-0 right-0 bg-[#101215] z-10 ">
           <hr className="border border-[#191c20]" />
           {navItems[activeDropdown].content}
         </div>
@@ -109,7 +109,7 @@ const MobileNavItem = ({ item, expandedItem, setExpandedItem, setActiveSubmenu, 
   return (
     <div className="border-t border-gray-700">
       <div
-        className="py-4 px-6 flex justify-between items-center cursor-pointer bg-[#191c20]"
+        className="py-4 px-6 flex justify-between items-center cursor-pointer bg-[#101215]"
         onClick={handleItemClick}
       >
         <span className=" text-white">{item.name}</span>
@@ -208,7 +208,7 @@ const MobileNavbar = ({ navItems }) => {
   return (
     <>
       {/* Mobile Header */}
-      <div className="fixed inset-x-0 top-0 z-50 bg-[#191c20] flex justify-between items-center py-4 px-6  border-b border-gray-600 lg:hidden">
+      <div className="fixed inset-x-0 top-0 z-50 bg-[#101215] flex justify-between items-center py-4 px-6  border-b border-gray-600 lg:hidden">
         <Link to="/" onClick={closeMenu}>
           <img
             src="https://res.cloudinary.com/dnijlfi48/image/upload/v1734432935/Balihans_-_logo_off-white_m6wkoi.webp"

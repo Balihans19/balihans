@@ -7,8 +7,8 @@ import React from 'react';
  */
 const CookieMainDiv = ({
   backgroundImage,
-  categories,
-  content
+  categories=[],
+  content=[]
 }) => {
   return (
     <div
