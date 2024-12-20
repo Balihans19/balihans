@@ -78,15 +78,19 @@ const MainDiv = ({
               {headerDescription}
             </p>
             {showLetsTalkButton && (
-        <Link
-          to="/contact-us" // Use Link to navigate to the Contact Us page
-          className="mt-6 flex items-center text-sm xs:text-base md:text-lg xl:text-xl text-white"
-         >
-            Let's Talk
-            <div className="ml-4 xs:w-10 xs:h-10 w-5 h-5 flex items-center justify-center rounded-full bg-gray-200">
-              <ArrowRight size={32} className="text-black transition-transform transform hover:-rotate-45" />
-            </div>
-       </Link>
+          <Link 
+          to="/contact-us"
+          className="mt-6 flex items-center text-sm xs:text-base md:text-lg xl:text-xl text-white group"
+        >
+          Let's Talk
+          <div className="ml-4 xs:w-10 xs:h-10 w-5 h-5 flex items-center justify-center rounded-full bg-gray-200">
+            <ArrowRight 
+              size={32} 
+              className="text-black group-hover:transform group-hover:-rotate-45 transition-transform duration-500" 
+            />
+          </div>
+        </Link>
+      
  
      
       )}

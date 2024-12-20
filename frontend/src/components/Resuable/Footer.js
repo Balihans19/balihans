@@ -24,8 +24,8 @@ const Footer = () => {
   const services = [
     { name: "Strategy and Consulting", route: "/strategy-and-consulting" },
     { name: "Artificial Intelligence", route: "/ai" },
-    { name: "Cloud & Infrastructure", route: "/cloud-and-infrastrucute" },
-    { name: "Digital Enterprise", route: "" },
+    { name: "Cloud & Infrastructure", route: "/cloud-and-infrastructure" },
+    { name: "Digital Enterprise", route: "/digital-enterprise" },
     { name: "Network Solutions", route: "" },
     { name: "Cybersecurity", route: "/cybersecurity" },
     { name: "Data & Analytics", route: "/data-and-analytics" },

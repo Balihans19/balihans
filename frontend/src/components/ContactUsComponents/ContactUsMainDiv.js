@@ -176,19 +176,20 @@ const ContactUsMainDiv = () => {
                   disabled={isSubmitting}
                 >
                   <option value="" disabled className="bg-transparent text-white">Industry*</option>
-                  <option value="Finance" className="bg-black text-white">Banking & Financial Services</option>
-                  <option value="Finance" className="bg-black text-white">Communications & Information Services</option>
-                  <option value="Finance" className="bg-black text-white">Energy, Resources & Utilities</option>
-                  <option value="Finance" className="bg-black text-white">Healthcare & Life Sciences</option>
-                  <option value="Finance" className="bg-black text-white">High-Tech</option>
-                  <option value="Finance" className="bg-black text-white">Hospitality</option>
-                  <option value="Finance" className="bg-black text-white">Insurance</option>
-                  <option value="Finance" className="bg-black text-white">Manufacturing</option>
-                  <option value="Finance" className="bg-black text-white">Media & Entertainment</option>
-                  <option value="Finance" className="bg-black text-white">Professional Services</option>
-                  <option value="Finance" className="bg-black text-white">Retail & Consumer Goods</option>
-                  <option value="Finance" className="bg-black text-white">Travel & Logistics</option>
-                  <option value="Finance" className="bg-black text-white">Transportation</option>
+                  <option value="banking-and-financial-services" className="bg-black text-white">Banking & Financial Services</option>
+                  <option value="communications-and-information-services" className="bg-black text-white">Communications & Information Services</option>
+                  <option value="energy-resources-utilities" className="bg-black text-white">Energy, Resources & Utilities</option>
+                  <option value="healthcare-and-lifesciences" className="bg-black text-white">Healthcare & Life Sciences</option>
+                  <option value="high-tech" className="bg-black text-white">High-Tech</option>
+                  <option value="hospitality" className="bg-black text-white">Hospitality</option>
+                  <option value="insurance" className="bg-black text-white">Insurance</option>
+                  <option value="manufacturing" className="bg-black text-white">Manufacturing</option>
+                  <option value="media-and-entertainment" className="bg-black text-white">Media & Entertainment</option>
+                  <option value="professional-services" className="bg-black text-white">Professional Services</option>
+                  <option value="Retail-and-consumer-goods" className="bg-black text-white">Retail & Consumer Goods</option>
+                  <option value="travel-and-logistics" className="bg-black text-white">Travel & Logistics</option>
+                  <option value="transportation" className="bg-black text-white">Transportation</option>
+                  <option value="other" className="bg-black text-white">Other</option>
                   
                 </select>
               </div>
