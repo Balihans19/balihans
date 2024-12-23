@@ -4,20 +4,21 @@ const express = require('express');
 const cors = require('cors');
 const connectDB = require('./config/db');
 
+//HomePages 
 const homePageRoutes = require('./routes/homePageRoutes');
 const homecasestudyonePageRoutes = require('./routes/homecasestudyonePageRoutes.js');
 const homecasestudytwoPageRoutes = require('./routes/homecasestudytwoPageRoutes.js');
 const homecasestudythreePageRoutes = require('./routes/homecasestudythreePageRoutes.js');
 const homecasestudyfourPageRoutes = require('./routes/homecasestudyfourPageRoutes.js');
 
-
+//AboutUsPages
 const aboutusPageRoutes = require('./routes/aboutusPageRoutes');
 const leadershipPageRoutes = require('./routes/leadershipPageRoutes');
 const diversityPageRoutes = require('./routes/diversityPageRoutes');
 const sustainabilityPageRoutes = require('./routes/sustainabilityPageRoutes');
 const customerspeakPageRoutes = require('./routes/customerspeakPageRoutes');
 
-
+//WhatWeDoPages
 const whatwedoPageRoutes = require('./routes/whatwedoPageRoutes');
 const bsfiPageRoutes=require('./routes/bsfiPageRoutes.js');
 const energyPageRoutes=require('./routes/energyPageRoutes.js');
@@ -25,6 +26,7 @@ const healthcarePageRoutes=require('./routes/healthcarePageRoutes.js');
 const communicationsPageRoutes=require('./routes/communicationsPageRoutes.js');
 
 
+//IndustriesPages
 const hightechPageRoutes=require('./routes/hightechPageRoutes.js');
 const aiPageRoutes=require('./routes/aiPageRoutes.js');
 const strategyandconsultingPageRoutes=require('./routes/strategyandconsultingPageRoutes.js');
@@ -33,10 +35,13 @@ const cybersecurityPageRoutes=require('./routes/cybersecurityPageRoutes.js');
 const dataandanalyticsPageRoutes=require('./routes/dataandanalyticsPageRoutes.js');
 const digitalenterprisePageRoutes=require('./routes/digitalenterprisePageRoutes.js');
 
-
+//PoliciesPages
 const privacypolicyPageRoutes=require('./routes/privacypolicyPageRoutes.js');
 const cookiepolicyPageRoutes=require('./routes/cookiepolicyPageRoutes.js');
+const securitypolicyPageRoutes=require('./routes/securitypolicyPageRoutes.js');
+const disclaimerPageRoutes=require('./routes/disclaimerPageRoutes.js');
 
+//ContactUsPages
 const contactusPageRoutes=require('./routes/contactusPageRoutes.js');
 const contactRoutes = require("./routes/contactRoutes");
 
@@ -104,6 +109,8 @@ app.use('/api/digitalenterprisepage', digitalenterprisePageRoutes);
 
 app.use('/api/privacypolicypage', privacypolicyPageRoutes);
 app.use('/api/cookiepolicypage', cookiepolicyPageRoutes);
+app.use('/api/securitypolicypage', securitypolicyPageRoutes);
+app.use('/api/disclaimerpage', disclaimerPageRoutes);
 
 app.use("/api/contactuspage", contactusPageRoutes);
 app.use("/api/contact", contactRoutes);

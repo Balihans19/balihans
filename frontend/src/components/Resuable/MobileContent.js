@@ -10,15 +10,26 @@ export const mobileContent =  [
         mobileContent: [
           { 
             name: 'Corporate Overview',
-            subContent: [
-              'Leadership',
-              'Our Brand',
-              'Corporate Sustainability',
-            ]
+            link:'/corporate-overview',
           },
-          { name: 'Diversity, Equity, and Inclusion' },
-          { name: 'Recognition ' },
-          { name: 'Customer Speak' },
+          { name: 'Leadership',
+            link:'/leadership',
+           },
+           { name: 'Our Brand',
+            link:'/',
+           },
+           { name: 'Corporate Sustainability',
+            link:'/sustainability',
+           },
+          { name: 'Diversity, Equity, and Inclusion',
+            link:'/diversity',
+           },
+          { name: 'Recognition ',
+            link:'/',
+          },
+          { name: 'Customer Speak',
+            link:'/customer-speak',
+           },
          
          
         ]
@@ -28,20 +39,30 @@ export const mobileContent =  [
         link:'/capabilities',
         mobileContent: [
           { name: 'Our Services' },
-          { 
-            name: 'Strategy & Consulting',
-            subContent: [
-              'Digital Enterprise',
-            ]
+          {  name: 'Strategy & Consulting',
+            link:'/strategy-and-consulting',
           },
-         
-          { name: 'Artificial Intelligence' },
-          { name: 'Cloud & Infrastructure' },
-          { name: 'Network Solutions' },
-          { name: 'Cybersecurity' },
-          { name: 'Data & Analytics' },
-          { name: 'Engineering Services' },
-          { name: 'Sustainability Services' },
+          { name: 'Artificial Intelligence',
+            link:'/ai',
+           },
+          { name: 'Cloud & Infrastructure',
+            link:'/cloud-and-infrastructure',
+           },
+          { name: 'Network Solutions',
+            
+           },
+          { name: 'Cybersecurity',
+            link:'/cybersecurity',
+           },
+          { name: 'Data & Analytics',
+            link:'/data-and-analytics',
+           },
+          { name: 'Engineering Services',
+            
+           },
+          { name: 'Sustainability Services',
+            
+           },
 
 
           { name: '' },
@@ -56,11 +77,21 @@ export const mobileContent =  [
         name: 'INDUSTRIES',
         link:'/industries',
         mobileContent: [
-          { name: 'Banking & Financial Services' },
-          { name: 'Communications & Information Services ' },
-          { name: 'Energy, Resources & Utilities ' },
-          { name: 'Healthcare & Life Sciences' },
-          { name: 'High Tech' },
+          { name: 'Banking & Financial Services',
+            link:'/bsfi',
+           },
+          { name: 'Communications & Information Services ',
+            link:'/communications',
+           },
+          { name: 'Energy, Resources & Utilities ',
+            link:'/energy',
+          },
+          { name: 'Healthcare & Life Sciences',
+            link:'/health-care',
+           },
+          { name: 'High Tech' ,
+            link:'/high-tech',
+          },
           { name: 'Hospitality' },
           { name: 'Insurance' },
           { name: 'Manufacturing' },

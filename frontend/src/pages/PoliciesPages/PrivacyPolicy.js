@@ -9,15 +9,15 @@ import { LoadingSpinner, ErrorFallback, PageWrapper } from '../../components/com
 // Lazy load components
 
 const ScrollToTop = React.lazy(() => import('../../components/Resuable/ScrollToTop'));
-const PrivacyPolicyMainDiv = React.lazy(() => import('../../components/PrivacyPolicyComponents/PrivacyPolicyMainDiv'));
-const PersonalInformation = React.lazy(() => import('../../components/PrivacyPolicyComponents/PersonalInformation'));
+const PoliciesMainDiv = React.lazy(() => import('../../components/PoliciesComponents/PoliciesMainDiv'));
+const PoliciesInfoDiv = React.lazy(() => import('../../components/PoliciesComponents/PoliciesInfoDiv'));
 
 
 
 
 // Memoized section components
-const MemoizedPrivacyPolicyMainDiv = memo(PrivacyPolicyMainDiv);
-const MemoizedPersonalInformation = memo(PersonalInformation);
+const MemoizedPoliciesMainDiv = memo(PoliciesMainDiv);
+const MemoizedPoliciesInfoDiv = memo(PoliciesInfoDiv);
 
 function PrivacyPolicy() {
 
@@ -31,13 +31,14 @@ const { data: privacypolicypageData, loading, error } = usePageData('privacypoli
 
   return (
    <PageWrapper>
-          <MemoizedPrivacyPolicyMainDiv
+          <MemoizedPoliciesMainDiv
           backgroundImage={privacypolicypageData.backgroundImage}
           categories={privacypolicypageData.categories}
           description={privacypolicypageData.description}
+          sectionType="privacy"
           />
 
-       <MemoizedPersonalInformation
+       <MemoizedPoliciesInfoDiv
        sections={privacypolicypageData.sections}
           />
 

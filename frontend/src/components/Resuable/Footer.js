@@ -149,7 +149,7 @@ const Footer = () => {
       <a href="/disclaimer" className="hover:underline">
         Disclaimer
       </a>
-      <a href="/security" className="hover:underline">
+      <a href="/security-policy" className="hover:underline">
         Security Policy
       </a>
       </div>

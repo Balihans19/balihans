@@ -9,15 +9,15 @@ import { LoadingSpinner, ErrorFallback, PageWrapper } from '../../components/com
 // Lazy load components
 
 const ScrollToTop = React.lazy(() => import('../../components/Resuable/ScrollToTop'));
-const CookieMainDiv = React.lazy(() => import('../../components/CookiePolicyComponents/CookieMainDiv'));
-const CookieInfo = React.lazy(() => import('../../components/CookiePolicyComponents/CookieInfo'));
+const PoliciesMainDiv = React.lazy(() => import('../../components/PoliciesComponents/PoliciesMainDiv'));
+const PoliciesInfoDiv = React.lazy(() => import('../../components/PoliciesComponents/PoliciesInfoDiv'));
 
 
 
 
 // Memoized section components
-const MemoizedCookieMainDiv = memo(CookieMainDiv);
-const MemoizedCookieInfo = memo(CookieInfo);
+const MemoizedPoliciesMainDiv = memo(PoliciesMainDiv);
+const MemoizedPoliciesInfoDiv = memo(PoliciesInfoDiv);
 
 function CookiePolicy() {
 
@@ -30,13 +30,13 @@ const { data: cookiepolicypageData, loading, error } = usePageData('cookiepolicy
 
   return (
    <PageWrapper>
-          <MemoizedCookieMainDiv
+          <MemoizedPoliciesMainDiv
           backgroundImage={cookiepolicypageData.backgroundImage}
           categories={cookiepolicypageData.categories}
           content={cookiepolicypageData.content}
           />
 
-       <MemoizedCookieInfo
+       <MemoizedPoliciesInfoDiv
        sections={cookiepolicypageData.sections}
           />
 
