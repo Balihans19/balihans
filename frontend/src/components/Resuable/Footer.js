@@ -35,7 +35,7 @@ const Footer = () => {
     { name: "Network Solutions", route: "" },
     { name: "Cybersecurity", route: "/cybersecurity" },
     { name: "Data & Analytics", route: "/data-and-analytics" },
-    { name: "Web3 Solutions", route: "" },
+    { name: "Web3 Solutions", route: "/web3-solutions" },
     { name: "Sustainability Services", route: "" },
   ];
 

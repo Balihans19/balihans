@@ -26,7 +26,7 @@ const AiServices = ({
   backgroundType, // Type of background, can be "image" or "video"
 }) => {
   return (
-    <section className="relative w-full h-screen">
+    <section className="relative w-full h-screen ">
       {/* Conditional rendering of the background */}
       {backgroundType === "image" && backgroundImage && (
         <img

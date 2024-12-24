@@ -24,6 +24,7 @@ import Energy from './pages/IndustriesPages/Energy';
 import HealthCare from './pages/IndustriesPages/HealthCare';
 import Communications from './pages/IndustriesPages/Communications';
 import HighTech from './pages/IndustriesPages/HighTech';
+import Web3Solutions from './pages/WhatWeDoPages/Web3Solutions';
 
 
 import AI from './pages/WhatWeDoPages/AI';
@@ -79,6 +80,7 @@ function App() {
         <Route path="/cybersecurity" element={<Cybersecurity />} />
         <Route path="/data-and-analytics" element={<DataAndAnalytics />} />
         <Route path="/digital-enterprise" element={<DigitalEnterprise />} />
+        <Route path="/web3-solutions" element={<Web3Solutions />} />
 
         {/* Industries Pages */}
 

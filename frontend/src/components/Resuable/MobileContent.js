@@ -73,7 +73,9 @@ export const mobileContent = [
         link: '/data-and-analytics',
       },
       
-      { name: 'Web3 Solutions' },
+      { name: 'Web3 Solutions',
+        link: '/web3-solutions',
+       },
       { name: 'Sustainability Services' },
       // Spacer
       { name: '' },

@@ -20,20 +20,23 @@ const customerspeakPageRoutes = require('./routes/customerspeakPageRoutes');
 
 //WhatWeDoPages
 const whatwedoPageRoutes = require('./routes/whatwedoPageRoutes');
-const bsfiPageRoutes=require('./routes/bsfiPageRoutes.js');
-const energyPageRoutes=require('./routes/energyPageRoutes.js');
-const healthcarePageRoutes=require('./routes/healthcarePageRoutes.js');
-const communicationsPageRoutes=require('./routes/communicationsPageRoutes.js');
-
-
-//IndustriesPages
-const hightechPageRoutes=require('./routes/hightechPageRoutes.js');
 const aiPageRoutes=require('./routes/aiPageRoutes.js');
 const strategyandconsultingPageRoutes=require('./routes/strategyandconsultingPageRoutes.js');
 const cloudandinfrastructurePageRoutes=require('./routes/cloudandinfrastructurePageRoutes.js');
 const cybersecurityPageRoutes=require('./routes/cybersecurityPageRoutes.js');
 const dataandanalyticsPageRoutes=require('./routes/dataandanalyticsPageRoutes.js');
 const digitalenterprisePageRoutes=require('./routes/digitalenterprisePageRoutes.js');
+const web3solutionsPageRoutes=require('./routes/web3solutionsPageRoutes.js');
+
+
+//IndustriesPages
+const hightechPageRoutes=require('./routes/hightechPageRoutes.js');
+const bsfiPageRoutes=require('./routes/bsfiPageRoutes.js');
+const energyPageRoutes=require('./routes/energyPageRoutes.js');
+const healthcarePageRoutes=require('./routes/healthcarePageRoutes.js');
+const communicationsPageRoutes=require('./routes/communicationsPageRoutes.js');
+
+
 
 //PoliciesPages
 const privacypolicyPageRoutes=require('./routes/privacypolicyPageRoutes.js');
@@ -93,19 +96,20 @@ app.use('/api/customerspeakpage', customerspeakPageRoutes);
 
 
 app.use('/api/whatwedopage', whatwedoPageRoutes);
-app.use('/api/bsfipage', bsfiPageRoutes);
-app.use('/api/energypage', energyPageRoutes);
-app.use('/api/healthcarepage', healthcarePageRoutes);
-app.use('/api/communicationspage', communicationsPageRoutes);
-app.use('/api/hightechpage', hightechPageRoutes);
-
-
 app.use('/api/aipage', aiPageRoutes);
 app.use('/api/strategyandconsultingpage', strategyandconsultingPageRoutes);
 app.use('/api/cloudandinfrastructurepage', cloudandinfrastructurePageRoutes);
 app.use('/api/cybersecuritypage', cybersecurityPageRoutes);
 app.use('/api/dataandanalyticspage', dataandanalyticsPageRoutes);
 app.use('/api/digitalenterprisepage', digitalenterprisePageRoutes);
+app.use('/api/web3solutionspage', web3solutionsPageRoutes);
+
+
+app.use('/api/bsfipage', bsfiPageRoutes);
+app.use('/api/energypage', energyPageRoutes);
+app.use('/api/healthcarepage', healthcarePageRoutes);
+app.use('/api/communicationspage', communicationsPageRoutes);
+app.use('/api/hightechpage', hightechPageRoutes);
 
 app.use('/api/privacypolicypage', privacypolicyPageRoutes);
 app.use('/api/cookiepolicypage', cookiepolicyPageRoutes);

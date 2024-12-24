@@ -11,6 +11,9 @@ const links = [
   "/ai",
   "/cybersecurity",
   "/digital-enterprise",
+  "/testing-services",
+  "/network-solutions",
+  "/web3-solutions",
 ];
 
 /**
