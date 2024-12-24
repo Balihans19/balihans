@@ -1,7 +1,18 @@
 import React from "react";
 
+/**
+ * A flexible component for displaying a sustainability section
+ * with a background image, text content, and an optional image.
+ *
+ * props - Props for the SustainabilityMainDiv component.
+ * props.backgroundImage - URL of the background image.
+ * props.title - The main title of the section.
+ * props.subtitle - A subtitle for the section.
+ * props.description - The description text for the section.
+ * props.imageSrc - URL of the image to display alongside the text.
+ */
 function SustainabilityMainDiv({
-  backgroundImage, 
+  backgroundImage,
   title,
   subtitle,
   description,
@@ -16,10 +27,10 @@ function SustainabilityMainDiv({
           className="absolute inset-0 overflow-hidden"
           style={{ clipPath: "polygon(0 0, 100% 0, 100% 11%, 0 100%)" }}
         >
-          {/* Dark Overlay */}
+          {/* Dark Overlay to enhance contrast */}
           <div className={`absolute inset-0 bg-black/50 z-10`}></div>
 
-          {/* Background Pattern */}
+          {/* Background Image */}
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
@@ -43,12 +54,15 @@ function SustainabilityMainDiv({
 
           {/* Text Content */}
           <div className="flex flex-col justify-center text-center md:text-left">
+            {/* Section Title */}
             <h1 className="text-xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8">
               {title}
             </h1>
+            {/* Section Subtitle */}
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-4 sm:mb-6">
               {subtitle}
             </h2>
+            {/* Section Description */}
             <p className="text-sm sm:text-base md:text-lg leading-relaxed">
               {description}
             </p>
@@ -60,3 +74,6 @@ function SustainabilityMainDiv({
 }
 
 export default SustainabilityMainDiv;
+
+
+

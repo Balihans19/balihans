@@ -5,7 +5,7 @@ import { usePageData} from '../../hooks/usePageData';
 import { LoadingSpinner, ErrorFallback, PageWrapper } from '../../components/common/PageWrapper';
 import UsePageTitle from '../../components/Resuable/UsePageTitle';
 
-// Lazy load components
+// Lazy load components for performance optimization
 
 const ScrollToTop = React.lazy(() => import('../../components/Resuable/ScrollToTop'));
 const CaseStudyMainDiv = React.lazy(() => import('../../components/CaseStudyComponents/CaseStudyMainDiv'));
@@ -16,7 +16,7 @@ const AiServices = React.lazy(() => import('../../components/AIComponents/AiServ
 const DuoCarousel = React.lazy(() => import('../../components/Resuable/DuoCarousel'));
 
 
-// Memoized section components
+// Memoized section components to avoid unnecessary re-renders
 const MemoizedCaseStudyMainDiv = memo(CaseStudyMainDiv);
 const MemoizedCaseStudySolutions = memo(CaseStudySolutions);
 const MemoizedSpotlight = memo(Spotlight);
@@ -26,15 +26,23 @@ const MemoizedContactCareers = memo(ContactCareers);
 
 function HomeCaseStudyTwo() {
 
+   // Set the page title for SEO and page rendering
   UsePageTitle('Case study: Elevating Security Posture with a 24/7 SOC');
-
+  
+  // Fetch the homecasestudytwopage data using a custom hook
   const { data: homecasestudytwopageData, loading, error } = usePageData('homecasestudytwopage');
-
+  
+  // Show loading spinner while fetching data
   if (loading) return <LoadingSpinner />;
+
+  // Show error fallback UI if there is an error
   if (error) return <ErrorFallback error={{ message: error }} />;
+
+  // If there's no homecasestudytwopage data, return null to prevent rendering empty UI
   if (!homecasestudytwopageData) return null;
 
   return (
+    // Wrapping the page in a PageWrapper for error handling and lazy loading
     <PageWrapper>
           <MemoizedCaseStudyMainDiv
             backgroundImageUrl={homecasestudytwopageData.backgroundImageUrl}
@@ -68,6 +76,8 @@ function HomeCaseStudyTwo() {
           <MemoizedContactCareers 
           variant="dark" 
           />
+
+          {/* Scroll to Top button to improve user experience */}
           <ScrollToTop />
           </PageWrapper>
   );

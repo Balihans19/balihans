@@ -2,6 +2,16 @@ import React from 'react';
 import { MoveRight } from 'lucide-react';
 import { useLocation } from 'react-router-dom'; // Import useLocation hook
 
+
+/**
+ * AboutSection Component
+ * A responsive section with dynamic navigation links that filter based on current route
+ * 
+ * @component
+ * props
+ *  props.backgroundImageUrl - URL for the background image
+ */
+
 const AboutSection = ({ backgroundImageUrl }) => {
   const location = useLocation(); // Get current route using useLocation hook
 

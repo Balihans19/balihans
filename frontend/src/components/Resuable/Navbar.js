@@ -8,9 +8,9 @@ import '../../App.css';
 /**
  * Desktop Navbar Component
  * Renders the navigation menu for desktop view
- * @param {Object[]} navItems - Array of navigation items
- * @param {number|null} activeDropdown - Index of the currently active dropdown
- * @param {Function} setActiveDropdown - Function to set the active dropdown
+ *  navItems - Array of navigation items
+ *  activeDropdown - Index of the currently active dropdown
+ *  setActiveDropdown - Function to set the active dropdown
  */
 const DesktopNavbar = ({ navItems, activeDropdown, setActiveDropdown }) => {
   const [currentContent, setCurrentContent] = useState(null);
@@ -96,11 +96,11 @@ const DesktopNavbar = ({ navItems, activeDropdown, setActiveDropdown }) => {
 /**
  * Mobile Navigation Item Component
  * Renders a single navigation item in the mobile view
- * @param {Object} item - Navigation item data
- * @param {string} expandedItem - Name of the currently expanded item
- * @param {Function} setExpandedItem - Function to set the expanded item
- * @param {Function} setActiveSubmenu - Function to set the active submenu
- * @param {Function} closeMenu - Function to close the mobile menu
+ *  item - Navigation item data
+ *  expandedItem - Name of the currently expanded item
+ *  setExpandedItem - Function to set the expanded item
+ *  setActiveSubmenu - Function to set the active submenu
+ *  closeMenu - Function to close the mobile menu
  */
 
 
@@ -167,9 +167,9 @@ const MobileNavItem = ({ item, expandedItem, setExpandedItem, setActiveSubmenu, 
 /**
  * Mobile Submenu Component
  * Renders the submenu for mobile view
- * @param {Object} submenu - Submenu data
- * @param {Function} setActiveSubmenu - Function to set the active submenu
- * @param {Function} closeMenu - Function to close the mobile menu
+ *  submenu - Submenu data
+ *  setActiveSubmenu - Function to set the active submenu
+ *  closeMenu - Function to close the mobile menu
  */
 
 
@@ -209,7 +209,7 @@ const MobileSubmenu = ({ submenu, setActiveSubmenu, closeMenu }) => {
 /**
  * Mobile Navbar Component
  * Renders the navigation menu for mobile view
- * @param {Object[]} navItems - Array of navigation items
+ *  navItems - Array of navigation items
  */
 
 

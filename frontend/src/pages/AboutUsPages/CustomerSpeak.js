@@ -3,29 +3,39 @@ import { usePageData } from '../../hooks/usePageData';
 import { LoadingSpinner, ErrorFallback, PageWrapper } from '../../components/common/PageWrapper';
 import UsePageTitle from '../../components/Resuable/UsePageTitle';
 
-// Lazy load components
+// Lazy load components for performance optimization
 const MainDiv = React.lazy(() => import('../../components/Resuable/MainDiv'));
 const CustomerSpeakDiv = React.lazy(() => import('../../components/CustomerSpeakComponents/CustomerSpeakDiv'))
 const ScrollToTop = React.lazy(() => import('../../components/Resuable/ScrollToTop'));
 const ContactCareers = React.lazy(() => import('../../components/Resuable/ContactCareers'));
 const AiServices = React.lazy(() => import('../../components/AIComponents/AiServices'));
 
-// Memoized components
+// Memoized components to avoid unnecessary re-renders
 const MemoizedMainDiv = memo(MainDiv);
 const MemoizedCustomerSpeakDiv = memo(CustomerSpeakDiv);
 const MemoizedContactCareers = memo(ContactCareers);
 const MemoizedAiServices = memo(AiServices);
 
 function CustomerSpeak() {
+
+   // Set the page title for SEO and page rendering
   UsePageTitle('Customer Speak ');
   
+   // Fetch the customerspeakpage data using a custom hook
   const { data: customerspeakpageData, loading, error } = usePageData('customerspeakpage');
-
+  
+  // Show loading spinner while fetching data
   if (loading) return <LoadingSpinner />;
+
+   // Show error fallback UI if there is an error
   if (error) return <ErrorFallback error={{ message: error }} />;
+
+  // If there's no customerspeakpage data, return null to prevent rendering empty UI
   if (!customerspeakpageData) return null;
 
   return (
+
+    // Wrapping the page in a PageWrapper for error handling and lazy loading
     <PageWrapper>
 
 

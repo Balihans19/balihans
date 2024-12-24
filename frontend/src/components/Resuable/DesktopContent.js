@@ -110,7 +110,9 @@ export const desktopContent = [
           </div>
           <div className="w-full min-w-[200px] my-4 md:my-8">
             <ul className="list-none text-lg p-0">
-              <li className="mb-2">Engineering Services</li>
+            <li className="mb-2">
+                <Link to="/web-3-solutions" className="text-white hover:underline">Web3 Solutions</Link>
+              </li>
               <li className="mb-2">Sustainability Services</li>
           </ul>
        </div>

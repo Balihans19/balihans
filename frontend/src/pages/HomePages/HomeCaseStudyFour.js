@@ -5,7 +5,7 @@ import { usePageData} from '../../hooks/usePageData';
 import { LoadingSpinner, ErrorFallback, PageWrapper } from '../../components/common/PageWrapper';
 import UsePageTitle from '../../components/Resuable/UsePageTitle';
 
-// Lazy load components
+// Lazy load components for performance optimization
 
 const ScrollToTop = React.lazy(() => import('../../components/Resuable/ScrollToTop'));
 const CaseStudyMainDiv = React.lazy(() => import('../../components/CaseStudyComponents/CaseStudyMainDiv'));
@@ -16,7 +16,7 @@ const AiServices = React.lazy(() => import('../../components/AIComponents/AiServ
 const DuoCarousel = React.lazy(() => import('../../components/Resuable/DuoCarousel'));
 
 
-// Memoized section components
+// Memoized section components to avoid unnecessary re-renders
 const MemoizedCaseStudyMainDiv = memo(CaseStudyMainDiv);
 const MemoizedCaseStudySolutions = memo(CaseStudySolutions);
 const MemoizedSpotlight = memo(Spotlight);
@@ -25,17 +25,22 @@ const MemoizedDuoCarousel = memo(DuoCarousel);
 const MemoizedContactCareers = memo(ContactCareers);
 
 function HomeCaseStudyFour() {
-
+// Set the page title for SEO and page rendering
   UsePageTitle('Case study: Optimizing E-commerce Payments for Seamless Checkout');
-
+ // Fetch the homecasestudyfourpage data using a custom hook
   const { data: homecasestudyfourpageData, loading, error } = usePageData('homecasestudyfourpage');
-
+  
+  // Show loading spinner while fetching data
   if (loading) return <LoadingSpinner />;
+   // Show error fallback UI if there is an error
   if (error) return <ErrorFallback error={{ message: error }} />;
+  // If there's no homecasestudyfourpage data, return null to prevent rendering empty UI
   if (!homecasestudyfourpageData) return null;
 
   return (
+     // Wrapping the page in a PageWrapper for error handling and lazy loading
     <PageWrapper>
+      
           <MemoizedCaseStudyMainDiv
             backgroundImageUrl={homecasestudyfourpageData.backgroundImageUrl}
             sectionTitle={homecasestudyfourpageData.sectionTitle}
@@ -69,9 +74,10 @@ function HomeCaseStudyFour() {
           <MemoizedContactCareers 
           variant="dark" 
           />
+          {/* Scroll to Top button to improve user experience */}
           <ScrollToTop />
           </PageWrapper>
   );
 }
-
+// Memoizing the entire Home component to prevent unnecessary re-renders
 export default memo(HomeCaseStudyFour);

@@ -2,27 +2,33 @@ import React from 'react';
 
 /**
  * PoliciesMainDiv Component
- * This component renders a reusable section for various types of content.
- * It can be used for Cookie, Disclaimer, Privacy Policy, and Security Policy.
- * All content and background images are configurable through props.
+ * A reusable section component for policy-related content with configurable background and content
+ * 
+ *  props
+ * props.backgroundImage - URL for background image
+ *  [props.categories=[]] - Category titles
+ *  [props.content=[]] - Content sections
+ *  [props.description=null] - Optional description paragraphs for privacy policy
+ *  [props.sectionType='default'] - Section type identifier
  */
+
 const PoliciesMainDiv = ({
   backgroundImage,
   categories = [],
   content = [],
-  description = null,  // Optional for some sections like Privacy Policy
-  sectionType = 'default' // Type of section (e.g., 'default', 'privacy', 'security')
+  description = null,
+  sectionType = 'default'
 }) => {
   return (
     <div
       className="relative min-h-screen lg:min-h-[850px] text-white w-full bg-cover bg-center mt-16 lg:mt-0"
       style={{ backgroundImage: `url('${backgroundImage}')` }}
     >
-      {/* Overlay for gradient effect */}
+      {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-l from-black to-transparent"></div>
 
       <div className="relative z-10 max-w-full mt-12 md:mt-0 px-4 py-16 sm:px-6 lg:px-20 xl:px-36">
-        {/* Section Title and Categories */}
+        {/* Header categories */}
         <div className="flex justify-end items-start">
           <div className="max-w-2xl w-full">
             <div className="flex gap-12 text-left font-bold text-base sm:text-lg lg:text-xl">
@@ -33,15 +39,15 @@ const PoliciesMainDiv = ({
           </div>
         </div>
 
-        {/* Horizontal Rule */}
+        {/* Divider */}
         <div className="flex justify-end items-start">
           <hr className="w-full my-6" />
         </div>
 
-        {/* Description or Content */}
+        {/* Main content */}
         <div className="flex justify-end items-start">
           <div className="text-left max-w-2xl w-full">
-            {/* Optional Description for Privacy Policy */}
+            {/* Privacy policy specific content */}
             {sectionType === 'privacy' && description && (
               <>
                 <p className="text-base sm:text-xl lg:text-2xl mb-8">
@@ -55,7 +61,7 @@ const PoliciesMainDiv = ({
               </>
             )}
 
-            {/* Regular Content for other sections */}
+            {/* Default content sections */}
             {sectionType !== 'privacy' && content.map((section, index) => (
               <div key={index} className="mb-8">
                 <p className="text-base sm:text-xl lg:text-2xl mb-4">{section.title}</p>
@@ -70,3 +76,6 @@ const PoliciesMainDiv = ({
 };
 
 export default PoliciesMainDiv;
+
+
+

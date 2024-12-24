@@ -5,7 +5,7 @@ import { usePageData} from '../../hooks/usePageData';
 import { LoadingSpinner, ErrorFallback, PageWrapper } from '../../components/common/PageWrapper';
 import UsePageTitle from '../../components/Resuable/UsePageTitle';
 
-// Lazy load components
+// Lazy load components for performance optimization
 
 const ScrollToTop = React.lazy(() => import('../../components/Resuable/ScrollToTop'));
 const MainDiv = React.lazy(() => import('../../components/Resuable/MainDiv'));
@@ -16,7 +16,7 @@ const AiServices = React.lazy(() => import('../../components/AIComponents/AiServ
 const DuoCarousel = React.lazy(() => import('../../components/Resuable/DuoCarousel'));
 
 
-// Memoized section components
+// Memoized section components to avoid unnecessary re-renders
 const MemoizedMainDiv = memo(MainDiv);
 const MemoizedBankingSolutions = memo(BankingSolutions);
 const MemoizedSpotlight = memo(Spotlight);
@@ -25,16 +25,26 @@ const MemoizedDuoCarousel = memo(DuoCarousel);
 const MemoizedContactCareers = memo(ContactCareers);
 
 function DigitalEnterprise() {
-
+  
+  // Set the page title for SEO and page rendering
   UsePageTitle('Digital Enterprise Services');
-
+  
+  // Fetch the digitalenterprisepage data using a custom hook
   const { data: digitalenterprisepageData, loading, error } = usePageData('digitalenterprisepage');
-
+  
+  // Show loading spinner while fetching data
   if (loading) return <LoadingSpinner />;
+
+  // Show error fallback UI if there is an error
   if (error) return <ErrorFallback error={{ message: error }} />;
+
+  // If there's no digitalenterprisepage data, return null to prevent rendering empty UI
   if (!digitalenterprisepageData) return null;
 
   return (
+
+    
+// Wrapping the page in a PageWrapper for error handling and lazy loading
     <PageWrapper>
           <MemoizedMainDiv
             videoData={digitalenterprisepageData.videoData}

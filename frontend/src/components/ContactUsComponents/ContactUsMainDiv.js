@@ -1,8 +1,21 @@
-
 import React, { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+import { Check, X} from 'lucide-react';
+
+/*
+ * This component renders a full-page contact form with the following features:
+ * - Form validation for required fields
+ * - Google reCAPTCHA integration for spam prevention
+ * - Responsive design with mobile-first approach
+ * - Real-time form state management
+ * - Error handling and success notifications
+ * - Custom styling with Tailwind CSS
+ * 
+ * @returns {JSX.Element} A contact form component with background image and gradient overlay
+ */
 
 const ContactUsMainDiv = () => {
+  // Form state management using useState hook
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -10,28 +23,51 @@ const ContactUsMainDiv = () => {
     message: "",
   });
 
+  // State for managing reCAPTCHA verification
   const [captchaValue, setCaptchaValue] = useState(null);
+  // State for managing notification display and content
   const [notification, setNotification] = useState({ show: false, message: "", type: "" });
+  // State for tracking form submission status
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  /**
+   * Handles form input changes and updates the form state
+   * @param {Object} e - The event object from the input change
+   */
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
+  /**
+   * Handles reCAPTCHA verification
+   * @param {string} value - The verification token from reCAPTCHA
+   */
   const handleCaptcha = (value) => {
     setCaptchaValue(value);
   };
 
+  /**
+   * Displays a notification toast message
+   * @param {string} message - The message to display
+   * @param {string} type - The type of notification ('success' or 'error')
+   */
   const showNotification = (message, type) => {
     setNotification({ show: true, message, type });
+    // Auto-hide notification after 5 seconds
     setTimeout(() => {
       setNotification({ show: false, message: "", type: "" });
     }, 5000);
   };
 
+  /**
+   * Handles form submission
+   * @param {Object} e - The form submission event
+   */
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Validate reCAPTCHA
     if (!captchaValue) {
         showNotification("Please complete the reCAPTCHA", "error");
         return;
@@ -40,6 +76,7 @@ const ContactUsMainDiv = () => {
     setIsSubmitting(true);
 
     try {
+        // Send form data to the API endpoint
         const response = await fetch(`${process.env.REACT_APP_API_URL}/api/contact`, {
             method: "POST",
             headers: {
@@ -49,7 +86,9 @@ const ContactUsMainDiv = () => {
         });
 
         if (response.ok) {
+            // Handle successful submission
             showNotification("Thank you for contacting us. We'll get back to you shortly over email", "success");
+            // Reset form state
             setFormData({
                 name: "",
                 email: "",
@@ -58,6 +97,7 @@ const ContactUsMainDiv = () => {
             });
             setCaptchaValue(null);
         } else {
+            // Handle API error response
             showNotification("Failed to send message. Please try again later.", "error");
         }
     } catch (error) {
@@ -66,7 +106,7 @@ const ContactUsMainDiv = () => {
     } finally {
         setIsSubmitting(false);
     }
-};
+  };
 
   return (
     <div       
@@ -76,7 +116,7 @@ const ContactUsMainDiv = () => {
         filter: 'grayscale(100%)'
       }}     
     >     
-      {/* Notification Toast */}
+      {/* Notification Toast - Displays success/error messages */}
       {notification.show && (
         <div
           className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 px-6 py-3 rounded-lg shadow-lg ${
@@ -86,15 +126,12 @@ const ContactUsMainDiv = () => {
           }`}
         >
           <div className="flex items-center">
+            {/* Success/Error icons */}
             <span className="mr-2">
               {notification.type === 'success' ? (
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                </svg>
+                <Check className="w-6 h-6 text-white" />
               ) : (
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd"/>
-                </svg>
+                <X className="w-6 h-6 text-white" />
               )}
             </span>
             {notification.message}
@@ -102,11 +139,12 @@ const ContactUsMainDiv = () => {
         </div>
       )}
 
-      {/* Overlay for gradient effect */}       
+      {/* Background gradient overlay for better text visibility */}       
       <div className="absolute inset-0 bg-gradient-to-l from-black to-transparent"></div>        
       
+      {/* Main content container */}
       <div className="relative z-10 max-w-full mt-12 md:mt-0 px-4 py-16 sm:px-6 lg:px-20 xl:px-36">
-        {/* Section Title and Categories */}
+        {/* Section header */}
         <div className="flex justify-end items-start">
           <div className="max-w-3xl w-full pl-6">
             <div className="flex gap-4 text-left font-bold text-base sm:text-lg lg:text-2xl">
@@ -115,15 +153,15 @@ const ContactUsMainDiv = () => {
           </div>
         </div>
 
-        {/* Horizontal Rule */}
+        {/* Decorative horizontal rule */}
         <div className="flex justify-end items-start">
           <hr className="w-full my-6" />
         </div>
 
-        {/* Description */}
+        {/* Form container */}
         <div className="flex justify-end items-start">
           <div className="flex flex-col w-full max-w-3xl p-6 rounded-md relative">
-            {/* Heading Section */}
+            {/* Form description */}
             <div>
               <p className="mb-4 text-sm">
                 Before connecting you with the right expert, we'll need a few details
@@ -131,10 +169,11 @@ const ContactUsMainDiv = () => {
               </p>
             </div>
 
-            {/* Form Section */}
+            {/* Contact form */}
             <form onSubmit={handleSubmit} className="space-y-4">
-              {/* Name and Email in One Line */}
+              {/* Name and Email fields row */}
               <div className="flex space-x-4">
+                {/* Name input */}
                 <div className="flex-1">
                   <input
                     type="text"
@@ -149,6 +188,7 @@ const ContactUsMainDiv = () => {
                   />
                 </div>
 
+                {/* Email input */}
                 <div className="flex-1">
                   <input
                     type="email"
@@ -164,7 +204,7 @@ const ContactUsMainDiv = () => {
                 </div>
               </div>
 
-              {/* Industry */}
+              {/* Industry dropdown */}
               <div>
                 <select
                   id="industry"
@@ -176,6 +216,7 @@ const ContactUsMainDiv = () => {
                   disabled={isSubmitting}
                 >
                   <option value="" disabled className="bg-transparent text-white">Industry*</option>
+                  {/* Industry options with consistent styling */}
                   <option value="banking-and-financial-services" className="bg-black text-white">Banking & Financial Services</option>
                   <option value="communications-and-information-services" className="bg-black text-white">Communications & Information Services</option>
                   <option value="energy-resources-utilities" className="bg-black text-white">Energy, Resources & Utilities</option>
@@ -190,11 +231,10 @@ const ContactUsMainDiv = () => {
                   <option value="travel-and-logistics" className="bg-black text-white">Travel & Logistics</option>
                   <option value="transportation" className="bg-black text-white">Transportation</option>
                   <option value="other" className="bg-black text-white">Other</option>
-                  
                 </select>
               </div>
 
-              {/* Message */}
+              {/* Message textarea */}
               <div>
                 <textarea
                   id="message"
@@ -209,7 +249,7 @@ const ContactUsMainDiv = () => {
                 ></textarea>
               </div>
 
-              {/* reCAPTCHA */}
+              {/* reCAPTCHA integration */}
               <div>
                 <ReCAPTCHA
                   sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
@@ -217,7 +257,7 @@ const ContactUsMainDiv = () => {
                 />
               </div>
 
-              {/* Consent */}
+              {/* Consent checkbox */}
               <div className="flex items-center space-x-2">
                 <input 
                   type="checkbox" 
@@ -231,6 +271,7 @@ const ContactUsMainDiv = () => {
                 </label>
               </div>
 
+              {/* Privacy policy link */}
               <div className="flex items-center space-x-2">
                 <label className="text-sm">
                   For further details on how your personal data will be processed and how your consent can be managed, refer to the{" "}
@@ -240,7 +281,7 @@ const ContactUsMainDiv = () => {
                 </label>
               </div>
             
-              {/* Submit Button */}
+              {/* Submit button with loading state */}
               <div>
                 <button
                   type="submit"
@@ -260,3 +301,4 @@ const ContactUsMainDiv = () => {
 };
 
 export default ContactUsMainDiv;
+
