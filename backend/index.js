@@ -27,6 +27,8 @@ const cybersecurityPageRoutes=require('./routes/cybersecurityPageRoutes.js');
 const dataandanalyticsPageRoutes=require('./routes/dataandanalyticsPageRoutes.js');
 const digitalenterprisePageRoutes=require('./routes/digitalenterprisePageRoutes.js');
 const web3solutionsPageRoutes=require('./routes/web3solutionsPageRoutes.js');
+const iotPageRoutes=require('./routes/iotPageRoutes.js');
+const testingservicesPageRoutes=require('./routes/testingservicesPageRoutes.js');
 
 
 //IndustriesPages
@@ -103,6 +105,8 @@ app.use('/api/cybersecuritypage', cybersecurityPageRoutes);
 app.use('/api/dataandanalyticspage', dataandanalyticsPageRoutes);
 app.use('/api/digitalenterprisepage', digitalenterprisePageRoutes);
 app.use('/api/web3solutionspage', web3solutionsPageRoutes);
+app.use('/api/iotpage', iotPageRoutes);
+app.use('/api/testingservicespage', testingservicesPageRoutes);
 
 
 app.use('/api/bsfipage', bsfiPageRoutes);

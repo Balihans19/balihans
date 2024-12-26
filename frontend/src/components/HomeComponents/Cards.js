@@ -8,11 +8,11 @@ import { Link } from 'react-router-dom';
 const links = [
   "/strategy-and-consulting",
   "/cloud-and-infrastructure",
-  "/ai",
+  "/artifical-intelligence",
   "/cybersecurity",
   "/digital-enterprise",
   "/testing-services",
-  "/network-solutions",
+  "/internet-of-things",
   "/web3-solutions",
 ];
 

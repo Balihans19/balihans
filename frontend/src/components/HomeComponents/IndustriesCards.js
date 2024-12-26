@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 // Predefined navigation links for industry routes
 const links = [
-  "/bsfi",
-  "/communications", 
-  "/energy",
-  "/health-care",
+  "/banking-and-financial-services",
+  "/communications-and-information-services", 
+  "/energy-resources-and-utilities",
+  "/healthcare-and-life-sciences",
   "/high-tech",
 ];
 

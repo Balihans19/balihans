@@ -38,7 +38,7 @@ export const desktopContent = [
                 <Link to="/" className="text-white hover:underline">Our Brand</Link>
               </li>
               <li className="mb-2">
-                <Link to="/sustainability" className="text-white hover:underline">Corporate Sustainability</Link>
+                <Link to="/corporate-sustainability" className="text-white hover:underline">Corporate Sustainability</Link>
               </li>
             </ul>
           </div>
@@ -46,7 +46,7 @@ export const desktopContent = [
           <div className="w-full min-w-[300px] my-4 md:my-8">
             <ul className="list-none text-base lg:text-lg p-0">
               <li className="mb-2">
-                <Link to="/diversity" className="text-white hover:underline">Diversity, Equity, and Inclusion</Link>
+                <Link to="/diversity-equity-and-inclusion" className="text-white hover:underline">Diversity, Equity, and Inclusion</Link>
               </li>
               <li className="mb-2">
                 <Link to="/" className="text-white hover:underline">Recogintion</Link>
@@ -86,7 +86,7 @@ export const desktopContent = [
             <h3 className="text-lg lg:text-xl mb-5"><Link to="/strategy-and-consulting" className="text-white hover:underline">Strategy & Consulting</Link> </h3>
             <ul className="list-none text-base lg:text-lg p-0">
             <li className="mb-2">
-                <Link to="/ai" className="text-white hover:underline">Artificial Intelligence</Link>
+                <Link to="/artifical-intelligence" className="text-white hover:underline">Artificial Intelligence</Link>
               </li>
               <li className="mb-2">
                 <Link to="/cloud-and-infrastructure" className="text-white hover:underline">Cloud & Infrastructure</Link>
@@ -99,12 +99,14 @@ export const desktopContent = [
     
           <div className="w-full min-w-[200px] my-4 md:my-8">
             <ul className="list-none text-base lg:text-lg p-0">
-            <li className="mb-2">Network Solutions</li>
               <li className="mb-2">
                 <Link to="/cybersecurity" className="text-white hover:underline">Cybersecurity</Link>
               </li>
               <li className="mb-2">
                 <Link to="/data-and-analytics" className="text-white hover:underline">Data & Analytics</Link>
+              </li>
+              <li className="mb-2">
+                <Link to="/internet-of-things" className="text-white hover:underline">Internet of Things (IoT)</Link>
               </li>
             </ul>
           </div>
@@ -113,7 +115,10 @@ export const desktopContent = [
             <li className="mb-2">
                 <Link to="/web3-solutions" className="text-white hover:underline">Web3 Solutions</Link>
               </li>
-              <li className="mb-2">Sustainability Services</li>
+              <li className="mb-2">
+                <Link to="/testing-services" className="text-white hover:underline">Testing Services</Link>
+              </li>
+
           </ul>
        </div>
         </div>
@@ -158,16 +163,16 @@ export const desktopContent = [
             <ul className="list-none text-base lg:text-lg p-0">
               
               <li className="mb-2">
-                <Link to="/bsfi" className="text-white hover:underline">Banking & Financial Services</Link>
+                <Link to="/banking-and-financial-services" className="text-white hover:underline">Banking & Financial Services</Link>
               </li>
               <li className="mb-2">
-                <Link to="/communications" className="text-white hover:underline">Communications & Information Services</Link>
+                <Link to="/communications-and-information-services" className="text-white hover:underline">Communications & Information Services</Link>
               </li>
               <li className="mb-2">
-                <Link to="/energy" className="text-white hover:underline">Energy, Resources & Utilities</Link>
+                <Link to="/energy-resources-and-utilities" className="text-white hover:underline">Energy, Resources & Utilities</Link>
               </li>
               <li className="mb-2">
-                <Link to="/health-care" className="text-white hover:underline">Healthcare & Life Sciences</Link>
+                <Link to="/healthcare-and-life-sciences" className="text-white hover:underline">Healthcare & Life Sciences</Link>
               </li>
               <li className="mb-2">
                 <Link to="/high-tech" className="text-white hover:underline">High Tech</Link>

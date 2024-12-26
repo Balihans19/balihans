@@ -4,10 +4,10 @@ import { MoveRight } from 'lucide-react'; // Icon component for indicating navig
 
 // Array of services, each with a title and a corresponding href link
 const services = [
-  { title: 'Banking & Financial Services', href: '/bsfi' },
-  { title: 'Communications & Information Services', href: '/communications' },
-  { title: 'Energy, Resources & Utilities', href: '/energy' },
-  { title: 'Healthcare & Life Sciences', href: '/health-care' },
+  { title: 'Banking & Financial Services', href: '/banking-and-financial-services' },
+  { title: 'Communications & Information Services', href: '/communications-and-information-services' },
+  { title: 'Energy, Resources & Utilities', href: '/energy-resources-and-utilities' },
+  { title: 'Healthcare & Life Sciences', href: '/healthcare-and-life-sciences' },
   { title: 'High-Tech', href: '/high-tech' },
   { title: 'Hospitality', href: '/hospitality' },
   { title: 'Insurance', href: '/insurance' },
@@ -52,7 +52,7 @@ const AiServices = ({
       {/* Main content container */}
       <div className="relative z-10 h-full flex flex-col justify-end">
         {/* Bottom section with a black background */}
-        <div className="w-full h-[60%] 2xl:h-[50%] bg-black/80 py-6">
+        <div className="w-full h-[60%] 2xl:h-[60%] bg-black/80 py-12">
           <div className="container mx-auto xl:px-3">
             {/* Section title */}
             <h2 className="text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold text-white mb-5">

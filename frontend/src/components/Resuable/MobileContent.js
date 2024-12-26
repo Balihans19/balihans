@@ -26,11 +26,11 @@ export const mobileContent = [
       },
       {
         name: 'Corporate Sustainability',
-        link: '/sustainability',
+        link: '/corporate-sustainability',
       },
       {
         name: 'Diversity, Equity, and Inclusion',
-        link: '/diversity',
+        link: '/diversity-equity-and-inclusion',
       },
       {
         name: 'Recognition ',
@@ -56,14 +56,16 @@ export const mobileContent = [
       },
       {
         name: 'Artificial Intelligence',
-        link: '/ai',
+        link: '/artificial-intelligence',
       },
       {
         name: 'Cloud & Infrastructure',
         link: '/cloud-and-infrastructure',
       },
    
-      { name: 'Network Solutions' },
+      { name: 'Internet of Things (IoT)',
+        link: '/internet-of-things',
+       },
       {
         name: 'Cybersecurity',
         link: '/cybersecurity',
@@ -76,7 +78,9 @@ export const mobileContent = [
       { name: 'Web3 Solutions',
         link: '/web3-solutions',
        },
-      { name: 'Sustainability Services' },
+      { name: 'Testing Services',
+        link: '/testing-services',
+       },
       // Spacer
       { name: '' },
    
@@ -93,19 +97,19 @@ export const mobileContent = [
     mobileContent: [
       {
         name: 'Banking & Financial Services',
-        link: '/bsfi',
+        link: '/banking-and-financial-services',
       },
       {
         name: 'Communications & Information Services ',
-        link: '/communications',
+        link: '/communications-and-information-services',
       },
       {
         name: 'Energy, Resources & Utilities ',
-        link: '/energy',
+        link: '/energy-resources-and-utilities',
       },
       {
         name: 'Healthcare & Life Sciences',
-        link: '/health-care',
+        link: '/healthcare-and-life-sciences',
       },
       {
         name: 'High Tech',

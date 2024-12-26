@@ -10,10 +10,10 @@ const Footer = () => {
   // Array of industry links with their routes
   // Some routes are empty strings indicating they're not yet implemented
   const industries = [
-    { name: "Banking & Financial Services", route: "/bsfi" },
-    { name: "Communications & Information Services", route: "/industries/communications" },
-    { name: "Energy, Resources & Utilities", route: "/energy" },
-    { name: "Healthcare & Life Sciences", route: "/healthcare" },
+    { name: "Banking & Financial Services", route: "/banking-and-financial-services" },
+    { name: "Communications & Information Services", route: "/communications-and-information-services" },
+    { name: "Energy, Resources & Utilities", route: "/energy-resources-and-utilities" },
+    { name: "Healthcare & Life Sciences", route: "/healthcare-and-life-sciences" },
     { name: "High-Tech", route: "/high-tech" },
     { name: "Hospitality", route: "" },
     { name: "Insurance", route: "" },
@@ -29,14 +29,14 @@ const Footer = () => {
   // Some routes are empty strings indicating they're not yet implemented
   const services = [
     { name: "Strategy and Consulting", route: "/strategy-and-consulting" },
-    { name: "Artificial Intelligence", route: "/ai" },
+    { name: "Artificial Intelligence", route: "/artifical-intelligence" },
     { name: "Cloud & Infrastructure", route: "/cloud-and-infrastructure" },
     { name: "Digital Enterprise", route: "/digital-enterprise" },
-    { name: "Network Solutions", route: "" },
     { name: "Cybersecurity", route: "/cybersecurity" },
     { name: "Data & Analytics", route: "/data-and-analytics" },
+    { name: "Internet of Things (IoT)", route: "/internet-of-things" },
     { name: "Web3 Solutions", route: "/web3-solutions" },
-    { name: "Sustainability Services", route: "" },
+    { name: "Testing Services", route: "/testing-services" },
   ];
 
   // Array of company information links
@@ -45,8 +45,8 @@ const Footer = () => {
     { name: "Corporate Overview", route: "" },
     { name: "Leadership", route: "/leadership" },
     { name: "Our Brand", route: "/" },
-    { name: "Corporate Sustainability", route: "/sustainability" },
-    { name: "Diversity, Equity, and Inclusion", route: "/diversity" },
+    { name: "Corporate Sustainability", route: "/corporate-sustainability" },
+    { name: "Diversity, Equity, and Inclusion", route: "/diversity-equity-and-inclusion" },
     { name: "Recognition", route: "/" },
     { name: "Customer Speak", route: "/customer-speak" },
   ];
