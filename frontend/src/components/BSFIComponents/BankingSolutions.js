@@ -81,7 +81,7 @@ const BankingSolutions = ({ solutionsData, title }) => {
   };
 
   return (
-    <div className="min-h-screen text-white p-4 sm:p-6 md:p-8 lg:p-10 xl:p-16 my-10 lg:my-0 ">
+    <div id="banking-solutions" className="min-h-screen text-white p-4 sm:p-6 md:p-8 lg:p-10 xl:p-16 my-10 lg:my-0 ">
       <div className="container px-0 lg:px-12 xl:px-20 relative">
         {/* Scroll Progress Line: Visual indicator of the scroll progress */}
         <div className="absolute -top-4 sm:-top-6 left-0 lg:left-11 xl:left-20 w-full h-1 z-5 overflow-hidden">

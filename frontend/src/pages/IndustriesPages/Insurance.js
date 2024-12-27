@@ -24,14 +24,13 @@ const MemoizedServices = memo(Services);
 const MemoizedDuoCarousel = memo(DuoCarousel);
 const MemoizedContactCareers = memo(ContactCareers);
 
-function BSFI() {
+function Insurance() {
   
   // Set the page title for SEO and page rendering
-  UsePageTitle('BSFI');
- 
+  UsePageTitle('Insurance Industry Solutions');
   
- // Fetch the bsfipage data using a custom hook
-  const { data: bsfipageData, loading, error } = usePageData('bsfipage');
+  // Fetch the insurancepage data using a custom hook
+  const { data: insurancepageData, loading, error } = usePageData('insurancepage');
   
   // Show loading spinner while fetching data
   if (loading) return <LoadingSpinner />;
@@ -39,46 +38,46 @@ function BSFI() {
   // Show error fallback UI if there is an error
   if (error) return <ErrorFallback error={{ message: error }} />;
 
-  // If there's no bsfipage data, return null to prevent rendering empty UI
-  if (!bsfipageData) return null;
+  // If there's no insurancepage data, return null to prevent rendering empty UI
+  if (!insurancepageData) return null;
 
   return (
+
     
-    // Wrapping the page in a PageWrapper for error handling and lazy loading
+// Wrapping the page in a PageWrapper for error handling and lazy loading
     <PageWrapper>
           <MemoizedMainDiv
-            videoData={bsfipageData.videoData}
-            headerTitle={bsfipageData.headerTitle}
-            headerDescription={bsfipageData.headerDescription}
-            backgroundImageUrl={bsfipageData.backgroundImageUrl}
-            knowMoreText={bsfipageData.knowMoreText}
+            videoData={insurancepageData.videoData}
+            headerTitle={insurancepageData.headerTitle}
+            headerDescription={insurancepageData.headerDescription}
+            backgroundImageUrl={insurancepageData.backgroundImageUrl}
+            knowMoreText={insurancepageData.knowMoreText}
              isSlideshow= {false}
-             footerText={bsfipageData.footerText}
-            //  footerItalicWords={bsfipageData.footerItalicWords}
+             footerText={insurancepageData.footerText}
+            //  footerItalicWords={insurancepageData.footerItalicWords}
              showLetsTalkButton={true}
           />
-        
+
           <MemoizedBankingSolutions
-             title={bsfipageData.BankingSolutions.title}
-             solutionsData={bsfipageData.BankingSolutions.solutionData}
+             title={insurancepageData.BankingSolutions.title}
+             solutionsData={insurancepageData.BankingSolutions.solutionData}
           />
-       
 
           <MemoizedSpotlight
-            spotlightItems={bsfipageData.Spotlight.spotlightItems}
+            spotlightItems={insurancepageData.Spotlight.spotlightItems}
           />
 
           <MemoizedServices
-            title={bsfipageData.Services.title}
-            backgroundImage={bsfipageData.Services.backgroundImage}
-            services={bsfipageData.Services.services}
-            backgroundType="image"
+            title={insurancepageData.Services.title}
+            backgroundVideo={insurancepageData.Services.backgroundVideo}
+            services={insurancepageData.Services.services}
+            backgroundType="video"
           />
 
         
-<MemoizedDuoCarousel
-            slides={bsfipageData.transformingBusinesses.carouselSlides}
-            title={bsfipageData.transformingBusinesses.title}
+         <MemoizedDuoCarousel
+            slides={insurancepageData.transformingEnterprises.carouselSlides}
+            title={insurancepageData.transformingEnterprises.title}
           />
 
           <MemoizedContactCareers 
@@ -89,5 +88,4 @@ function BSFI() {
   );
 }
 
-export default memo(BSFI);
-
+export default memo(Insurance);

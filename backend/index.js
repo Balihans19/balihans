@@ -37,7 +37,9 @@ const bsfiPageRoutes=require('./routes/bsfiPageRoutes.js');
 const energyPageRoutes=require('./routes/energyPageRoutes.js');
 const healthcarePageRoutes=require('./routes/healthcarePageRoutes.js');
 const communicationsPageRoutes=require('./routes/communicationsPageRoutes.js');
-
+const hospitalityPageRoutes=require('./routes/hospitalityPageRoutes.js');
+const insurancePageRoutes=require('./routes/insurancePageRoutes.js');
+const manufacturingPageRoutes=require('./routes/manufacturingPageRoutes.js');
 
 
 //PoliciesPages
@@ -114,6 +116,9 @@ app.use('/api/energypage', energyPageRoutes);
 app.use('/api/healthcarepage', healthcarePageRoutes);
 app.use('/api/communicationspage', communicationsPageRoutes);
 app.use('/api/hightechpage', hightechPageRoutes);
+app.use('/api/hospitalitypage', hospitalityPageRoutes);
+app.use('/api/insurancepage', insurancePageRoutes);
+app.use('/api/manufacturingpage', manufacturingPageRoutes);
 
 app.use('/api/privacypolicypage', privacypolicyPageRoutes);
 app.use('/api/cookiepolicypage', cookiepolicyPageRoutes);

@@ -24,14 +24,13 @@ const MemoizedServices = memo(Services);
 const MemoizedDuoCarousel = memo(DuoCarousel);
 const MemoizedContactCareers = memo(ContactCareers);
 
-function BSFI() {
+function Manufacturing() {
   
   // Set the page title for SEO and page rendering
-  UsePageTitle('BSFI');
- 
+  UsePageTitle('Manufacturing Industry Solutions');
   
- // Fetch the bsfipage data using a custom hook
-  const { data: bsfipageData, loading, error } = usePageData('bsfipage');
+  // Fetch the manufacturingpage data using a custom hook
+  const { data: manufacturingpageData, loading, error } = usePageData('manufacturingpage');
   
   // Show loading spinner while fetching data
   if (loading) return <LoadingSpinner />;
@@ -39,46 +38,46 @@ function BSFI() {
   // Show error fallback UI if there is an error
   if (error) return <ErrorFallback error={{ message: error }} />;
 
-  // If there's no bsfipage data, return null to prevent rendering empty UI
-  if (!bsfipageData) return null;
+  // If there's no manufacturingpage data, return null to prevent rendering empty UI
+  if (!manufacturingpageData) return null;
 
   return (
+
     
-    // Wrapping the page in a PageWrapper for error handling and lazy loading
+// Wrapping the page in a PageWrapper for error handling and lazy loading
     <PageWrapper>
           <MemoizedMainDiv
-            videoData={bsfipageData.videoData}
-            headerTitle={bsfipageData.headerTitle}
-            headerDescription={bsfipageData.headerDescription}
-            backgroundImageUrl={bsfipageData.backgroundImageUrl}
-            knowMoreText={bsfipageData.knowMoreText}
+            videoData={manufacturingpageData.videoData}
+            headerTitle={manufacturingpageData.headerTitle}
+            headerDescription={manufacturingpageData.headerDescription}
+            backgroundImageUrl={manufacturingpageData.backgroundImageUrl}
+            knowMoreText={manufacturingpageData.knowMoreText}
              isSlideshow= {false}
-             footerText={bsfipageData.footerText}
-            //  footerItalicWords={bsfipageData.footerItalicWords}
+             footerText={manufacturingpageData.footerText}
+            //  footerItalicWords={manufacturingpageData.footerItalicWords}
              showLetsTalkButton={true}
           />
-        
+
           <MemoizedBankingSolutions
-             title={bsfipageData.BankingSolutions.title}
-             solutionsData={bsfipageData.BankingSolutions.solutionData}
+             title={manufacturingpageData.BankingSolutions.title}
+             solutionsData={manufacturingpageData.BankingSolutions.solutionData}
           />
-       
 
           <MemoizedSpotlight
-            spotlightItems={bsfipageData.Spotlight.spotlightItems}
+            spotlightItems={manufacturingpageData.Spotlight.spotlightItems}
           />
 
           <MemoizedServices
-            title={bsfipageData.Services.title}
-            backgroundImage={bsfipageData.Services.backgroundImage}
-            services={bsfipageData.Services.services}
+            title={manufacturingpageData.Services.title}
+            backgroundImage={manufacturingpageData.Services.backgroundImage}
+            services={manufacturingpageData.Services.services}
             backgroundType="image"
           />
 
         
-<MemoizedDuoCarousel
-            slides={bsfipageData.transformingBusinesses.carouselSlides}
-            title={bsfipageData.transformingBusinesses.title}
+         <MemoizedDuoCarousel
+            slides={manufacturingpageData.transformingEnterprises.carouselSlides}
+            title={manufacturingpageData.transformingEnterprises.title}
           />
 
           <MemoizedContactCareers 
@@ -89,5 +88,4 @@ function BSFI() {
   );
 }
 
-export default memo(BSFI);
-
+export default memo(Manufacturing);

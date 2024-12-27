@@ -8,6 +8,9 @@ const links = [
   "/energy-resources-and-utilities",
   "/healthcare-and-life-sciences",
   "/high-tech",
+  "/hospitality",
+  "/insurance",
+  "/manufacturing"
 ];
 
 /**

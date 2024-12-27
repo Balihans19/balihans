@@ -177,14 +177,20 @@ export const desktopContent = [
               <li className="mb-2">
                 <Link to="/high-tech" className="text-white hover:underline">High Tech</Link>
               </li>
-              <li className="mb-2">Hospitality</li>
-              <li className="mb-2">Insurance</li>
+              <li className="mb-2">
+                <Link to="/hospitality" className="text-white hover:underline">Hospitality</Link>
+              </li>
+              <li className="mb-2">
+                <Link to="/insurance" className="text-white hover:underline">Insurance</Link>
+              </li>
             </ul>
           </div>
 
           <div className="w-full min-w-[200px] my-4 md:my-8">
             <ul className="list-none text-base lg:text-lg p-0">
-              <li className="mb-2">Manufacturing</li>
+            <li className="mb-2">
+                <Link to="/manufacturing" className="text-white hover:underline">Manufacturing</Link>
+              </li>
               <li className="mb-2">Media & Entertainment</li>
               <li className="mb-2">Professional Services</li>
               <li className="mb-2">Retail & Consumer Goods</li>

@@ -12,10 +12,10 @@ const services = [
   { title: 'Hospitality', href: '/hospitality' },
   { title: 'Insurance', href: '/insurance' },
   { title: 'Manufacturing', href: '/manufacturing' },
-  { title: 'Media & Entertainment', href: '/media' },
-  { title: 'Professional Services', href: '/professional' },
-  { title: 'Retail & Consumer Goods', href: '/retail' },
-  { title: 'Travel & Logistics', href: '/travel' },
+  { title: 'Media & Entertainment', href: '/media-and-entertainment' },
+  { title: 'Professional Services', href: '/professional-and-services' },
+  { title: 'Retail & Consumer Goods', href: '/retail-and-consumer-goods' },
+  { title: 'Travel & Logistics', href: '/travel-and-logistics' },
 ];
 
 // Functional component to render the AI Services section
@@ -52,10 +52,10 @@ const AiServices = ({
       {/* Main content container */}
       <div className="relative z-10 h-full flex flex-col justify-end">
         {/* Bottom section with a black background */}
-        <div className="w-full h-[60%] 2xl:h-[60%] bg-black/80 py-12">
+        <div className="w-full h-[60%] 2xl:h-[60%] bg-black/80 py-6 lg:py-8 2xl:py-12">
           <div className="container mx-auto xl:px-3">
             {/* Section title */}
-            <h2 className="text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold text-white mb-5">
+            <h2 className="text-base md:text-lg lg:text-xl xl:text-xl 2xl:text-3xl font-bold text-white mb-5">
               {title}
             </h2>
 
@@ -73,7 +73,7 @@ const AiServices = ({
                     className={`group border-b border-white/30 py-4 flex items-center justify-between hover:border-white transition-all duration-300 ${columnClass}`}
                   >
                     {/* Service title */}
-                    <span className="text-xs sm:text-xs md:text-sm lg:text-lg xl:text-xl 2xl:text-2xl text-white font-light tracking-wide">
+                    <span className="text-xxs xs:text-xs sm:text-xs md:text-sm lg:text-lg xl:text-xl 2xl:text-xl text-white font-light tracking-wide">
                       {service.title}
                     </span>
                     {/* Animated arrow icon */}

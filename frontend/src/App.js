@@ -24,6 +24,9 @@ import Energy from './pages/IndustriesPages/Energy';
 import HealthCare from './pages/IndustriesPages/HealthCare';
 import Communications from './pages/IndustriesPages/Communications';
 import HighTech from './pages/IndustriesPages/HighTech';
+import Hospitality from './pages/IndustriesPages/Hospitality';
+import Insurance from './pages/IndustriesPages/Insurance';
+import Manufacturing from './pages/IndustriesPages/Manufacturing';
 
 
 import WhatWeDo from './pages/WhatWeDoPages/WhatWeDo';
@@ -44,6 +47,7 @@ import SecurityPolicy from './pages/PoliciesPages/SecurityPolicy';
 import Disclaimer from './pages/PoliciesPages/Disclaimer';
 
 import ContactUs from './pages/ContactUsPage/ContactUs';
+
 
 
 
@@ -95,6 +99,9 @@ function App() {
         <Route path="/healthcare-and-life-sciences" element={<HealthCare />} />
         <Route path="/communications-and-information-services" element={<Communications />} />
         <Route path="/high-tech" element={<HighTech />} />
+        <Route path="/hospitality" element={<Hospitality />} />
+        <Route path="/insurance" element={<Insurance />} />
+        <Route path="/manufacturing" element={<Manufacturing />} />
 
 
           {/* Policies Pages */}
@@ -107,7 +114,6 @@ function App() {
         <Route path="/contact-us" element={<ContactUs />} />
 
 
-        
       </Routes>
       <Footer />
     </Router>

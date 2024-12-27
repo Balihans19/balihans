@@ -1,13 +1,12 @@
 const mongoose = require('mongoose');
 
 
-//  schema for the bsfipage
-const bsfipageSchema = new mongoose.Schema({
+//  schema for the hospitalitypage
+const hospitalitypageSchema = new mongoose.Schema({
   videoData: [{
     heading: { type: String, required: true },
     videoUrl: { type: String, required: true },
-    description: { type: String, required: true },
-    linkUrl:{type:String, required: true}
+    description: { type: String, required: true }
   }],
   headerTitle: { type: String, required: true },
   headerDescription: { type: String, required: true },
@@ -39,13 +38,13 @@ const bsfipageSchema = new mongoose.Schema({
 
  Services:{
   title: { type: String, required: true },
-  backgroundImage: { type: String, required: true },
+  backgroundVideo: { type: String, required: true },
   services:[{
     title: { type: String, required: true },
     href: { type: String, required: true }
   }]
  },
-  transformingBusinesses: {
+ transformingEnterprises: {
     title: { type: String, required: true },
     carouselSlides: [{
       id: { type: Number, required: true },
@@ -54,8 +53,7 @@ const bsfipageSchema = new mongoose.Schema({
       alt: { type: String, required: true }
     }]
   }
-}, { collection: 'BSFIPage' });
+}, { collection: 'HospitalityPage' });
 
 // Export the model
-module.exports = mongoose.model('BSFIPage', bsfipageSchema);
-
+module.exports = mongoose.model('HospitalityPage', hospitalitypageSchema);

@@ -83,6 +83,19 @@ const MainDiv = ({
     });
   };
 
+  const handleKnowMoreClick = (linkUrl) => {
+    if (linkUrl?.startsWith('#')) {
+      // If it starts with #, it's an in-page link
+      const element = document.querySelector(linkUrl);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } else {
+      // Regular page navigation
+      navigate(linkUrl || '/');
+    }
+  };
+  
   return (
     <div className="flex flex-col">
       <div className="pt-20 lg:pt-0">
@@ -162,7 +175,7 @@ const MainDiv = ({
                 </p>
                 <button
                   className="bg-transparent border border-white text-xs sm:text-sm lg:text-base font-semibold py-3 px-6 lg:py-4 lg:px-8 cursor-pointer hover:bg-[#2c2c2c] hover:text-white transition-colors"
-                  onClick={() => navigate(videos[currentSlide].linkUrl || '/')}
+                  onClick={() => handleKnowMoreClick(videos[currentSlide].linkUrl)}
                 >
                   {knowMoreText}
                 </button>
