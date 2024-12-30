@@ -22,7 +22,7 @@ const ContactCareers = ({ variant }) => {
       divider: 'bg-gray-600' // Divider color.
     },
     dark: {
-      background: 'bg-[#191c20]', // Dark background color.
+      background: 'bg-[#101215]', // Dark background color.
       text: 'text-white', // Light text color for dark theme.
       subtext: 'text-gray-300', // Subtext color for dark theme.
       button: 'border-white text-white hover:bg-white hover:text-gray-900', // Button styling.
@@ -46,16 +46,16 @@ const ContactCareers = ({ variant }) => {
         {/* Contact Us Section */}
         <div className="flex flex-col items-center justify-center py-16">
           <div className="max-w-md text-center">
-            <h2 className={`text-5xl font-bold mb-4 ${currentStyle.text}`}>
+            <h2 className={`text-3xl xs:text-4xl md:text-5xl font-bold mb-4 ${currentStyle.text}`}>
               Contact Us
             </h2>
-            <p className={`${currentStyle.subtext} text-xl mb-6`}>
+            <p className={`${currentStyle.subtext} text-lg lg:text-xl mb-8`}>
               Find out what can we help you achieve.
             </p>
             {/* Call-to-action button for contacting */}
           <Link
               to="/contact-us"
-              className={`border-2 px-6 py-3 text-xl transition duration-300 ${currentStyle.button}`}
+              className={`border-2 px-6 py-3 text-lg xs:text-xl transition duration-300 ${currentStyle.button}`}
             >
               Let's talk
             </Link>
@@ -65,16 +65,19 @@ const ContactCareers = ({ variant }) => {
         {/* Careers Section */}
         <div className="flex flex-col items-center justify-center py-16">
           <div className="max-w-md text-center">
-            <h2 className={`text-5xl font-bold mb-4 ${currentStyle.text}`}>
+            <h2 className={`text-3xl xs:text-4xl md:text-5xl  font-bold mb-4 ${currentStyle.text}`}>
               Careers
             </h2>
-            <p className={`${currentStyle.subtext} text-xl mb-6`}>
+            <p className={`${currentStyle.subtext} text-lg lg:text-xl mb-8`}>
               Join our team. Realize your potential.
             </p>
             {/* Call-to-action button for exploring career opportunities */}
-            <button className={`border-2 px-6 py-3 text-xl transition duration-300 ${currentStyle.button}`}>
+            <Link
+              to=""
+              className={`border-2 px-6 py-3 text-lg xs:text-xl transition duration-300 ${currentStyle.button}`}
+            >
               Explore opportunities
-            </button>
+            </Link>
           </div>
         </div>
       </div>

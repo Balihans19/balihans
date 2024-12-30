@@ -61,7 +61,7 @@ const Spotlight = ({ spotlightItems, title = "Spotlight" }) => {
               {spotlightItems.map((item, index) => (
                 <div key={index} className={`${isMobile ? 'w-1/2' : 'w-1/3'} flex-shrink-0 px-4 md:px-10`}>
                   {/* Spotlight item container */}
-                  <div className="relative h-[650px] flex flex-col overflow-hidden group">
+                  <div className="relative h-[700px] flex flex-col overflow-hidden group">
                     <div className="overflow-hidden h-[72%] mb-4">
                       {/* Spotlight item image */}
                       <img

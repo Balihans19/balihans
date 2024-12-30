@@ -86,7 +86,7 @@ export const desktopContent = [
             <h3 className="text-lg lg:text-xl mb-5"><Link to="/strategy-and-consulting" className="text-white hover:underline">Strategy & Consulting</Link> </h3>
             <ul className="list-none text-base lg:text-lg p-0">
             <li className="mb-2">
-                <Link to="/artifical-intelligence" className="text-white hover:underline">Artificial Intelligence</Link>
+                <Link to="/artificial-intelligence" className="text-white hover:underline">Artificial Intelligence</Link>
               </li>
               <li className="mb-2">
                 <Link to="/cloud-and-infrastructure" className="text-white hover:underline">Cloud & Infrastructure</Link>
@@ -191,8 +191,12 @@ export const desktopContent = [
             <li className="mb-2">
                 <Link to="/manufacturing" className="text-white hover:underline">Manufacturing</Link>
               </li>
-              <li className="mb-2">Media & Entertainment</li>
-              <li className="mb-2">Professional Services</li>
+              <li className="mb-2">
+                <Link to="/media-and-entertainment" className="text-white hover:underline">Media & Entertainment</Link>
+              </li>
+              <li className="mb-2">
+                <Link to="/professional-services" className="text-white hover:underline">Professional Services</Link>
+              </li>
               <li className="mb-2">Retail & Consumer Goods</li>
               <li className="mb-2">Travel & Logistics</li>
               <li className="mb-2">Transportation</li>

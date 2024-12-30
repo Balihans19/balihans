@@ -18,8 +18,8 @@ const Footer = () => {
     { name: "Hospitality", route: "/hospitality" },
     { name: "Insurance", route: "/insurance" },
     { name: "Manufacturing", route: "/manufacturing" },
-    { name: "Media & Entertainment", route: "" },
-    { name: "Professional Services", route: "" },
+    { name: "Media & Entertainment", route: "/media-and-entertainment" },
+    { name: "Professional Services", route: "/professional-services" },
     { name: "Retail & Consumer Goods", route: "" },
     { name: "Travel & Logistics", route: "" },
     { name: "Transportation", route: "" },
@@ -29,7 +29,7 @@ const Footer = () => {
   // Some routes are empty strings indicating they're not yet implemented
   const services = [
     { name: "Strategy and Consulting", route: "/strategy-and-consulting" },
-    { name: "Artificial Intelligence", route: "/artifical-intelligence" },
+    { name: "Artificial Intelligence", route: "/artificial-intelligence" },
     { name: "Cloud & Infrastructure", route: "/cloud-and-infrastructure" },
     { name: "Digital Enterprise", route: "/digital-enterprise" },
     { name: "Cybersecurity", route: "/cybersecurity" },

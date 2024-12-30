@@ -202,9 +202,9 @@ const MainDiv = ({
         </div>
 
         {/* Footer Section with italicized text support */}
-        <div className="bg-[#f8f9fa] text-black py-12">
+        <div className="bg-[#f8f9fa] text-black py-6 md:py-12">
           <div className="max-w-full px-4 md:px-7 lg:px-20 xl:px-36  text-left">
-            <p className="text-base md:text-lg lg:text-xl">
+            <p className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl">
               {renderTextWithItalics(footerText, footerItalicWords)}
             </p>
           </div>

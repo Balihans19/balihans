@@ -10,7 +10,8 @@ const links = [
   "/high-tech",
   "/hospitality",
   "/insurance",
-  "/manufacturing"
+  "/manufacturing",
+  "/media-and-entertainment"
 ];
 
 /**

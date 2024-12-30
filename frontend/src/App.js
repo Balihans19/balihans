@@ -27,6 +27,8 @@ import HighTech from './pages/IndustriesPages/HighTech';
 import Hospitality from './pages/IndustriesPages/Hospitality';
 import Insurance from './pages/IndustriesPages/Insurance';
 import Manufacturing from './pages/IndustriesPages/Manufacturing';
+import MediaAndEntertainment from './pages/IndustriesPages/MediaAndEntertainment';
+import ProfessionalServices from './pages/IndustriesPages/ProfessionalServices';
 
 
 import WhatWeDo from './pages/WhatWeDoPages/WhatWeDo';
@@ -47,6 +49,7 @@ import SecurityPolicy from './pages/PoliciesPages/SecurityPolicy';
 import Disclaimer from './pages/PoliciesPages/Disclaimer';
 
 import ContactUs from './pages/ContactUsPage/ContactUs';
+
 
 
 
@@ -84,7 +87,7 @@ function App() {
 
         <Route path="/strategy-and-consulting" element={<StrategyAndConsulting />} />
         <Route path="/cloud-and-infrastructure" element={<CloudAndInfrastructure />} />
-        <Route path="/artifical-intelligence" element={<AI />} />
+        <Route path="/artificial-intelligence" element={<AI />} />
         <Route path="/cybersecurity" element={<Cybersecurity />} />
         <Route path="/data-and-analytics" element={<DataAndAnalytics />} />
         <Route path="/digital-enterprise" element={<DigitalEnterprise />} />
@@ -102,6 +105,8 @@ function App() {
         <Route path="/hospitality" element={<Hospitality />} />
         <Route path="/insurance" element={<Insurance />} />
         <Route path="/manufacturing" element={<Manufacturing />} />
+        <Route path="/media-and-entertainment" element={<MediaAndEntertainment />} />
+        <Route path="/professional-services" element={<ProfessionalServices />} />
 
 
           {/* Policies Pages */}
