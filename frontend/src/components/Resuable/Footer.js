@@ -20,9 +20,8 @@ const Footer = () => {
     { name: "Manufacturing", route: "/manufacturing" },
     { name: "Media & Entertainment", route: "/media-and-entertainment" },
     { name: "Professional Services", route: "/professional-services" },
-    { name: "Retail & Consumer Goods", route: "" },
-    { name: "Travel & Logistics", route: "" },
-    { name: "Transportation", route: "" },
+    { name: "Retail & Consumer Goods", route: "/retail-and-consumer-goods" },
+    { name: "Travel & Logistics", route: "/travel-and-logistics" },
   ];
 
   // Array of service links with their routes

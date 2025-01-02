@@ -30,6 +30,8 @@ const web3solutionsPageRoutes=require('./routes/web3solutionsPageRoutes.js');
 const iotPageRoutes=require('./routes/iotPageRoutes.js');
 const testingservicesPageRoutes=require('./routes/testingservicesPageRoutes.js');
 const professionalservicesPageRoutes=require('./routes/professionalservicesPageRoutes.js');
+const retailandconsumergoodsPageRoutes=require('./routes/retailandconsumergoodsPageRoutes.js');
+const travelandlogisticsPageRoutes=require('./routes/travelandlogisticsPageRoutes.js');
 
 
 //IndustriesPages
@@ -42,6 +44,9 @@ const hospitalityPageRoutes=require('./routes/hospitalityPageRoutes.js');
 const insurancePageRoutes=require('./routes/insurancePageRoutes.js');
 const manufacturingPageRoutes=require('./routes/manufacturingPageRoutes.js');
 const mediaandentertainmentPageRoutes=require('./routes/mediaandentertainmentPageRoutes.js');
+
+//InsightsPages
+const casestudiesPageRoutes=require('./routes/casestudiesPageRoutes.js');
 
 
 //PoliciesPages
@@ -111,7 +116,7 @@ app.use('/api/digitalenterprisepage', digitalenterprisePageRoutes);
 app.use('/api/web3solutionspage', web3solutionsPageRoutes);
 app.use('/api/iotpage', iotPageRoutes);
 app.use('/api/testingservicespage', testingservicesPageRoutes);
-app.use('/api/professionalservicespage', professionalservicesPageRoutes);
+
 
 
 app.use('/api/bsfipage', bsfiPageRoutes);
@@ -123,6 +128,11 @@ app.use('/api/hospitalitypage', hospitalityPageRoutes);
 app.use('/api/insurancepage', insurancePageRoutes);
 app.use('/api/manufacturingpage', manufacturingPageRoutes);
 app.use('/api/mediaandentertainmentpage', mediaandentertainmentPageRoutes);
+app.use('/api/professionalservicespage', professionalservicesPageRoutes);
+app.use('/api/retailandconsumergoodspage', retailandconsumergoodsPageRoutes);
+app.use('/api/travelandlogisticspage', travelandlogisticsPageRoutes);
+
+app.use('/api/casestudiespage', casestudiesPageRoutes);
 
 app.use('/api/privacypolicypage', privacypolicyPageRoutes);
 app.use('/api/cookiepolicypage', cookiepolicyPageRoutes);

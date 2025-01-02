@@ -11,7 +11,10 @@ const links = [
   "/hospitality",
   "/insurance",
   "/manufacturing",
-  "/media-and-entertainment"
+  "/media-and-entertainment",
+  "/professional-services",
+  "/retail-and-consumer-goods",
+  "/travel-and-logistics"
 ];
 
 /**

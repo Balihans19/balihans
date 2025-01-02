@@ -13,7 +13,7 @@ const services = [
   { title: 'Insurance', href: '/insurance' },
   { title: 'Manufacturing', href: '/manufacturing' },
   { title: 'Media & Entertainment', href: '/media-and-entertainment' },
-  { title: 'Professional Services', href: '/professional-and-services' },
+  { title: 'Professional Services', href: '/professional-services' },
   { title: 'Retail & Consumer Goods', href: '/retail-and-consumer-goods' },
   { title: 'Travel & Logistics', href: '/travel-and-logistics' },
 ];

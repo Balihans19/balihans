@@ -180,14 +180,15 @@ export const desktopContent = [
               <li className="mb-2">
                 <Link to="/hospitality" className="text-white hover:underline">Hospitality</Link>
               </li>
-              <li className="mb-2">
-                <Link to="/insurance" className="text-white hover:underline">Insurance</Link>
-              </li>
+              
             </ul>
           </div>
 
           <div className="w-full min-w-[200px] my-4 md:my-8">
             <ul className="list-none text-base lg:text-lg p-0">
+            <li className="mb-2">
+                <Link to="/insurance" className="text-white hover:underline">Insurance</Link>
+              </li>
             <li className="mb-2">
                 <Link to="/manufacturing" className="text-white hover:underline">Manufacturing</Link>
               </li>
@@ -197,9 +198,12 @@ export const desktopContent = [
               <li className="mb-2">
                 <Link to="/professional-services" className="text-white hover:underline">Professional Services</Link>
               </li>
-              <li className="mb-2">Retail & Consumer Goods</li>
-              <li className="mb-2">Travel & Logistics</li>
-              <li className="mb-2">Transportation</li>
+              <li className="mb-2">
+                <Link to="/retail-and-consumer-goods" className="text-white hover:underline">Retail & Consumer Goods</Link>
+              </li>
+              <li className="mb-2">
+                <Link to="/travel-and-logistics" className="text-white hover:underline">Travel & Logistics</Link>
+              </li>
             </ul>
           </div>
 
@@ -228,7 +232,10 @@ export const desktopContent = [
 
           <div className="w-full min-w-[200px] my-4 md:my-8">
             <ul className="list-none text-base lg:text-lg p-0">
-              <li className="mb-2">Case Studies</li>
+            <li className="mb-2">
+                <Link to="/case-studies" className="text-white hover:underline">Case Studies</Link>
+              </li>
+            
               <li className="mb-2">Views</li>
               <li className="mb-2">Insights</li>
               <li className="mb-2">News</li>

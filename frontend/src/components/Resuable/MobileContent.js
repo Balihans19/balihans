@@ -137,9 +137,7 @@ export const mobileContent = [
       { name: 'Travel & Logistics',
         link: '/travel-and-logistics',
        },
-      { name: 'Transportation',
-        link: '/transportation',
-       },
+     
     ]
   },
 
@@ -148,7 +146,9 @@ export const mobileContent = [
     name: 'INSIGHTS',
     link: '/insights',
     mobileContent: [
-      { name: 'Case Studies' },
+      { name: 'Case Studies',
+        link: '/case-studies',
+       },
       { name: 'Views' },
       { name: 'Insights' },
       { name: 'News' },

@@ -124,7 +124,7 @@ const MainDiv = ({
             {showLetsTalkButton && (
               <Link 
                 to="/contact-us"
-                className="mt-6 flex items-center text-sm xs:text-base md:text-lg xl:text-xl text-white group"
+                className="mt-6 flex items-center text-sm xs:text-base md:text-lg xl:text-xl text-white group max-w-40"
               >
                 Let's Talk
                 <div className="ml-4 xs:w-10 xs:h-10 w-5 h-5 flex items-center justify-center rounded-full bg-gray-200">

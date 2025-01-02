@@ -29,6 +29,7 @@ import Insurance from './pages/IndustriesPages/Insurance';
 import Manufacturing from './pages/IndustriesPages/Manufacturing';
 import MediaAndEntertainment from './pages/IndustriesPages/MediaAndEntertainment';
 import ProfessionalServices from './pages/IndustriesPages/ProfessionalServices';
+import RetailAndConsumerGoods from './pages/IndustriesPages/RetailAndConsumerGoods';
 
 
 import WhatWeDo from './pages/WhatWeDoPages/WhatWeDo';
@@ -42,6 +43,8 @@ import Web3Solutions from './pages/WhatWeDoPages/Web3Solutions';
 import IOT from './pages/WhatWeDoPages/IOT';
 import TestingServices from './pages/WhatWeDoPages/TestingServices';
 
+import CaseStudies from './pages/InsightsPages/CaseStudies';
+
 
 import PrivacyPolicy from './pages/PoliciesPages/PrivacyPolicy';
 import CookiePolicy from './pages/PoliciesPages/CookiePolicy';
@@ -49,6 +52,8 @@ import SecurityPolicy from './pages/PoliciesPages/SecurityPolicy';
 import Disclaimer from './pages/PoliciesPages/Disclaimer';
 
 import ContactUs from './pages/ContactUsPage/ContactUs';
+import TravelAndLogistics from './pages/IndustriesPages/TravelAndLogistics';
+
 
 
 
@@ -94,6 +99,8 @@ function App() {
         <Route path="/web3-solutions" element={<Web3Solutions />} />
         <Route path="/internet-of-things" element={<IOT />} />
         <Route path="/testing-services" element={<TestingServices />} />
+        <Route path="/retail-and-consumer-goods" element={<RetailAndConsumerGoods />} />
+
 
         {/* Industries Pages */}
 
@@ -107,7 +114,10 @@ function App() {
         <Route path="/manufacturing" element={<Manufacturing />} />
         <Route path="/media-and-entertainment" element={<MediaAndEntertainment />} />
         <Route path="/professional-services" element={<ProfessionalServices />} />
+        <Route path="/travel-and-logistics" element={<TravelAndLogistics />} />
 
+        {/* ContactUs Pages */} 
+        <Route path="/case-studies" element={<CaseStudies />} />
 
           {/* Policies Pages */}
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
