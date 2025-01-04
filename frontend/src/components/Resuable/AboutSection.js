@@ -17,20 +17,20 @@ const AboutSection = ({ backgroundImageUrl }) => {
 
   // Define navigation items
   const navigationItems = [
-    { title: 'Leadership', href: '#leadership' },
-    { title: 'Our Brand', href: '#brand' },
-    { title: 'Corporate Sustainability', href: '#sustainability' },
-    { title: 'Diversity, Equity, and Inclusion', href: '#dei' },
-    { title: 'Recognition', href: '#recognition' },
-    { title: 'Customer Speak', href: '#customers' },
+    { title: 'Leadership', href: '/leadership' },
+    { title: 'Our Services', href: '/what-we-do' },
+    { title: 'Corporate Sustainability', href: '/corporate-sustainability' },
+    { title: 'Diversity, Equity, and Inclusion', href: '/diversity-equity-and-inclusion' },
+    { title: 'Join Us', href: '/join-us' },
+    { title: 'Customer Speak', href: '/customer-speak' },
   ];
 
   // Define conditions for each page where an item should be excluded
   const excludedItems = {
     '/leadership': ['Leadership'], // Remove 'Leadership' item when on /leadership
     '/brand': ['Our Brand'], // Remove 'Our Brand' item when on /brand
-    '/sustainability': ['Corporate Sustainability'], // Remove 'Corporate Sustainability' when on /sustainability
-    '/diversity': ['Diversity, Equity, and Inclusion'], // Remove 'Diversity, Equity, and Inclusion' when on /dei
+    '/corporate-sustainability': ['Corporate Sustainability'], // Remove 'Corporate Sustainability' when on /sustainability
+    '/diversity-equity-and-inclusion': ['Diversity, Equity, and Inclusion'], // Remove 'Diversity, Equity, and Inclusion' when on /dei
     '/recognition': ['Recognition'], // Remove 'Recognition' when on /recognition
   };
 

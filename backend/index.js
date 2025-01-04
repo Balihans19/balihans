@@ -48,6 +48,9 @@ const mediaandentertainmentPageRoutes=require('./routes/mediaandentertainmentPag
 //InsightsPages
 const casestudiesPageRoutes=require('./routes/casestudiesPageRoutes.js');
 
+const joinusPageRoutes=require('./routes/joinusPageRoutes.js');
+const resumeRoutes=require('./routes/resumeRoutes.js');
+
 
 //PoliciesPages
 const privacypolicyPageRoutes=require('./routes/privacypolicyPageRoutes.js');
@@ -133,6 +136,9 @@ app.use('/api/retailandconsumergoodspage', retailandconsumergoodsPageRoutes);
 app.use('/api/travelandlogisticspage', travelandlogisticsPageRoutes);
 
 app.use('/api/casestudiespage', casestudiesPageRoutes);
+
+app.use('/api/joinuspage', joinusPageRoutes);
+app.use('/api/resume', resumeRoutes);
 
 app.use('/api/privacypolicypage', privacypolicyPageRoutes);
 app.use('/api/cookiepolicypage', cookiepolicyPageRoutes);

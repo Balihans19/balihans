@@ -109,13 +109,18 @@ const ContactUsMainDiv = () => {
   };
 
   return (
-    <div       
-      className="relative min-h-screen lg:min-h-[850px] text-white w-full bg-cover bg-center mt-16 lg:mt-0"       
-      style={{ 
+    <div className="relative min-h-screen lg:min-h-[850px] text-white w-full">
+    {/* Grayscale background container */}
+    <div 
+      className="absolute inset-0 w-full h-full"
+      style={{
         backgroundImage: `url('https://res.cloudinary.com/dnijlfi48/image/upload/v1734518437/Untitled_design_34_xjrkwz.webp')`,
-        filter: 'grayscale(100%)'
-      }}     
-    >     
+        filter: 'grayscale(100%)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        zIndex: 0
+      }}
+    />    
       {/* Notification Toast - Displays success/error messages */}
       {notification.show && (
         <div

@@ -274,7 +274,10 @@ export const desktopContent = [
             <ul className="list-none text-base lg:text-lg p-0">
               <li className="mb-2">Why Balihans</li>
               <li className="mb-2">Diversity & Inclusion</li>
-              <li className="mb-2">Join Us</li>
+              <li className="mb-2">
+                <Link to="/join-us" className="text-white hover:underline">Join Us</Link>
+              </li>
+             
             </ul>
           </div>
 

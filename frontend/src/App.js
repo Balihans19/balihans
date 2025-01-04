@@ -45,6 +45,8 @@ import TestingServices from './pages/WhatWeDoPages/TestingServices';
 
 import CaseStudies from './pages/InsightsPages/CaseStudies';
 
+import JoinUs from './pages/CareersPages/JoinUs';
+import SubmitResumePage from './pages/CareersPages/SubmitResumePage';
 
 import PrivacyPolicy from './pages/PoliciesPages/PrivacyPolicy';
 import CookiePolicy from './pages/PoliciesPages/CookiePolicy';
@@ -53,6 +55,7 @@ import Disclaimer from './pages/PoliciesPages/Disclaimer';
 
 import ContactUs from './pages/ContactUsPage/ContactUs';
 import TravelAndLogistics from './pages/IndustriesPages/TravelAndLogistics';
+
 
 
 
@@ -116,8 +119,13 @@ function App() {
         <Route path="/professional-services" element={<ProfessionalServices />} />
         <Route path="/travel-and-logistics" element={<TravelAndLogistics />} />
 
-        {/* ContactUs Pages */} 
+        {/* Insights Pages */} 
         <Route path="/case-studies" element={<CaseStudies />} />
+
+       
+        {/* Careers Pages */} 
+        <Route path="/join-us" element={<JoinUs />} />
+        <Route path="/submit-resume" element={<SubmitResumePage />} />
 
           {/* Policies Pages */}
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
