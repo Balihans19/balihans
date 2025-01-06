@@ -1,5 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from 'react-query'
+
 import PageTopNavigator from './components/Resuable/PageTopNavigator';
 import Navbar from './components/Resuable/Navbar';
 import Footer from './components/Resuable/Footer';
@@ -55,6 +57,7 @@ import Disclaimer from './pages/PoliciesPages/Disclaimer';
 
 import ContactUs from './pages/ContactUsPage/ContactUs';
 import TravelAndLogistics from './pages/IndustriesPages/TravelAndLogistics';
+import CaseStudyPage from './pages/HomePages/CaseStudyPage';
 
 
 
@@ -63,10 +66,11 @@ import TravelAndLogistics from './pages/IndustriesPages/TravelAndLogistics';
 
 
 
-
+const queryClient = new QueryClient()
 
 function App() {
   return (
+    <QueryClientProvider client={queryClient}>
     <Router>
 
       <PageTopNavigator />
@@ -77,10 +81,12 @@ function App() {
         {/* Home Pages */}
         <Route path="/" element={<Home />} />
         
-        <Route path="/balihans-helps-us-based-manufacturing-company-modernize-shop-floor" element={<HomeCaseStudyOne />} />
+        {/* <Route path="/balihans-helps-us-based-manufacturing-company-modernize-shop-floor" element={<HomeCaseStudyOne />} />
         <Route path="/elevating-security-posture-with-a-24/7-soc" element={<HomeCaseStudyTwo />} />
         <Route path="/balihans-empowers-media-company-through-digital-transformation" element={<HomeCaseStudyThree />} />
-        <Route path="/optimizing-ecommerce-payments-for-seamless-checkout" element={<HomeCaseStudyFour />} />
+        <Route path="/optimizing-ecommerce-payments-for-seamless-checkout" element={<HomeCaseStudyFour />} /> */}
+
+        <Route path="/case-study/:slug" element={<CaseStudyPage/>} />
  
         {/* AboutUs Pages */}
         <Route path="/about-us" element={<AboutUs />} />
@@ -140,6 +146,7 @@ function App() {
       </Routes>
       <Footer />
     </Router>
+    </QueryClientProvider>
   );
 }
 
