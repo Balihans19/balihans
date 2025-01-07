@@ -225,7 +225,7 @@ const CaseStudySolutions = ({ solutionsData = [], title }) => {
                         <h3 className="text-2xl font-bold mb-2">{content.primaryHeading}</h3>
                       )}
                       {content.primaryDescription && (
-                        <p className="text-lg text-white">{content.primaryDescription}</p>
+                        <p className="text-2xl  text-white">{content.primaryDescription}</p>
                       )}
 
                       {/* Render List Points */}

@@ -6,18 +6,19 @@ import { LoadingSpinner, ErrorFallback, PageWrapper } from '../../components/com
 
 const CaseStudyMainDiv = React.lazy(() => import('../../components/CaseStudyComponents/CaseStudyMainDiv'));
 const CaseStudySolutions = React.lazy(() => import('../../components/CaseStudyComponents/CaseStudySolutions'));
-const Spotlight = React.lazy(() => import('../../components/BSFIComponents/Spotlight'));
+const CaseStudySlides = React.lazy(() => import('../../components/CaseStudyComponents/CaseStudySlides'));
+const WhitePaperSlides = React.lazy(() => import('../../components/CaseStudyComponents/WhitePaperSlides'));
 const ContactCareers = React.lazy(() => import('../../components/Resuable/ContactCareers'));
 const AiServices = React.lazy(() => import('../../components/AIComponents/AiServices'));
-const DuoCarousel = React.lazy(() => import('../../components/Resuable/DuoCarousel'));
+
 
 // Memoize components
 const MemoizedComponents = {
   CaseStudyMainDiv: memo(CaseStudyMainDiv),
   CaseStudySolutions: memo(CaseStudySolutions),
-  Spotlight: memo(Spotlight),
+  CaseStudySlides: memo(CaseStudySlides),
+  WhitePaperSlides: memo(WhitePaperSlides),
   AiServices: memo(AiServices),
-  DuoCarousel: memo(DuoCarousel),
   ContactCareers: memo(ContactCareers)
 };
 
@@ -47,16 +48,15 @@ function CaseStudyPage() {
              solutionsData={data.solutions.solutionData}
           />
       
-      <MemoizedComponents.Spotlight spotlightItems={data.spotlight.spotlightItems} />
+      <MemoizedComponents.WhitePaperSlides />
+
+
       <MemoizedComponents.AiServices {...data.aiServices}
             backgroundVideo={data.aiServices.backgroundVideo}
             backgroundType="video"
           />
 
-<MemoizedComponents.DuoCarousel
-            slides={data.transformingEnterprises.carouselSlides}
-            title={data.transformingEnterprises.title}
-          />
+      <MemoizedComponents.CaseStudySlides />
 
       <MemoizedComponents.ContactCareers variant="dark" />
     </PageWrapper>

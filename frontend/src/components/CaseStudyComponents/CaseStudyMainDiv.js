@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react'; // Importing ArrowRight icon for the button
+import { Link } from 'react-router-dom'; 
 
 /**
  * CaseStudyMainDiv Component
@@ -43,13 +44,18 @@ const CaseStudyMainDiv = ({ backgroundImageUrl, categories, heading, description
         </p>
 
         {/* Button */}
-        <button className="mt-6 flex items-center text-base md:text-lg xl:text-2xl text-white">
-          Let's Talk {/* Button label */}
-          <div className="ml-4 w-12 h-12 flex items-center justify-center rounded-full bg-gray-200 transition-colors">
-            {/* Arrow icon inside the button */}
-            <ArrowRight size={36} className="text-black" />
-          </div>
-        </button>
+       <Link 
+                       to="/contact-us"
+                       className="mt-6 flex items-center text-sm xs:text-base md:text-lg xl:text-xl text-white group max-w-40"
+                     >
+                       Let's Talk
+                       <div className="ml-4 xs:w-10 xs:h-10 w-5 h-5 flex items-center justify-center rounded-full bg-gray-200">
+                         <ArrowRight 
+                           size={32} 
+                           className="text-black group-hover:transform group-hover:-rotate-45 transition-transform duration-500" 
+                         />
+                       </div>
+                     </Link>
       </div>
     </div>
   );

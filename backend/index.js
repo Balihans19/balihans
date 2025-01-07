@@ -7,6 +7,8 @@ const connectDB = require('./config/db');
 //HomePages 
 const homePageRoutes = require('./routes/homePageRoutes');
 const caseStudies = require('./routes/caseStudies');
+const casestudyslidesPageRoutes = require('./routes/casestudyslidesPageRoutes.js')
+const whitepaperslidesPageRoutes = require('./routes/whitepaperslidesPageRoutes.js')
 
 const homecasestudyonePageRoutes = require('./routes/homecasestudyonePageRoutes.js');
 const homecasestudytwoPageRoutes = require('./routes/homecasestudytwoPageRoutes.js');
@@ -99,6 +101,8 @@ const initializeMongoDB = async () => {
 // API routes
 app.use('/api/homepage', homePageRoutes);
 app.use('/api/case-studies', caseStudies);
+app.use('/api/casestudyslidespage', casestudyslidesPageRoutes);
+app.use('/api/whitepaperslidespage', whitepaperslidesPageRoutes);
 
 app.use('/api/homecasestudyonepage', homecasestudyonePageRoutes);
 app.use('/api/homecasestudytwopage', homecasestudytwoPageRoutes);

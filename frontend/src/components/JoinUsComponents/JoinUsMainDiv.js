@@ -2,7 +2,7 @@ import React from "react";
 import { MoveRight } from 'lucide-react';
 
 
-const ContactUsMainDiv = ({
+const JoinUsMainDiv = ({
   backgroundImageUrl,
   heading,
   description,
@@ -45,28 +45,28 @@ const ContactUsMainDiv = ({
 
         <div className="flex justify-end items-start">
           <div className="mr-14 text-left max-w-2xl w-full">
-            <p className="text-base sm:text-xl lg:text-xl mb-8">{description}</p>
+            <p className="text-base text-justify sm:text-xl lg:text-xl mb-8">{description}</p>
           </div>
         </div>
 
         {/* Values section */}
         <div className="flex justify-end items-start">
           <div className="mr-14 max-w-2xl w-full">
-            {values.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="group flex items-center justify-between border-b-4 border-[#add9f2] py-4 text-gray-300 hover:text-white transition-colors duration-300"
-              >
-                <span className="text-sm xs:text-lg sm:text-xl md:text-2xl">
-                  {item.title}
-                </span>
-                <MoveRight
-                  color="#add9f2"
-                  className="w-8 sm:w-10 h-8 sm:h-10 transform group-hover:translate-x-2 transition-transform duration-300"
-                />
-              </a>
-            ))}
+          {values.map((item, index) => (
+  <a
+    key={item.href || index}  // Use index as a fallback if href is empty or not unique
+    href={item.href}
+    className="group flex items-center justify-between border-b-4 border-[#add9f2] py-4 text-gray-300 hover:text-white transition-colors duration-300"
+  >
+    <span className="text-sm xs:text-lg sm:text-xl md:text-2xl">
+      {item.title}
+    </span>
+    <MoveRight
+      color="#add9f2"
+      className="w-8 sm:w-10 h-8 sm:h-10 transform group-hover:translate-x-2 transition-transform duration-300"
+    />
+  </a>
+))}
           </div>
         </div>
       </div>
@@ -74,6 +74,6 @@ const ContactUsMainDiv = ({
   );
 };
 
-export default ContactUsMainDiv;
+export default JoinUsMainDiv;
 
 

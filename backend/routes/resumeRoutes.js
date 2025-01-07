@@ -42,7 +42,6 @@ const upload = multer({
 
 // POST Route to handle resume submission
 router.post("/", async (req, res) => {
-  // Wrap multer upload in a promise to handle errors better
   const handleUpload = () => {
     return new Promise((resolve, reject) => {
       upload(req, res, (err) => {
@@ -53,20 +52,30 @@ router.post("/", async (req, res) => {
   };
 
   try {
-    // Handle the file upload
     await handleUpload();
 
-    const { name, email, keySkills } = req.body;
+    const { name, email, keySkills, formType } = req.body;
 
-    if (!name || !email || !keySkills || !req.file) {
-      return res.status(400).json({ message: "All fields are required." });
+    // Validate required fields
+    if (!name || !email || !keySkills || !req.file || !formType) {
+      return res.status(400).json({ 
+        message: "All required fields must be provided.",
+        missingFields: {
+          name: !name,
+          email: !email,
+          keySkills: formType === 'with-skills' && !keySkills,
+          resume: !req.file,
+          formType: !formType
+        }
+      });
     }
 
-    // Create new resume document
+    // Create new resume document with formType
     const newResume = new Resume({
       name,
       email,
       keySkills,
+      formType, // Make sure to include formType
       resumeFile: {
         public_id: req.file.public_id,
         secure_url: req.file.secure_url,
@@ -74,6 +83,7 @@ router.post("/", async (req, res) => {
         resource_type: req.file.resource_type
       }
     });
+
 
     // Save to MongoDB
     await newResume.save();
@@ -124,3 +134,5 @@ router.post("/", async (req, res) => {
 });
 
 module.exports = router;
+
+
