@@ -56,6 +56,7 @@ function Energy() {
              footerText={energypageData.footerText}
             //  footerItalicWords={energypageData.footerItalicWords}
              showLetsTalkButton={true}
+             singleVideoPosition="xl:right-24 xl:bottom-16 xl:w-[400px] 2xl:right-32 2xl:bottom-28 2xl:w-[400px]"
           />
 
           <MemoizedBankingSolutions

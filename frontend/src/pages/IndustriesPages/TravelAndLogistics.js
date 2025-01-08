@@ -56,6 +56,7 @@ function TravelAndLogistics() {
              footerText={travelandlogisticspageData.footerText}
             //  footerItalicWords={travelandlogisticspageData.footerItalicWords}
              showLetsTalkButton={true}
+             singleVideoPosition="xl:right-24 xl:bottom-16 xl:w-[500px] 2xl:right-36 2xl:bottom-16 2xl:w-[700px]"
           />
 
           <MemoizedBankingSolutions

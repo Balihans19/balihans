@@ -56,6 +56,7 @@ function Web3Solutions() {
              footerText={web3solutionspageData.footerText}
             //  footerItalicWords={web3solutionspageData.footerItalicWords}
              showLetsTalkButton={true}
+             singleVideoPosition="xl:right-24 xl:bottom-16 xl:w-[500px] 2xl:right-28 2xl:bottom-28 2xl:w-[700px]"
           />
 
           <MemoizedBankingSolutions

@@ -56,6 +56,7 @@ function MediaAndEntertainment() {
              footerText={mediaandentertainmentpageData.footerText}
             //  footerItalicWords={mediaandentertainmentpageData.footerItalicWords}
              showLetsTalkButton={true}
+             singleVideoPosition="xl:right-24 xl:bottom-16 xl:w-[500px] 2xl:right-36 2xl:bottom-20 2xl:w-[670px]"
           />
 
           <MemoizedBankingSolutions

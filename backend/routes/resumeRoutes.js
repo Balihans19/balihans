@@ -1,38 +1,14 @@
 const express = require("express");
 const router = express.Router();
-const Resume = require("../models/Resume");
 const nodemailer = require("nodemailer");
 const multer = require("multer");
-const cloudinary = require('cloudinary').v2;
-const { CloudinaryStorage } = require('multer-storage-cloudinary');
-require("dotenv").config();
 
-// Configure Cloudinary
-cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET
-});
-
-// Configure multer storage with Cloudinary
-const storage = new CloudinaryStorage({
-  cloudinary: cloudinary,
-  params: {
-    folder: 'resumes', // This will create a folder in Cloudinary
-    resource_type: 'raw', // This allows for document upload
-    allowed_formats: ['pdf', 'doc', 'docx'], // Allowed file formats
-    public_id: (req, file) => `resume_${Date.now()}`, // Custom filename
-  },
-});
-
-// Configure multer upload
+// Configure multer for temporary storage
 const upload = multer({
-  storage: storage,
   limits: {
     fileSize: 5 * 1024 * 1024, // 5MB limit
   },
   fileFilter: (req, file, cb) => {
-    // Check file type
     if (!file.originalname.match(/\.(pdf|doc|docx)$/)) {
       return cb(new Error('Only PDF, DOC, and DOCX files are allowed!'), false);
     }
@@ -40,8 +16,7 @@ const upload = multer({
   }
 }).single('uploadResume');
 
-// POST Route to handle resume submission
-router.post("/", async (req, res) => {
+router.post("/email", async (req, res) => {
   const handleUpload = () => {
     return new Promise((resolve, reject) => {
       upload(req, res, (err) => {
@@ -53,42 +28,27 @@ router.post("/", async (req, res) => {
 
   try {
     await handleUpload();
+    const { name, email, keySkills } = req.body;
 
-    const { name, email, keySkills, formType } = req.body;
-
-    // Validate required fields
-    if (!name || !email || !keySkills || !req.file || !formType) {
-      return res.status(400).json({ 
+    if (!name || !email || !keySkills || !req.file) {
+      return res.status(400).json({
         message: "All required fields must be provided.",
         missingFields: {
           name: !name,
           email: !email,
-          keySkills: formType === 'with-skills' && !keySkills,
-          resume: !req.file,
-          formType: !formType
+          keySkills: !keySkills,
+          resume: !req.file
         }
       });
     }
 
-    // Create new resume document with formType
-    const newResume = new Resume({
-      name,
-      email,
-      keySkills,
-      formType, // Make sure to include formType
-      resumeFile: {
-        public_id: req.file.public_id,
-        secure_url: req.file.secure_url,
-        format: req.file.format,
-        resource_type: req.file.resource_type
-      }
+    // Format the current date
+    const currentDate = new Date().toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
     });
 
-
-    // Save to MongoDB
-    await newResume.save();
-
-    // Configure email transporter
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -97,42 +57,148 @@ router.post("/", async (req, res) => {
       },
     });
 
-    // Prepare email content
+    // Professional HTML email template
+    const emailTemplate = `
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <style>
+            body {
+              font-family: Arial, sans-serif;
+              line-height: 1.6;
+              color: #333333;
+            }
+            .container {
+              max-width: 600px;
+              margin: 0 auto;
+              padding: 20px;
+            }
+            .header {
+              background-color: #f8f9fa;
+              padding: 20px;
+              border-bottom: 3px solid #007bff;
+              margin-bottom: 20px;
+            }
+            .company-name {
+              color: #007bff;
+              font-size: 24px;
+              font-weight: bold;
+              margin: 0;
+            }
+            .submission-date {
+              color: #6c757d;
+              font-size: 14px;
+              margin-top: 5px;
+            }
+            .section {
+              margin-bottom: 25px;
+            }
+            .section-title {
+              color: #007bff;
+              font-size: 18px;
+              font-weight: bold;
+              margin-bottom: 10px;
+              padding-bottom: 5px;
+              border-bottom: 1px solid #dee2e6;
+            }
+            .candidate-info {
+              background-color: #ffffff;
+              padding: 15px;
+              border: 1px solid #dee2e6;
+              border-radius: 4px;
+            }
+            .info-item {
+              margin-bottom: 10px;
+            }
+            .label {
+              font-weight: bold;
+              color: #495057;
+              width: 100px;
+              display: inline-block;
+            }
+            .value {
+              color: #212529;
+            }
+            .footer {
+              margin-top: 30px;
+              padding-top: 20px;
+              border-top: 1px solid #dee2e6;
+              font-size: 12px;
+              color: #6c757d;
+            }
+            .attachment-info {
+              background-color: #f8f9fa;
+              padding: 10px;
+              border-radius: 4px;
+              margin-top: 20px;
+              font-size: 14px;
+              color: #6c757d;
+            }
+          </style>
+        </head>
+        <body>
+          <div class="container">
+            <div class="header">
+              <h1 class="company-name">Balihans</h1>
+              <div class="submission-date">Resume Submission - ${currentDate}</div>
+            </div>
+
+            <div class="section">
+              <h2 class="section-title">Candidate Details</h2>
+              <div class="candidate-info">
+                <div class="info-item">
+                  <span class="label">Name:</span>
+                  <span class="value">${name}</span>
+                </div>
+                <div class="info-item">
+                  <span class="label">Email:</span>
+                  <span class="value">${email}</span>
+                </div>
+                <div class="info-item">
+                  <span class="label">Key Skills:</span>
+                  <span class="value">${keySkills}</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="attachment-info">
+              📎 Resume attached: ${req.file.originalname}
+            </div>
+          </div>
+        </body>
+      </html>
+    `;
+
     const mailOptions = {
-      from: process.env.EMAIL_USER,
+      from: {
+        name: 'Balihans Careers',
+        address: process.env.EMAIL_USER
+      },
       to: `${process.env.EMAIL_RECEIVER_1}, ${process.env.EMAIL_RECEIVER_2}`,
-      subject: "New Resume Submission",
-      html: `
-        <h2>New Resume Submission</h2>
-        
-        <h3>Candidate Details:</h3>
-        <ul>
-          <li><strong>Name:</strong> ${name}</li>
-          <li><strong>Email:</strong> ${email}</li>
-          <li><strong>Key Skills:</strong> ${keySkills}</li>
-        </ul>
-        
-        <p>The resume can be downloaded from: <a href="${req.file.secure_url}">Click here</a></p>
-      `,
+      subject: `New Resume Submission - ${name}`,
+      html: emailTemplate,
+      attachments: [
+        {
+          filename: req.file.originalname,
+          content: req.file.buffer,
+          contentType: req.file.mimetype
+        }
+      ]
     };
 
-    // Send email
     await transporter.sendMail(mailOptions);
 
-    res.status(200).json({ 
-      message: "Resume submitted successfully!",
-      fileUrl: req.file.secure_url
+    res.status(200).json({
+      message: "Resume submitted successfully!"
     });
-
   } catch (error) {
     console.error("Error processing resume submission:", error);
-    res.status(500).json({ 
-      message: "Failed to submit resume.", 
-      error: error.message 
+    res.status(500).json({
+      message: "Failed to submit resume.",
+      error: error.message
     });
   }
 });
 
 module.exports = router;
-
 

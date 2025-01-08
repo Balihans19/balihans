@@ -55,6 +55,7 @@ function DataAndAnalytics() {
              footerText={dataandanalyticspageData.footerText}
             //  footerItalicWords={dataandanalyticspageData.footerItalicWords}
              showLetsTalkButton={true}
+             singleVideoPosition="xl:right-32 xl:bottom-16 xl:w-[400px] 2xl:right-28 2xl:bottom-28 2xl:w-[400px]"
           />
 
           <MemoizedBankingSolutions

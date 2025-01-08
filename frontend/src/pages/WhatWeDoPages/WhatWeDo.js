@@ -49,6 +49,7 @@ function  WhatWeDo() {
              isSlideshow= {false}
              footerText={whatwedopageData.footerText}
             //  footerItalicWords={whatwedopageData.footerItalicWords}
+            singleVideoPosition="xl:right-24 xl:bottom-16 xl:w-[500px] 2xl:right-36 2xl:bottom-28 2xl:w-[500px]"
           />
 
       <MemoizedBusinessServices

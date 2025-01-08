@@ -56,6 +56,7 @@ function TestingServices() {
              footerText={testingservicespageData.footerText}
             //  footerItalicWords={testingservicespageData.footerItalicWords}
              showLetsTalkButton={true}
+             singleVideoPosition="xl:right-12 xl:bottom-16 xl:w-[500px] 2xl:right-36 2xl:bottom-28 2xl:w-[570px]"
           />
 
           <MemoizedBankingSolutions

@@ -56,6 +56,7 @@ function Cybersecurity() {
              footerText={cybersecuritypageData.footerText}
             //  footerItalicWords={cybersecuritypageData.footerItalicWords}
              showLetsTalkButton={true}
+             singleVideoPosition="xl:right-24 xl:bottom-16 xl:w-[500px] 2xl:right-24 2xl:bottom-28 2xl:w-[600px]"
           />
 
           <MemoizedBankingSolutions

@@ -56,6 +56,7 @@ function Hospitality() {
              footerText={hospitalitypageData.footerText}
             //  footerItalicWords={hospitalitypageData.footerItalicWords}
              showLetsTalkButton={true}
+             singleVideoPosition="xl:right-28 xl:bottom-16 xl:w-[550px] 2xl:right-36 2xl:bottom-28 2xl:w-[550px]"
           />
 
           <MemoizedBankingSolutions

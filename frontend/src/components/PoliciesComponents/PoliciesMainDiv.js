@@ -54,7 +54,7 @@ const PoliciesMainDiv = ({
                   Last reviewed on: December 17, 2023
                 </p>
                 {description.map((paragraph, index) => (
-                  <p key={index} className="text-base sm:text-xl lg:text-2xl mb-8">
+                  <p key={index} className="text-base sm:text-xl lg:text-2xl mb-8 text-justify">
                     {paragraph}
                   </p>
                 ))}
@@ -65,7 +65,7 @@ const PoliciesMainDiv = ({
             {sectionType !== 'privacy' && content.map((section, index) => (
               <div key={index} className="mb-8">
                 <p className="text-base sm:text-xl lg:text-2xl mb-4">{section.title}</p>
-                <p className="text-base sm:text-xl lg:text-2xl">{section.text}</p>
+                <p className="text-base sm:text-xl lg:text-2xl text-justify">{section.text}</p>
               </div>
             ))}
           </div>

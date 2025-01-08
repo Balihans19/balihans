@@ -56,6 +56,7 @@ function DigitalEnterprise() {
              footerText={digitalenterprisepageData.footerText}
             //  footerItalicWords={digitalenterprisepageData.footerItalicWords}
              showLetsTalkButton={true}
+             singleVideoPosition="xl:right-32 xl:bottom-16 xl:w-[500px] 2xl:right-32 2xl:bottom-28 2xl:w-[500px]"
           />
 
           <MemoizedBankingSolutions

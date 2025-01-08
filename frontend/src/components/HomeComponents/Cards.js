@@ -102,7 +102,7 @@ const Cards = ({ primaryHeading, paragraph, cardsData }) => {
             {primaryHeading}
           </h2>
           {/* Paragraph takes 3/4 width on large screens */}
-          <p className="text-xl font-normal text-left lg:w-3/4 xl:w-4/5">
+          <p className="text-xl font-normal text-left  lg:text-justify lg:w-3/4 xl:w-4/5">
             {paragraph}
           </p>
         </div>

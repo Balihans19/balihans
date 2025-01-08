@@ -20,6 +20,8 @@ import { useNavigate } from 'react-router-dom';
  *  props.showLetsTalkButton - Toggle for the "Let's Talk" CTA button
  *  props.descriptionWidths - Array of Tailwind width classes for each slide description
  *  props.defaultDescriptionWidth - Default width class for non-slideshow mode
+ *  props.singleVideoPosition - String specifying the Tailwind classes for positioning
+ *  Only applies when isSlideshow is false and screen width > 1024px
  */
 const MainDiv = ({
   headerTitle,
@@ -34,6 +36,7 @@ const MainDiv = ({
   showLetsTalkButton,
   descriptionWidths = ['lg:max-w-xl', 'lg:max-w-xl', 'lg:max-w-xl', 'lg:max-w-xl'],
   defaultDescriptionWidth = 'lg:max-w-4xl',
+  singleVideoPosition = '', 
 }) => {
   // State for tracking current slide in slideshow mode
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -159,7 +162,13 @@ const MainDiv = ({
 
           {/* Content overlay with heading, description, and CTA */}
           <div className="relative z-10 flex h-full">
-            <div className="absolute right-12 md:right-0 lg:right-12 xl:right-16 bottom-16 w-[10vh] sm:w-[40vh] md:w-[50vh] flex flex-col items-start justify-start text-white">
+            <div 
+              className={`absolute right-12 md:right-0 bottom-16 w-[10vh] sm:w-[40vh] md:w-[50vh] flex flex-col items-start justify-start text-white ${
+                isSlideshow 
+                  ? 'lg:right-12 xl:right-16' 
+                  : `lg:right-12 xl:right-16 ${singleVideoPosition}`
+              }`}
+            >
               <div className="flex flex-col items-start p-2 rounded mb-4">
                 <h1 className="text-md sm:text-xl md:text-3xl xl:text-4xl font-bold transition-all duration-500">
                   {videos[currentSlide].heading}
@@ -182,7 +191,6 @@ const MainDiv = ({
               </div>
             </div>
           </div>
-
           {/* Slideshow navigation bullets */}
           {isSlideshow && videos.length > 1 && (
             <div className="absolute inset-x-0 bottom-5 flex justify-end mr-8 sm:mr-16 md:mr-16 lg:mr-20 xl:mr-36 space-x-2 z-10">
@@ -204,7 +212,7 @@ const MainDiv = ({
         {/* Footer Section with italicized text support */}
         <div className="bg-[#f8f9fa] text-black py-6 md:py-12">
           <div className="max-w-full px-4 md:px-7 lg:px-20 xl:px-36  text-left">
-            <p className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl">
+            <p className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl text-justify">
               {renderTextWithItalics(footerText, footerItalicWords)}
             </p>
           </div>

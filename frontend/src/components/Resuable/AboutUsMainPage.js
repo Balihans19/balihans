@@ -51,7 +51,7 @@ function AboutUsMainPage({
               {headerText}
             </h1>
             {/* Description with left alignment */}
-            <p className="text-sm xs:text-base md:text-lg lg:text-xl xl:text-2xl text-left">
+            <p className="text-sm xs:text-base md:text-lg lg:text-xl xl:text-2xl text-justify">
               {description}
             </p>
           </div>
@@ -88,7 +88,7 @@ function AboutUsMainPage({
                 {missionTitle}
               </h2>
               {/* Mission text with responsive sizing */}
-              <p className="text-sm md:text-base lg:text-lg xl:text-2xl text-gray-200">
+              <p className="text-sm md:text-base lg:text-lg xl:text-2xl text-gray-200 text-justify">
                 {missionText}
               </p>
             </div>

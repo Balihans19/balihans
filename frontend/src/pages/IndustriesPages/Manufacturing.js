@@ -56,6 +56,7 @@ function Manufacturing() {
              footerText={manufacturingpageData.footerText}
             //  footerItalicWords={manufacturingpageData.footerItalicWords}
              showLetsTalkButton={true}
+             singleVideoPosition="xl:right-32 xl:bottom-12 xl:w-[600px] 2xl:right-32 2xl:bottom-28 2xl:w-[600px]"
           />
 
           <MemoizedBankingSolutions

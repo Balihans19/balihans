@@ -56,6 +56,7 @@ function RetailAndConsumerGoods() {
              footerText={retailandconsumergoodspageData.footerText}
             //  footerItalicWords={retailandconsumergoodspageData.footerItalicWords}
              showLetsTalkButton={true}
+             singleVideoPosition="xl:right-32 xl:bottom-10 xl:w-[650px] 2xl:right-32 2xl:bottom-20 2xl:w-[650px]"
           />
 
           <MemoizedBankingSolutions

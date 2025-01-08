@@ -56,6 +56,7 @@ function Communications() {
              footerText={communicationspageData.footerText}
             //  footerItalicWords={communicationspageData.footerItalicWords}
              showLetsTalkButton={true}
+             singleVideoPosition="xl:right-32 xl:bottom-16 xl:w-[450px] 2xl:right-36 2xl:bottom-28 2xl:w-[450px]"
           />
 
           <MemoizedBankingSolutions

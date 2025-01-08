@@ -39,23 +39,23 @@ const CaseStudyMainDiv = ({ backgroundImageUrl, categories, heading, description
         <h1 className="text-3xl lg:text-4xl max-w-lg sm:max-w-xl lg:max-w-3xl mb-8">
           {heading} {/* Display the main heading */}
         </h1>
-        <p className="text-xl lg:text-2xl max-w-lg md:max-w-2xl mb-8">
+        <p className="text-xl lg:text-2xl max-w-lg md:max-w-2xl mb-8 text-justify">
           {description} {/* Display the description text */}
         </p>
 
         {/* Button */}
        <Link 
-                       to="/contact-us"
-                       className="mt-6 flex items-center text-sm xs:text-base md:text-lg xl:text-xl text-white group max-w-40"
-                     >
-                       Let's Talk
-                       <div className="ml-4 xs:w-10 xs:h-10 w-5 h-5 flex items-center justify-center rounded-full bg-gray-200">
-                         <ArrowRight 
-                           size={32} 
-                           className="text-black group-hover:transform group-hover:-rotate-45 transition-transform duration-500" 
-                         />
-                       </div>
-                     </Link>
+          to="/contact-us"
+          className="mt-6 flex items-center text-sm xs:text-base md:text-lg xl:text-xl text-white group max-w-40"
+          >
+            Let's Talk
+            <div className="ml-4 xs:w-10 xs:h-10 w-5 h-5 flex items-center justify-center rounded-full bg-gray-200">
+              <ArrowRight 
+                size={32} 
+                className="text-black group-hover:transform group-hover:-rotate-45 transition-transform duration-500" 
+              />
+            </div>
+          </Link>
       </div>
     </div>
   );

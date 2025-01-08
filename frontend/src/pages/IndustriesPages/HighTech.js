@@ -56,6 +56,7 @@ function HighTech() {
              footerText={hightechpageData.footerText}
             //  footerItalicWords={hightechpageData.footerItalicWords}
              showLetsTalkButton={true}
+             singleVideoPosition="xl:right-32 xl:bottom-16 xl:w-[550px] 2xl:right-36 2xl:bottom-28 2xl:w-[550px]"
           />
 
           <MemoizedBankingSolutions

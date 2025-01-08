@@ -175,7 +175,7 @@ const BankingSolutions = ({ solutionsData, title }) => {
                       {/* Solution Content Heading */}
                       <h3 className="text-xl sm:text-2xl md:text-3xl">{content.heading}</h3>
                       {/* Solution Content Description */}
-                      <p className="text-base sm:text-lg md:text-xl text-gray-300">{content.description}</p>
+                      <p className="text-base sm:text-lg md:text-xl text-gray-300 text-justify">{content.description}</p>
                     </div>
                   ))}
                 </div>
