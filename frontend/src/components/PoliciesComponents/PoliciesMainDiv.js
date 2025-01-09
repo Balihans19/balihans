@@ -30,7 +30,7 @@ const PoliciesMainDiv = ({
       <div className="relative z-10 max-w-full mt-12 md:mt-0 px-4 py-16 sm:px-6 lg:px-20 xl:px-36">
         {/* Header categories */}
         <div className="flex justify-end items-start">
-          <div className="max-w-2xl w-full">
+          <div className="max-w-lg xl:max-w-xl 2xl:max-w-2xl w-full">
             <div className="flex gap-12 text-left font-bold text-base sm:text-lg lg:text-xl">
               {categories.map((category, index) => (
                 <div key={index}>{category}</div>
@@ -46,7 +46,7 @@ const PoliciesMainDiv = ({
 
         {/* Main content */}
         <div className="flex justify-end items-start">
-          <div className="text-left max-w-2xl w-full">
+          <div className="text-left max-w-lg xl:max-w-xl 2xl:max-w-2xl w-full">
             {/* Privacy policy specific content */}
             {sectionType === 'privacy' && description && (
               <>

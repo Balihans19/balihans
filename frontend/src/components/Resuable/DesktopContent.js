@@ -273,7 +273,9 @@ export const desktopContent = [
           <div className="w-full min-w-[200px] my-4 md:my-8">
             <ul className="list-none text-base lg:text-lg p-0">
               <li className="mb-2">Why Balihans</li>
-              <li className="mb-2">Diversity & Inclusion</li>
+              <li className="mb-2">
+                <Link to="/diversity-equity-and-inclusion" className="text-white hover:underline">Diversity & Inclusion</Link>
+              </li>
               <li className="mb-2">
                 <Link to="/join-us" className="text-white hover:underline">Join Us</Link>
               </li>

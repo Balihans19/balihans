@@ -151,7 +151,7 @@ const ContactUsMainDiv = () => {
       <div className="relative z-10 max-w-full mt-12 md:mt-0 px-4 py-16 sm:px-6 lg:px-20 xl:px-36">
         {/* Section header */}
         <div className="flex justify-end items-start">
-          <div className="max-w-3xl w-full pl-6">
+          <div className="max-w-lg lg:max-w-xl xl:max-w-2xl 2xl:max-w-3xl w-full pl-6">
             <div className="flex gap-4 text-left font-bold text-base sm:text-lg lg:text-2xl">
               <h1>TALK TO AN EXPERT</h1>
             </div>
@@ -165,7 +165,7 @@ const ContactUsMainDiv = () => {
 
         {/* Form container */}
         <div className="flex justify-end items-start">
-          <div className="flex flex-col w-full max-w-3xl p-6 rounded-md relative">
+          <div className="flex flex-col w-full max-w-lg lg:max-w-xl xl:max-w-2xl 2xl:max-w-3xl p-6 rounded-md relative">
             {/* Form description */}
             <div>
               <p className="mb-4 text-sm">

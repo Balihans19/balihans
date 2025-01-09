@@ -8,12 +8,12 @@ import { Link } from 'react-router-dom';
 const links = [
   "/strategy-and-consulting",
   "/cloud-and-infrastructure",
-  "/artifical-intelligence",
-  "/cybersecurity",
+  "/data-and-analytics",
   "/digital-enterprise",
+  "/cybersecurity",
+  "/artificial-intelligence",
   "/testing-services",
   "/internet-of-things",
-  "/web3-solutions",
 ];
 
 /**

@@ -2,133 +2,160 @@ import ReCAPTCHA from "react-google-recaptcha";
 import React, { useState } from "react";
 import { Check, X } from 'lucide-react';
 
+
+/**
+ * SubmitResume component handles:
+ * - Collecting user information (name, email, key skills)
+ * - Resume file upload with validation
+ * - Google reCAPTCHA verification
+ * - Form submission to a backend API
+ */
+
 const SubmitResume = () => {
-      const [formData, setFormData] = useState({
-         name: "",
-         email: "",
-         keySkills: "",
-       });
-       
-       const [resumeFile, setResumeFile] = useState(null);
-       const [selectedFileName, setSelectedFileName] = useState("");
-       const [captchaValue, setCaptchaValue] = useState(null);
-       const [notification, setNotification] = useState({
-         show: false,
-         message: "",
-         type: "",
-       });
-       const [isSubmitting, setIsSubmitting] = useState(false);
-     
-       const handleChange = (e) => {
-         const { name, value, files } = e.target;
-     
-         if (name === "uploadResume") {
-           const file = files[0];
-           if (file) {
-             const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
-             
-             if (!allowedTypes.includes(file.type)) {
-               showNotification("Please upload only PDF, DOC, or DOCX files", "error");
-               return;
-             }
-     
-             if (file.size > 5 * 1024 * 1024) {
-               showNotification("File size should be less than 5MB", "error");
-               return;
-             }
-     
-             setResumeFile(file);
-             setSelectedFileName(file.name);
-           }
-         } else {
-           setFormData(prev => ({
-             ...prev,
-             [name]: value
-           }));
-         }
-       };
-     
-       const handleCaptcha = (value) => {
-         setCaptchaValue(value);
-       };
-     
-       const showNotification = (message, type) => {
-         setNotification({ show: true, message, type });
-         setTimeout(() => {
-           setNotification({ show: false, message: "", type: "" });
-         }, 5000);
-       };
-     
-       const handleSubmit = async (e) => {
-         e.preventDefault();
-     
-         if (!resumeFile) {
-           showNotification("Please upload your resume", "error");
-           return;
-         }
-     
-         if (!captchaValue) {
-           showNotification("Please complete the reCAPTCHA", "error");
-           return;
-         }
-     
-         setIsSubmitting(true);
-     
-         try {
-           const formDataToSend = new FormData();
-           Object.keys(formData).forEach(key => {
-             formDataToSend.append(key, formData[key]);
-           });
-           formDataToSend.append("uploadResume", resumeFile);
-           formDataToSend.append("captchaValue", captchaValue);
-     
-           const response = await fetch(
-             `${process.env.REACT_APP_API_URL}/api/resume/email`,
-             {
-               method: "POST",
-               body: formDataToSend,
-             }
-           );
-     
-           if (!response.ok) {
-             const errorData = await response.json();
-             throw new Error(errorData.message || 'Failed to submit resume');
-           }
-     
-           await response.json();
-     
-           showNotification(
-             "Thank you for submitting your resume. We'll review it and get back to you shortly.",
-             "success"
-           );
-           
-           // Reset form
-           setFormData({
-             name: "",
-             email: "",
-             keySkills: "",
-           });
-           setResumeFile(null);
-           setSelectedFileName("");
-           setCaptchaValue(null);
-           if (window.grecaptcha) {
-             window.grecaptcha.reset();
-           }
-         } catch (error) {
-           console.error("Error submitting form:", error);
-           showNotification(
-             error.message || "An error occurred while submitting your resume. Please try again later.",
-             "error"
-           );
-         } finally {
-           setIsSubmitting(false);
-         }
-       };
+
+  // State for managing form input values
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    keySkills: "",
+  });
+  
+  // State for storing the uploaded resume file and its name
+  const [resumeFile, setResumeFile] = useState(null);
+  const [selectedFileName, setSelectedFileName] = useState("");
+
+    // State for storing the Google reCAPTCHA response
+  const [captchaValue, setCaptchaValue] = useState(null);
+
+    // State for displaying notifications (e.g., errors or success messages)
+  const [notification, setNotification] = useState({
+    show: false,
+    message: "",
+    type: "",
+  });
+
+   // State for managing form submission status
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+
+  // Handles input changes for both text inputs and file uploads
+  const handleChange = (e) => {
+    const { name, value, files } = e.target;
+ 
+     // Handling file upload input
+    if (name === "uploadResume") {
+      const file = files[0];
+      if (file) {
+        // File type validation
+        const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+        
+        if (!allowedTypes.includes(file.type)) {
+          showNotification("Please upload only PDF, DOC, or DOCX files", "error");
+          return;
+        }
+           // File size validation (max: 5MB)
+        if (file.size > 5 * 1024 * 1024) {
+          showNotification("File size should be less than 5MB", "error");
+          return;
+        }
+      // Storing the valid file and its name in the state
+        setResumeFile(file);
+        setSelectedFileName(file.name);
+      }
+    } else {
+       // Updating state for text inputs
+      setFormData(prev => ({
+        ...prev,
+        [name]: value
+      }));
+    }
+  };
+   // Captures the Google reCAPTCHA response
+  const handleCaptcha = (value) => {
+    setCaptchaValue(value);
+  };
+// Displays notifications for success or error messages
+  const showNotification = (message, type) => {
+    setNotification({ show: true, message, type });
+    setTimeout(() => {
+      setNotification({ show: false, message: "", type: "" });
+    }, 5000);
+  };
+  // Handles form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault(); //Prevents the default form submission behavior
+ // Validation checks
+    if (!resumeFile) {
+      showNotification("Please upload your resume", "error");
+      return;
+    }
+
+    if (!captchaValue) {
+      showNotification("Please complete the reCAPTCHA", "error");
+      return;
+    }
+
+    setIsSubmitting(true);// Sets the submission state to true
+
+    try {
+      // Preparing form data for submission
+      const formDataToSend = new FormData();
+      Object.keys(formData).forEach(key => {
+        formDataToSend.append(key, formData[key]);
+      });
+      formDataToSend.append("uploadResume", resumeFile);
+      formDataToSend.append("captchaValue", captchaValue);
+
+    // Sending data to the backend API
+      const response = await fetch(
+        `${process.env.REACT_APP_API_URL}/api/resume/email`,
+        {
+          method: "POST",
+          body: formDataToSend,
+        }
+      );
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Failed to submit resume');
+      }
+
+      await response.json();
+ // Display success notification and reset the form
+      showNotification(
+        "Thank you for submitting your resume. We'll review it and get back to you shortly.",
+        "success"
+      );
+      
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        keySkills: "",
+      });
+      setResumeFile(null);
+      setSelectedFileName("");
+      setCaptchaValue(null);
+
+      // Resets reCAPTCHA if available
+      if (window.grecaptcha) {
+        window.grecaptcha.reset();
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      showNotification(
+        error.message || "An error occurred while submitting your resume. Please try again later.",
+        "error"
+      );
+    } finally {
+      setIsSubmitting(false);// Ends the submission state
+    }
+  };
 
   return (
     <div className="relative min-h-screen lg:min-h-[850px] text-white w-full pb-24 mt-12 lg:mt-0">
       <div 
-        className="absolute inset-0 w-full h-full"
+        className="absolute inset-0 w-full h-full bg-center bg-cover"
         style={{
           backgroundImage: `url('https://res.cloudinary.com/dnijlfi48/image/upload/v1735884634/Untitled_design_35_ixony5.webp')`,
           filter: 'brightness(0.7)',
@@ -163,8 +190,8 @@ const SubmitResume = () => {
       {/* Main content container */}
       <div className="relative z-10 max-w-full mt-12 md:mt-0 px-4 py-16 sm:px-6 lg:px-20 xl:px-36">
         {/* Section header */}
-        <div className="flex justify-start lg:justify-end items-start">
-           <div className="max-w-3xl w-full pl-6">
+        <div className="flex justify-end ">
+           <div className="max-w-xl 2xl:max-w-3xl w-full pl-6">
              <div className="flex gap-8 text-left font-bold text-base sm:text-lg lg:text-2xl">
                <h1>APPLY NOW</h1>
                <h1>JOIN US</h1>
@@ -173,13 +200,13 @@ const SubmitResume = () => {
          </div>
 
         {/* Decorative horizontal rule */}
-        <div className="flex justify-start lg:justify-end items-start">
+        <div className="flex justify-end ">
           <hr className="w-full my-6" />
         </div>
 
         {/* Form container */}
-        <div className="flex justify-start lg:justify-end items-start">
-          <div className="flex flex-col w-full max-w-3xl p-6 rounded-md relative">
+        <div className="flex justify-end ">
+          <div className="flex flex-col w-full max-w-xl 2xl:max-w-3xl p-6 rounded-md relative">
            
 
             {/* Contact form */}
@@ -305,7 +332,7 @@ const SubmitResume = () => {
        
                   {/* Left Section - Quotation Icon */}
                   <div className="text-5xl lg:text-7xl font-bold flex-shrink-0 mb-2">
-                     <img src="https://res.cloudinary.com/dnijlfi48/image/upload/v1735978017/Untitled_80_x_60_px_aktvxc.webp" alt="Quotation mark" className="inline-block" />
+                     <img src="https://res.cloudinary.com/dnijlfi48/image/upload/v1736424167/Untitled10_hezv8w.webp" alt="Quotation mark" className="inline-block" />
                    </div>
 
                 {/* Right Section - Text Content */}

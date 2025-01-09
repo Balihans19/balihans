@@ -50,7 +50,6 @@ function CaseStudies() {
           />
 
          <MemoizedCustomerStories 
-            stories={casestudiespageData.CustomerStories.Stories}
             />
 
         <MemoizedAiServices
