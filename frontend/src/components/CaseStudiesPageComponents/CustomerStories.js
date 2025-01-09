@@ -25,7 +25,7 @@ const CustomerStories = () => {
   if (isLoading) return <div>Loading...</div>; // Show a loading indicator while fetching data
   if (error) return <div>Error loading stories</div>; // Display an error message if fetching fails
 
-  const { stories = [], pagination } = data || {}; // Destructure stories and pagination from fetched data
+  const { stories = [], pagination = { totalPages: 1, currentPage: 0 } } = data || {}; // Destructure stories and pagination from fetched data
 
   // Navigate to the next page of stories, if available
   const handleNext = () => {
@@ -86,40 +86,39 @@ const CustomerStories = () => {
       </div>
 
       {/* Pagination controls */}
-      <div className="flex justify-end mt-4 items-center gap-2 xs:gap-4">
-        {/* Previous page button */}
-        <div className="flex items-center gap-2 xs:gap-6">
-          <button
-            onClick={handlePrevious}
-            disabled={currentPage === 0} // Disable button on the first page
-            className={`p-0 xs:p-1 rounded-full ${
-              currentPage === 0 ? "bg-white" : "bg-gray-700 hover:bg-gray-600"
-            }`}
-          >
-            <ArrowLeft className="text-black" size={28} /> {/* Left arrow icon */}
-          </button>
-          <span className="text-base xs:text-xl">Previous</span>
-        </div>
-        <span className="text-3xl">|</span> {/* Separator */}
-        {/* Next page button */}
-        <div className="flex items-center gap-2 xs:gap-6">
-          <span className="text-base xs:text-xl">Next</span>
-          <button
-            onClick={handleNext}
-            disabled={currentPage === pagination.totalPages - 1} // Disable button on the last page
-            className={`p-0 xs:p-1 rounded-full ${
-              currentPage === pagination.totalPages - 1
-                ? "bg-white"
-                : "bg-gray-300 hover:bg-gray-400"
-            }`}
-          >
-            <ArrowRight className="text-black" size={28} /> {/* Right arrow icon */}
-          </button>
-        </div>
-      </div>
+      {pagination && (
+         <div className="flex justify-end mt-4 items-center gap-2 xs:gap-4">
+           <div className="flex items-center gap-2 xs:gap-6">
+             <button
+               onClick={handlePrevious}
+               disabled={currentPage === 0}
+               className={`p-0 xs:p-1 rounded-full ${
+                 currentPage === 0 ? "bg-white" : "bg-gray-700 hover:bg-gray-600"
+               }`}
+             >
+               <ArrowLeft className="text-black" size={28} />
+             </button>
+             <span className="text-base xs:text-xl">Previous</span>
+           </div>
+           <span className="text-3xl">|</span>
+           <div className="flex items-center gap-2 xs:gap-6">
+             <span className="text-base xs:text-xl">Next</span>
+             <button
+               onClick={handleNext}
+               disabled={currentPage === pagination.totalPages - 1}
+               className={`p-0 xs:p-1 rounded-full ${
+                 currentPage === pagination.totalPages - 1
+                   ? "bg-white"
+                   : "bg-gray-300 hover:bg-gray-400"
+               }`}
+             >
+               <ArrowRight className="text-black" size={28} />
+             </button>
+           </div>
+         </div>
+       )}
     </div>
   );
 };
 
 export default CustomerStories;
-

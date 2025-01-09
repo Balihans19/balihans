@@ -34,11 +34,14 @@ router.get('/', async (req, res) => {
 // New route: Get stories for CustomerStories component
 router.get('/stories', async (req, res) => {
   try {
+    const { page = 0, limit = 9 } = req.query; // Extract page and limit from query params
+    const totalStories = await CaseStudy.countDocuments(); // Count total stories
     const stories = await CaseStudy.find({})
       .select('slug mainSection.categories mainSection.heading mainSection.backgroundImageUrl')
+      .skip(page * limit)
+      .limit(parseInt(limit))
       .lean();
 
-    // Transform the data to match CustomerStories component requirements
     const transformedStories = stories.map(story => ({
       slug: story.slug,
       categories: story.mainSection.categories,
@@ -46,11 +49,18 @@ router.get('/stories', async (req, res) => {
       backgroundImageUrl: story.mainSection.backgroundImageUrl
     }));
 
-    res.json(transformedStories);
+    const pagination = {
+      totalPages: Math.ceil(totalStories / limit),
+      currentPage: parseInt(page),
+      totalItems: totalStories,
+    };
+
+    res.json({ stories: transformedStories, pagination }); // Include pagination in response
   } catch (error) {
     res.status(500).json({ message: 'Server error', error: error.message });
   }
 });
+
 
 // Get single case study by slug
 router.get('/:slug', async (req, res) => {
