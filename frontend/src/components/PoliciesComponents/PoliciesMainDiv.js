@@ -21,8 +21,9 @@ const PoliciesMainDiv = ({
 }) => {
   return (
     <div
-      className="relative min-h-screen lg:min-h-[850px] text-white w-full bg-cover bg-fixed bg-center mt-16 lg:mt-0"
-      style={{ backgroundImage: `url('${backgroundImage}')` }}
+      className="relative min-h-screen lg:min-h-[850px] text-white w-full bg-fixed  mt-16 lg:mt-0"
+      style={{ backgroundImage: `url('${backgroundImage}')`
+    }}
     >
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-l from-black to-transparent"></div>
