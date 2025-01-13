@@ -7,10 +7,6 @@ import Navbar from './components/Resuable/Navbar';
 import Footer from './components/Resuable/Footer';
 
 import Home from './pages/HomePages/Home';
-import HomeCaseStudyOne from './pages/HomePages/HomeCaseStudyOne';
-import HomeCaseStudyTwo from './pages/HomePages/HomeCaseStudyTwo';
-import HomeCaseStudyThree from './pages/HomePages/HomeCaseStudyThree';
-import HomeCaseStudyFour from './pages/HomePages/HomeCaseStudyFour';
 
 
 import AboutUs from './pages/AboutUsPages/AboutUs';
@@ -80,12 +76,6 @@ function App() {
 
         {/* Home Pages */}
         <Route path="/" element={<Home />} />
-        
-        {/* <Route path="/balihans-helps-us-based-manufacturing-company-modernize-shop-floor" element={<HomeCaseStudyOne />} />
-        <Route path="/elevating-security-posture-with-a-24/7-soc" element={<HomeCaseStudyTwo />} />
-        <Route path="/balihans-empowers-media-company-through-digital-transformation" element={<HomeCaseStudyThree />} />
-        <Route path="/optimizing-ecommerce-payments-for-seamless-checkout" element={<HomeCaseStudyFour />} /> */}
-
         <Route path="/case-study/:slug" element={<CaseStudyPage/>} />
  
         {/* AboutUs Pages */}
