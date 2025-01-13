@@ -21,7 +21,10 @@ const MemoizedContactCareers = memo(ContactCareers);
 function AboutUs() {
 
    // Set the page title for SEO and page rendering
-  UsePageTitle('About Us');
+  UsePageTitle(
+    'About Us',
+    'Learn about Balihans, a leading data science and AI consulting firm. We empower businesses with cutting-edge solutions in predictive analytics, machine learning, and digital transformation. Discover our team, our values, and our commitment to driving client success.'
+  );
   
    // Fetch the aboutuspage data using a custom hook
   const { data: aboutuspageData, loading, error } = usePageData('aboutuspage');

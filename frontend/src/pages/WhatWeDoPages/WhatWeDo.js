@@ -21,7 +21,10 @@ const MemoizedContactCareers = memo(ContactCareers);
 function  WhatWeDo() {
 
   // Set the page title for SEO and page rendering
-  UsePageTitle('What We Do');
+  UsePageTitle(
+    'What We Do',
+    'Explore Balihans comprehensive suite of data science and AI services, including predictive analytics, machine learning, data engineering, and digital transformation consulting. We help businesses leverage data to solve complex challenges and achieve their strategic goals.'
+  );
   
   // Fetch the whatwedopage data using a custom hook
   const { data: whatwedopageData, loading, error } = usePageData('whatwedopage');

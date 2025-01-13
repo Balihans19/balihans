@@ -25,7 +25,10 @@ const MemoizedContactUsVideoDiv = memo(ContactUsVideoDiv);
 function ContactUs() {
   
   // Set the page title for SEO and page rendering
-  UsePageTitle('Contact Us');
+  UsePageTitle(
+    'Contact Us',
+    'Contact Balihans for expert data science and AI consulting services. Were ready to help you achieve your business goals through data-driven solutions.'
+  );
     
     // Fetch the contactuspage data using a custom hook  
     const { data: contactuspageData, loading, error } = usePageData('contactuspage');
