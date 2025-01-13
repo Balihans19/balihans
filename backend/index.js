@@ -10,10 +10,7 @@ const caseStudies = require('./routes/caseStudies');
 const casestudyslidesPageRoutes = require('./routes/casestudyslidesPageRoutes.js')
 const whitepaperslidesPageRoutes = require('./routes/whitepaperslidesPageRoutes.js')
 
-const homecasestudyonePageRoutes = require('./routes/homecasestudyonePageRoutes.js');
-const homecasestudytwoPageRoutes = require('./routes/homecasestudytwoPageRoutes.js');
-const homecasestudythreePageRoutes = require('./routes/homecasestudythreePageRoutes.js');
-const homecasestudyfourPageRoutes = require('./routes/homecasestudyfourPageRoutes.js');
+
 
 //AboutUsPages
 const aboutusPageRoutes = require('./routes/aboutusPageRoutes');
@@ -104,10 +101,7 @@ app.use('/api/case-studies', caseStudies);
 app.use('/api/casestudyslidespage', casestudyslidesPageRoutes);
 app.use('/api/whitepaperslidespage', whitepaperslidesPageRoutes);
 
-app.use('/api/homecasestudyonepage', homecasestudyonePageRoutes);
-app.use('/api/homecasestudytwopage', homecasestudytwoPageRoutes);
-app.use('/api/homecasestudythreepage', homecasestudythreePageRoutes);
-app.use('/api/homecasestudyfourpage', homecasestudyfourPageRoutes);
+
 
 
 app.use('/api/aboutuspage', aboutusPageRoutes);
