@@ -21,7 +21,7 @@ const PoliciesMainDiv = ({
 }) => {
   return (
     <div
-      className="relative min-h-screen lg:min-h-[850px] text-white w-full bg-fixed  mt-16 lg:mt-0"
+      className="relative min-h-screen lg:min-h-[850px] text-white w-full bg-fixed mt-16 lg:mt-0"
       style={{ backgroundImage: `url('${backgroundImage}')`
     }}
     >
@@ -55,7 +55,7 @@ const PoliciesMainDiv = ({
                   Last reviewed on: December 17, 2023
                 </p>
                 {description.map((paragraph, index) => (
-                  <p key={index} className="text-base sm:text-xl lg:text-2xl mb-8 text-justify">
+                  <p key={index} className="text-base sm:text-xl lg:text-2xl mb-8 ">
                     {paragraph}
                   </p>
                 ))}
@@ -66,7 +66,7 @@ const PoliciesMainDiv = ({
             {sectionType !== 'privacy' && content.map((section, index) => (
               <div key={index} className="mb-8">
                 <p className="text-base sm:text-xl lg:text-2xl mb-4">{section.title}</p>
-                <p className="text-base sm:text-xl lg:text-2xl text-justify">{section.text}</p>
+                <p className="text-base sm:text-xl lg:text-2xl ">{section.text}</p>
               </div>
             ))}
           </div>

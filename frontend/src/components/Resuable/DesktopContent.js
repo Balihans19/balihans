@@ -56,19 +56,25 @@ export const desktopContent = [
               </li>
             </ul>
           </div>
-
           <div className="min-w-[250] xl:min-w-[350px]">
-            <div style={styles.aboutCustomer} className="min-h-[200px] md:min-h-[250px] text-center p-4 lg:pl-10 bg-black bg-opacity-80">
-              <p className="text-white text-base lg:text-lg pt-16 lg:pt-24 mb-1">
-                52% increase in customer satisfaction for e-commerce refund
-              </p>
-            </div>
-            <div style={styles.aboutFaster} className="min-h-[200px] lg:min-h-[250px] text-left p-4 lg:pl-10 bg-black bg-opacity-50">
-              <p className="text-white text-base lg:text-lg pt-16 lg:pt-24 mb-1">
-                Faster claim settlement for insurance company
-              </p>
-            </div>
+             <Link to="/case-study/52-percent-increase-customer-satisfaction-ecommerce-refund" className="block">
+               <div style={styles.aboutCustomer} className="relative min-h-[200px] lg:min-h-[250px] text-center p-4 lg:pl-10">
+                 <div className="absolute inset-0 bg-black bg-opacity-60 z-0"></div>
+                 <p className="text-white text-base lg:text-lg pt-16 lg:pt-24 mb-1 relative z-10">
+                   52% increase in customer satisfaction for e-commerce refund
+                 </p>
+               </div>
+             </Link>
+             <Link to="/case-study/faster-claim-settlement-for-insurance-company" className="block">
+               <div style={styles.aboutFaster} className="relative min-h-[200px] lg:min-h-[250px] text-left p-4 lg:pl-10">
+                 <div className="absolute inset-0 bg-black bg-opacity-60 z-0"></div>
+                 <p className="text-white text-base lg:text-lg pt-16 lg:pt-24 mb-1 relative z-10">
+                   Faster claim settlement for insurance company
+                 </p>
+               </div>
+             </Link>
           </div>
+ 
         </div>
       ),
     },
@@ -208,16 +214,22 @@ export const desktopContent = [
           </div>
 
           <div className="min-w-[250] xl:min-w-[350px]">
-            <div style={styles.aboutCustomer} className="min-h-[200px] lg:min-h-[250px] text-center p-4 lg:pl-10 bg-black bg-opacity-50">
-              <p className="text-white text-base lg:text-lg pt-16 lg:pt-24 mb-1">
-                52% increase in customer satisfaction for e-commerce refund
-              </p>
-            </div>
-            <div style={styles.aboutFaster} className="min-h-[200px] lg:min-h-[250px] text-left p-4 lg:pl-10 bg-black bg-opacity-50">
-              <p className="text-white text-base lg:text-lg pt-16 lg:pt-24 mb-1">
-                Faster claim settlement for insurance company
-              </p>
-            </div>
+             <Link to="/case-study/52-percent-increase-customer-satisfaction-ecommerce-refund" className="block">
+               <div style={styles.aboutCustomer} className="relative min-h-[200px] lg:min-h-[250px] text-center p-4 lg:pl-10">
+                 <div className="absolute inset-0 bg-black bg-opacity-60 z-0"></div>
+                 <p className="text-white text-base lg:text-lg pt-16 lg:pt-24 mb-1 relative z-10">
+                   52% increase in customer satisfaction for e-commerce refund
+                 </p>
+               </div>
+             </Link>
+             <Link to="/case-study/faster-claim-settlement-for-insurance-company" className="block">
+               <div style={styles.aboutFaster} className="relative min-h-[200px] lg:min-h-[250px] text-left p-4 lg:pl-10">
+                 <div className="absolute inset-0 bg-black bg-opacity-60 z-0"></div>
+                 <p className="text-white text-base lg:text-lg pt-16 lg:pt-24 mb-1 relative z-10">
+                   Faster claim settlement for insurance company
+                 </p>
+               </div>
+             </Link>
           </div>
         </div>
       ),
@@ -248,16 +260,22 @@ export const desktopContent = [
           </div>
 
           <div className="min-w-[250] xl:min-w-[350px]">
-            <div style={styles.aboutCustomer} className="min-h-[200px] lg:min-h-[250px] text-center p-4 lg:pl-10 bg-black bg-opacity-50">
-              <p className="text-white text-base lg:text-lg pt-16 lg:pt-24 mb-1">
-                52% increase in customer satisfaction for e-commerce refund
-              </p>
-            </div>
-            <div style={styles.aboutFaster} className="min-h-[200px] lg:min-h-[250px] text-left p-4 lg:pl-10 bg-black bg-opacity-50">
-              <p className="text-white text-base lg:text-lg pt-16 lg:pt-24 mb-1">
-                Faster claim settlement for insurance company
-              </p>
-            </div>
+             <Link to="/case-study/52-percent-increase-customer-satisfaction-ecommerce-refund" className="block">
+               <div style={styles.aboutCustomer} className="relative min-h-[200px] lg:min-h-[250px] text-center p-4 lg:pl-10">
+                 <div className="absolute inset-0 bg-black bg-opacity-60 z-0"></div>
+                 <p className="text-white text-base lg:text-lg pt-16 lg:pt-24 mb-1 relative z-10">
+                   52% increase in customer satisfaction for e-commerce refund
+                 </p>
+               </div>
+             </Link>
+             <Link to="/case-study/faster-claim-settlement-for-insurance-company" className="block">
+               <div style={styles.aboutFaster} className="relative min-h-[200px] lg:min-h-[250px] text-left p-4 lg:pl-10">
+                 <div className="absolute inset-0 bg-black bg-opacity-60 z-0"></div>
+                 <p className="text-white text-base lg:text-lg pt-16 lg:pt-24 mb-1 relative z-10">
+                   Faster claim settlement for insurance company
+                 </p>
+               </div>
+             </Link>
           </div>
         </div>
       ),
@@ -288,16 +306,22 @@ export const desktopContent = [
           </div>
 
           <div className="min-w-[250] xl:min-w-[350px]">
-            <div style={styles.aboutCustomer} className="min-h-[200px] lg:min-h-[250px] text-center p-4 lg:pl-10 bg-black bg-opacity-50">
-              <p className="text-white text-base lg:text-lg pt-16 lg:pt-24 mb-1">
-                52% increase in customer satisfaction for e-commerce refund
-              </p>
-            </div>
-            <div style={styles.aboutFaster} className="min-h-[200px] lg:min-h-[250px] text-left p-4 lg:pl-10 bg-black bg-opacity-50">
-              <p className="text-white text-base lg:text-lg pt-16 lg:pt-24 mb-1">
-                Faster claim settlement for insurance company
-              </p>
-            </div>
+             <Link to="/case-study/52-percent-increase-customer-satisfaction-ecommerce-refund" className="block">
+               <div style={styles.aboutCustomer} className="relative min-h-[200px] lg:min-h-[250px] text-center p-4 lg:pl-10">
+                 <div className="absolute inset-0 bg-black bg-opacity-60 z-0"></div>
+                 <p className="text-white text-base lg:text-lg pt-16 lg:pt-24 mb-1 relative z-10">
+                   52% increase in customer satisfaction for e-commerce refund
+                 </p>
+               </div>
+             </Link>
+             <Link to="/case-study/faster-claim-settlement-for-insurance-company" className="block">
+               <div style={styles.aboutFaster} className="relative min-h-[200px] lg:min-h-[250px] text-left p-4 lg:pl-10">
+                 <div className="absolute inset-0 bg-black bg-opacity-60 z-0"></div>
+                 <p className="text-white text-base lg:text-lg pt-16 lg:pt-24 mb-1 relative z-10">
+                   Faster claim settlement for insurance company
+                 </p>
+               </div>
+             </Link>
           </div>
         </div>
       ),

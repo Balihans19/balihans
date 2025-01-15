@@ -48,7 +48,7 @@ const JoinUsMainDiv = ({
         {/* Description section */}
         <div className="flex justify-end items-start">
           <div className="text-left max-w-lg lg:max-w-xl xl:max-w-2xl 2xl:max-w-3xl w-full">
-            <p className="text-base text-justify sm:text-xl lg:text-xl mb-8">
+            <p className="text-base  sm:text-xl lg:text-xl mb-8">
               {description} {/* Render the description */}
             </p>
           </div>

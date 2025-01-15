@@ -48,7 +48,7 @@ const CaseStudiesPagMainDiv = ({
             <h1 className="text-base sm:text-lg md:text-xl lg:text-3xl xl:text-4xl font-bold mb-4">
               {title} {/* Display the title */}
             </h1>
-            <p className="text-base sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white/90 text-justify">
+            <p className="text-base sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white/90 ">
               {description} {/* Display the description/content */}
             </p>
           </div>

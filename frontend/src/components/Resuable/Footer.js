@@ -104,30 +104,34 @@ const Footer = () => {
             {/* Featured Case Studies Section */}
             <h2 className="text-xl font-bold  mb-4">Featured case-study</h2>
             <div className="space-y-4">
-              {/* E-commerce Case Study */}
-              <div className="relative">
-                <img
-                  src="https://res.cloudinary.com/dnijlfi48/image/upload/f_webp,q_auto/v1730886548/Untitled_design_20_uqhti3.png"
-                  alt="E-commerce"
-                  className="w-[20vh] lg:w-[25vh] h-32 object-cover"
-                />
-                <p className="absolute inset-0 flex items-center text-[#e3e5e6] text-sm justify-center bg-black bg-opacity-50 text-center px-4 w-[20vh] lg:w-[25vh]">
-                  52% increase in customer satisfaction for e-commerce refund
-                </p>
-              </div>
-
-              {/* Insurance Case Study */}
-              <div className="relative">
-                <img
-                  src="https://res.cloudinary.com/dnijlfi48/image/upload/f_webp,q_auto/v1730886548/Untitled_design_30_xuetna.png"
-                  alt="Insurance"
-                  className="w-[20vh] lg:w-[25vh] h-32 object-cover"
-                />
-                <p className="absolute inset-0 flex items-center justify-center  text-[#e3e5e6]  text-sm bg-black bg-opacity-50 text-center px-4 w-[20vh] lg:w-[25vh]">
-                  Faster claim settlement for insurance company
-                </p>
-              </div>
-            </div>
+                {/* E-commerce Case Study */}
+               <Link to="/case-study/52-percent-increase-customer-satisfaction-ecommerce-refund" className="block">
+                 <div className="relative">
+                   <img
+                     src="https://res.cloudinary.com/dnijlfi48/image/upload/f_webp,q_auto/v1730886548/Untitled_design_20_uqhti3.png"
+                     alt="E-commerce"
+                     className="w-[20vh] lg:w-[25vh] h-32 object-cover"
+                   />
+                   <p className="absolute inset-0 flex items-center text-[#e3e5e6] text-sm justify-center bg-black bg-opacity-50 text-center px-4 w-[20vh] lg:w-[25vh]">
+                     52% increase in customer satisfaction for e-commerce refund
+                   </p>
+                 </div>
+               </Link>
+             
+               {/* Insurance Case Study */}
+               <Link to="/case-study/faster-claim-settlement-for-insurance-company" className="block">
+                 <div className="relative">
+                   <img
+                     src="https://res.cloudinary.com/dnijlfi48/image/upload/f_webp,q_auto/v1730886548/Untitled_design_30_xuetna.png"
+                     alt="Insurance"
+                     className="w-[20vh] lg:w-[25vh] h-32 object-cover"
+                   />
+                   <p className="absolute inset-0 flex items-center justify-center text-[#e3e5e6] text-sm bg-black bg-opacity-50 text-center px-4 w-[20vh] lg:w-[25vh]">
+                     Faster claim settlement for insurance company
+                   </p>
+                 </div>
+               </Link>
+             </div>
           </div>
         </div>
 

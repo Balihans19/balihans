@@ -116,7 +116,7 @@ const MainDiv = ({
           )}
 
           {/* Header content with title, description, and optional CTA */}
-          <div className="relative z-10 max-w-44 xs:max-w-xs md:max-w-6xl pl-6 lg:pl-20 xl:pl-36 pb-44 h-full flex flex-col justify-center">
+          <div className="relative z-10 max-w-44 xs:max-w-xs md:max-w-6xl pl-6 lg:pl-20 xl:pl-36 pb-52 xl:pb-20 2xl:pb-28 h-full flex flex-col justify-center">
             <h1 className="text-sm xs:text-lg sm:text-xl md:text-3xl xl:text-4xl mt-5 md:mt-0 font-bold text-[#FAF9F6] ">
               {headerTitle}
             </h1>
@@ -212,7 +212,7 @@ const MainDiv = ({
         {/* Footer Section with italicized text support */}
         <div className="bg-[#f8f9fa] text-black py-6 md:py-12">
           <div className="max-w-full px-4 md:px-7 lg:px-20 xl:px-36  text-left">
-            <p className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl text-justify">
+            <p className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl">
               {renderTextWithItalics(footerText, footerItalicWords)}
             </p>
           </div>

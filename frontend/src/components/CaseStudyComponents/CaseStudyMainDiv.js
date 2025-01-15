@@ -39,7 +39,7 @@ const CaseStudyMainDiv = ({ backgroundImageUrl, categories, heading, description
         <h1 className="text-3xl lg:text-4xl max-w-lg sm:max-w-xl lg:max-w-xl xl:max-w-2xl 2xl:max-w-3xl mb-8">
           {heading} {/* Display the main heading */}
         </h1>
-        <p className="text-xl lg:text-2xl max-w-lg sm:max-w-xl lg:max-w-xl xl:max-w-2xl 2xl:max-w-3xl mb-8 text-justify">
+        <p className="text-xl lg:text-2xl max-w-lg sm:max-w-xl lg:max-w-xl xl:max-w-2xl 2xl:max-w-3xl mb-8 ">
           {description} {/* Display the description text */}
         </p>
 
