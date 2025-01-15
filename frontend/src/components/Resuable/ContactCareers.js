@@ -73,7 +73,7 @@ const ContactCareers = ({ variant }) => {
             </p>
             {/* Call-to-action button for exploring career opportunities */}
             <Link
-              to=""
+              to="/join-us"
               className={`border-2 px-6 py-3 text-lg xs:text-xl transition duration-300 ${currentStyle.button}`}
             >
               Explore opportunities
