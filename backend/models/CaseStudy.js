@@ -22,7 +22,7 @@ const caseStudySchema = new mongoose.Schema({
         primaryDescription: String,
         description: String,
         image: String
-      }],
+      }], 
       points: [String]
     }]
   },

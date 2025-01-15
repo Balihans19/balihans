@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useCallback } from 'react'; 
 import { ArrowLeft, ArrowRight } from 'lucide-react'; // Importing arrow icons for navigation
+import { useNavigate } from 'react-router-dom'; 
 
 // Spotlight component to display a carousel of spotlight items
 const Spotlight = ({ spotlightItems, title = "Spotlight" }) => {
   // State hooks to manage the current slide index and whether the screen is mobile-sized
   const [current, setCurrent] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
-
+  const navigate = useNavigate(); 
   // Handle window resizing to check if the screen is mobile-sized
   const handleResize = useCallback(() => {
     setIsMobile(window.innerWidth < 1024); // Mobile screen if width < 1024px
@@ -43,6 +44,14 @@ const Spotlight = ({ spotlightItems, title = "Spotlight" }) => {
     }
   }, [isMobile, next]);
 
+   // Function to handle navigation
+   const handleCardClick = (item) => {
+    if (item && item.route) {
+      navigate(item.route); // Navigate to the item's route
+    }
+  };
+
+
   return (
     <div className="w-full bg-[#f8f9fa]"> {/* Container for the spotlight */}
       <div className="max-w-4xl xl:max-w-6xl 2xl:max-w-7xl mx-auto px-4 py-36"> {/* Wrapper with max width */}
@@ -59,7 +68,10 @@ const Spotlight = ({ spotlightItems, title = "Spotlight" }) => {
             >
               {/* Loop through each spotlight item and render its content */}
               {spotlightItems.map((item, index) => (
-                <div key={index} className={`${isMobile ? 'w-1/2' : 'w-1/3'} flex-shrink-0 px-4 md:px-10`}>
+                <div key={index}
+                 className={`${isMobile ? 'w-1/2' : 'w-1/3'} flex-shrink-0 px-4 md:px-10`}
+                 onClick={() => handleCardClick(item)}
+                 >
                   {/* Spotlight item container */}
                   <div className="relative h-[700px] flex flex-col overflow-hidden group">
                     <div className="overflow-hidden h-[72%] mb-4">

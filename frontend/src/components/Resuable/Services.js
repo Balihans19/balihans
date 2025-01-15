@@ -16,8 +16,44 @@ import { MoveRight } from 'lucide-react';
  * backgroundVideo: URL of the video to be used as the background (string).
  * backgroundType: Type of background ('image' or 'video') (string).
  */
+
+const services = [
+  {
+    title: "Strategy & Consulting",
+    href: "/strategy-and-consulting"
+  },
+  {
+    title: "Digital Enterprise",
+    href: "/digital-enterprise"
+  },
+  {
+    title: "Cloud & Infrastructure",
+    href: "/cloud-and-infrastructure"
+  },
+  {
+    title: "Testing Services",
+    href: "/testing-services"
+  },
+  {
+    title: "AI-native Solutions",
+    href: "/artificial-intelligence"
+  },
+  {
+    title: "Internet of Things(IoT)",
+    href: "/internet-of-things"
+  },
+  {
+    title: "Security",
+    href: "/cybersecurity"
+  },
+  {
+    title: "Web3 Solutions",
+    href: "/web3-solutions"
+  }
+];
+
+
 const Services = ({ 
-  services, 
   backgroundImage, 
   backgroundVideo,
   backgroundType 

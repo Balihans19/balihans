@@ -7,7 +7,8 @@ import Navbar from './components/Resuable/Navbar';
 import Footer from './components/Resuable/Footer';
 
 import Home from './pages/HomePages/Home';
-
+import CaseStudyPage from './pages/HomePages/CaseStudyPage';
+import WhitePaperPage from './pages/HomePages/WhitePaperPage';
 
 import AboutUs from './pages/AboutUsPages/AboutUs';
 import LeaderShip from './pages/AboutUsPages/LeaderShip';
@@ -28,6 +29,7 @@ import Manufacturing from './pages/IndustriesPages/Manufacturing';
 import MediaAndEntertainment from './pages/IndustriesPages/MediaAndEntertainment';
 import ProfessionalServices from './pages/IndustriesPages/ProfessionalServices';
 import RetailAndConsumerGoods from './pages/IndustriesPages/RetailAndConsumerGoods';
+import TravelAndLogistics from './pages/IndustriesPages/TravelAndLogistics';
 
 
 import WhatWeDo from './pages/WhatWeDoPages/WhatWeDo';
@@ -52,8 +54,8 @@ import SecurityPolicy from './pages/PoliciesPages/SecurityPolicy';
 import Disclaimer from './pages/PoliciesPages/Disclaimer';
 
 import ContactUs from './pages/ContactUsPage/ContactUs';
-import TravelAndLogistics from './pages/IndustriesPages/TravelAndLogistics';
-import CaseStudyPage from './pages/HomePages/CaseStudyPage';
+
+
 
 
 
@@ -77,6 +79,7 @@ function App() {
         {/* Home Pages */}
         <Route path="/" element={<Home />} />
         <Route path="/case-study/:slug" element={<CaseStudyPage/>} />
+        <Route path="/white-paper/:slug" element={<WhitePaperPage/>} />
  
         {/* AboutUs Pages */}
         <Route path="/about-us" element={<AboutUs />} />

@@ -9,6 +9,7 @@ const homePageRoutes = require('./routes/homePageRoutes');
 const caseStudies = require('./routes/caseStudies');
 const casestudyslidesPageRoutes = require('./routes/casestudyslidesPageRoutes.js')
 const whitepaperslidesPageRoutes = require('./routes/whitepaperslidesPageRoutes.js')
+const whitePapers = require('./routes/whitePapers');
 
 
 
@@ -98,6 +99,7 @@ const initializeMongoDB = async () => {
 // API routes
 app.use('/api/homepage', homePageRoutes);
 app.use('/api/case-studies', caseStudies);
+app.use('/api/white-papers', whitePapers);
 app.use('/api/casestudyslidespage', casestudyslidesPageRoutes);
 app.use('/api/whitepaperslidespage', whitepaperslidesPageRoutes);
 
