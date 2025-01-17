@@ -1,8 +1,7 @@
 const mongoose = require('mongoose');
 
-
 //  schema for the aipage
-const casestudiespageSchema = new mongoose.Schema({
+const infocuspageSchema = new mongoose.Schema({
  
   backgroundVideo: { type: String, required: true },
   categories: [{type: String,required: true}],
@@ -14,7 +13,7 @@ const casestudiespageSchema = new mongoose.Schema({
   imageUrl: { type: String, required: true },
   quoteImageUrl: { type: String, required: true },
  },
-}, { collection: 'CaseStudiesPage' });
+}, { collection: 'InfocusPage' });
 
 // Export the model
-module.exports = mongoose.model('CaseStudiesPage', casestudiespageSchema);
+module.exports = mongoose.model('InfocusPage', infocuspageSchema);

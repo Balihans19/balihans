@@ -1,6 +1,6 @@
 import React from "react";
 
-const CaseStudiesPagMainDiv = ({
+const StoriesPageMainDiv = ({
   backgroundVideo, // URL of the background video
   categories = [], // Array of categories to display as labels
   title, // Title of the case study page
@@ -45,7 +45,7 @@ const CaseStudiesPagMainDiv = ({
         {/* Main Content */}
         <div className="flex justify-end">
           <div className="text-left max-w-lg lg:max-w-xl xl:max-w-2xl 2xl:max-w-3xl w-full">
-            <h1 className="text-base sm:text-lg md:text-xl lg:text-3xl xl:text-4xl font-bold mb-4">
+            <h1 className="text-base sm:text-lg md:text-xl lg:text-3xl xl:text-5xl  mb-6">
               {title} {/* Display the title */}
             </h1>
             <p className="text-base sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white/90 ">
@@ -58,7 +58,7 @@ const CaseStudiesPagMainDiv = ({
   );
 };
 
-export default CaseStudiesPagMainDiv;
+export default StoriesPageMainDiv;
 
 
 

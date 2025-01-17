@@ -42,6 +42,7 @@ import DigitalEnterprise from './pages/WhatWeDoPages/DigitalEnterprise';
 import Web3Solutions from './pages/WhatWeDoPages/Web3Solutions';
 import IOT from './pages/WhatWeDoPages/IOT';
 import TestingServices from './pages/WhatWeDoPages/TestingServices';
+import Infocus from './pages/WhatWeDoPages/Infocus';
 
 import CaseStudies from './pages/InsightsPages/CaseStudies';
 
@@ -54,6 +55,7 @@ import SecurityPolicy from './pages/PoliciesPages/SecurityPolicy';
 import Disclaimer from './pages/PoliciesPages/Disclaimer';
 
 import ContactUs from './pages/ContactUsPage/ContactUs';
+
 
 
 
@@ -103,6 +105,10 @@ function App() {
         <Route path="/testing-services" element={<TestingServices />} />
         <Route path="/retail-and-consumer-goods" element={<RetailAndConsumerGoods />} />
 
+        <Route path="/infocus" element={<Infocus />} />
+
+
+
 
         {/* Industries Pages */}
 
@@ -120,6 +126,7 @@ function App() {
 
         {/* Insights Pages */} 
         <Route path="/case-studies" element={<CaseStudies />} />
+        
 
        
         {/* Careers Pages */} 

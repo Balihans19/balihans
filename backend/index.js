@@ -34,6 +34,7 @@ const testingservicesPageRoutes=require('./routes/testingservicesPageRoutes.js')
 const professionalservicesPageRoutes=require('./routes/professionalservicesPageRoutes.js');
 const retailandconsumergoodsPageRoutes=require('./routes/retailandconsumergoodsPageRoutes.js');
 const travelandlogisticsPageRoutes=require('./routes/travelandlogisticsPageRoutes.js');
+const infocusPageRoutes=require('./routes/infocusPageRoutes.js');
 
 
 //IndustriesPages
@@ -123,6 +124,7 @@ app.use('/api/digitalenterprisepage', digitalenterprisePageRoutes);
 app.use('/api/web3solutionspage', web3solutionsPageRoutes);
 app.use('/api/iotpage', iotPageRoutes);
 app.use('/api/testingservicespage', testingservicesPageRoutes);
+app.use('/api/infocuspage', infocusPageRoutes);
 
 
 

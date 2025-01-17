@@ -137,7 +137,9 @@ export const desktopContent = [
           
           <div className="w-full min-w-[200px] my-4 md:my-8">
             <ul className="list-none text-base lg:text-lg p-0">
-              <li className="mb-2">InFocus</li>
+            <li className="mb-2">
+                <Link to="/infocus" className="text-white hover:underline">InFocus</Link>
+              </li>
               <li className="mb-2">Balihans Research</li>
             </ul>
           </div>
@@ -247,7 +249,7 @@ export const desktopContent = [
             <li className="mb-2">
                 <Link to="/case-studies" className="text-white hover:underline">Case Studies</Link>
               </li>
-            
+              
               <li className="mb-2">Views</li>
               <li className="mb-2">Insights</li>
               <li className="mb-2">News</li>

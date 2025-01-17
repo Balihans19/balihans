@@ -8,7 +8,7 @@ import UsePageTitle from '../../components/Resuable/UsePageTitle';
 // Lazy load components for performance optimization
 
 const ScrollToTop = React.lazy(() => import('../../components/Resuable/ScrollToTop'));
-const CaseStudiesPageMainDiv = React.lazy(() => import('../../components/StoriesPageComponents/StoriesPageMainDiv'));
+const StoriesPageMainDiv = React.lazy(() => import('../../components/StoriesPageComponents/StoriesPageMainDiv'));
 const CustomerStories = React.lazy(() => import('../../components/StoriesPageComponents/CustomerStories'));
 const AiServices = React.lazy(() => import('../../components/AIComponents/AiServices'));
 const ContactCareers = React.lazy(() => import('../../components/Resuable/ContactCareers'));
@@ -16,19 +16,19 @@ const ContactCareers = React.lazy(() => import('../../components/Resuable/Contac
 
 
 // Memoized section components to avoid unnecessary re-renders
-const MemoizedStoriesPageMainDiv = memo(CaseStudiesPageMainDiv);
+const MemoizedStoriesPageMainDiv = memo(StoriesPageMainDiv);
 const MemoizedCustomerStories = memo(CustomerStories);
 const MemoizedAiServices = memo(AiServices);
 const MemoizedContactCareers = memo(ContactCareers);
 
 
-function CaseStudies() {
+function Infocus() {
   
   // Set the page title for SEO and page rendering
-  UsePageTitle('Case Studies');
+  UsePageTitle('InFocus');
   
-//   // Fetch the casestudiespage data using a custom hook
-  const { data: casestudiespageData, loading, error } = usePageData('casestudiespage');
+//   // Fetch the infocuspage data using a custom hook
+  const { data: infocuspageData, loading, error } = usePageData('infocuspage');
   
 //   // Show loading spinner while fetching data
   if (loading) return <LoadingSpinner />;
@@ -36,8 +36,8 @@ function CaseStudies() {
 //   // Show error fallback UI if there is an error
   if (error) return <ErrorFallback error={{ message: error }} />;
 
-//   // If there's no casestudiespage data, return null to prevent rendering empty UI
-  if (!casestudiespageData) return null;
+//   // If there's no infocuspage data, return null to prevent rendering empty UI
+  if (!infocuspageData) return null;
 
   return (
 
@@ -45,29 +45,29 @@ function CaseStudies() {
 // Wrapping the page in a PageWrapper for error handling and lazy loading
     <PageWrapper>
           <MemoizedStoriesPageMainDiv
-            backgroundVideo={casestudiespageData.backgroundVideo}
-            categories={casestudiespageData.categories}
-            title={casestudiespageData.title}
-            description={casestudiespageData.description}
+            backgroundVideo={infocuspageData.backgroundVideo}
+            categories={infocuspageData.categories}
+            title={infocuspageData.title}
+            description={infocuspageData.description}
           />
 
          <MemoizedCustomerStories 
-          contentType="case-study"
+         contentType="white-paper"
             />
 
         <MemoizedAiServices
-            title={casestudiespageData.AiServices.title}
-            backgroundVideo={casestudiespageData.AiServices.backgroundVideo}
+            title={infocuspageData.AiServices.title}
+            backgroundVideo={infocuspageData.AiServices.backgroundVideo}
             backgroundType="video"
           />
        
        <MemoizedContactCareers 
           variant="dark" 
           />
-
+          
           <ScrollToTop />
           </PageWrapper>
   );
 }
 
-export default memo(CaseStudies);
+export default memo(Infocus);

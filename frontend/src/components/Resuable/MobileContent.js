@@ -84,7 +84,9 @@ export const mobileContent = [
       // Spacer
       { name: '' },
    
-      { name: 'In Focus' },
+      { name: 'In Focus',
+        link: '/infocus',
+       },
       { name: 'Balihans Research' },
       { name: 'Balihans Innovation' },
     ]
@@ -162,7 +164,9 @@ export const mobileContent = [
     link: '/careers',
     mobileContent: [
       { name: 'Why Balihans' },
-      { name: 'Diversity & Inclusion' },
+      { name: 'Diversity & Inclusion',
+        link: '/diversity-equity-and-inclusion',
+       },
       { name: 'Join Us' },
     ]
   },
