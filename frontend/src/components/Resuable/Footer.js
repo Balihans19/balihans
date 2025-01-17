@@ -108,7 +108,7 @@ const Footer = () => {
                <Link to="/case-study/52-percent-increase-customer-satisfaction-ecommerce-refund" className="block">
                  <div className="relative">
                    <img
-                     src="https://res.cloudinary.com/dnijlfi48/image/upload/f_webp,q_auto/v1730886548/Untitled_design_20_uqhti3.png"
+                     src="https://res.cloudinary.com/dnijlfi48/image/upload/v1737098821/Untitled_design_98_kh70jo.webp"
                      alt="E-commerce"
                      className="w-[20vh] lg:w-[25vh] h-32 object-cover"
                    />
@@ -122,7 +122,7 @@ const Footer = () => {
                <Link to="/case-study/faster-claim-settlement-for-insurance-company" className="block">
                  <div className="relative">
                    <img
-                     src="https://res.cloudinary.com/dnijlfi48/image/upload/f_webp,q_auto/v1730886548/Untitled_design_30_xuetna.png"
+                     src="https://res.cloudinary.com/dnijlfi48/image/upload/v1737098926/Untitled_design_30_xuetna_ppxfwa.webp"
                      alt="Insurance"
                      className="w-[20vh] lg:w-[25vh] h-32 object-cover"
                    />

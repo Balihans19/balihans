@@ -32,7 +32,7 @@ const WhitePaperSection = ({
 
           {/* Divider */}
           <div className="flex justify-end items-start">
-            <hr className="w-full my-6" />
+            <hr className="w-full mt-4 mb-12" />
           </div>
 
           {/* Main content */}

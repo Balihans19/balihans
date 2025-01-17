@@ -232,13 +232,13 @@ const CaseStudySolutions = ({ solutionsData = [], title }) => {
                         />
                       )}
                       {content.description && (
-                        <p className="text-xl text-white text-justify">{content.description}</p>
+                        <p className="text-xl text-white ">{content.description}</p>
                       )}
                       {content.primaryHeading && (
                         <h3 className="text-2xl font-bold mb-2">{content.primaryHeading}</h3>
                       )}
                       {content.primaryDescription && (
-                        <p className="text-2xl text-white text-justify">{content.primaryDescription}</p>
+                        <p className="text-2xl text-white ">{content.primaryDescription}</p>
                       )}
                       {content.points && (
                         <ul className="list-disc list-inside text-lg text-white">

@@ -11,6 +11,7 @@ const ScrollToTop = React.lazy(() => import('../../components/Resuable/ScrollToT
 const CaseStudiesPageMainDiv = React.lazy(() => import('../../components/CaseStudiesPageComponents/CaseStudiesPageMainDiv'));
 const CustomerStories = React.lazy(() => import('../../components/CaseStudiesPageComponents/CustomerStories'));
 const AiServices = React.lazy(() => import('../../components/AIComponents/AiServices'));
+const ContactCareers = React.lazy(() => import('../../components/Resuable/ContactCareers'));
 
 
 
@@ -18,6 +19,7 @@ const AiServices = React.lazy(() => import('../../components/AIComponents/AiServ
 const MemoizedCaseStudiesPageMainDiv = memo(CaseStudiesPageMainDiv);
 const MemoizedCustomerStories = memo(CustomerStories);
 const MemoizedAiServices = memo(AiServices);
+const MemoizedContactCareers = memo(ContactCareers);
 
 
 function CaseStudies() {
@@ -58,6 +60,10 @@ function CaseStudies() {
             backgroundType="video"
           />
        
+       <MemoizedContactCareers 
+          variant="dark" 
+          />
+          
           <ScrollToTop />
           </PageWrapper>
   );

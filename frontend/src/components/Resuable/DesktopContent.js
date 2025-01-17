@@ -5,14 +5,14 @@ import { Link } from 'react-router-dom';
 const styles = {
   // About Us section
   aboutCustomer: {
-    backgroundImage: 'url("https://res.cloudinary.com/dnijlfi48/image/upload/f_webp,q_auto/v1730886860/Untitled_design_31_ludy13.png")',
+    backgroundImage: 'url("https://res.cloudinary.com/dnijlfi48/image/upload/v1737098666/Untitled_design_97_tmkwuq.webp")',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat'
    
   },
   aboutFaster: {
-    backgroundImage: 'url("https://res.cloudinary.com/dnijlfi48/image/upload/f_webp,q_auto/v1730886938/Untitled_design_32_moqp7n.png")',
+    backgroundImage: 'url("https://res.cloudinary.com/dnijlfi48/image/upload/v1737098925/Untitled_design_32_moqp7n_ebulxd.webp")',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat'
@@ -66,7 +66,7 @@ export const desktopContent = [
                </div>
              </Link>
              <Link to="/case-study/faster-claim-settlement-for-insurance-company" className="block">
-               <div style={styles.aboutFaster} className="relative min-h-[200px] lg:min-h-[250px] text-left p-4 lg:pl-10">
+               <div style={styles.aboutFaster} className="relative min-h-[200px] lg:min-h-[250px] text-center p-4 lg:pl-10">
                  <div className="absolute inset-0 bg-black bg-opacity-60 z-0"></div>
                  <p className="text-white text-base lg:text-lg pt-16 lg:pt-24 mb-1 relative z-10">
                    Faster claim settlement for insurance company
@@ -223,7 +223,7 @@ export const desktopContent = [
                </div>
              </Link>
              <Link to="/case-study/faster-claim-settlement-for-insurance-company" className="block">
-               <div style={styles.aboutFaster} className="relative min-h-[200px] lg:min-h-[250px] text-left p-4 lg:pl-10">
+               <div style={styles.aboutFaster} className="relative min-h-[200px] lg:min-h-[250px] text-center  p-4 lg:pl-10">
                  <div className="absolute inset-0 bg-black bg-opacity-60 z-0"></div>
                  <p className="text-white text-base lg:text-lg pt-16 lg:pt-24 mb-1 relative z-10">
                    Faster claim settlement for insurance company
@@ -269,7 +269,7 @@ export const desktopContent = [
                </div>
              </Link>
              <Link to="/case-study/faster-claim-settlement-for-insurance-company" className="block">
-               <div style={styles.aboutFaster} className="relative min-h-[200px] lg:min-h-[250px] text-left p-4 lg:pl-10">
+               <div style={styles.aboutFaster} className="relative min-h-[200px] lg:min-h-[250px] text-center  p-4 lg:pl-10">
                  <div className="absolute inset-0 bg-black bg-opacity-60 z-0"></div>
                  <p className="text-white text-base lg:text-lg pt-16 lg:pt-24 mb-1 relative z-10">
                    Faster claim settlement for insurance company
@@ -315,7 +315,7 @@ export const desktopContent = [
                </div>
              </Link>
              <Link to="/case-study/faster-claim-settlement-for-insurance-company" className="block">
-               <div style={styles.aboutFaster} className="relative min-h-[200px] lg:min-h-[250px] text-left p-4 lg:pl-10">
+               <div style={styles.aboutFaster} className="relative min-h-[200px] lg:min-h-[250px] text-center  p-4 lg:pl-10">
                  <div className="absolute inset-0 bg-black bg-opacity-60 z-0"></div>
                  <p className="text-white text-base lg:text-lg pt-16 lg:pt-24 mb-1 relative z-10">
                    Faster claim settlement for insurance company

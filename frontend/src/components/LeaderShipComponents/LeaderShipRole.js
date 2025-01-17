@@ -147,21 +147,21 @@ const LeaderShipRole = ({ leadershipData }) => {
 
               {/* Profile descriptions */}
               <div className="space-y-4 sm:space-y-4 text-white">
-                <p className="text-xs sm:text-sm 2xl:text-base tracking-tighter text-justify">
+                <p className="text-xs sm:text-sm 2xl:text-base tracking-tighter ">
                   {currentProfile.description}
                 </p>
                 {currentProfile.description2 && (
-                  <p className="text-xs sm:text-sm 2xl:text-base tracking-tighter text-justify">
+                  <p className="text-xs sm:text-sm 2xl:text-base tracking-tighter ">
                     {currentProfile.description2}
                   </p>
                 )}
                 {currentProfile.description3 && (
-                  <p className="text-xs sm:text-sm 2xl:text-base tracking-tighter text-justify">
+                  <p className="text-xs sm:text-sm 2xl:text-base tracking-tighter ">
                     {currentProfile.description3}
                   </p>
                 )}
                 {currentProfile.description4 && (
-                  <p className="text-xs sm:text-sm 2xl:text-base tracking-tighter text-justify">
+                  <p className="text-xs sm:text-sm 2xl:text-base tracking-tighter ">
                     {currentProfile.description4}
                   </p>
                 )}

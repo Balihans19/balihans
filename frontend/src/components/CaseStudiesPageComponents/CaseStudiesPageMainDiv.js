@@ -38,7 +38,7 @@ const CaseStudiesPagMainDiv = ({
         </div>
 
         {/* Divider */}
-        <div className="flex justify-end mt-6 mb-6">
+        <div className="flex justify-end mt-4 mb-10">
           <hr className="w-full border-white/20" /> {/* Decorative horizontal line */}
         </div>
 
