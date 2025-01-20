@@ -68,8 +68,17 @@ import ContactUs from './pages/ContactUsPage/ContactUs';
 
 
 
-
-const queryClient = new QueryClient()
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: false,
+      // Disable websocket dev tools in production
+      refetchOnWindowFocus: false,
+    },
+  },
+  // Explicitly disable dev tools in production
+  devTools: false
+});
 
 function App() {
   return (
