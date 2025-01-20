@@ -60,6 +60,8 @@ const privacypolicyPageRoutes=require('./routes/privacypolicyPageRoutes.js');
 const cookiepolicyPageRoutes=require('./routes/cookiepolicyPageRoutes.js');
 const securitypolicyPageRoutes=require('./routes/securitypolicyPageRoutes.js');
 const disclaimerPageRoutes=require('./routes/disclaimerPageRoutes.js');
+const antiharassmentpolicyPageRoutes=require('./routes/antiharassmentpolicyPageRoutes.js');
+const equalemploymentpolicyPageRoutes=require('./routes/equalemploymentpolicyPageRoutes.js');
 
 //ContactUsPages
 const contactusPageRoutes=require('./routes/contactusPageRoutes.js');
@@ -150,6 +152,8 @@ app.use('/api/privacypolicypage', privacypolicyPageRoutes);
 app.use('/api/cookiepolicypage', cookiepolicyPageRoutes);
 app.use('/api/securitypolicypage', securitypolicyPageRoutes);
 app.use('/api/disclaimerpage', disclaimerPageRoutes);
+app.use('/api/equalemploymentpolicypage', equalemploymentpolicyPageRoutes);
+app.use('/api/antiharassmentpolicypage', antiharassmentpolicyPageRoutes);
 
 app.use("/api/contactuspage", contactusPageRoutes);
 app.use("/api/contact", contactRoutes);

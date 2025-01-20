@@ -53,8 +53,11 @@ import PrivacyPolicy from './pages/PoliciesPages/PrivacyPolicy';
 import CookiePolicy from './pages/PoliciesPages/CookiePolicy';
 import SecurityPolicy from './pages/PoliciesPages/SecurityPolicy';
 import Disclaimer from './pages/PoliciesPages/Disclaimer';
+import AntiHarassmentPolicy from './pages/PoliciesPages/AntiHarassmentPolicy';
+import EqualEmploymentPolicy from './pages/PoliciesPages/EqualEmploymentPolicy';
 
 import ContactUs from './pages/ContactUsPage/ContactUs';
+
 
 
 
@@ -138,6 +141,8 @@ function App() {
         <Route path="/cookie-policy" element={<CookiePolicy />} />
         <Route path="/security-policy" element={<SecurityPolicy />} />
         <Route path="/disclaimer" element={<Disclaimer />} />
+        <Route path="/anti-harassment-policy" element={<AntiHarassmentPolicy />} />
+        <Route path="/equal-employment-policy" element={<EqualEmploymentPolicy />} />
 
          {/* ContactUs Pages */} 
         <Route path="/contact-us" element={<ContactUs />} />
