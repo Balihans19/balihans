@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react'; 
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const WhitePaperSlides = ({ spotlightItems = [], title = "Spotlight" }) => {
@@ -7,6 +8,7 @@ const WhitePaperSlides = ({ spotlightItems = [], title = "Spotlight" }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [slides, setSlides] = useState([]); // Fetched slides
   const [error, setError] = useState(null); // Error state
+  const navigate = useNavigate();
 
   // Fetch slides from the API
   useEffect(() => {
@@ -53,6 +55,12 @@ const WhitePaperSlides = ({ spotlightItems = [], title = "Spotlight" }) => {
     }
   }, [isMobile, next]);
 
+  const handleSlideClick = (slide) => {
+    if (slide.link) {
+      navigate(slide.link);
+    }
+  };
+
   const displayedSlides = slides.length > 0 ? slides : spotlightItems;
 
   if (error) {
@@ -70,7 +78,7 @@ const WhitePaperSlides = ({ spotlightItems = [], title = "Spotlight" }) => {
               style={{ transform: `translateX(-${current * (isMobile ? 50 : 33.33)}%)` }}
             >
               {displayedSlides.map((item, index) => (
-                <div key={index} className={`${isMobile ? 'w-1/2' : 'w-1/3'} flex-shrink-0 px-4 md:px-10`}>
+                <div key={index} className={`${isMobile ? 'w-1/2' : 'w-1/3'} flex-shrink-0 px-4 md:px-10` }  onClick={() => handleSlideClick(item)}>
                   <div className="relative h-[700px] flex flex-col overflow-hidden group">
                     <div className="overflow-hidden h-[72%] mb-4">
                       <img
