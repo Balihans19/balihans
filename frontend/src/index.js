@@ -4,6 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// Add this production-specific code
+if (process.env.NODE_ENV === 'production') {
+  // Prevent WebSocket connections in production
+  window.WebSocket = class MockWebSocket {
+    constructor(url) {
+      console.log('Prevented WebSocket connection to:', url);
+    }
+    send() {}
+    close() {}
+  };
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
