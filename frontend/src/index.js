@@ -4,8 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-// Override WebSocket to prevent connection, but without logging
-window.WebSocket = function () {};
+// Disable WebSocket in production environment
+if (process.env.NODE_ENV === 'production') {
+  window.WebSocket = function () {}; // Disable WebSocket in production
+}
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -66,14 +66,6 @@ import ContactUs from './pages/ContactUsPage/ContactUs';
 
 
 
-
-
-
-
-
-
-
-
 const queryClient = new QueryClient()
 
 function App() {
