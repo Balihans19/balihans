@@ -17,13 +17,11 @@ const DesktopNavbar = ({ navItems, activeDropdown, setActiveDropdown }) => {
   const [currentContent, setCurrentContent] = useState(null);
   const location = useLocation();
 
-  // Reset dropdown when location changes (page navigation)
   useEffect(() => {
     setActiveDropdown(null);
     setCurrentContent(null);
   }, [location, setActiveDropdown]);
 
-  // Handle dropdown content updates
   useEffect(() => {
     if (activeDropdown !== null) {
       setCurrentContent(navItems[activeDropdown].content);
@@ -37,10 +35,8 @@ const DesktopNavbar = ({ navItems, activeDropdown, setActiveDropdown }) => {
       className="hidden lg:block bg-[#101215] sticky top-0 z-50"
       onMouseLeave={() => setActiveDropdown(null)}
     >
-      {/* Main container */}
       <div className="max-w-full mx-auto px-4 py-4 md:px-20 xl:px-36">
         <div className="flex items-center justify-between h-20">
-          {/* Logo section */}
           <NavLink to="/" className="flex-shrink-0">
             <img
               src="https://res.cloudinary.com/dnijlfi48/image/upload/v1734432935/Balihans_-_logo_off-white_m6wkoi.webp"
@@ -49,7 +45,6 @@ const DesktopNavbar = ({ navItems, activeDropdown, setActiveDropdown }) => {
             />
           </NavLink>
 
-          {/* Navigation Items */}
           <ul className="flex space-x-8">
             {navItems.map((item, index) => (
               <li
@@ -57,36 +52,118 @@ const DesktopNavbar = ({ navItems, activeDropdown, setActiveDropdown }) => {
                 className="relative"
                 onMouseEnter={() => setActiveDropdown(index)}
               >
-                <NavLink
-                  to={`/${item.name.toLowerCase().replace(/\s+/g, '-')}`}
-                  className={({ isActive }) =>
-                    `text-[#FAF9F6] text-base relative after:content-[''] after:absolute after:w-full after:h-px after:bottom-[-5px] after:left-0 after:transition-transform after:duration-300 ${
-                      isActive
-                        ? 'after:bg-white after:scale-x-100'
-                        : 'after:bg-black after:scale-x-0 hover:after:scale-x-100'
-                    }`
-                  }
-                >
-                  {item.name}
-                </NavLink>
+                {/* Conditional rendering based on route availability */}
+                {item.route ? (
+                  <NavLink
+                    to={item.route}
+                    className={({ isActive }) =>
+                      `text-[#FAF9F6] text-base relative after:content-[''] after:absolute after:w-full after:h-px after:bottom-[-5px] after:left-0 after:transition-transform after:duration-300 ${
+                        isActive
+                          ? 'after:bg-white after:scale-x-100'
+                          : 'after:bg-black after:scale-x-0 hover:after:scale-x-100'
+                      }`
+                    }
+                  >
+                    {item.name}
+                  </NavLink>
+                ) : (
+                  <span
+                    className={`text-[#FAF9F6] text-base relative after:content-[''] after:absolute after:w-full after:h-px after:bottom-[-5px] after:left-0 after:transition-transform after:duration-300 after:bg-black after:scale-x-0 hover:after:scale-x-100 cursor-default`}
+                  >
+                    {item.name}
+                  </span>
+                )}
               </li>
             ))}
           </ul>
         </div>
       </div>
 
-      {/* Dropdown Container - Always visible when there's content */}
       {currentContent !== null && (
         <div className="absolute top-full left-0 right-0 bg-[#101215] z-10">
           <hr className="border border-[#191c20]" />
-          {/* Content Wrapper */}
           <div>{currentContent}</div>
         </div>
       )}
     </nav>
   );
 };
+// const DesktopNavbar = ({ navItems, activeDropdown, setActiveDropdown }) => {
+//   const [currentContent, setCurrentContent] = useState(null); // State to store content of the active dropdown
+//   const location = useLocation(); // Hook to track the current location (used to reset dropdown)
 
+//   // Reset dropdown when location changes (i.e., page navigation)
+//   useEffect(() => {
+//     setActiveDropdown(null); // Reset active dropdown
+//     setCurrentContent(null); // Clear current dropdown content
+//   }, [location, setActiveDropdown]); // Dependency on location (page change)
+
+//   // Handle updates to dropdown content when activeDropdown changes
+//   useEffect(() => {
+//     if (activeDropdown !== null) {
+//       // Set current content based on the selected dropdown item
+//       setCurrentContent(navItems[activeDropdown].content);
+//     } else {
+//       // Clear content if no dropdown is active
+//       setCurrentContent(null);
+//     }
+//   }, [activeDropdown, navItems]); // Dependencies on activeDropdown and navItems
+
+//   return (
+//     <nav
+//       className="hidden lg:block bg-[#101215] sticky top-0 z-50" // Styling for the navbar (hidden on small screens, sticky at top)
+//       onMouseLeave={() => setActiveDropdown(null)} // Close the dropdown when mouse leaves the navbar
+//     >
+//       {/* Main container for navbar content */}
+//       <div className="max-w-full mx-auto px-4 py-4 md:px-20 xl:px-36">
+//         <div className="flex items-center justify-between h-20">
+//           {/* Logo section */}
+//           <NavLink to="/" className="flex-shrink-0">
+//             <img
+//               src="https://res.cloudinary.com/dnijlfi48/image/upload/v1734432935/Balihans_-_logo_off-white_m6wkoi.webp"
+//               alt="Balihans Logo"
+//               className="h-[5vh] xl:h-[6vh]" // Responsive logo height
+//             />
+//           </NavLink>
+
+//           {/* Navigation Items */}
+//           <ul className="flex space-x-8">
+//             {navItems.map((item, index) => (
+//               <li
+//                 key={index}
+//                 className="relative"
+//                 onMouseEnter={() => setActiveDropdown(index)} // Show dropdown on hover
+//               >
+//                 <NavLink
+//                   to={`/${item.name.toLowerCase().replace(/\s+/g, '-')}`} // Dynamic route generation based on item name
+//                   className={({ isActive }) =>
+//                     // Styles for active and hover states
+//                     `text-[#FAF9F6] text-base relative after:content-[''] after:absolute after:w-full after:h-px after:bottom-[-5px] after:left-0 after:transition-transform after:duration-300 ${
+//                       isActive
+//                         ? 'after:bg-white after:scale-x-100' // Active state: white underline
+//                         : 'after:bg-black after:scale-x-0 hover:after:scale-x-100' // Hover state: black underline
+//                     }`
+//                   }
+//                 >
+//                   {item.name}
+//                 </NavLink>
+//               </li>
+//             ))}
+//           </ul>
+//         </div>
+//       </div>
+
+//       {/* Dropdown Container */}
+//       {currentContent !== null && (
+//         <div className="absolute top-full left-0 right-0 bg-[#101215] z-10">
+//           <hr className="border border-[#191c20]" /> {/* Horizontal line to separate dropdown */}
+//           {/* Content of the active dropdown */}
+//           <div>{currentContent}</div>
+//         </div>
+//       )}
+//     </nav>
+//   );
+// };
 
 
 /**

@@ -46,7 +46,6 @@ const Footer = () => {
     { name: "Our Brand", route: "/" },
     { name: "Corporate Sustainability", route: "/corporate-sustainability" },
     { name: "Diversity, Equity, and Inclusion", route: "/diversity-equity-and-inclusion" },
-    { name: "Recognition", route: "/" },
     { name: "Customer Speak", route: "/customer-speak" },
   ];
 

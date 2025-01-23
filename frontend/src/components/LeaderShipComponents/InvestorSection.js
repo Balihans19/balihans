@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { useNavigate } from 'react-router-dom';
 /**
  * InvestorSection Component
  * Renders a responsive investor information section with text content and image
@@ -8,6 +8,14 @@ import React from 'react';
  *  props.backgroundImageUrl - URL for the section's image
  */
 const InvestorSection = ({ backgroundImageUrl }) => {
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/join-us');
+  };
+
+
   return (
     // Main container with responsive padding
     <div className="min-h-screen text-black bg-white px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-6 md:py-8 lg:py-24">
@@ -40,7 +48,7 @@ const InvestorSection = ({ backgroundImageUrl }) => {
               <button className="bg-transparent border text-xs sm:text-sm md:text-base font-semibold py-2 px-4 sm:py-3 sm:px-6 cursor-pointer border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white transition-colors">
                 Learn more.
               </button>
-              <button className="bg-transparent border text-xs sm:text-sm md:text-base font-semibold py-2 px-4 sm:py-3 sm:px-6 cursor-pointer border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white transition-colors">
+              <button onClick={handleClick} className="bg-transparent border text-xs sm:text-sm md:text-base font-semibold py-2 px-4 sm:py-3 sm:px-6 cursor-pointer border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white transition-colors">
                 Join us.
               </button>
             </div>

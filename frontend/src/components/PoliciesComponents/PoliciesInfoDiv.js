@@ -31,7 +31,7 @@ import React from "react";
 const PoliciesInfoDiv = ({ sections }) => {
   return (
     <div className="text-white min-h-screen my-24">
-      <div className="max-w-6xl mx-8 lg:mx-20 xl:mx-36">
+      <div className="max-w-6xl xl:mx-w-7xl 2xl:max-w-full mx-8 lg:mx-20 xl:mx-36">
         {sections.map((mainSection, mainIndex) => (
           <div key={mainIndex} className="mb-8">
             {/* Main section header */}

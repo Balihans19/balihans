@@ -22,6 +22,7 @@ const styles = {
 export const desktopContent = [
  {
       name: 'ABOUT US',
+       route: '/about-us',
       content: (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 w-full max-w-6xl mx-auto px-4 text-white">
           <div className="w-full min-w-[200px] my-4 md:my-8">
@@ -48,9 +49,7 @@ export const desktopContent = [
               <li className="mb-2">
                 <Link to="/diversity-equity-and-inclusion" className="text-white hover:underline">Diversity, Equity, and Inclusion</Link>
               </li>
-              <li className="mb-2">
-                <Link to="/" className="text-white hover:underline">Recogintion</Link>
-              </li>
+              
               <li className="mb-2">
                 <Link to="/customer-speak" className="text-white hover:underline">Customer Speak</Link>
               </li>
@@ -80,6 +79,7 @@ export const desktopContent = [
     },
     {
       name: 'WHAT WE DO',
+      route: '/what-we-do',
       content: (
         <div className="grid grid-cols-1 gap-8 w-full max-w-6xl mx-auto px-4 text-white">
         {/* What We Do Section */}
@@ -249,11 +249,17 @@ export const desktopContent = [
             <li className="mb-2">
                 <Link to="/case-studies" className="text-white hover:underline">Case Studies</Link>
               </li>
+              <li className="mb-2">
+                <Link to="/what-we-do" className="text-white hover:underline">Balihans Innovation</Link>
+              </li>
+              <li className="mb-2">
+                <Link to="/infocus" className="text-white hover:underline">Insights</Link>
+              </li>
               
-              <li className="mb-2">Views</li>
-              <li className="mb-2">Insights</li>
-              <li className="mb-2">News</li>
-              <li className="mb-2">Events</li>
+              <li className="mb-2">
+                <Link to="/customer-speak" className="text-white hover:underline">Customer Speak</Link>
+              </li>
+              
             </ul>
           </div>
 
@@ -284,6 +290,7 @@ export const desktopContent = [
     },
     {
       name: 'CAREERS',
+      route: '/join-us',
       content: (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-6xl mx-auto px-4 text-white">
           <div className="w-full min-w-[200px] my-4 md:my-8">
@@ -292,7 +299,10 @@ export const desktopContent = [
 
           <div className="w-full min-w-[200px] my-4 md:my-8">
             <ul className="list-none text-base lg:text-lg p-0">
-              <li className="mb-2">Why Balihans</li>
+            
+              <li className="mb-2">
+                <Link to="/about-us" className="text-white hover:underline">Why Balihans</Link>
+              </li>
               <li className="mb-2">
                 <Link to="/diversity-equity-and-inclusion" className="text-white hover:underline">Diversity & Inclusion</Link>
               </li>
@@ -330,6 +340,7 @@ export const desktopContent = [
     },
     {
       name: 'CONTACT US',
+      route: '/contact-us',
       
     },
   ];
