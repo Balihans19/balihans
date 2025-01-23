@@ -4,16 +4,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-if (process.env.NODE_ENV === 'production') {
-  window.WebSocket = class {
-    constructor() {
-      this.readyState = 1;
-      this.onopen?.();
-    }
-    send() {}
-    close() {}
-  };
-}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
