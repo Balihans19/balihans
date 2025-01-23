@@ -5,17 +5,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 
-if (process.env.NODE_ENV === "production") {
-  global.WebSocket = function () {
-    return {
-      onopen: () => {},
-      onclose: () => {},
-      onmessage: () => {},
-      onerror: () => {},
-    };
-  };
-}
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
