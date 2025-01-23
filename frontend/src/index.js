@@ -5,17 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 
-// Mock WebSocket globally
-global.WebSocket = function() {
-  // Empty mock implementation
-  return {
-    onopen: () => {},
-    onclose: () => {},
-    onmessage: () => {},
-    onerror: () => {}
+if (process.env.NODE_ENV === "production") {
+  global.WebSocket = function () {
+    return {
+      onopen: () => {},
+      onclose: () => {},
+      onmessage: () => {},
+      onerror: () => {},
+    };
   };
-};
-
+}
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
