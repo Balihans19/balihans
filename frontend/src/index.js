@@ -4,10 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-// Disable WebSocket in production environment
-if (process.env.NODE_ENV === 'production') {
-  window.WebSocket = function () {}; // Disable WebSocket in production
-}
+
+// Mock WebSocket globally
+global.WebSocket = function() {
+  // Empty mock implementation
+  return {
+    onopen: () => {},
+    onclose: () => {},
+    onmessage: () => {},
+    onerror: () => {}
+  };
+};
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

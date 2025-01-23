@@ -41,7 +41,7 @@ const DesktopNavbar = ({ navItems, activeDropdown, setActiveDropdown }) => {
             <img
               src="https://res.cloudinary.com/dnijlfi48/image/upload/v1734432935/Balihans_-_logo_off-white_m6wkoi.webp"
               alt="Balihans Logo"
-              className="h-[5vh] xl:h-[6vh]"
+              className="h-[5vh] lg:h-[6vh]"
             />
           </NavLink>
 

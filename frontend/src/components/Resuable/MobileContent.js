@@ -14,7 +14,7 @@ export const mobileContent = [
     mobileContent: [
       {
         name: 'Corporate Overview',
-        link: '/corporate-overview',
+        link: '/',
       },
       {
         name: 'Leadership',
@@ -33,10 +33,6 @@ export const mobileContent = [
         link: '/diversity-equity-and-inclusion',
       },
       {
-        name: 'Recognition ',
-        link: '/',
-      },
-      {
         name: 'Customer Speak',
         link: '/customer-speak',
       },
@@ -48,8 +44,7 @@ export const mobileContent = [
     name: 'WHAT WE DO',
     link: '/capabilities',
     mobileContent: [
-      // Services 
-      { name: 'Our Services' },
+    
       {
         name: 'Strategy & Consulting',
         link: '/strategy-and-consulting',
@@ -87,15 +82,17 @@ export const mobileContent = [
       { name: 'In Focus',
         link: '/infocus',
        },
-      { name: 'Balihans Research' },
-      { name: 'Balihans Innovation' },
+      { name: 'Balihans Research',
+       },
+      { name: 'Balihans Innovation',
+        link: '/what-we-do',
+       },
     ]
   },
 
   // Industries Section
   {
     name: 'INDUSTRIES',
-    link: '/industries',
     mobileContent: [
       {
         name: 'Banking & Financial Services',
@@ -146,28 +143,36 @@ export const mobileContent = [
   // Insights Section
   {
     name: 'INSIGHTS',
-    link: '/insights',
     mobileContent: [
       { name: 'Case Studies',
         link: '/case-studies',
        },
-      { name: 'Views' },
-      { name: 'Insights' },
-      { name: 'News' },
-      { name: 'Events' }
+       { name: 'Balihans Innovation',
+        link: '/what-we-do',
+       },
+      { name: 'Insights',
+        link: '/infocus',
+       },
+      {
+        name: 'Customer Speak',
+        link: '/customer-speak',
+      },
     ]
   },
 
   // Careers Section 
   {
     name: 'CAREERS',
-    link: '/careers',
     mobileContent: [
-      { name: 'Why Balihans' },
+      { name: 'Why Balihans',
+        link: '/about-us',
+       },
       { name: 'Diversity & Inclusion',
         link: '/diversity-equity-and-inclusion',
        },
-      { name: 'Join Us' },
+      { name: 'Join Us',
+        link: '/join-us',
+       },
     ]
   },
 
