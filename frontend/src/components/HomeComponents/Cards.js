@@ -49,7 +49,7 @@ const Card = ({ title, description, imgSrc, link }) => {
   return (
     <Link to={link} className="group">
       {/* Card container with hover effects */}
-      <div className="relative w-full h-[450px] overflow-hidden transition-transform duration-300 ease-in-out group">
+      <div className="relative max-w-screen-sm xl:max-w-full   h-[300px] xl:h-[450px] overflow-hidden transition-transform duration-300 ease-in-out group">
         {/* Overlay with conditional opacity based on hover/mobile */}
         <div
           className={`absolute inset-0 flex flex-col justify-center items-start bg-black ${
@@ -108,7 +108,7 @@ const Cards = ({ primaryHeading, paragraph, cardsData }) => {
         </div>
 
         {/* Responsive card grid: 1 column on mobile, 3 on lg screens, 4 on xl screens */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-6">
           {cardsData.map((card, index) => (
             <Card
               key={index}
