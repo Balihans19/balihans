@@ -67,6 +67,7 @@ const contactusPageRoutes=require('./routes/contactusPageRoutes.js');
 const contactRoutes = require("./routes/contactRoutes");
 
 
+console.log(`Environment: ${process.env.NODE_ENV}`);
 
 require('dotenv').config();
 
