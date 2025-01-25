@@ -67,7 +67,7 @@ const contactusPageRoutes=require('./routes/contactusPageRoutes.js');
 const contactRoutes = require("./routes/contactRoutes");
 
 
-console.log(`Environment: ${process.env.NODE_ENV}`);
+
 
 require('dotenv').config();
 
@@ -160,11 +160,20 @@ app.use("/api/contactuspage", contactusPageRoutes);
 app.use("/api/contact", contactRoutes);
 
 // Health check endpoint
+// app.get('/health', (req, res) => {
+//   res.status(200).json({
+//     status: 'healthy',
+//     environment: process.env.NODE_ENV,
+//     timestamp: new Date().toISOString()
+//   });
+// });
 app.get('/health', (req, res) => {
+  const isProduction = process.env.NODE_ENV === 'production';
+  console.log(`Backend running in ${isProduction ? 'Production' : 'Development'} mode`);
   res.status(200).json({
     status: 'healthy',
     environment: process.env.NODE_ENV,
-    timestamp: new Date().toISOString()
+    timestamp: new Date().toISOString(),
   });
 });
 
