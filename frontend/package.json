@@ -18,11 +18,12 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": " react-scripts start",
-    "build": "NODE_ENV=production react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
+  "start": "NODE_ENV=production react-scripts start",
+  "build": "NODE_ENV=production react-scripts build",
+  "serve": "NODE_ENV=production serve -s build",
+  "test": "react-scripts test",
+  "eject": "react-scripts eject"
+},
   "eslintConfig": {
     "extends": [
       "react-app",
