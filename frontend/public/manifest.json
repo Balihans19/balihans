@@ -3,32 +3,32 @@
   "name": "Balihans",
   "icons": [
     {
-      "src": "Balihans_icon16.png",
+      "src": "Balihans_16.png",
       "sizes": "16x16",
       "type": "image/png"
     },
     {
-      "src": "Balihans_icon24.png",
+      "src": "Balihans_24.png",
       "sizes": "24x24",
       "type": "image/png"
     },
     {
-      "src": "Balihans_icon32.png",
+      "src": "Balihans_32.png",
       "sizes": "32x32 ",
       "type": "image/png"
     },
     {
-      "src": "Balihans_icon64.png",
+      "src": "Balihans_64.png",
       "sizes": "64x64",
       "type": "image/png"
     },
     {
-      "src": "Balihans_icon192.png",
+      "src": "Balihans_192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "Balihans_icon512.png",
+      "src": "Balihans_512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
