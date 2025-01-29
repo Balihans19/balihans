@@ -5,6 +5,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 
+
+
+
 console.log(`Frontend running in ${process.env.NODE_ENV} mode`);
 
 

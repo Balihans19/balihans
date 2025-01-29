@@ -8,6 +8,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query'
 
+
 import PageTopNavigator from './components/Resuable/PageTopNavigator';
 import Navbar from './components/Resuable/Navbar';
 import Footer from './components/Resuable/Footer';
@@ -15,6 +16,8 @@ import Footer from './components/Resuable/Footer';
 import Home from './pages/HomePages/Home';
 import CaseStudyPage from './pages/HomePages/CaseStudyPage';
 import WhitePaperPage from './pages/HomePages/WhitePaperPage';
+
+
 
 import AboutUs from './pages/AboutUsPages/AboutUs';
 import LeaderShip from './pages/AboutUsPages/LeaderShip';
@@ -72,7 +75,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
     <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}> 
-
+    
       <PageTopNavigator />
 
       <Navbar />
@@ -82,6 +85,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/case-study/:slug" element={<CaseStudyPage/>} />
         <Route path="/white-paper/:slug" element={<WhitePaperPage/>} />
+       
+
+  
+          
  
         {/* AboutUs Pages */}
         <Route path="/about-us" element={<AboutUs />} />
@@ -147,7 +154,9 @@ function App() {
 
       </Routes>
       <Footer />
+   
     </Router>
+    
     </QueryClientProvider>
   );
 }

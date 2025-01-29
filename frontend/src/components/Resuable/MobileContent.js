@@ -82,8 +82,6 @@ export const mobileContent = [
       { name: 'In Focus',
         link: '/infocus',
        },
-      { name: 'Balihans Research',
-       },
       { name: 'Balihans Innovation',
         link: '/what-we-do',
        },

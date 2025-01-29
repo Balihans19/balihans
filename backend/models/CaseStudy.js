@@ -1,51 +1,125 @@
+
 const mongoose = require('mongoose');
 
 const caseStudySchema = new mongoose.Schema({
   slug: { type: String, required: true, unique: true },
+
   seo: {
     title: { type: String, required: true },
   },
+
   mainSection: {
     backgroundImageUrl: { type: String, required: true },
-    categories: [String],
+    sectionTitle: { type: String, default: 'CASE STUDY' }, // Default title for WordPress case studies
+    categories: { type: [String], default: undefined },
     heading: { type: String, required: true },
     description: { type: String, required: true }
   },
+
   solutions: {
     title: { type: String, required: true },
-    items: [{
-      id: Number,
-      number: String,
-      title: String,
+    items: [{ // Retain original field name but make it optional
+      id: { type: Number, default: undefined },
+      number: { type: String, default: undefined },
+      title: { type: String, default: undefined },
       contents: [{
-        primaryHeading: String,
-        primaryDescription: String,
-        description: String,
-        image: String
-      }], 
-      points: [String]
+        primaryHeading: { type: String, default: undefined },
+        primaryDescription: { type: String, default: undefined },
+        description: { type: String, default: undefined },
+        image: { type: String, default: undefined },
+        points: { type: [String], default: undefined } // Allow points within contents
+      }]
+    }],
+    solutionData: [{ // Alternative naming for WordPress structure
+      id: { type: Number, default: undefined },
+      number: { type: String, default: undefined },
+      title: { type: String, default: undefined },
+      contents: [{
+        primaryHeading: { type: String, default: undefined },
+        primaryDescription: { type: String, default: undefined },
+        description: { type: String, default: undefined },
+        image: { type: String, default: undefined },
+        points: { type: [String], default: undefined } // Move points inside contents for WordPress schema
+      }]
     }]
   },
-  spotlight: {
+
+  spotlight: { // Optional for WordPress case studies
     items: [{
-      title: String,
-      description: String,
-      imageUrl: String
+      title: { type: String, default: undefined },
+      description: { type: String, default: undefined },
+      imageUrl: { type: String, default: undefined }
     }]
   },
+
   aiServices: {
-    title: String,
-    backgroundVideo: String
+    title: { type: String, default: undefined },
+    backgroundVideo: { type: String, default: undefined }
   },
-  transformingEnterprises: {
-    title: String,
+
+  transformingEnterprises: { // Optional section
+    title: { type: String, default: undefined },
     carouselSlides: [{
-      id: Number,
-      title: String,
-      image: String,
-      alt: String
+      id: { type: Number, default: undefined },
+      title: { type: String, default: undefined },
+      image: { type: String, default: undefined },
+      alt: { type: String, default: undefined }
     }]
   }
-});
+}, { timestamps: true }); // Enables createdAt & updatedAt fields
 
 module.exports = mongoose.model('CaseStudy', caseStudySchema);
+
+
+
+// const mongoose = require('mongoose');
+
+// const caseStudySchema = new mongoose.Schema({
+//   slug: { type: String, required: true, unique: true },
+//   seo: {
+//     title: { type: String, required: true },
+//   },
+//   mainSection: {
+//     backgroundImageUrl: { type: String, required: true },
+//     categories: [String],
+//     heading: { type: String, required: true },
+//     description: { type: String, required: true }
+//   },
+//   solutions: {
+//     title: { type: String, required: true },
+//     items: [{
+//       id: Number,
+//       number: String,
+//       title: String,
+//       contents: [{
+//         primaryHeading: String,
+//         primaryDescription: String,
+//         description: String,
+//         image: String
+//       }], 
+//       points: [String]
+//     }]
+//   },
+//   spotlight: {
+//     items: [{
+//       title: String,
+//       description: String,
+//       imageUrl: String
+//     }]
+//   },
+//   aiServices: {
+//     title: String,
+//     backgroundVideo: String
+//   },
+//   transformingEnterprises: {
+//     title: String,
+//     carouselSlides: [{
+//       id: Number,
+//       title: String,
+//       image: String,
+//       alt: String
+//     }]
+//   }
+// });
+
+// module.exports = mongoose.model('CaseStudy', caseStudySchema);
