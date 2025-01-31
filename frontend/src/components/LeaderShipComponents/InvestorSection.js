@@ -11,10 +11,13 @@ const InvestorSection = ({ backgroundImageUrl }) => {
 
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    navigate('/join-us');
+  const handleJoinUsClick = () => {
+    navigate('/contact-us');
   };
-
+ 
+  const handleLearnMoreClick = () => {
+    navigate('/what-we-do');
+  };
 
   return (
     // Main container with responsive padding
@@ -45,10 +48,10 @@ const InvestorSection = ({ backgroundImageUrl }) => {
 
             {/* CTA buttons with hover effects */}
             <div className="flex flex-wrap gap-4">
-              <button className="bg-transparent border text-xs sm:text-sm md:text-base font-semibold py-2 px-4 sm:py-3 sm:px-6 cursor-pointer border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white transition-colors">
+              <button onClick={handleLearnMoreClick} className="bg-transparent border text-xs sm:text-sm md:text-base font-semibold py-2 px-4 sm:py-3 sm:px-6 cursor-pointer border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white transition-colors">
                 Learn more.
               </button>
-              <button onClick={handleClick} className="bg-transparent border text-xs sm:text-sm md:text-base font-semibold py-2 px-4 sm:py-3 sm:px-6 cursor-pointer border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white transition-colors">
+              <button onClick={handleJoinUsClick} className="bg-transparent border text-xs sm:text-sm md:text-base font-semibold py-2 px-4 sm:py-3 sm:px-6 cursor-pointer border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white transition-colors">
                 Join us.
               </button>
             </div>
