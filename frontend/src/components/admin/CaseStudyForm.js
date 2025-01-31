@@ -180,34 +180,41 @@ const CaseStudyForm = () => {
   const handleImageUpload = async (e, section, field) => {
     const file = e.target.files[0];
     if (!file) return;
-
+  
     const formData = new FormData();
     formData.append('file', file);
     formData.append('upload_preset', 'Casestudies');
     formData.append('api_key', process.env.REACT_APP_CLOUDINARY_API_KEY);
     formData.append('timestamp', Math.round((new Date()).getTime() / 1000));
-
+  
     try {
-      const cloudinaryAxios = axios.create({
-        withCredentials: false,
-        headers: { 'Content-Type': 'multipart/form-data' }
-      });
-
-      const uploadUrl = `https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUDINARY_CLOUD_NAME}/image/upload?api_key=${process.env.REACT_APP_CLOUDINARY_API_KEY}`;
-      const response = await cloudinaryAxios.post(uploadUrl, formData);
-
-      if (response.data?.secure_url) {
+      const response = await fetch(
+        `https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUDINARY_CLOUD_NAME}/image/upload`,
+        {
+          method: 'POST',
+          body: formData
+        }
+      );
+  
+      if (!response.ok) {
+        throw new Error('Upload failed');
+      }
+  
+      const result = await response.json();
+  
+      if (result.secure_url) {
         setFormData(prev => ({
           ...prev,
           [section]: {
             ...prev[section],
-            [field]: response.data.secure_url,
-            ...(field === 'backgroundImageUrl' && { backgroundImage: response.data.secure_url })
+            [field]: result.secure_url,
+            ...(field === 'backgroundImageUrl' && { backgroundImage: result.secure_url })
           }
         }));
       }
     } catch (err) {
       setError('Image upload failed');
+      console.error(err);
     }
   };
 

@@ -48,13 +48,22 @@ const adminController = {
   // Handle file upload
   async uploadFile(req, res) {
     try {
-      if (!req.file) {
+      let result;
+      const resourceType = req.body.file.startsWith('data:image') ? 'image' : 'raw';
+      
+      if (req.file) {
+        // Multer file upload
+        result = await adminController.uploadToCloudinary(req.file.buffer, resourceType);
+      } else if (req.body.file) {
+        // Base64 upload
+        result = await cloudinary.uploader.upload(req.body.file, {
+          folder: 'case-studies',
+          resource_type: resourceType
+        });
+      } else {
         return res.status(400).json({ message: 'No file uploaded' });
       }
-
-      const resourceType = req.file.mimetype.startsWith('video/') ? 'video' : 'image';
-      const result = await adminController.uploadToCloudinary(req.file.buffer, resourceType);
-
+  
       res.json({ url: result.secure_url });
     } catch (error) {
       res.status(500).json({ message: 'Upload failed', error: error.message });

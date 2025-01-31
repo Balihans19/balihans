@@ -231,6 +231,22 @@ router.post('/logout', (req, res) => {
   res.json({ message: 'Logged out successfully' });
 });
 
+
+
+router.post('/upload', authMiddleware, async (req, res) => {
+  try {
+    const result = await cloudinary.uploader.upload(req.body.file, {
+      folder: 'case-studies'
+    });
+    res.json({ url: result.secure_url });
+  } catch (error) {
+    res.status(500).json({ message: 'Upload failed', error: error.message });
+  }
+});
+
+module.exports = router;
+
+
 /**
  * @route GET /api/admin/common-components
  * @description Retrieves common components configuration
