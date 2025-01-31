@@ -2,6 +2,10 @@
 const express = require('express');
 const cors = require('cors');
 const connectDB = require('./config/db');
+const authMiddleware = require('./middleware/auth.js');
+const upload = require('./utils/multer');
+const adminController = require('./controllers/adminController.js')
+const cookieParser = require('cookie-parser');
 
 //HomePages 
 const homePageRoutes = require('./routes/homePageRoutes');
@@ -10,7 +14,7 @@ const casestudyslidesPageRoutes = require('./routes/casestudyslidesPageRoutes.js
 const whitepaperslidesPageRoutes = require('./routes/whitepaperslidesPageRoutes.js')
 const whitePapers = require('./routes/whitePapers');
 
-
+const admin = require('./routes/admin');
 
 
 //AboutUsPages
@@ -100,6 +104,14 @@ const initializeMongoDB = async () => {
     process.exit(1);
   }
 };
+
+
+app.use(cookieParser());
+app.use('/api/admin',admin);
+
+
+
+
 
 // API routes
 app.use('/api/homepage', homePageRoutes);

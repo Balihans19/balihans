@@ -17,6 +17,11 @@ import Home from './pages/HomePages/Home';
 import CaseStudyPage from './pages/HomePages/CaseStudyPage';
 import WhitePaperPage from './pages/HomePages/WhitePaperPage';
 
+import LoginPage from './components/admin/LoginPage';
+import CaseStudyForm from './components/admin/CaseStudyForm';
+import CaseStudyList from './components/admin/CaseStudyList';
+import { AuthProvider } from './hooks/useAuth';
+import PrivateRoute from './components/admin/PrivateRoutes';
 
 
 import AboutUs from './pages/AboutUsPages/AboutUs';
@@ -73,6 +78,7 @@ const queryClient = new QueryClient()
 
 function App() {
   return (
+    <AuthProvider>
     <QueryClientProvider client={queryClient}>
     <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}> 
     
@@ -86,8 +92,39 @@ function App() {
         <Route path="/case-study/:slug" element={<CaseStudyPage/>} />
         <Route path="/white-paper/:slug" element={<WhitePaperPage/>} />
        
-
-  
+         {/* Admin routes */}
+          {/* Public routes */}
+        <Route path="/admin/login" element={<LoginPage />} />
+        
+        {/* Protected admin routes */}
+        <Route
+          path="/admin/case-studies"
+          element={
+            <PrivateRoute>
+              <CaseStudyList />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/admin/case-studies/new"
+          element={
+            <PrivateRoute>
+              <CaseStudyForm />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/admin/case-studies/edit/:slug"
+          element={
+            <PrivateRoute>
+              <CaseStudyForm />
+            </PrivateRoute>
+          }
+        />
+        
+        {/* Existing routes */}
+        <Route path="/case-studies/:slug" element={<CaseStudyPage />} />
+      
           
  
         {/* AboutUs Pages */}
@@ -158,6 +195,7 @@ function App() {
     </Router>
     
     </QueryClientProvider>
+    </AuthProvider>
   );
 }
 

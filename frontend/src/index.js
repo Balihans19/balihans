@@ -8,9 +8,6 @@ import reportWebVitals from './reportWebVitals';
 
 
 
-console.log(`Frontend running in ${process.env.NODE_ENV} mode`);
-
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
