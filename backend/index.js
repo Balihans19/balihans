@@ -85,7 +85,6 @@ app.use(cors({
   origin: process.env.FRONTEND_URL || '', // Fallback to allow all origins if FRONTEND_URL is not set
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
-  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 
