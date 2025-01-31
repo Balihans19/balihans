@@ -54,7 +54,7 @@ const adminController = {
 
       const resourceType = req.file.mimetype.startsWith('video/') ? 'video' : 'image';
       const result = await adminController.uploadToCloudinary(req.file.buffer, resourceType);
-      
+
       res.json({ url: result.secure_url });
     } catch (error) {
       res.status(500).json({ message: 'Upload failed', error: error.message });

@@ -2,46 +2,35 @@ import React, { useState, useEffect } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 
-/**
- * PrivateRoute - A Higher-Order Component (HOC) that restricts access to authenticated users only.
- * It checks authentication status via a backend API before rendering the protected route.
- * If the user is not authenticated, they are redirected to the login page.
- *
- * @param {object} props - React component props
- * @param {React.ReactNode} props.children - The child components (protected routes)
- * @returns {JSX.Element} - Protected route or redirection to login page
- */
+
 const PrivateRoute = ({ children }) => {
-  // State to track authentication status: `null` means check is in progress
   const [isAuthenticated, setIsAuthenticated] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const location = useLocation(); // Get the current route location
+  const location = useLocation();
 
-  /**
-   * Runs once on component mount to verify authentication status.
-   */
   useEffect(() => {
     checkAuthStatus();
   }, []);
 
-  /**
-   * Verifies the user's authentication status by calling the backend API.
-   * If the token is valid, grants access; otherwise, denies access.
-   */
   const checkAuthStatus = async () => {
-    try {
-      // API request to verify the authentication token (JWT)
-      await axios.get(`${process.env.REACT_APP_API_URL}/api/admin/verify-token`, {
-        withCredentials: true,
-      });
+    const token = localStorage.getItem('adminToken');
+    
+    if (!token) {
+      setIsAuthenticated(false);
+      setIsLoading(false);
+      return;
+    }
 
-      // If the request is successful, mark user as authenticated
+    try {
+      await axios.get('/api/admin/verify-token', {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      
       setIsAuthenticated(true);
     } catch (error) {
-      // If an error occurs, assume authentication failed
+      localStorage.removeItem('adminToken');
       setIsAuthenticated(false);
     } finally {
-      // Mark the loading state as complete
       setIsLoading(false);
     }
   };
