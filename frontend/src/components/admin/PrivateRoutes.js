@@ -31,8 +31,8 @@ const PrivateRoute = ({ children }) => {
   const checkAuthStatus = async () => {
     try {
       // API request to verify the authentication token (JWT)
-      await axios.get('/api/admin/verify-token', {
-        withCredentials: true, // Ensures cookies (including auth tokens) are sent
+      await axios.get(`${process.env.REACT_APP_API_URL}/api/admin/verify-token`, {
+        withCredentials: true,
       });
 
       // If the request is successful, mark user as authenticated
