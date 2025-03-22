@@ -18,6 +18,7 @@ import Footer from './components/Resuable/Footer';
 import Home from './pages/HomePages/Home';
 import CaseStudyPage from './pages/HomePages/CaseStudyPage';
 import WhitePaperPage from './pages/HomePages/WhitePaperPage';
+import BlogPage from './pages/HomePages/BlogPage';
 
 import LoginPage from './components/admin/LoginPage';
 import CaseStudyForm from './components/admin/CaseStudyForm';
@@ -61,6 +62,7 @@ import TestingServices from './pages/WhatWeDoPages/TestingServices';
 import Infocus from './pages/WhatWeDoPages/Infocus';
 
 import CaseStudies from './pages/InsightsPages/CaseStudies';
+import Blogs from './pages/InsightsPages/Blogs'
 
 import JoinUs from './pages/CareersPages/JoinUs';
 import SubmitResumePage from './pages/CareersPages/SubmitResumePage';
@@ -96,6 +98,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/case-study/:slug" element={<CaseStudyPage/>} />
         <Route path="/white-paper/:slug" element={<WhitePaperPage/>} />
+        <Route path="/blog/:slug" element={<BlogPage/>} />
        
         
           {/* Admin Routes wrapped in their own Route */}
@@ -184,6 +187,7 @@ function App() {
 
         {/* Insights Pages */} 
         <Route path="/case-studies" element={<CaseStudies />} />
+        <Route path="/blogs" element={<Blogs />} />
         
 
        

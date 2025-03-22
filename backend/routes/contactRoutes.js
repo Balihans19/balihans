@@ -40,7 +40,7 @@ router.post("/", async (req, res) => {
 
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: `${process.env.EMAIL_RECEIVER_1}, ${process.env.EMAIL_RECEIVER_2}`,
+      to: `${process.env.EMAIL_RECEIVER_1}, ${process.env.EMAIL_RECEIVER_2}, ${process.env.EMAIL_RECEIVER_3}`,
       subject: "New Contact Us Message",
       text: `
         You have a new message from ${name}.
@@ -59,6 +59,10 @@ router.post("/", async (req, res) => {
 });
 
 module.exports = router;
+
+
+
+
 // const express = require("express");
 // const router = express.Router();
 // const Contact = require("../models/Contact");

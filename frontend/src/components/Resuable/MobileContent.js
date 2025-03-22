@@ -155,6 +155,10 @@ export const mobileContent = [
         name: 'Customer Speak',
         link: '/customer-speak',
       },
+      {
+        name: 'Blogs',
+        link: '/blogs',
+      },
     ]
   },
 

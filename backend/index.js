@@ -13,6 +13,7 @@ const caseStudies = require('./routes/caseStudies');
 const casestudyslidesPageRoutes = require('./routes/casestudyslidesPageRoutes.js')
 const whitepaperslidesPageRoutes = require('./routes/whitepaperslidesPageRoutes.js')
 const whitePapers = require('./routes/whitePapers');
+const blog = require('./routes/blog.js');
 
 const admin = require('./routes/admin');
 
@@ -54,6 +55,7 @@ const mediaandentertainmentPageRoutes=require('./routes/mediaandentertainmentPag
 
 //InsightsPages
 const casestudiesPageRoutes=require('./routes/casestudiesPageRoutes.js');
+const blogsPageRoutes=require('./routes/blogsPageRoutes.js')
 
 const joinusPageRoutes=require('./routes/joinusPageRoutes.js');
 const resumeRoutes=require('./routes/resumeRoutes.js');
@@ -117,6 +119,7 @@ app.use('/api/admin',admin);
 app.use('/api/homepage', homePageRoutes);
 app.use('/api/case-studies', caseStudies);
 app.use('/api/white-papers', whitePapers);
+app.use('/api/blog', blog);
 app.use('/api/casestudyslidespage', casestudyslidesPageRoutes);
 app.use('/api/whitepaperslidespage', whitepaperslidesPageRoutes);
 
@@ -158,6 +161,7 @@ app.use('/api/retailandconsumergoodspage', retailandconsumergoodsPageRoutes);
 app.use('/api/travelandlogisticspage', travelandlogisticsPageRoutes);
 
 app.use('/api/casestudiespage', casestudiesPageRoutes);
+app.use('/api/blogspage', blogsPageRoutes);
 
 app.use('/api/joinuspage', joinusPageRoutes);
 app.use('/api/resume', resumeRoutes);

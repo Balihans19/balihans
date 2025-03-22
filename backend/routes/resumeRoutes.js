@@ -174,7 +174,7 @@ router.post("/email", async (req, res) => {
         name: 'Balihans Careers',
         address: process.env.EMAIL_USER
       },
-      to: `${process.env.EMAIL_RECEIVER_1}, ${process.env.EMAIL_RECEIVER_2}`,
+      to: `${process.env.EMAIL_RECEIVER_1}, ${process.env.EMAIL_RECEIVER_2}, ${process.env.EMAIL_RECEIVER_3}`,
       subject: `New Resume Submission - ${name}`,
       html: emailTemplate,
       attachments: [

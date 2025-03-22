@@ -32,7 +32,7 @@ const DesktopNavbar = ({ navItems, activeDropdown, setActiveDropdown }) => {
 
   return (
     <nav
-      className="hidden lg:block bg-[#101215] sticky top-0 z-50"
+      className="hidden lg:block bg-[#101215] sticky top-0 z-50 "
       onMouseLeave={() => setActiveDropdown(null)}
     >
       <div className="max-w-full mx-auto px-4 py-4 md:px-20 xl:px-36">

@@ -9,10 +9,19 @@ const CustomerStories = ({ contentType = "case-study" }) => {
   const [currentPage, setCurrentPage] = useState(0); // State for tracking current page
 
   // Function to determine the API endpoint based on the content type
+  // const getEndpoint = () => {
+  //   return contentType === "case-study"
+  //     ? "case-studies/stories"
+  //     : "white-papers/stories";
+  // };
   const getEndpoint = () => {
-    return contentType === "case-study"
-      ? "case-studies/stories"
-      : "white-papers/stories";
+    if (contentType === "case-study") {
+      return "case-studies/stories";
+    } else if (contentType === "blog") {
+      return "blog/stories";
+    } else {
+      return "white-papers/stories";
+    }
   };
 
   // Fetch data using react-query with pagination, error handling, and caching
@@ -108,9 +117,9 @@ const CustomerStories = ({ contentType = "case-study" }) => {
     <div className="bg-[#101215] py-36 px-8 lg:px-20 xl:px-36 text-white">
       {/* Title */}
       <h2 className="text-2xl font-semibold mb-6">
-        {contentType === "case-study" ? "CUSTOMER STORIES" : "WHITEPAPERS"}
-      </h2>
-      
+         {contentType === "case-study" ? "CUSTOMER STORIES": contentType === "blog"? "BLOGS": "WHITEPAPERS"}
+       </h2>
+
       {/* Horizontal line separator */}
       <div className="flex justify-end mt-6 mb-6">
         <hr className="w-full border-white/20" />
