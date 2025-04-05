@@ -159,6 +159,7 @@ export const mobileContent = [
         name: 'Blogs',
         link: '/blogs',
       },
+     
     ]
   },
 

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-//  schema for the aipage
+//  schema for the blogspage
 const blogspageSchema = new mongoose.Schema({
  
   backgroundVideo: { type: String, required: true },

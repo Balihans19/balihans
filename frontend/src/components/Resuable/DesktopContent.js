@@ -251,6 +251,7 @@ export const desktopContent = [
               <li className="mb-2">
                 <Link to="/blogs" className="text-white hover:underline">Blogs</Link>
               </li>
+              
               <li className="mb-2">
                 <Link to="/customer-speak" className="text-white hover:underline">Customer Speak</Link>
               </li>

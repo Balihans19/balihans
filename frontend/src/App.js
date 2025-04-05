@@ -64,6 +64,7 @@ import Infocus from './pages/WhatWeDoPages/Infocus';
 import CaseStudies from './pages/InsightsPages/CaseStudies';
 import Blogs from './pages/InsightsPages/Blogs'
 
+
 import JoinUs from './pages/CareersPages/JoinUs';
 import SubmitResumePage from './pages/CareersPages/SubmitResumePage';
 
@@ -188,6 +189,7 @@ function App() {
         {/* Insights Pages */} 
         <Route path="/case-studies" element={<CaseStudies />} />
         <Route path="/blogs" element={<Blogs />} />
+     
         
 
        
