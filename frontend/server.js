@@ -20,20 +20,16 @@ if (fs.existsSync(buildPath)) {
 app.use(express.static(path.join(__dirname, 'build')));
 
 // For any request that doesn't match a static file, send the index.html
-app.get('*', (req, res) => {
-  console.log(`Request for: ${req.url}`);
-  const indexPath = path.join(__dirname, 'build', 'index.html');
-  
-  if (fs.existsSync(indexPath)) {
-    console.log('Serving index.html');
-    res.sendFile(indexPath);
-  } else {
-    console.error('index.html not found at path:', indexPath);
-    res.status(404).send('Build folder or index.html not found. Make sure your build is in the correct location.');
-  }
-});
+pp.get('*', (req, res) => {
+    const indexPath = path.join(__dirname, 'build', 'index.html');
+    if (fs.existsSync(indexPath)) {
+      res.sendFile(indexPath);
+    } else {
+      res.status(404).send('Build folder not found. Run npm run build first.');
+    }
+  });
 
 const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
+app.listen(PORT,'0.0.0.0', () => {
   console.log(`Server running on port ${PORT}`);
 });
