@@ -20,7 +20,7 @@ if (fs.existsSync(buildPath)) {
 app.use(express.static(path.join(__dirname, 'build')));
 
 // For any request that doesn't match a static file, send the index.html
-pp.get('*', (req, res) => {
+app.get('*', (req, res) => {
     const indexPath = path.join(__dirname, 'build', 'index.html');
     if (fs.existsSync(indexPath)) {
       res.sendFile(indexPath);
