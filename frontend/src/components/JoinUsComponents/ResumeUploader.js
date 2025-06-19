@@ -303,14 +303,21 @@ const ResumeUploader = () => {
               </div>
 
               <div>
-                <button
+                {/* <button
                   type="submit"
                   className={`w-full py-2 px-4 bg-transparent border border-white rounded text-white font-semibold max-w-44 
                     ${isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:bg-white hover:text-black transition-colors duration-300'}`}
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? 'Submitting...' : 'Submit'}
-                </button>
+                </button> */}
+                <button
+                   type="submit"
+                   className="w-full py-2 px-4 bg-transparent border border-white rounded text-white font-semibold max-w-44 opacity-50 cursor-not-allowed"
+                   disabled={true}
+                  >
+                 Submit
+             </button>
               </div>
             </form>
           </div>
